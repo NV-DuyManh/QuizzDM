@@ -1,155 +1,115 @@
-# Đáp án TN-CNXHKH
+# Đáp án và rà soát TN-LSDCSVN
 
-Bộ 105 câu môn Chủ nghĩa xã hội khoa học, đối chiếu ngày 03/10/2026, ưu tiên bài giảng trên lớp do người dùng cung cấp. Đây là đáp án biên soạn từ kiến thức môn học và nguồn tham khảo, không phải đáp án thi chính thức của giảng viên. Thứ tự câu và A/B/C/D được giữ theo file người dùng, trừ sửa lỗi gõ và làm rõ các câu bên dưới. Giao diện không thay đổi. Cột đối chiếu ghi trang PDF chứa nội dung hoặc cơ sở lý luận liên quan; các câu kiến thức bổ sung dùng nguồn bên ngoài.
+Rà soát ngày 03/10/2026. Trang web chỉ sử dụng **60 câu trắc nghiệm gốc** trong phần 1. Thứ tự câu và A/B/C/D được giữ nguyên; không chuyển các câu trả lời ngắn hoặc tự luận thành trắc nghiệm.
+
+Nguồn chính: **SV_BỘ NGÂN HÀNG CÂU HỎI_LSĐCS VIỆT NAM.docx**, năm học 2026–2027, người dùng cung cấp. Đọc nội dung và định dạng OOXML của từng lựa chọn: 59 câu có đúng một chữ cái được gạch chân; câu 38 có dấu `*A` thay cho gạch chân. Không coi các tiêu đề gạch chân là đáp án.
+
+Không phát hiện trường hợp cần đổi chữ cái đáp án sau khi sửa nội dung: riêng câu 31, phương án A gốc có mốc thời gian sai và cả bốn phương án gốc đều không ghi đúng 18–29/12/1972; web đã sửa A để có lựa chọn đúng. Một số câu khác sai dẫn chiếu, ngày tháng hoặc diễn đạt, được sửa dưới đây. Bảng này phân biệt vị trí đánh dấu của file và nội dung chính xác sử dụng trên web; không coi mọi câu trong file gốc đều đúng nguyên văn.
 
 ## Bảng đáp án
 
-| Câu | Đáp án | Nội dung lựa chọn | Đối chiếu |
+| Câu | File Word đánh dấu | Web sử dụng | Nội dung lựa chọn đúng trên web |
 | --- | --- | --- | --- |
-| 1 | C | Tômát Morơ | British Library: Thomas More/Utopia |
-| 2 | B | Tuyên ngôn của Đảng cộng sản | Bài giảng trên lớp, tr. 5–6 |
-| 3 | D | Giai cấp công nhân | Bài giảng trên lớp, tr. 3, 16–17 |
-| 4 | A | Sự sụp đổ của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau | Bài giảng trên lớp, tr. 5 |
-| 5 | A | Nhà nước Xô Viết, năm 1917 | Bài giảng trên lớp, tr. 43 |
-| 6 | A | Iosif Vissarionovich Stalin | Library of Congress: niên biểu |
-| 7 | C | Độc lập dân tộc gắn với chủ nghĩa xã hội | Bài giảng trên lớp, tr. 10 |
-| 8 | D | Giai cấp công nhân | Bài giảng trên lớp, tr. 17 |
-| 9 | C | Sứ mệnh lịch sử của giai cấp công nhân | Bài giảng trên lớp, tr. 12 |
-| 10 | B | Nhà nước | Bài giảng trên lớp, tr. 51 |
-| 11 | C | Đất liền, hải đảo, vùng biển và vùng trời. | Hiến pháp 2013, Điều 1 |
-| 12 | B | 54 | Bài giảng trên lớp, tr. 69 |
-| 13 | D | Phát triển về giáo dục | Giáo trình Bộ GD&ĐT (bản cũ), tr. 171–176; đã làm rõ khía cạnh đào tạo |
-| 14 | D | Cả A, B, C | Bài giảng trên lớp, tr. 40–42 |
-| 15 | A | Giai cấp công nhân | Bài giảng trên lớp, tr. 17–18 |
-| 16 | D | Đảng Cộng sản Trung Quốc | Bài giảng trên lớp, tr. 9–10 |
-| 17 | A | Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân | Giáo trình Bộ GD&ĐT (bản cũ), mục quy luật hình thành Đảng |
-| 18 | A | Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân. | Bài giảng trên lớp, tr. 45–46 |
-| 19 | B | Cách mạng tháng Mười Nga thành công và sự ra đời của nhà nước XHCN đầu tiên (1917) | Bài giảng trên lớp, tr. 43 |
-| 20 | A | Công nhân có xu hướng trí tuệ hóa, có tính toàn cầu hóa, gia tăng nhanh về số lượng và chất lượng | Bài giảng trên lớp, tr. 20–21 |
-| 21 | A | Quan hệ sở hữu đối với tư liệu sản xuất chủ yếu | Bài giảng trên lớp, tr. 17 |
-| 22 | B | Sau cách mạng Tháng Tám 1945 (2/9/1945) | Bài giảng trên lớp, tr. 47 |
-| 23 | C | Thế giới quan duy tâm | Bài giảng trên lớp, tr. 74 |
-| 24 | D | Xây dựng gia đình ấm no, hạnh phúc, tiến bộ, văn minh | Hệ giá trị gia đình: nguồn Chính phủ |
-| 25 | D | Thiết lập nhà nước kiểu mới mang bản chất giai cấp công nhân | Bài giảng trên lớp, tr. 17–18 |
-| 26 | C | Do sự bóc lột của giai cấp tư sản đối với giai cấp công nhân | Bài giảng trên lớp, tr. 16–17, 20 |
-| 27 | C | 3 | Bài giảng trên lớp, tr. 42–43 |
-| 28 | B | Nhà nước xã hội chủ nghĩa | Giáo trình Bộ GD&ĐT (bản cũ), tr. 100 |
-| 29 | C | 72 ngày | Học viện Chính trị khu vực IV: Công xã Paris |
-| 30 | A | Châu Mỹ Latinh | Mô hình CNXH thế kỷ XXI tại Mỹ Latinh |
-| 31 | B | Pháp luật | Bài giảng trên lớp, tr. 41–42 |
-| 32 | C | Chủ nghĩa Mác – Lênin và tư tưởng Hồ Chí Minh | Bài giảng trên lớp, tr. 10–11 |
-| 33 | A | V.I.Lênin | Bài giảng trên lớp, tr. 6–8 |
-| 34 | B | Một trong ba bộ phận hợp thành chủ nghĩa Mác-Lênin. | Bài giảng trên lớp, tr. 3 |
-| 35 | C | Chủ nghĩa xã hội không tưởng Pháp | Bài giảng trên lớp, tr. 4 |
-| 36 | B | Sự xuất hiện giai cấp cùng những phân hóa, đối kháng, bất công... là điều không thể giải thích được | Bài giảng trên lớp, tr. 75 |
-| 37 | D | Là một hiện tượng xã hội - văn hoá do con người sáng tạo ra | Bài giảng trên lớp, tr. 74 |
-| 38 | A | Trực tiếp và gián tiếp | Bài giảng trên lớp, tr. 31–32 |
-| 39 | B | Chủ nghĩa tư bản đã chuyển sang giai đoạn đế quốc chủ nghĩa. | Bài giảng trên lớp, tr. 7 |
-| 40 | A | Xã hội "dân giàu, nước mạnh, dân chủ, công bằng, văn minh" | Bài giảng trên lớp, tr. 36–37 |
-| 41 | B | Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa | Bài giảng trên lớp, tr. 34 |
-| 42 | C | Trở thành nước phát triển, thu nhập cao. | Mục tiêu 2045: nguồn Chính phủ |
-| 43 | B | Đảng cộng sản | Bài giảng trên lớp, tr. 19 |
-| 44 | B | Các nước đã trải qua giai đoạn chủ nghĩa tư bản phát triển. | Bài giảng trên lớp, tr. 31 |
-| 45 | C | Hiến pháp và pháp luật | Bài giảng trên lớp, tr. 49–50 |
-| 46 | A | Đảng cộng sản Việt Nam | Bài giảng trên lớp, tr. 50 |
-| 47 | C | Có tính tổ chức, kỷ luật lao động và tâm lý lao động công nghiệp. | Bài giảng trên lớp, tr. 16–17 |
-| 48 | D | Giai cấp tư sản | Bài giảng trên lớp, tr. 16, 20 |
-| 49 | A | Tạo sức mạnh tổng hợp đảm bảo cho sự thắng lợi của cách mạng xã hội chủ nghĩa | Bài giảng trên lớp, tr. 56 |
-| 50 | B | Liên minh giai cấp công nhân với giai cấp nông dân và đội ngũ trí thức do Đảng lãnh đạo. | Bài giảng trên lớp, tr. 56–58 |
-| 51 | A | Để thích nghi với văn hóa, xã hội của quốc gia đó | Bài giảng trên lớp, tr. 79 |
-| 52 | B | Mang bản chất giai cấp công nhân; phục vụ lợi ích cho nhân dân | Bài giảng trên lớp, tr. 50–52 |
-| 53 | C | Năm 1995 | Bộ Ngoại giao: bình thường hóa năm 1995 |
-| 54 | D | Thị tộc, bộ lạc, bộ tộc, dân tộc | Giáo trình Bộ GD&ĐT (bản cũ), chương dân tộc |
-| 55 | B | Quan hệ huyết thống | Bài giảng trên lớp, tr. 85 |
-| 56 | D | Nhà nước pháp quyền xã hội chủ nghĩa | Bài giảng trên lớp, tr. 49–50 |
-| 57 | A | Đoàn kết các dân tộc | Bài giảng trên lớp, tr. 71 |
-| 58 | A | Cộng đồng về ngôn ngữ | Bài giảng trên lớp, tr. 67 |
-| 59 | B | Chức năng nuôi dưỡng, giáo dục | Bài giảng trên lớp, tr. 87–88 |
-| 60 | A | Giai cấp công nhân Việt Nam | Bài giảng trên lớp, tr. 58 |
-| 61 | B | Phát triển kinh tế, tiến hành thành công công nghiệp hóa, hiện đại hóa | Bài giảng trên lớp, tr. 61–62 |
-| 62 | D | Khi xã hội xuất hiện sự phân chia giai cấp và đối kháng về lợi ích giai cấp | Bài giảng trên lớp, tr. 76 |
-| 63 | D | Chủ nghĩa xã hội | Bài giảng trên lớp, tr. 27–28 |
-| 64 | D | Cách mạng Tháng Tám thành công và Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập (2/9/1945) | Hiến pháp 2013, Lời nói đầu |
-| 65 | D | Liên minh công - nông - trí thức | Cẩm nang tư tưởng Hồ Chí Minh, Thư viện Quốc hội |
-| 66 | A | Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất định của lịch sử xã hội loài người | Bài giảng trên lớp, tr. 76 |
-| 67 | D | Cả 3 đáp án trên | Bài giảng trên lớp, tr. 48, 80 |
-| 68 | A | Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng | Luật Thực hiện dân chủ ở cơ sở 2022; nguồn Quốc hội |
-| 69 | B | Phát huy sức mạnh của mọi giai cấp, mọi tầng lớp nhân dân, mọi thành phần dân tộc, tôn giáo cho công cuộc đổi mới, xây dựng và bảo vệ tổ quốc. | Bài giảng trên lớp, tr. 10–11 |
-| 70 | D | Hiến pháp | Hiến pháp 2013, Điều 7 |
-| 71 | A | Sự ra đời nền Đại công nghiệp | Bài giảng trên lớp, tr. 3, 16 |
-| 72 | A | Phát hiện ra giai cấp công nhân là lực lượng xã hội có thể thủ tiêu CNTB, xây dựng CNXH. | Bài giảng trên lớp, tr. 5 |
-| 73 | C | Sự đoàn kết, thống nhất của hai giai cấp công nhân và nông dân | Ý nghĩa biểu tượng liên minh công nhân – nông dân |
-| 74 | D | Cơ cấu xã hội - giai cấp | Bài giảng trên lớp, tr. 54–55 |
-| 75 | A | Tự quyết về chính trị | Bài giảng trên lớp, tr. 68–69 |
-| 76 | A | Xây dựng Đảng cộng sản Việt Nam trong sạch, vững mạnh | Bài giảng trên lớp, tr. 51 |
-| 77 | A | Chủ tịch Hồ Chí Minh | Hồ Chí Minh: đoàn kết và đại đoàn kết |
-| 78 | B | Pháp | Học viện Chính trị khu vực IV: Công xã Paris 1871 |
-| 79 | A | Chính phủ | Luật Tín ngưỡng, tôn giáo 2016, Điều 61; luật 2026, Điều 57 |
-| 80 | A | Tôn giáo có hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tương đối chặt chẽ; tín ngưỡng thường chưa có hệ thống đó. | Bài giảng trên lớp, tr. 74 |
-| 81 | B | Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của đông đảo các tầng lớp nhân dân. | Bài giảng trên lớp, tr. 76 |
-| 82 | B | Tính lịch sử | Bài giảng trên lớp, tr. 76, 78 |
-| 83 | A | Thần thánh hóa các hiện tượng tự nhiên | Bài giảng trên lớp, tr. 75 |
-| 84 | A | Hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tôn giáo | Bài giảng trên lớp, tr. 74 |
-| 85 | C | Nước Cộng hòa Nhân dân Trung Hoa ra đời. | Bài giảng trên lớp, tr. 8–9 |
-| 86 | C | Là niềm tin mê muội, viển vông, không dựa trên một cơ sở khoa học | Bài giảng trên lớp, tr. 74–75 |
-| 87 | C | Cuba | Lịch sử cách mạng Cuba |
-| 88 | C | 9 | Báo Chính phủ: 9 tôn giáo du nhập |
-| 89 | C | Gia đình hòa thuận, bình đẳng, tiến bộ, hạnh phúc và thực hiện tốt nghĩa vụ công dân. | Bài giảng trên lớp, tr. 97 |
-| 90 | C | Quá trình công nghiệp hóa, hiện đại hóa và hội nhập quốc tế. | Bài giảng trên lớp, tr. 92–93 |
-| 91 | B | Xây dựng gia đình no ấm, bình đẳng, tiến bộ, hạnh phúc và phát triển bền vững. | Bài giảng trên lớp, tr. 95–97 |
-| 92 | A | Là ý thức về nguồn gốc và tộc danh của dân tộc mình | Bài giảng trên lớp, tr. 67 |
-| 93 | B | Dân chủ đại diện và dân chủ trực tiếp | Hiến pháp 2013, Điều 6 |
-| 94 | C | Chức năng kinh tế | Bài giảng trên lớp, tr. 88–89 |
-| 95 | D | Báo Thanh Niên | Bảo tàng Hồ Chí Minh: Báo Thanh Niên |
-| 96 | D | Chức năng giáo dục | Bài giảng trên lớp, tr. 87–89 |
-| 97 | A | Quan hệ hôn nhân | Bài giảng trên lớp, tr. 85 |
-| 98 | A | Gia đình hạt nhân | Bài giảng trên lớp, tr. 92 |
-| 99 | C | Giáo dục lòng yêu nước và giữ gìn, phát huy bản sắc văn hóa dân tộc. | Bài giảng trên lớp, tr. 10–11 |
-| 100 | A | Sự lãnh đạo của Đảng Cộng sản Việt Nam | Bài giảng trên lớp, tr. 11 |
-| 101 | A | Tôn trọng tự do tín ngưỡng | Bài giảng trên lớp, tr. 80 |
-| 102 | A | Chức năng kinh tế và tổ chức tiêu dùng | Bài giảng trên lớp, tr. 88–89 |
-| 103 | A | 43 | Ban Tôn giáo Chính phủ, số liệu mốc 2022 |
-| 104 | B | Tình yêu chân chính giữa nam và nữ. | Bài giảng trên lớp, tr. 90–91 |
-| 105 | D | Gia đình | Bài giảng trên lớp, tr. 86, 89 |
+| 1 | D | D | Tất cả các phương án đều đúng |
+| 2 | C | C | Phương pháp lịch sử; phương pháp logic; phương pháp tổng kết thực tiễn lịch sử; phương pháp so sánh |
+| 3 | A | A | Chức năng nhận thức; chức năng giáo dục; chức năng dự báo và phê phán |
+| 4 | D | D | Tất cả các phương án đều đúng |
+| 5 | C | C | Nguyễn Ái Quốc |
+| 6 | A | A | Ngày 03 tháng 2 năm 1930 |
+| 7 | A | A | Tư sản dân quyền cách mạng và thổ địa cách mạng để đi tới xã hội cộng sản |
+| 8 | B | B | Trần Phú |
+| 9 | D | D | Năm 1930 (Đảng Cộng sản Việt Nam ra đời) |
+| 10 | A | A | Trần Phú |
+| 11 | A | A | Sự lãnh đạo của Đảng là điều kiện cốt yếu cho thắng lợi của cách mạng Việt Nam |
+| 12 | D | D | Tất cả các phương án đều đúng |
+| 13 | D | D | Tất cả các phương án đều đúng |
+| 14 | A | A | Hồ Chí Minh |
+| 15 | D | D | Ngày 22 tháng 12 năm 1944 |
+| 16 | C | C | Hội Việt Nam Cách mạng Thanh niên |
+| 17 | C | C | Ma Cao |
+| 18 | B | B | Trần Phú |
+| 19 | C | C | Về tư tưởng |
+| 20 | C | C | Khủng hoảng về đường lối cứu nước. |
+| 21 | C | C | Thực dân Pháp xâm lược |
+| 22 | B | B | Ngày 19 tháng 12 năm 1946 |
+| 23 | D | D | Tất cả các phương án đều đúng |
+| 24 | D | D | Tất cả các phương án đều đúng |
+| 25 | D | D | Nguyễn Văn Tố |
+| 26 | D | D | Tất cả các phương án đều đúng |
+| 27 | A | A | Hàn gắn vết thương chiến tranh, phục hồi kinh tế quốc dân |
+| 28 | D | D | Tất cả các phương án đều đúng |
+| 29 | D | D | Nguyễn Hữu Thọ |
+| 30 | B | B | Tháng 9 năm 1960 |
+| 31 | A | A | Từ ngày 18 đến ngày 29 tháng 12 năm 1972 |
+| 32 | A | A | Ngày 27 tháng 1 năm 1973 |
+| 33 | C | C | Chiến dịch Tây Nguyên |
+| 34 | B | B | Ngày 26 tháng 4 năm 1975 |
+| 35 | D | D | Ngày 30 tháng 4 năm 1975 |
+| 36 | B | B | Tháng 2-1951 |
+| 37 | C | C | Phong trào Đồng Khởi. |
+| 38 | A (dấu *) | A | Đêm 30 rạng ngày 31-1-1968 |
+| 39 | B | B | Sau chiến thắng Buôn Ma Thuột, khi Chiến dịch Tây Nguyên đang phát triển (18-3-1975). |
+| 40 | C | C | Tổng tiến công và nổi dậy Mậu Thân 1968 |
+| 41 | D | D | Tất cả các phương án đều đúng |
+| 42 | A | A | Đại hội lần thứ IV |
+| 43 | B | B | Đại hội lần thứ V |
+| 44 | B | B | Đại hội lần thứ X |
+| 45 | C | C | Chăm lo xây dựng con người có nhân cách, lối sống tốt đẹp, với các đặc tính cơ bản: yêu nước, nhân ái, nghĩa tình, trung thực, đoàn kết, cần cù, sáng tạo |
+| 46 | A | A | Văn hóa Tiên tiến là yêu nước và tiến bộ với nội dung cốt lõi là lý tưởng độc lập dân tộc và chủ nghĩa xã hội theo chủ nghĩa Mác - Lênin, tư tưởng Hồ Chí Minh, nhằm mục tiêu tất cả vì con người |
+| 47 | A | A | Giữ vai trò quan trọng trong sự nghiệp xây dựng và phát triển văn hóa của toàn dân, dưới sự lãnh đạo của Đảng và quản lý của Nhà nước |
+| 48 | A | A | Nắm vững hai mặt hợp tác và đấu tranh trong quan hệ quốc tế |
+| 49 | D | D | Tất cả các phương án đều đúng |
+| 50 | C | C | Khoa học, công nghệ, tri thức và nguồn nhân lực chất lượng cao |
+| 51 | B | B | Nhằm thực hiện "dân giàu, nước mạnh, dân chủ, công bằng, văn minh”; giải phóng mạnh mẽ lực lượng sản xuất, không ngừng nâng cao đời sống nhân dân |
+| 52 | A | A | Là một động lực quan trọng của nền kinh tế |
+| 53 | A | A | Đại hội XII |
+| 54 | D | D | Tất cả đều đúng |
+| 55 | B | B | Kinh tế |
+| 56 | B | B | Hội nghị lần thứ 24 |
+| 57 | C | C | Tháng 12 năm 1976 |
+| 58 | C | C | Đại hội VI (1986) |
+| 59 | C | C | Đại hội XI |
+| 60 | B | B | Dân giàu, nước mạnh, dân chủ, công bằng, văn minh |
 
-## Câu hỏi đã làm rõ
+## Kết quả rà soát và những nội dung đã sửa
 
-- Câu 11: Yêu cầu đúng cách liệt kê của Điều 1 để phân biệt B/C cùng nội dung.
-- Câu 13: Giới hạn ở trực tiếp trang bị tri thức, kỹ năng; chọn D. Đề gốc quá rộng để loại hoàn toàn tác động của kinh tế - xã hội.
-- Câu 25: Làm rõ nhiệm vụ chính trị trực tiếp; chọn D.
-- Câu 68: Dùng “thể chế hóa” thay vì coi phương châm sáu vế là trích nguyên văn luật.
-- Câu 80: Làm rõ A về giáo lý, giáo luật, lễ nghi và tổ chức tương đối hệ thống; không phủ nhận nghi thức tín ngưỡng.
-- Câu 88: Sửa tư cách pháp nhân của tôn giáo thành tổ chức được công nhận hoặc cấp đăng ký.
-- Câu 99: Giới hạn phương diện văn hóa để đáp án C không phủ nhận nhiệm vụ bảo vệ lãnh thổ.
-- Câu 101: Bỏ cách gọi “hòn đá tảng” chưa có nguồn xác nhận; hỏi nguyên tắc nền tảng.
-- Câu 103: Làm rõ thống kê “công nhận hoặc cấp đăng ký hoạt động” tại mốc 2022.
+- **Câu 13:** Giới hạn B vào quyết định quốc kỳ, quốc ca đã đối chiếu; không giữ khẳng định riêng về việc đặt tên nước trong B của đề gốc. Giữ D.
+- **Câu 19:** Làm rõ Le Paria ra số đầu năm 1922; năm 1921 là mốc tham gia Hội Liên hiệp thuộc địa. Giữ C.
+- **Câu 29:** Tách ngày thành lập Mặt trận 20/12/1960 khỏi thời điểm bầu Nguyễn Hữu Thọ tại Đại hội I tháng 2/1962. Giữ D.
+- **Câu 31:** A trong file ghi 18–30/12/1972, sai mốc cuối. Sửa A thành 18–29/12/1972, tức 12 ngày đêm; không lựa chọn nào trong đề gốc ghi đúng khoảng thời gian này.
+- **Câu 37:** Sửa thiếu từ “là” trong câu hỏi, không đổi nội dung hoặc C.
+- **Câu 38:** File dùng dấu *A, không dùng gạch chân. Giữ A; lời giải phân biệt đợt đồng loạt chủ yếu với một số địa phương nổ súng sớm.
+- **Câu 39:** B giữ mốc 18/3/1975 nhưng bỏ khẳng định toàn bộ Tây Nguyên đã giải phóng tại thời điểm đó. Sửa ngày bức điện trong D từ 6/4 thành 7/4/1975. Giữ B.
+- **Câu 41:** C dùng tên chức vụ chính xác: Trường Chinh là Chủ tịch Ủy ban Thường vụ Quốc hội khóa VI. Giữ D.
+- **Câu 46:** Định nghĩa trong A thuộc Trung ương 5 khóa VIII (1998), không phải Trung ương 9 khóa XI (2014); sửa dẫn chiếu trong câu hỏi. Giữ A.
+- **Câu 47:** A gốc trộn cách diễn đạt về công nhân, nông dân, trí thức với Nghị quyết 33. Viết lại A đúng vai trò trí thức theo Trung ương 9 khóa XI. Giữ A.
+- **Câu 52:** Bỏ cách hỏi “hiện nay”; xác định rõ phạm vi Nghị quyết Trung ương 5 khóa XII năm 2017, không áp dụng phát biểu này như mô tả mọi thời điểm. Giữ A.
+- **Câu 55:** Bỏ cụm “hiện nay”, giữ phạm vi quan điểm Đại hội XII năm 2016. Giữ B.
+- **Câu 56:** Sửa tháng 8/1975 thành tháng 9/1975 theo Nghị quyết 247-NQ/TW ngày 29/9/1975. Bản thảo giáo trình 2019 cũng có lỗi tháng 8 tại đoạn này; ưu tiên văn kiện gốc. Giữ B.
+- **Câu 58:** Sửa năm của các phương án nhiễu: Đại hội IV năm 1976, Đại hội V năm 1982. Giữ C: Đại hội VI năm 1986.
 
-Câu 5: Xô viết năm 1917 là đáp án trong bốn lựa chọn; phân biệt với Công xã Paris, nhà nước vô sản đầu tiên. Câu 6: Stalin củng cố quyền lãnh đạo dần sau năm 1924. Câu 27: ba chế độ dân chủ theo phân loại như hình thái nhà nước. Câu 35 và 37 chọn phương án phù hợp nhất, không xem chúng là định nghĩa đầy đủ. Câu 65: liên minh công - nông - trí thức là nòng cốt; “đoàn kết trong Đảng” là hạt nhân trong cách diễn đạt về xây dựng Đảng. Câu 78: Pháp/Công xã Paris năm 1871, không nhầm với Nga năm 1917. Câu 80: tín ngưỡng vẫn có nghi thức. Câu 103: số 43 gắn với mốc năm 2022.
+Ngoài các mục trên, đã sửa lỗi gõ rõ ràng như “lịc sử”, “Đảng Đảng”, “tổ địa cách mạng”, “hững”, “xác đinh” và chuẩn hóa Unicode tiếng Việt. Không bỏ các câu trùng kiến thức (10 và 18), vì chúng là hai câu riêng trong ngân hàng gốc.
+
+**Lưu ý câu 38:** giữ A theo đánh dấu và cách trình bày trong giáo trình. Mốc đêm 30 rạng 31/1/1968 được dùng cho đợt đồng loạt chủ yếu; không có nghĩa mọi địa phương đều bắt đầu cùng một đêm.
+
+**Lưu ý về thời điểm:** các câu nhắc Đại hội XII hoặc Trung ương 5 khóa XII được hiểu theo văn kiện 2016–2017. Không tự thay bằng quan điểm ban hành ở giai đoạn sau.
 
 ## Nguồn đối chiếu
 
-- **Bài giảng Chủ nghĩa xã hội khoa học.pdf**, Trường Đại học Duy Tân, Khoa Khoa học Xã hội và Nhân văn, giảng viên ThS. Nguyễn Thị Hải Lên, học phần POS 351, 97 trang: nguồn chính do người dùng cung cấp. Số trang trong bảng là thứ tự trang PDF, tính từ 1. File bài giảng không được đưa vào kho Git.
-- **Câu 20 chọn A:** trang 20–21 tách những biến đổi của công nhân hiện nay khỏi những điểm tương đồng với công nhân thế kỷ XIX; phương án D thêm một điểm tương đồng.
-- **Câu 58 chọn A:** trang 67 gọi ngôn ngữ là tiêu chí *cơ bản*, còn ý thức tự giác tộc người là tiêu chí *quan trọng nhất*. Câu hỏi đang hỏi tiêu chí cơ bản.
-- **Câu 103 chọn A (43):** số liệu tại trang 78 của bài giảng thuộc thời điểm cũ; với mốc 2022 trong đề, dùng thông tin của Ban Tôn giáo Chính phủ bên dưới.
-- [Giáo trình Chủ nghĩa xã hội khoa học – Bộ GD&ĐT, bản tái bản lần hai, lưu tại Đại học Quốc tế Vinh](https://www.iuv.edu.vn/cms/plugin_upload/download/news/1468/1110/gt-chu-nghia-xa-hoi-khoa-hoc-bo-gddt.pdf): cơ sở lý luận; các chương về công nhân, dân chủ, nhà nước, dân tộc, tôn giáo, gia đình; trang in 171–176 về nguồn lực con người. Bản này dùng cho khái niệm nền tảng, không dùng cho số liệu hiện nay.
-- [Hiến pháp năm 2013 – Cổng thông tin Chính phủ](https://xaydungchinhsach.chinhphu.vn/toan-van-hien-phap-nuoc-cong-hoa-xa-hoi-chu-nghia-viet-nam-119231225213002261.htm): câu 11, 32, 45, 46, 50, 70, 93; Điều 1, 4, 6, 8.
-- [Luật Tín ngưỡng, tôn giáo 2016 – Cơ sở dữ liệu văn bản Bộ Tư pháp](https://vbpl.moj.gov.vn/bonoivu/Pages/vbpq-print.aspx?ItemID=117201): Điều 3 về tự do tín ngưỡng và Điều 61 về Chính phủ thống nhất quản lý; câu 79, 101.
-- [Luật Tín ngưỡng, tôn giáo 2026 – phổ biến pháp luật Thái Nguyên](https://pbgdplthainguyen.gov.vn/nghien-cuu-trao-doi/50-cau-hoi-dap-ve-luat-tin-nguong-ton-giao-nam-2026-1023.html): Điều 57 tiếp tục xác định Chính phủ thống nhất quản lý; kiểm tra câu 79 theo thời điểm mới.
-- [Quốc hội: phương châm dân biết, bàn, làm, kiểm tra, giám sát, thụ hưởng](https://quochoi.vn/pages/tim-kiem.aspx?ItemID=68752): câu 68.
-- [Học viện Chính trị khu vực IV: Chủ nghĩa xã hội – một tất yếu của lịch sử thế giới](https://hcma4.hcma.vn/Pages/chi-tiet-tin.aspx?ItemID=1439): câu 5, 29, 78; phân biệt Công xã Paris 1871 với Xô viết 1917.
-- [Mục tiêu Việt Nam trở thành nước phát triển, thu nhập cao năm 2045 – Chính phủ](https://xaydungchinhsach.chinhphu.vn/tu-hao-va-tin-tuong-duoi-la-co-ve-vang-cua-dang-quyet-tam-xay-dung-mot-nuoc-viet-nam-ngay-cang-giau-manh-van-minh-van-hien-va-anh-hung-119240131165746594.htm): câu 42.
-- [Bộ Ngoại giao: 25 năm bình thường hóa Việt Nam – Hoa Kỳ](https://mofa.gov.vn/tin-chi-tiet/chi-tiet/-viet-nam-hoa-ky-25-nam-mot-chang-duong--168.html): câu 53, năm 1995.
-- [Bảo tàng Hồ Chí Minh: Học Bác Hồ làm báo chuyên nghiệp](https://baotanghochiminh.vn/hoc-bac-ho-lam-bao-chuyen-nghiep.htm): câu 95, báo Thanh Niên năm 1925.
-- [British Library: Thomas More và Utopia](https://www.bl.uk/stories/blogs/posts/the-execution-of-sir-thomas-more): câu 1.
-- [Library of Congress: niên biểu Churchill](https://www.loc.gov/exhibits/churchill/interactive/_html/1_00_00.html): câu 6, Stalin sau Lênin.
-- [Hệ giá trị gia đình Việt Nam – UBND Bình Phước](https://binhphuoc.gov.vn/vi/news/tin-tuc-su-kien-421/he-gia-tri-gia-dinh-viet-nam-am-no-hanh-phuc-tien-bo-van-minh-37440.html?download=1&id=0): câu 24.
-- [Cẩm nang tư tưởng Hồ Chí Minh (2007), Thư viện Quốc hội](https://thuvienso.quochoi.vn/bitstream/11742/93872/1/VL00003944_Cam%20nang%20tu%20tuong%20Ho%20Chi%20Minh_2007.pdf): câu 65, liên minh công nhân - nông dân - trí thức.
-- [Hướng dẫn sử dụng cờ Đảng, Ban Tuyên giáo Trung ương](https://vafs.gov.vn/vn/huong-dan-so-105-hd-btgtw-ngay-29-5-2023-cua-ban-tuyen-giao-trung-uong-thuc-hien-quy-dinh-cua-ban-bi-thu-ve-co-dang-cong-san-viet-nam-va-viec-su-dung-co-dang/): câu 73, biểu tượng búa liềm và liên minh công nhân – nông dân.
-- [Hồ Chí Minh toàn tập, tập 13, Bảo tàng Hồ Chí Minh](https://baotanghochiminh.vn/pic/FileLibrary/HO-CHI-MI_636854812994688106.pdf): câu 77, bài nói chuyện ngày 25/4/1961, trang in 119–120.
-- [Tư liệu Văn kiện Đảng: Cách mạng Cuba năm 1959](https://tulieuvankien.dangcongsan.vn/ho-so-su-kien-nhan-chung/su-kien-va-nhan-chung/cach-mang-cuba-nam-1959-3371?categoryId=102000101): câu 87, Cuba và phong trào giải phóng dân tộc Mỹ Latinh.
-- [Báo Nhân Dân: dân chủ và đại đoàn kết](https://special.nhandan.vn/phat-huy-khoi-dai-doan-ket-dan-toc-trong-tac-pham-tbt/index.html): câu 76, vai trò tiên quyết của sự lãnh đạo của Đảng.
-- [Báo Chính phủ: 9 tôn giáo du nhập, 7 tôn giáo bản địa](https://baochinhphu.vn/phat-huy-nhung-gia-tri-tinh-than-quy-bau-cua-phat-giao-102241210152539919.htm): câu 88.
-- [Ban Tôn giáo Chính phủ: Hội nghị biểu dương các tổ chức tôn giáo năm 2022](https://btgcp.gov.vn/tin-trong-nuoc/khai-mac-hoi-nghi-thu-tuong-chinh-phu-bieu-duong-cac-to-chuc-ton-giao-co-dong-gop-tieu-bieu-trong-su-nghiep-xay-dung-va-bao-ve-to-quoc-postYZqyjQVnEg.html): câu 103, 43 tổ chức thuộc 16 tôn giáo.
+- [Giáo trình Lịch sử Đảng, bản thảo 6/2019](https://iuv.edu.vn/cms/plugin_upload/preview/news/1468/1113/gt-lich-su-dang-csvn-ban-tuyen-giao-tw.pdf)
+- [Bảo tàng Hồ Chí Minh: Le Paria ra số đầu ngày 1/4/1922](https://baotanghochiminh.vn/bao-le-paria-do-nguyen-ai-quoc-mot-trong-nhung-nguoi-sang-lap-ra-so-dau-tien.htm)
+- [Tư liệu Văn kiện Đảng: Chương trình hành động 6/1932](https://tulieuvankien.dangcongsan.vn/ban-chap-hanh-trung-uong-dang/dai-hoi-dang/lan-thu-i/nien-bieu-toan-khoa-27)
+- [Đề cương kỷ niệm Quốc hội: Quốc dân Đại hội Tân Trào](https://sonnam.hungyen.gov.vn/de-cuong-tuyen-truyen-ky-niem-80-nam-ngay-tong-tuyen-cu-dau-tien-bau-quoc-hoi-viet-nam-06011946-0601-c2104.html)
+- [Bảo tàng Lịch sử Quốc gia: Tiến quân ca](https://baotanglichsuquocgia.vn/vi/Articles/3096/74120/tien-quan-ca-bai-ca-cua-nhan-dan-viet-nam.html)
+- [Bảo tàng Lịch sử Quốc gia: Nguyễn Hữu Thọ và Đại hội Mặt trận 2/1962](https://baotanglichsuquocgia.vn/vi/Articles/2002/68107/ky-niem-53-nam-20-12-1960-20-12-2013-thanh-lap-mat-tran-dan-toc-giai-phong-mien-nam-viet-nam-luat-su-nguyen-huu-tho-su-lua-chon-cua-lich-su.html)
+- [Bảo tàng Lịch sử Quốc gia: 18–29/12/1972](https://baotanglichsuquocgia.vn/vi/Articles/3097/15515/18-29-12-1972-quan-va-dan-mien-bac-djanh-thang-cuoc-chien-tranh-pha-hoai-lan-thu-hai-bang-khong-quan-cua-dje-quoc-my.html)
+- [Bảo tàng Lịch sử Quốc gia: quyết tâm ngày 18/3/1975](https://baotanglichsuquocgia.vn/vi/Articles/3096/71444/chi-djao-chien-luoc-cua-bo-chinh-tri-trong-cuoc-tong-tien-cong-1975.html)
+- [Bảo tàng Lịch sử Quốc gia: bức điện ngày 7/4/1975](https://baotanglichsuquocgia.vn/vi/Articles/3098/15187/djai-tuong-vo-nguyen-giap-niem-tu-hao-cua-djang-nha-nuoc-quan-djoi-va-nhan-dan-ta.html)
+- [Văn kiện Quốc hội toàn tập: kỳ họp thứ nhất khóa VI](https://quochoi.vn/tulieuquochoi/anpham/Pages/anpham.aspx?AnPhamItemID=233)
+- [Nghị quyết 03-NQ/TW ngày 16/7/1998, Trung ương 5 khóa VIII](https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/hoi-nghi-bch-trung-uong/khoa-viii/nghi-quyet-so-03-nqtw-ngay-1671998-hoi-nghi-lan-thu-nam-bchtw-dang-khoa-viii-ve-xay-dung-va-phat-trien-nen-van-hoa-viet-681?categoryId=104000074)
+- [Nghị quyết 33-NQ/TW ngày 9/6/2014, Trung ương 9 khóa XI](https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/hoi-nghi-bch-trung-uong/khoa-xi/nghi-quyet-so-33-nqtw-ngay-962014-hoi-nghi-lan-thu-9-ban-chap-hanh-trung-uong-dang-khoa-xi-ve-xay-dung-va-phat-trien-590)
+- [Báo cáo chính trị Đại hội XII (2016)](https://tulieuvankien.dangcongsan.vn/ban-chap-hanh-trung-uong-dang/dai-hoi-dang/lan-thu-xii/bao-cao-chinh-tri-cua-ban-chap-hanh-trung-uong-dang-khoa-xi-tai-dai-hoi-dai-bieu-toan-quoc-lan-thu-xii-cua-dang-1600)
+- [Báo cáo về văn kiện Đại hội XI (2011)](https://tulieuvankien.dangcongsan.vn/ban-chap-hanh-trung-uong-dang/dai-hoi-dang/lan-thu-xi/bao-cao-cua-ban-chap-hanh-trung-uong-dang-khoa-x-ve-cac-van-kien-dai-hoi-xi-cua-dang-1529)
+- [Nghị quyết 247-NQ/TW ngày 29/9/1975, Trung ương 24 khóa III](https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/hoi-nghi-bch-trung-uong/khoa-iii/nghi-quyet-so-247-nqtw-ngay-2991975-hoi-nghi-lan-thu-24-cua-ban-chap-hanh-trung-uong-dang-lao-dong-viet-nam-ve-nhiem-vu-814)
 
-Các lời giải ngắn được biên soạn riêng. Không sao chép toàn văn giáo trình.
+Bản thảo giáo trình 6/2019 được dùng kiểm tra kiến thức nền. Khi có lỗi ngày tháng trong bản thảo, ưu tiên nghị quyết gốc và nguồn lưu trữ chính thức; câu 56 là trường hợp cụ thể. Lời giải được biên soạn ngắn để học, không sao chép toàn văn các nguồn.

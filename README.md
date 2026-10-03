@@ -1,13 +1,13 @@
-# TN-CNXHKH
+# TN-LSDCSVN
 
-Trang trắc nghiệm **Chủ nghĩa xã hội khoa học**, gồm 105 câu hỏi theo bộ đề người dùng cung cấp.
+Trang trắc nghiệm **Lịch sử Đảng Cộng sản Việt Nam**, gồm **60 câu nhiều lựa chọn** trong phần 1 của ngân hàng câu hỏi năm học 2026–2027 do người dùng cung cấp. Không đưa phần trả lời ngắn và tự luận lên web.
 
-Mở `index.html` bằng trình duyệt hoặc dùng Live Server. Trang dùng HTML, CSS và JavaScript thuần, không cần cài gói hay backend.
+Mở `index.html` bằng trình duyệt hoặc Live Server. Trang dùng HTML, CSS và JavaScript thuần, không cần backend hay cài gói.
 
 Giữ nguyên giao diện và các chức năng luyện tập, thi thử 60 phút, ôn câu khó, tìm kiếm, lịch sử, sao lưu/khôi phục, sáng/tối và âm thanh.
 
-Dữ liệu của môn này dùng khóa `cnxhkh_` riêng để không lẫn lịch sử và câu ôn tập của môn Tư tưởng Hồ Chí Minh. Chỉ khôi phục bản sao lưu của CNXHKH.
+Dữ liệu môn này dùng khóa `lsdcsvn_` riêng. Lịch sử và câu ôn tập của CNXHKH/Tư tưởng Hồ Chí Minh không được dùng lại. Chỉ khôi phục bản sao lưu có mã `lsdcsvn_quiz_backup`.
 
-Xem [đáp án, nguồn đối chiếu và các câu đã làm rõ](ANSWERS.md). Nhánh Git: `TN-CNXHKH`.
+Đáp án được đọc từ định dạng gạch chân trong Word; câu 38 dùng dấu `*A`. Xem [bảng đáp án, kết quả rà soát và nguồn](ANSWERS.md). Những lỗi mốc thời gian hoặc dẫn chiếu đã được sửa và ghi rõ.
 
-Nguồn chính là bài giảng trên lớp do người dùng cung cấp; các câu lịch sử, pháp luật và số liệu được bổ sung nguồn chính thức. Bản PDF bài giảng không nằm trong kho Git.
+Nhánh Git: `TN-LSDCSVN`. Bản CNXHKH vẫn nằm trên nhánh `TN-CNXHKH`. File Word nguồn không được đưa vào kho Git.
