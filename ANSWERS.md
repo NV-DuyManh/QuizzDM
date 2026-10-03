@@ -2,7 +2,7 @@
 
 Nguồn: **SV_BỘ NGÂN HÀNG CÂU HỎI_LSĐCS VIỆT NAM.docx**, do người dùng cung cấp.
 
-Trang web sử dụng 60 câu trắc nghiệm trong phần 1. Toàn bộ câu hỏi, phương án và thứ tự A/B/C/D giữ nguyên nội dung trong file Word, kể cả chính tả, mốc thời gian và cách diễn đạt. Không đưa phần trả lời ngắn và tự luận lên web.
+Trang web sử dụng 60 câu trắc nghiệm trong phần 1. Toàn bộ câu hỏi, phương án và thứ tự A/B/C/D giữ nguyên nội dung trong file Word; chỉ sửa lỗi gõ, chữ lặp, chữ thiếu và dấu ngoặc kép. Mốc thời gian và đáp án không thay đổi. Không đưa phần trả lời ngắn và tự luận lên web.
 
 Đáp án theo định dạng đánh dấu trong đề: 59 câu gạch chân chữ cái đáp án; câu 38 dùng dấu `*A`. Phần giải thích trên web chỉ hiển thị lựa chọn được đánh dấu trong file Word.
 
@@ -58,7 +58,7 @@ Trang web sử dụng 60 câu trắc nghiệm trong phần 1. Toàn bộ câu h�
 | 48 | A | Nắm vững hai mặt hợp tác và đấu tranh trong quan hệ quốc tế |
 | 49 | D | Tất cả các phương án đều đúng |
 | 50 | C | Khoa học, công nghệ, tri thức và nguồn nhân lực chất lượng cao |
-| 51 | B | Nhằm thực hiện "dân giàu, nước mạnh, dân chủ, công bằng, văn minh“; giải phóng mạnh mẽ lực lượng sản xuất, không ngừng nâng cao đời sống nhân dân |
+| 51 | B | Nhằm thực hiện "dân giàu, nước mạnh, dân chủ, công bằng, văn minh”; giải phóng mạnh mẽ lực lượng sản xuất, không ngừng nâng cao đời sống nhân dân |
 | 52 | A | Là một động lực quan trọng của nền kinh tế |
 | 53 | A | Đại hội XII |
 | 54 | D | Tất cả đều đúng |
@@ -68,3 +68,20 @@ Trang web sử dụng 60 câu trắc nghiệm trong phần 1. Toàn bộ câu h�
 | 58 | C | Đại hội VI (1986) |
 | 59 | C | Đại hội XI |
 | 60 | B | Dân giàu, nước mạnh, dân chủ, công bằng, văn minh |
+
+## Các lỗi gõ đã sửa
+
+Chỉ sửa các lỗi dưới đây; giữ đáp án, thứ tự lựa chọn, mốc thời gian và ý nghĩa nội dung.
+
+| Câu | Vị trí | Trước | Sau |
+| --- | --- | --- | --- |
+| 2 | Câu hỏi | môn lịc sử | môn lịch sử |
+| 8 | Câu hỏi | Đảng Đảng Cộng sản | Đảng Cộng sản |
+| 11 | Câu hỏi | Đông dương | Đông Dương |
+| 11 | B | tổ địa cách mạng | thổ địa cách mạng |
+| 32 | Câu hỏi | hòa bình ở Việt Nam, kết thúc | hòa bình ở Việt Nam”, kết thúc |
+| 37 | Câu hỏi | Thắng lợi nào bước ngoặt | Thắng lợi nào là bước ngoặt |
+| 41 | Câu hỏi | quyết định hững | quyết định những |
+| 46 | Câu hỏi | văn hóa tiến tiến | văn hóa tiên tiến |
+| 51 | B | văn minh“; | văn minh”; |
+| 52 | Câu hỏi | xác đinh | xác định |
