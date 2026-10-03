@@ -1,15 +1,17 @@
 # Đáp án TN-CNXHKH
 
-Bộ 105 câu môn Chủ nghĩa xã hội khoa học, đối chiếu ngày 03/10/2026, ưu tiên bài giảng trên lớp do người dùng cung cấp. Đây là đáp án biên soạn từ kiến thức môn học và nguồn tham khảo, không phải đáp án thi chính thức của giảng viên. Thứ tự câu và A/B/C/D được giữ theo file người dùng, trừ sửa lỗi gõ và làm rõ các câu bên dưới. Giao diện không thay đổi. Cột đối chiếu ghi trang PDF chứa nội dung hoặc cơ sở lý luận liên quan; các câu kiến thức bổ sung dùng nguồn bên ngoài.
+Bộ 105 câu môn Chủ nghĩa xã hội khoa học. Câu hỏi, toàn bộ phương án và thứ tự A/B/C/D giữ nguyên nội dung bộ đề dạng văn bản người dùng cung cấp, kể cả lỗi gõ. Giao diện giữ nguyên.
+
+Đáp án được chọn dựa trên bài giảng trên lớp và nguồn tham khảo; bộ đề dạng văn bản không có đáp án đánh dấu sẵn. Giữ bộ đáp án đã đối chiếu trước khi khôi phục nội dung. Cột đối chiếu ghi trang PDF hoặc nguồn liên quan.
 
 ## Bảng đáp án
 
-| Câu | Đáp án | Nội dung lựa chọn | Đối chiếu |
+| Câu | Đáp án | Nội dung lựa chọn nguyên văn | Đối chiếu |
 | --- | --- | --- | --- |
 | 1 | C | Tômát Morơ | British Library: Thomas More/Utopia |
 | 2 | B | Tuyên ngôn của Đảng cộng sản | Bài giảng trên lớp, tr. 5–6 |
 | 3 | D | Giai cấp công nhân | Bài giảng trên lớp, tr. 3, 16–17 |
-| 4 | A | Sự sụp đổ của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau | Bài giảng trên lớp, tr. 5 |
+| 4 | A | Sự sụp đổi của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau | Bài giảng trên lớp, tr. 5 |
 | 5 | A | Nhà nước Xô Viết, năm 1917 | Bài giảng trên lớp, tr. 43 |
 | 6 | A | Iosif Vissarionovich Stalin | Library of Congress: niên biểu |
 | 7 | C | Độc lập dân tộc gắn với chủ nghĩa xã hội | Bài giảng trên lớp, tr. 10 |
@@ -18,12 +20,12 @@ Bộ 105 câu môn Chủ nghĩa xã hội khoa học, đối chiếu ngày 03/10
 | 10 | B | Nhà nước | Bài giảng trên lớp, tr. 51 |
 | 11 | C | Đất liền, hải đảo, vùng biển và vùng trời. | Hiến pháp 2013, Điều 1 |
 | 12 | B | 54 | Bài giảng trên lớp, tr. 69 |
-| 13 | D | Phát triển về giáo dục | Giáo trình Bộ GD&ĐT (bản cũ), tr. 171–176; đã làm rõ khía cạnh đào tạo |
+| 13 | D | Phát triển về giáo dục | Giáo trình Bộ GD&ĐT (bản cũ), tr. 171–176 |
 | 14 | D | Cả A, B, C | Bài giảng trên lớp, tr. 40–42 |
 | 15 | A | Giai cấp công nhân | Bài giảng trên lớp, tr. 17–18 |
 | 16 | D | Đảng Cộng sản Trung Quốc | Bài giảng trên lớp, tr. 9–10 |
 | 17 | A | Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân | Giáo trình Bộ GD&ĐT (bản cũ), mục quy luật hình thành Đảng |
-| 18 | A | Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân. | Bài giảng trên lớp, tr. 45–46 |
+| 18 | A | Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân dân. | Bài giảng trên lớp, tr. 45–46 |
 | 19 | B | Cách mạng tháng Mười Nga thành công và sự ra đời của nhà nước XHCN đầu tiên (1917) | Bài giảng trên lớp, tr. 43 |
 | 20 | A | Công nhân có xu hướng trí tuệ hóa, có tính toàn cầu hóa, gia tăng nhanh về số lượng và chất lượng | Bài giảng trên lớp, tr. 20–21 |
 | 21 | A | Quan hệ sở hữu đối với tư liệu sản xuất chủ yếu | Bài giảng trên lớp, tr. 17 |
@@ -71,7 +73,7 @@ Bộ 105 câu môn Chủ nghĩa xã hội khoa học, đối chiếu ngày 03/10
 | 63 | D | Chủ nghĩa xã hội | Bài giảng trên lớp, tr. 27–28 |
 | 64 | D | Cách mạng Tháng Tám thành công và Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập (2/9/1945) | Hiến pháp 2013, Lời nói đầu |
 | 65 | D | Liên minh công - nông - trí thức | Cẩm nang tư tưởng Hồ Chí Minh, Thư viện Quốc hội |
-| 66 | A | Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất định của lịch sử xã hội loài người | Bài giảng trên lớp, tr. 76 |
+| 66 | A | Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất đinh của lịch sử xã hội loài người | Bài giảng trên lớp, tr. 76 |
 | 67 | D | Cả 3 đáp án trên | Bài giảng trên lớp, tr. 48, 80 |
 | 68 | A | Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng | Luật Thực hiện dân chủ ở cơ sở 2022; nguồn Quốc hội |
 | 69 | B | Phát huy sức mạnh của mọi giai cấp, mọi tầng lớp nhân dân, mọi thành phần dân tộc, tôn giáo cho công cuộc đổi mới, xây dựng và bảo vệ tổ quốc. | Bài giảng trên lớp, tr. 10–11 |
@@ -85,7 +87,7 @@ Bộ 105 câu môn Chủ nghĩa xã hội khoa học, đối chiếu ngày 03/10
 | 77 | A | Chủ tịch Hồ Chí Minh | Hồ Chí Minh: đoàn kết và đại đoàn kết |
 | 78 | B | Pháp | Học viện Chính trị khu vực IV: Công xã Paris 1871 |
 | 79 | A | Chính phủ | Luật Tín ngưỡng, tôn giáo 2016, Điều 61; luật 2026, Điều 57 |
-| 80 | A | Tôn giáo có hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tương đối chặt chẽ; tín ngưỡng thường chưa có hệ thống đó. | Bài giảng trên lớp, tr. 74 |
+| 80 | A | Tôn giáo có hệ thống giáo lý, giáo luật, lễ nghi, còn tín ngưỡng thì không. | Bài giảng trên lớp, tr. 74 |
 | 81 | B | Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của đông đảo các tầng lớp nhân dân. | Bài giảng trên lớp, tr. 76 |
 | 82 | B | Tính lịch sử | Bài giảng trên lớp, tr. 76, 78 |
 | 83 | A | Thần thánh hóa các hiện tượng tự nhiên | Bài giảng trên lớp, tr. 75 |
@@ -112,19 +114,9 @@ Bộ 105 câu môn Chủ nghĩa xã hội khoa học, đối chiếu ngày 03/10
 | 104 | B | Tình yêu chân chính giữa nam và nữ. | Bài giảng trên lớp, tr. 90–91 |
 | 105 | D | Gia đình | Bài giảng trên lớp, tr. 86, 89 |
 
-## Câu hỏi đã làm rõ
+## Lưu ý về đề gốc
 
-- Câu 11: Yêu cầu đúng cách liệt kê của Điều 1 để phân biệt B/C cùng nội dung.
-- Câu 13: Giới hạn ở trực tiếp trang bị tri thức, kỹ năng; chọn D. Đề gốc quá rộng để loại hoàn toàn tác động của kinh tế - xã hội.
-- Câu 25: Làm rõ nhiệm vụ chính trị trực tiếp; chọn D.
-- Câu 68: Dùng “thể chế hóa” thay vì coi phương châm sáu vế là trích nguyên văn luật.
-- Câu 80: Làm rõ A về giáo lý, giáo luật, lễ nghi và tổ chức tương đối hệ thống; không phủ nhận nghi thức tín ngưỡng.
-- Câu 88: Sửa tư cách pháp nhân của tôn giáo thành tổ chức được công nhận hoặc cấp đăng ký.
-- Câu 99: Giới hạn phương diện văn hóa để đáp án C không phủ nhận nhiệm vụ bảo vệ lãnh thổ.
-- Câu 101: Bỏ cách gọi “hòn đá tảng” chưa có nguồn xác nhận; hỏi nguyên tắc nền tảng.
-- Câu 103: Làm rõ thống kê “công nhận hoặc cấp đăng ký hoạt động” tại mốc 2022.
-
-Câu 5: Xô viết năm 1917 là đáp án trong bốn lựa chọn; phân biệt với Công xã Paris, nhà nước vô sản đầu tiên. Câu 6: Stalin củng cố quyền lãnh đạo dần sau năm 1924. Câu 27: ba chế độ dân chủ theo phân loại như hình thái nhà nước. Câu 35 và 37 chọn phương án phù hợp nhất, không xem chúng là định nghĩa đầy đủ. Câu 65: liên minh công - nông - trí thức là nòng cốt; “đoàn kết trong Đảng” là hạt nhân trong cách diễn đạt về xây dựng Đảng. Câu 78: Pháp/Công xã Paris năm 1871, không nhầm với Nga năm 1917. Câu 80: tín ngưỡng vẫn có nghi thức. Câu 103: số 43 gắn với mốc năm 2022.
+Câu 11: chọn C theo đúng cách liệt kê của Điều 1 Hiến pháp 2013; B cũng liệt kê đủ bốn bộ phận lãnh thổ theo thứ tự khác. Một số câu gốc có cách hỏi rộng hoặc các phương án chồng lấn, như câu 13, 25 và 99. Giữ nguyên đề và lựa chọn đã đối chiếu, không viết lại câu hỏi để loại các phương án khác.
 
 ## Nguồn đối chiếu
 
@@ -152,4 +144,4 @@ Câu 5: Xô viết năm 1917 là đáp án trong bốn lựa chọn; phân biệ
 - [Báo Chính phủ: 9 tôn giáo du nhập, 7 tôn giáo bản địa](https://baochinhphu.vn/phat-huy-nhung-gia-tri-tinh-than-quy-bau-cua-phat-giao-102241210152539919.htm): câu 88.
 - [Ban Tôn giáo Chính phủ: Hội nghị biểu dương các tổ chức tôn giáo năm 2022](https://btgcp.gov.vn/tin-trong-nuoc/khai-mac-hoi-nghi-thu-tuong-chinh-phu-bieu-duong-cac-to-chuc-ton-giao-co-dong-gop-tieu-bieu-trong-su-nghiep-xay-dung-va-bao-ve-to-quoc-postYZqyjQVnEg.html): câu 103, 43 tổ chức thuộc 16 tôn giáo.
 
-Các lời giải ngắn được biên soạn riêng. Không sao chép toàn văn giáo trình.
+Phần giải thích trên web hiển thị lựa chọn đã chọn và nguồn đối chiếu; không sửa nội dung câu hỏi hoặc phương án.
