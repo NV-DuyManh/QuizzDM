@@ -4,7 +4,7 @@ Rà soát ngày 03/10/2026. Trang web chỉ sử dụng **60 câu trắc nghiệ
 
 Nguồn chính: **SV_BỘ NGÂN HÀNG CÂU HỎI_LSĐCS VIỆT NAM.docx**, năm học 2026–2027, người dùng cung cấp. Đọc nội dung và định dạng OOXML của từng lựa chọn: 59 câu có đúng một chữ cái được gạch chân; câu 38 có dấu `*A` thay cho gạch chân. Không coi các tiêu đề gạch chân là đáp án.
 
-Không phát hiện trường hợp cần đổi chữ cái đáp án sau khi sửa nội dung: riêng câu 31, phương án A gốc có mốc thời gian sai và cả bốn phương án gốc đều không ghi đúng 18–29/12/1972; web đã sửa A để có lựa chọn đúng. Một số câu khác sai dẫn chiếu, ngày tháng hoặc diễn đạt, được sửa dưới đây. Bảng này phân biệt vị trí đánh dấu của file và nội dung chính xác sử dụng trên web; không coi mọi câu trong file gốc đều đúng nguyên văn.
+Giữ chữ cái đáp án được đánh dấu trong file Word. Theo yêu cầu mới nhất của người dùng, phương án A của câu 31 và câu 47 đã được khôi phục nguyên văn theo file, cùng lời giải ghi đáp án theo file Word. Các thay đổi ở câu khác được giữ như bản trước và ghi dưới đây. Bảng này phản ánh nội dung hiện đang sử dụng trên web.
 
 ## Bảng đáp án
 
@@ -40,7 +40,7 @@ Không phát hiện trường hợp cần đổi chữ cái đáp án sau khi s�
 | 28 | D | D | Tất cả các phương án đều đúng |
 | 29 | D | D | Nguyễn Hữu Thọ |
 | 30 | B | B | Tháng 9 năm 1960 |
-| 31 | A | A | Từ ngày 18 đến ngày 29 tháng 12 năm 1972 |
+| 31 | A | A | Từ 18 đến ngày 30 tháng 12 năm 1972 |
 | 32 | A | A | Ngày 27 tháng 1 năm 1973 |
 | 33 | C | C | Chiến dịch Tây Nguyên |
 | 34 | B | B | Ngày 26 tháng 4 năm 1975 |
@@ -56,7 +56,7 @@ Không phát hiện trường hợp cần đổi chữ cái đáp án sau khi s�
 | 44 | B | B | Đại hội lần thứ X |
 | 45 | C | C | Chăm lo xây dựng con người có nhân cách, lối sống tốt đẹp, với các đặc tính cơ bản: yêu nước, nhân ái, nghĩa tình, trung thực, đoàn kết, cần cù, sáng tạo |
 | 46 | A | A | Văn hóa Tiên tiến là yêu nước và tiến bộ với nội dung cốt lõi là lý tưởng độc lập dân tộc và chủ nghĩa xã hội theo chủ nghĩa Mác - Lênin, tư tưởng Hồ Chí Minh, nhằm mục tiêu tất cả vì con người |
-| 47 | A | A | Giữ vai trò quan trọng trong sự nghiệp xây dựng và phát triển văn hóa của toàn dân, dưới sự lãnh đạo của Đảng và quản lý của Nhà nước |
+| 47 | A | A | Cùng với giai cấp công nhân, nông dân, trí thức có vai trò quan trọng là nền tảng của sự nghiệp xây dựng và phát triển văn hóa dưới sự lãnh đạo của Đảng, quản lý của Nhà nước |
 | 48 | A | A | Nắm vững hai mặt hợp tác và đấu tranh trong quan hệ quốc tế |
 | 49 | D | D | Tất cả các phương án đều đúng |
 | 50 | C | C | Khoa học, công nghệ, tri thức và nguồn nhân lực chất lượng cao |
@@ -76,13 +76,13 @@ Không phát hiện trường hợp cần đổi chữ cái đáp án sau khi s�
 - **Câu 13:** Giới hạn B vào quyết định quốc kỳ, quốc ca đã đối chiếu; không giữ khẳng định riêng về việc đặt tên nước trong B của đề gốc. Giữ D.
 - **Câu 19:** Làm rõ Le Paria ra số đầu năm 1922; năm 1921 là mốc tham gia Hội Liên hiệp thuộc địa. Giữ C.
 - **Câu 29:** Tách ngày thành lập Mặt trận 20/12/1960 khỏi thời điểm bầu Nguyễn Hữu Thọ tại Đại hội I tháng 2/1962. Giữ D.
-- **Câu 31:** A trong file ghi 18–30/12/1972, sai mốc cuối. Sửa A thành 18–29/12/1972, tức 12 ngày đêm; không lựa chọn nào trong đề gốc ghi đúng khoảng thời gian này.
+- **Câu 31:** Đã khôi phục nguyên văn phương án A “Từ 18 đến ngày 30 tháng 12 năm 1972” theo file Word và yêu cầu của người dùng; đáp án vẫn là A.
 - **Câu 37:** Sửa thiếu từ “là” trong câu hỏi, không đổi nội dung hoặc C.
 - **Câu 38:** File dùng dấu *A, không dùng gạch chân. Giữ A; lời giải phân biệt đợt đồng loạt chủ yếu với một số địa phương nổ súng sớm.
 - **Câu 39:** B giữ mốc 18/3/1975 nhưng bỏ khẳng định toàn bộ Tây Nguyên đã giải phóng tại thời điểm đó. Sửa ngày bức điện trong D từ 6/4 thành 7/4/1975. Giữ B.
 - **Câu 41:** C dùng tên chức vụ chính xác: Trường Chinh là Chủ tịch Ủy ban Thường vụ Quốc hội khóa VI. Giữ D.
 - **Câu 46:** Định nghĩa trong A thuộc Trung ương 5 khóa VIII (1998), không phải Trung ương 9 khóa XI (2014); sửa dẫn chiếu trong câu hỏi. Giữ A.
-- **Câu 47:** A gốc trộn cách diễn đạt về công nhân, nông dân, trí thức với Nghị quyết 33. Viết lại A đúng vai trò trí thức theo Trung ương 9 khóa XI. Giữ A.
+- **Câu 47:** Đã khôi phục nguyên văn phương án A theo file Word và yêu cầu của người dùng; đáp án vẫn là A.
 - **Câu 52:** Bỏ cách hỏi “hiện nay”; xác định rõ phạm vi Nghị quyết Trung ương 5 khóa XII năm 2017, không áp dụng phát biểu này như mô tả mọi thời điểm. Giữ A.
 - **Câu 55:** Bỏ cụm “hiện nay”, giữ phạm vi quan điểm Đại hội XII năm 2016. Giữ B.
 - **Câu 56:** Sửa tháng 8/1975 thành tháng 9/1975 theo Nghị quyết 247-NQ/TW ngày 29/9/1975. Bản thảo giáo trình 2019 cũng có lỗi tháng 8 tại đoạn này; ưu tiên văn kiện gốc. Giữ B.
