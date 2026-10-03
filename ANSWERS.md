@@ -1,17 +1,17 @@
 # Đáp án TN-CNXHKH
 
-Bộ 105 câu môn Chủ nghĩa xã hội khoa học. Câu hỏi, toàn bộ phương án và thứ tự A/B/C/D giữ nguyên nội dung bộ đề dạng văn bản người dùng cung cấp, kể cả lỗi gõ. Giao diện giữ nguyên.
+Bộ 105 câu môn Chủ nghĩa xã hội khoa học. Câu hỏi, toàn bộ phương án và thứ tự A/B/C/D giữ nguyên nội dung bộ đề dạng văn bản người dùng cung cấp; chỉ sửa lỗi gõ và chữ lặp. Giao diện giữ nguyên.
 
 Đáp án được chọn dựa trên bài giảng trên lớp và nguồn tham khảo; bộ đề dạng văn bản không có đáp án đánh dấu sẵn. Giữ bộ đáp án đã đối chiếu trước khi khôi phục nội dung. Cột đối chiếu ghi trang PDF hoặc nguồn liên quan.
 
 ## Bảng đáp án
 
-| Câu | Đáp án | Nội dung lựa chọn nguyên văn | Đối chiếu |
+| Câu | Đáp án | Nội dung lựa chọn | Đối chiếu |
 | --- | --- | --- | --- |
 | 1 | C | Tômát Morơ | British Library: Thomas More/Utopia |
 | 2 | B | Tuyên ngôn của Đảng cộng sản | Bài giảng trên lớp, tr. 5–6 |
 | 3 | D | Giai cấp công nhân | Bài giảng trên lớp, tr. 3, 16–17 |
-| 4 | A | Sự sụp đổi của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau | Bài giảng trên lớp, tr. 5 |
+| 4 | A | Sự sụp đổ của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau | Bài giảng trên lớp, tr. 5 |
 | 5 | A | Nhà nước Xô Viết, năm 1917 | Bài giảng trên lớp, tr. 43 |
 | 6 | A | Iosif Vissarionovich Stalin | Library of Congress: niên biểu |
 | 7 | C | Độc lập dân tộc gắn với chủ nghĩa xã hội | Bài giảng trên lớp, tr. 10 |
@@ -25,7 +25,7 @@ Bộ 105 câu môn Chủ nghĩa xã hội khoa học. Câu hỏi, toàn bộ ph�
 | 15 | A | Giai cấp công nhân | Bài giảng trên lớp, tr. 17–18 |
 | 16 | D | Đảng Cộng sản Trung Quốc | Bài giảng trên lớp, tr. 9–10 |
 | 17 | A | Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân | Giáo trình Bộ GD&ĐT (bản cũ), mục quy luật hình thành Đảng |
-| 18 | A | Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân dân. | Bài giảng trên lớp, tr. 45–46 |
+| 18 | A | Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân. | Bài giảng trên lớp, tr. 45–46 |
 | 19 | B | Cách mạng tháng Mười Nga thành công và sự ra đời của nhà nước XHCN đầu tiên (1917) | Bài giảng trên lớp, tr. 43 |
 | 20 | A | Công nhân có xu hướng trí tuệ hóa, có tính toàn cầu hóa, gia tăng nhanh về số lượng và chất lượng | Bài giảng trên lớp, tr. 20–21 |
 | 21 | A | Quan hệ sở hữu đối với tư liệu sản xuất chủ yếu | Bài giảng trên lớp, tr. 17 |
@@ -73,7 +73,7 @@ Bộ 105 câu môn Chủ nghĩa xã hội khoa học. Câu hỏi, toàn bộ ph�
 | 63 | D | Chủ nghĩa xã hội | Bài giảng trên lớp, tr. 27–28 |
 | 64 | D | Cách mạng Tháng Tám thành công và Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập (2/9/1945) | Hiến pháp 2013, Lời nói đầu |
 | 65 | D | Liên minh công - nông - trí thức | Cẩm nang tư tưởng Hồ Chí Minh, Thư viện Quốc hội |
-| 66 | A | Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất đinh của lịch sử xã hội loài người | Bài giảng trên lớp, tr. 76 |
+| 66 | A | Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất định của lịch sử xã hội loài người | Bài giảng trên lớp, tr. 76 |
 | 67 | D | Cả 3 đáp án trên | Bài giảng trên lớp, tr. 48, 80 |
 | 68 | A | Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng | Luật Thực hiện dân chủ ở cơ sở 2022; nguồn Quốc hội |
 | 69 | B | Phát huy sức mạnh của mọi giai cấp, mọi tầng lớp nhân dân, mọi thành phần dân tộc, tôn giáo cho công cuộc đổi mới, xây dựng và bảo vệ tổ quốc. | Bài giảng trên lớp, tr. 10–11 |
@@ -145,3 +145,23 @@ Câu 11: chọn C theo đúng cách liệt kê của Điều 1 Hiến pháp 2013
 - [Ban Tôn giáo Chính phủ: Hội nghị biểu dương các tổ chức tôn giáo năm 2022](https://btgcp.gov.vn/tin-trong-nuoc/khai-mac-hoi-nghi-thu-tuong-chinh-phu-bieu-duong-cac-to-chuc-ton-giao-co-dong-gop-tieu-bieu-trong-su-nghiep-xay-dung-va-bao-ve-to-quoc-postYZqyjQVnEg.html): câu 103, 43 tổ chức thuộc 16 tôn giáo.
 
 Phần giải thích trên web hiển thị lựa chọn đã chọn và nguồn đối chiếu; không sửa nội dung câu hỏi hoặc phương án.
+
+## Các lỗi gõ đã sửa
+
+Chỉ sửa các lỗi dưới đây; giữ đáp án, thứ tự lựa chọn, mốc thời gian và ý nghĩa nội dung.
+
+| Câu | Vị trí | Trước | Sau |
+| --- | --- | --- | --- |
+| 4 | A | Sự sụp đổi | Sự sụp đổ |
+| 11 | A | Vùng biến, | Vùng biển, |
+| 18 | A | nhân dân dân. | nhân dân. |
+| 25 | C | đai đa số | đại đa số |
+| 36 | D | những những hiện tượng | những hiện tượng |
+| 40 | Câu hỏi | trong của quá trình | trong quá trình |
+| 41 | C | bốc lột | bóc lột |
+| 44 | C | cách mạnh vô sản | cách mạng vô sản |
+| 52 | C | nhân được được | nhân dân được |
+| 52 | D | bầu cữ | bầu cử |
+| 66 | A | nhất đinh | nhất định |
+| 67 | B | Âm mưc | Âm mưu |
+| 99 | D | Mở rộng tiếp tục những tinh hoa | Mở rộng tiếp thu những tinh hoa |
