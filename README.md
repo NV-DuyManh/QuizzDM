@@ -8,6 +8,6 @@ Giữ nguyên giao diện và các chức năng luyện tập, thi thử 60 phú
 
 Dữ liệu môn này dùng khóa `lsdcsvn_` riêng. Lịch sử và câu ôn tập của CNXHKH/Tư tưởng Hồ Chí Minh không được dùng lại. Chỉ khôi phục bản sao lưu có mã `lsdcsvn_quiz_backup`.
 
-Đáp án được đọc từ định dạng gạch chân trong Word; câu 38 dùng dấu `*A`. Xem [bảng đáp án, kết quả rà soát và nguồn](ANSWERS.md). Những lỗi mốc thời gian hoặc dẫn chiếu đã được sửa và ghi rõ.
+Câu hỏi và các phương án giữ nguyên nội dung trong file Word, kể cả chính tả và mốc thời gian. Đáp án theo dấu gạch chân trong Word; câu 38 dùng dấu `*A`. Phần giải thích chỉ hiển thị lựa chọn được đánh dấu trong đề. Xem [bảng đáp án theo file Word](ANSWERS.md).
 
 Nhánh Git: `TN-LSDCSVN`. Bản CNXHKH vẫn nằm trên nhánh `TN-CNXHKH`. File Word nguồn không được đưa vào kho Git.
