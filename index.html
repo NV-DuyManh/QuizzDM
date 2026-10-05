@@ -11,7 +11,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TN-CNXHKH - Trắc nghiệm Chủ nghĩa xã hội khoa học</title>
+    <title>TN-KTCT - Trắc nghiệm Kinh tế chính trị Mác – Lênin</title>
     <style>
         :root {
             --primary: #3498db;
@@ -931,7 +931,7 @@
 
     <div id="score-board">
         <div id="score-board-info" class="score-info">
-            Điểm: <span id="score">0</span> / <span id="total-score">105</span>
+            Điểm: <span id="score">0</span> / <span id="total-score">80</span>
             <div class="progress-info">Đã trả lời: <span id="progress">0</span> câu</div>
         </div>
 
@@ -961,7 +961,7 @@
     <div id="layout-container">
         <div id="main-content">
             <div id="quiz-header">
-                <h1 id="main-title">Môn Học: Chủ Nghĩa Xã Hội Khoa Học</h1>
+                <h1 id="main-title">Môn Học: Kinh Tế Chính Trị Mác – Lênin</h1>
                 <p class="intro-text" id="main-desc">Actor: Duy Mạnh</p>
             </div>
 
@@ -1016,1176 +1016,901 @@
     <script>
         const quizData = [
             {
-                "q": "Ai là người viết tác phẩm \"Không tưởng\" (Utôpia)?",
-                "o": [
-                    "Xanh Xi Mông",
-                    "Campanenla",
-                    "Tômát Morơ",
-                    "Uynxtenli"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Tác phẩm nào đánh dấu sự ra đời của Chủ nghĩa xã hội khoa học?",
-                "o": [
-                    "Chống Đuy - Rinh",
-                    "Tuyên ngôn của Đảng cộng sản",
-                    "Bộ Tư bản",
-                    "Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Đâu là giai cấp có lợi ích cơ bản đối lập với lợi ích của giai cấp tư sản?",
-                "o": [
-                    "Giai cấp nông dân",
-                    "Tiểu tư sản",
-                    "Tầng lớp trí thức",
-                    "Giai cấp công nhân"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Chủ nghĩa duy vật lịch sử đã luận giải như thế nào về mặt triết học của lịch sử phát triển chủ nghĩa tư bản?",
-                "o": [
-                    "Sự sụp đổ của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau",
-                    "Chủ nghĩa tư bản là đỉnh cao trong sự phát triển của lịch sử loài người",
-                    "Kinh tế tư bản chủ nghĩa phát triển tạo nên lực lượng sản xuất hiện đại",
-                    "Giai cấp tư sản là lực lượng xã hội đối đầu trực tiếp với giai cấp công nhân"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là Nhà nước xã hội chủ nghĩa đầu tiên trên thế giới?",
-                "o": [
-                    "Nhà nước Xô Viết, năm 1917",
-                    "Nhà nước XHCN Việt Nam",
-                    "Nhà nước Trung Quốc",
-                    "Nhà nước XHCN Cuba"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Người lãnh đạo Đảng cộng sản Liên Xô sau khi V.I.Lênin mất (1924) là ai?",
-                "o": [
-                    "Iosif Vissarionovich Stalin",
-                    "Georgy Maksimilianovich Malenkov",
-                    "Konstantin Ustinovich Chernenko",
-                    "Mikhail Sergeyevich Gorbachov"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Cách mạng Việt Nam diễn ra theo quy luật nào?",
-                "o": [
-                    "Kiên định mục tiêu chủ nghĩa xã hội",
-                    "Tính bạo lực cách mạng",
-                    "Độc lập dân tộc gắn với chủ nghĩa xã hội",
-                    "Thực hiện thời kỳ quá độ lên chủ nghĩa xã hội"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là giai cấp bị bóc lột giá trị thặng dư trong các nước tư bản?",
-                "o": [
-                    "Giai cấp nông dân",
-                    "Tiểu tư sản",
-                    "Tầng lớp trí thức",
-                    "Giai cấp công nhân"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Phạm trù nào là phạm trù trung tâm của chủ nghĩa xã hội khoa học?",
-                "o": [
-                    "Chủ nghĩa xã hội",
-                    "Đảng cộng sản",
-                    "Sứ mệnh lịch sử của giai cấp công nhân",
-                    "Cách mạng xã hội chủ nghĩa"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Tổ chức nào sẽ trực tiếp thực thi vấn đề dân chủ?",
-                "o": [
-                    "Các Đảng phái chính trị",
-                    "Nhà nước",
-                    "Pháp luật",
-                    "Các tổ chức chính trị - xã hội"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Theo đúng cách liệt kê tại Điều 1 Hiến pháp năm 2013, lãnh thổ nước Cộng hòa xã hội chủ nghĩa Việt Nam bao gồm những bộ phận nào?",
-                "o": [
-                    "Vùng biển, đất liền, các đảo và hải đảo.",
-                    "Vùng biển, đất liền, vùng trời và hải đảo",
-                    "Đất liền, hải đảo, vùng biển và vùng trời.",
-                    "Đất liền, hải đảo, vùng biển và vùng trời trên biển."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Nước ta có bao nhiêu dân tộc cùng chung sống?",
-                "o": [
-                    "53",
-                    "54",
-                    "55",
-                    "56"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Yếu tố nào trực tiếp trang bị tri thức, kỹ năng và nâng cao chất lượng nguồn lực con người?",
-                "o": [
-                    "Phát triển về chính trị",
-                    "Phát triển về kinh tế - xã hội",
-                    "Phát triển về văn hóa",
-                    "Phát triển về giáo dục"
-                ],
-                "a": 3
-            },
-            {
-                "q": "“Dân chủ” là gì?",
-                "o": [
-                    "Dân chủ là một hình thức hay hình thái nhà nước",
-                    "Dân chủ là một nguyên tắc thực thi quyền lực",
-                    "Dân chủ là quyền lực thuộc về nhân dân",
-                    "Cả A, B, C"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Cách mạng xã hội chủ nghĩa là do giai cấp, tầng lớp nào lãnh đạo?",
-                "o": [
-                    "Giai cấp công nhân",
-                    "Giai cấp nông dân",
-                    "Tầng lớp trí thức",
-                    "Tầng lớp tiểu tư sản"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Tổ chức chính trị lãnh đạo quá trình xây dựng CNXH ở Trung Quốc hiện nay là tổ chức nào?",
-                "o": [
-                    "Cộng hoà Nhân dân Trung Hoa",
-                    "Quốc vụ viện Trung Quốc",
-                    "Quân ủy Trung Quốc",
-                    "Đảng Cộng sản Trung Quốc"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Quy luật chung, phổ biến cho sự ra đời Đảng cộng sản?",
-                "o": [
-                    "Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân",
-                    "Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân với phong trào yêu nước chân chính",
-                    "Là sự phát triển của phong trào công nhân và chủ nghĩa xã hội",
-                    "Là theo chủ nghĩa Mác – Lênin và chủ nghĩa xã hội"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Bản chất của nhà nước xã hội chủ nghĩa về mặt chính trị là:",
-                "o": [
-                    "Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân.",
-                    "Mang bản chất của quần chúng nhân dân và chế độ xã hội chủ nghĩa",
-                    "Mang bản chất của giai cấp tư sản và quần chúng nhân dân",
-                    "Mang bản chất của giai cấp thống trị và quần chúng nhân dân"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Dân chủ xã hội chủ nghĩa được hình thành bắt đầu bởi sự kiện lịch sử nào?",
-                "o": [
-                    "Thắng lợi của cách mạng Trung Quốc năm 1939",
-                    "Cách mạng tháng Mười Nga thành công và sự ra đời của nhà nước XHCN đầu tiên (1917)",
-                    "Sự hình thành và phát triển của hệ thống xã hội chủ nghĩa ở Liên Xô và Đông Âu",
-                    "Thực tiễn đấu tranh giai cấp ở Pháp và công xã Paris 1817"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Giai cấp công nhân hiện đại đã có những khác biệt nào so với giai cấp công nhân thế kỷ 19?",
-                "o": [
-                    "Công nhân có xu hướng trí tuệ hóa, có tính toàn cầu hóa, gia tăng nhanh về số lượng và chất lượng",
-                    "Công nhân đã trở thành một phần của lực lượng sản xuất hiện đại, có tính toàn cầu hóa",
-                    "Gia tăng nhanh về số lượng và chất lượng",
-                    "Công nhân có xu hướng trí tuệ hóa, gia tăng nhanh về số lượng, chất lượng và trở thành một phần của lực lượng sản xuất hiện đại, có tính toàn cầu hóa"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Giai cấp công nhân ở các nước tư bản chủ nghĩa và xã hội chủ nghĩa có điểm khác biệt cơ bản nào?",
-                "o": [
-                    "Quan hệ sở hữu đối với tư liệu sản xuất chủ yếu",
-                    "Phương thức lao động và phương thức sản xuất",
-                    "Nguồn gốc xuất thân của giai cấp công nhân",
-                    "Sản phẩm lao động do giai cấp công nhân làm ra"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Chế độ dân chủ nhân dân ở Việt Nam được xác lập vào năm nào?",
-                "o": [
-                    "Sau khi thành lập Đảng cộng sản Việt Nam 1930",
-                    "Sau cách mạng Tháng Tám 1945 (2/9/1945)",
-                    "Sau chiến thắng Điện Biên Phủ 1954",
-                    "Sau thắng lợi mùa xuân 1975"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Thế giới quan tôn giáo thuộc vào loại hình thế giới quan nào?",
-                "o": [
-                    "Thế giới quan duy vật siêu hình",
-                    "Thế giới quan duy vật biện chứng",
-                    "Thế giới quan duy tâm",
-                    "Thế giới quan duy danh"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là hệ giá trị gia đình Việt Nam hiện nay?",
-                "o": [
-                    "Phát triển kinh tế - xã hội",
-                    "Nâng cao trình độ dân trí cho nhân dân lao động",
-                    "Giải phóng người phụ nữ",
-                    "Xây dựng gia đình ấm no, hạnh phúc, tiến bộ, văn minh"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Nhiệm vụ chính trị trực tiếp của giai cấp công nhân sau khi lật đổ quyền thống trị của giai cấp tư sản là gì?",
-                "o": [
-                    "Thay thế chế độ sở hữu tư nhân bằng chế độ sở hữu hỗn hợp",
-                    "Xóa bỏ chế độ sở hữu tư nhân TBCN",
-                    "Giành lấy lợi ích cho đại đa số trên cơ sở công hữu về tư liệu sản xuất chủ yếu",
-                    "Thiết lập nhà nước kiểu mới mang bản chất giai cấp công nhân"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Nguyên nhân dẫn đến tình trạng nghèo khổ của giai cấp công nhân dưới chủ nghĩa tư bản?",
-                "o": [
-                    "Sản xuất công nghiệp mở rộng",
-                    "Sự phát triển của khoa học – công nghệ",
-                    "Do sự bóc lột của giai cấp tư sản đối với giai cấp công nhân",
-                    "Sự hình thành các kiểu lao động mới như “chuyên gia quốc tế”, “làm việc tại nhà”."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Với tư cách là một hình thái nhà nước, một chế độ chính trị thì trong lịch sử nhân loại, cho đến nay có bao nhiêu nền (chế độ) dân chủ?",
-                "o": [
-                    "1",
-                    "2",
-                    "3",
-                    "4"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Tổ chức nào đóng vai trò trụ cột trong hệ thống chính trị ở Việt Nam hiện nay?",
-                "o": [
-                    "Đảng cộng sản Việt Nam",
-                    "Nhà nước xã hội chủ nghĩa",
-                    "Mặt trận Tổ quốc Việt Nam",
-                    "Các đoàn thể nhân dân"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Công xã Paris 1871 – Nhà nước kiểu mới của giai cấp vô sản tồn tại trong bao nhiêu ngày?",
-                "o": [
-                    "70 ngày",
-                    "71 ngày",
-                    "72 ngày",
-                    "73 ngày"
-                ],
-                "a": 2
-            },
-            {
-                "q": "“Chủ nghĩa xã hội thế kỷ XXI” là triết lý phát triển được ở đâu?",
-                "o": [
-                    "Châu Mỹ Latinh",
-                    "Bắc Mỹ",
-                    "Tây Âu",
-                    "Liên Xô cũ"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là công cụ điều chỉnh, chi phối để dân chủ không biến dạng thành các hành vi phản dân chủ?",
-                "o": [
-                    "Văn hóa",
-                    "Pháp luật",
-                    "Đoàn thể",
-                    "Hiệp hội"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Nền tảng tư tưởng và kim chỉ nam cho hành động của hệ thống chính trị Việt Nam là:",
-                "o": [
-                    "Chủ nghĩa Mác và tư tưởng Hồ Chí Minh",
-                    "Tư tưởng Hồ Chí Minh",
-                    "Chủ nghĩa Mác – Lênin và tư tưởng Hồ Chí Minh",
-                    "Hồ Chí Minh và Đảng Cộng sản Việt Nam."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Người kế tục xuất sắc sự nghiệp cách mạng và khoa học của C.Mác và Ph.Ănghen là ai?",
-                "o": [
-                    "V.I.Lênin",
-                    "I.V.Stalin",
-                    "I.M.Kant",
-                    "Heghen"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Theo nghĩa hẹp, chủ nghĩa xã hội khoa học là gì?",
-                "o": [
-                    "Toàn bộ hệ tư tưởng của chủ nghĩa Mác-Lênin.",
-                    "Một trong ba bộ phận hợp thành chủ nghĩa Mác-Lênin.",
-                    "Lý luận về đấu tranh giai cấp.",
-                    "Học thuyết về nhà nước pháp quyền xã hội chủ nghĩa."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Đâu là nguồn gốc lý luận trực tiếp ra đời Chủ nghĩa xã hội khoa học?",
-                "o": [
-                    "Triết học cổ điển Đức",
-                    "Kinh tế chính trị học cổ điển Anh",
-                    "Chủ nghĩa xã hội không tưởng Pháp",
-                    "Chủ nghĩa dân tộc"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Nguyên nhân kinh tế - xã hội cho sự ra đời của tôn giáo là gì?",
-                "o": [
-                    "Sự bất lực, yếu đuối của con người trước những hiện tượng của tự nhiên",
-                    "Sự xuất hiện giai cấp cùng những phân hóa, đối kháng, bất công... là điều không thể giải thích được",
-                    "Sự giới hạn trong nhận thức của con người trước tự nhiên, xã hội và chính bản thân mình.",
-                    "Sự sợ hãi trước những hiện tượng tự nhiên, xã hội…."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Theo chủ nghĩa Mác - Lênin, bản chất của tôn giáo là gì?",
-                "o": [
-                    "Là một hình thái ý thức xã hội phản ánh đúng hiện thực khách quan",
-                    "Là một công cụ để giai cấp thống trị áp bức quần chúng",
-                    "Là một yếu tố tích cực thúc đẩy sự phát triển xã hội",
-                    "Là một hiện tượng xã hội - văn hoá do con người sáng tạo ra"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Quá độ từ chủ nghĩa tư bản lên chủ nghĩa xã hội trải qua những hình thức nào?",
-                "o": [
-                    "Trực tiếp và gián tiếp",
-                    "Tiệm tiến và trực tiếp",
-                    "Trực tiếp và tiếp biến",
-                    "Tiệm tiến và gián tiếp"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Lênin đã phát triển sáng tạo Chủ nghĩa xã hội khoa học trong bối cảnh lịch sử:",
-                "o": [
-                    "Chủ nghĩa tư bản đang trong giai đoạn tự do cạnh tranh.",
-                    "Chủ nghĩa tư bản đã chuyển sang giai đoạn đế quốc chủ nghĩa.",
-                    "Chủ nghĩa xã hội đã trở thành một hệ thống trên thế giới.",
-                    "Các cuộc cách mạng tư sản đang nổ ra mạnh mẽ ở châu Âu."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Xã hội mà Việt Nam hướng đến trong quá trình xây dựng chủ nghĩa xã hội là một xã hội như thế nào?",
-                "o": [
-                    "Xã hội \"dân giàu, nước mạnh, dân chủ, công bằng, văn minh\"",
-                    "Xã hội có sự phát triển công nghiệp hiện đại, thu nhập trung bình cao",
-                    "Xã hội có tốc độ phát triển cao, thu nhập cao.",
-                    "Xã hội bảo đảm thu nhập cao, công bằng văn minh cho nhân dân."
-                ],
-                "a": 0
-            },
-            {
-                "q": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa ở Việt Nam là bỏ qua những yếu tố nào?",
-                "o": [
-                    "Bỏ qua sự thống trị về mặt kinh tế và chính trị của chủ nghĩa tư bản",
-                    "Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa",
-                    "Bỏ qua sự áp bức bóc lột và những thành tựu khoa học kỹ thuật của chủ nghĩa tư bản",
-                    "Bỏ qua giai đoạn phát triển cao của chủ nghĩa tư bản"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Mục tiêu về kinh tế của Việt Nam đến năm 2045 là:",
-                "o": [
-                    "Là nước đang phát triển, có công nghiệp theo hướng hiện đại, vượt qua mức thu nhập trung bình thấp",
-                    "Là nước đang phát triển có công nghiệp hiện đại, thu nhập trung bình cao",
-                    "Trở thành nước phát triển, thu nhập cao.",
-                    "Trở thành nước phát triển, vượt qua mức thu nhập trung bình thấp"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là đội tiên phong của giai cấp công nhân?",
-                "o": [
-                    "Nhà nước xã hội chủ nghĩa",
-                    "Đảng cộng sản",
-                    "Tổ chức Công Đoàn",
-                    "Quốc tế III"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Hình thức quá độ trực tiếp lên chủ nghĩa xã hội được áp dụng đối với những nước nào?",
-                "o": [
-                    "Các nước có Đảng cộng sản lãnh đạo",
-                    "Các nước đã trải qua giai đoạn chủ nghĩa tư bản phát triển.",
-                    "Các nước đã tiến hành cách mạng vô sản thành công",
-                    "Các nước chưa trải qua giai đoạn phát triển chủ nghĩa tư bản"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam hoạt động trên cơ sở nào?",
-                "o": [
-                    "Quyền lực của Quốc hội",
-                    "Sự hiểu biết pháp luật của nhân dân",
-                    "Hiến pháp và pháp luật",
-                    "Sự làm chủ của nhân dân"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam do tổ chức nào lãnh đạo?",
-                "o": [
-                    "Đảng cộng sản Việt Nam",
-                    "Quốc Hội Việt Nam",
-                    "Mặt trận Tổ quốc Việt Nam",
-                    "Liên đoàn Lao động Việt Nam"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là những đặc trưng đặc biệt của giai cấp công nhân?",
-                "o": [
-                    "Tinh thần đoàn kết và khả năng tạo ra của cải vật chất",
-                    "Giai cấp có địa vị chính trị - xã hội trong CNTB",
-                    "Có tính tổ chức, kỷ luật lao động và tâm lý lao động công nghiệp.",
-                    "Giai cấp giữ vai trò quản lý cao cấp trong sản xuất TBCN."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Trong chủ nghĩa tư bản, giai cấp công nhân là giai cấp có mâu thuẫn đối kháng với:",
-                "o": [
-                    "Giai cấp nông dân",
-                    "Giai cấp địa chủ",
-                    "Tầng lớp trí thức",
-                    "Giai cấp tư sản"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Xét ở góc độ chính trị, tại sao giai cấp công nhân cần tiến hành liên minh với các giai tầng xã hội khác?",
-                "o": [
-                    "Tạo sức mạnh tổng hợp đảm bảo cho sự thắng lợi của cách mạng xã hội chủ nghĩa",
-                    "Điều hòa mâu thuẫn về lợi ích giữa giai cấp công nhân với các giai tầng xã hội khác.",
-                    "Đẩy mạnh công nghiệp hóa, hiện đại hóa, xây dựng nền tảng vật chất – kỹ thuật cần thiết cho chủ nghĩa xã hội.",
-                    "Thực hiện lợi ích của giai cấp công nhân, thực hiện thành công quá trình xây dựng chủ nghĩa xã hội"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Khối đại đoàn kết dân tộc ở Việt Nam được xây dựng trên nền tảng nào?",
-                "o": [
-                    "Sự phát triển kinh tế thị trường định hướng xã hội chủ nghĩa",
-                    "Liên minh giai cấp công nhân với giai cấp nông dân và đội ngũ trí thức do Đảng lãnh đạo.",
-                    "Thực hiện thành công chủ nghĩa xã hội ở Việt Nam",
-                    "Đoàn kết, tôn trọng lẫn nhau giữa các dân tộc – tộc người"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Vì sao các tôn giáo có sự thay đổi về giáo lý hoặc lễ nghi khi truyền bá sang các quốc gia khác?",
-                "o": [
-                    "Để thích nghi với văn hóa, xã hội của quốc gia đó",
-                    "Để tín đồ tôn giáo ở quốc gia đó di cư sang các vùng đất mới",
-                    "Để làm tốt chức năng đạo đức",
-                    "Phục vụ chức năng đền bù hư ảo"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là điểm khác biệt của Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam so với các nhà nước pháp quyền khác?",
-                "o": [
-                    "Thực hành trên cơ sở dân biết, dân bàn, dân làm, dân kiểm tra",
-                    "Mang bản chất giai cấp công nhân; phục vụ lợi ích cho nhân dân",
-                    "Quyền dân chủ của nhân dân được thực hành rộng rãi",
-                    "Dân có quyền bầu cử và bãi miễn đại biểu."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Mốc thời gian nào Việt Nam chính thức bình thường hóa quan hệ với Hoa Kỳ, hoàn thành việc phá thế bị bao vây cấm vận?",
-                "o": [
-                    "Năm 1975",
-                    "Năm 2007",
-                    "Năm 1995",
-                    "Năm 1991"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Sắp xếp các hình thức cộng đồng từ thấp đến cao.",
-                "o": [
-                    "Thị tộc, bộ lạc, dân tộc, bộ tộc",
-                    "Bộ tộc, bộ lạc, thị tộc, dân tộc",
-                    "Bộ lạc, bộ tộc, thị tộc, dân tộc",
-                    "Thị tộc, bộ lạc, bộ tộc, dân tộc"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Quan hệ nào là mối quan hệ tự nhiên, là yếu tố mạnh mẽ nhất gắn kết các thành viên trong gia đình với nhau?",
-                "o": [
-                    "Quan hệ hôn nhân",
-                    "Quan hệ huyết thống",
-                    "Quan hệ dòng tộc",
-                    "Quan hệ nuôi dưỡng"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Mô hình nhà nước của Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội?",
-                "o": [
-                    "Nhà nước dân chủ xã hội chủ nghĩa",
-                    "Nhà nước chủ nghĩa cộng sản.",
-                    "Chuyên chính vô sản",
-                    "Nhà nước pháp quyền xã hội chủ nghĩa"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Đối với vấn đề dân tộc, đâu là nội dung có vị trí chiến lược trong sự nghiệp cách mạng của nước ta?",
-                "o": [
-                    "Đoàn kết các dân tộc",
-                    "Phát triển kinh tế, giáo dục đồng bộ",
-                    "Phải có sự phối hợp giữa các Hội đoàn thể",
-                    "Thúc đẩy phát triển công nghiệp hóa, hiện đại hóa"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là tiêu chí cơ bản để phân biệt các tộc người khác nhau?",
-                "o": [
-                    "Cộng đồng về ngôn ngữ",
-                    "Cộng đồng về văn hóa",
-                    "Cộng đồng về kinh tế",
-                    "Ý thức tự giác tộc người"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Trách nhiệm nuôi dưỡng, dạy dỗ con cái trở thành người có ích cho gia đình, cộng đồng và xã hội là thuộc về chức năng nào của gia đình?",
-                "o": [
-                    "Chức năng tái sản xuất ra con người",
-                    "Chức năng nuôi dưỡng, giáo dục",
-                    "Chức năng kinh tế và tổ chức tiêu dùng",
-                    "Chức năng thỏa mãn nhu cầu sinh lý, duy trì tình cảm gia đình"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Đâu là giai cấp giữ vai trò lãnh đạo trong cơ cấu xã hội – giai cấp ở Việt Nam hiện nay?",
-                "o": [
-                    "Giai cấp công nhân Việt Nam",
-                    "Giai cấp nông dân Việt Nam",
-                    "Tầng lớp trí thức Việt Nam",
-                    "Tầng lớp doanh nhân Việt Nam"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Nhiệm vụ trung tâm về mặt kinh tế của thời kỳ quá độ lên CNXH ở Việt Nam hiện nay là gì?",
-                "o": [
-                    "Thực hiện thành công thời kỳ quá độ lên CNXH",
-                    "Phát triển kinh tế, tiến hành thành công công nghiệp hóa, hiện đại hóa",
-                    "Xây dựng nhà nước pháp quyền XHCN, thực hiện thành công thời kỳ quá độ lên CNXH",
-                    "Xây dựng nền văn hóa Việt Nam tiên tiến, đậm đà bản sắc dân tộc"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Tính chính trị của tôn giáo xuất hiện trong điều kiện nào?",
-                "o": [
-                    "Khi con người bắt đầu xây dựng các công trình thờ tự lớn",
-                    "Ngay từ thời kỳ công xã nguyên thủy khi con người mới biết thờ cúng",
-                    "Khi xã hội không còn xuất hiện sự phân chia giai cấp và đối kháng về lợi ích",
-                    "Khi xã hội xuất hiện sự phân chia giai cấp và đối kháng về lợi ích giai cấp"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Giai đoạn thấp của hình thái kinh tế - xã hội CNCS còn gọi là gì?",
-                "o": [
-                    "Thời kỳ quá độ",
-                    "CNCS hoàn chỉnh",
-                    "Tiền chủ nghĩa cộng sản",
-                    "Chủ nghĩa xã hội"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Sự kiện lịch sử nào đánh dấu sự ra đời của nước Việt Nam Dân chủ Cộng hòa?",
-                "o": [
-                    "Đại hội đại biểu toàn quốc lần thứ II của Đảng (1951)",
-                    "Hiến pháp năm 1980",
-                    "Hiệp định Genève (1954)",
-                    "Cách mạng Tháng Tám thành công và Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập (2/9/1945)"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Đâu là hạt nhân của khối đại đoàn kết toàn dân tộc Việt Nam?",
-                "o": [
-                    "Có sự lãnh đạo của Đảng cộng sản",
-                    "Có sự thống nhất lợi ích giữa các giai cấp",
-                    "Sự tăng trưởng và phát triển kinh tế bền vững",
-                    "Liên minh công - nông - trí thức"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Vì sao tôn giáo là một phạm trù lịch sử?",
-                "o": [
-                    "Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất định của lịch sử xã hội loài người",
-                    "Nó là sản phẩm của con người và nó ảnh hưởng đến đời sống tinh thần của con người",
-                    "Nó có ảnh hưởng đến sự phát triển của đời sống vật chất",
-                    "Vì tôn giáo là sản phẩm của sự phát triển về nhận thức của con người."
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là yếu tố gây trở ngại đối với quá trình thực hiện dân chủ ở nước ta trong giai đoạn hiện nay?",
-                "o": [
-                    "Âm mưu “diễn biến hòa bình”, gây bạo loạn, lật đổ",
-                    "Âm mưu thực hiện “cách mạng màu” của các thế lực thù địch",
-                    "Vấn đề tự diễn biến, tự chuyển hóa",
-                    "Cả 3 đáp án trên"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Phương châm thực hiện dân chủ ở cơ sở được Luật Thực hiện dân chủ ở cơ sở năm 2022 thể chế hóa bao gồm những thành tố nào?",
-                "o": [
-                    "Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng",
-                    "Dân biết, dân bàn, dân làm, dân kiểm tra",
-                    "Dân biết, dân bàn, dân thụ hưởng",
-                    "Dân biết, dân bàn, dân làm, dân giám sát, dân thụ hưởng"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Vì sao trong giai đoạn hiện nay Việt Nam tiếp tục mở rộng và phát huy khối đại đoàn kết dân tộc?",
-                "o": [
-                    "Để thực hiện thành công các nhiệm vụ trên lĩnh vực chính trị, kinh tế, văn hóa – tư tưởng",
-                    "Phát huy sức mạnh của mọi giai cấp, mọi tầng lớp nhân dân, mọi thành phần dân tộc, tôn giáo cho công cuộc đổi mới, xây dựng và bảo vệ tổ quốc.",
-                    "Giữ vững và tăng cường vai trò lãnh đạo của giai cấp công nhân Việt Nam và Đảng cộng sản Việt Nam",
-                    "Đảm bảo phát triển kinh tế gắn liền với lợi ích của các giai tầng, xã hội."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Đâu là nền tảng cho việc hoàn thiện pháp luật về bầu cử?",
-                "o": [
-                    "Cương lĩnh",
-                    "Đường lối",
-                    "Chủ trương",
-                    "Hiến pháp"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Sự ra đời và phát triển của giai cấp công nhân hiện đại gắn liền với điều kiện kinh tế nào?",
-                "o": [
-                    "Sự ra đời nền Đại công nghiệp",
-                    "Công trường thủ công phát triển",
-                    "Sự ra đời của động cơ hơi nước",
-                    "Sự phát triển của sản xuất thủ công nghiệp"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Nội dung cơ bản nhất mà nhờ đó chủ nghĩa xã hội từ không tưởng trở thành khoa học?",
-                "o": [
-                    "Phát hiện ra giai cấp công nhân là lực lượng xã hội có thể thủ tiêu CNTB, xây dựng CNXH.",
-                    "Phản ánh đúng khát vọng của nhân dân lao động bị áp bức.",
-                    "Lên án mạnh mẽ chủ nghĩa tư bản.",
-                    "Chỉ ra sự cần thiết phải thay thế chủ nghĩa tư bản bằng chủ nghĩa xã hội."
-                ],
-                "a": 0
-            },
-            {
-                "q": "Biểu tượng “Búa - Liềm” trên Đảng kỳ của Đảng cộng sản có ý nghĩa gì?",
-                "o": [
-                    "Sự lãnh đạo của Đảng cộng sản",
-                    "Sự thống nhất lợi ích giữa các giai cấp",
-                    "Sự đoàn kết, thống nhất của hai giai cấp công nhân và nông dân",
-                    "Liên kết để phát triển kinh tế bền vững"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Trong xã hội có giai cấp, cơ cấu nào có vị trí quyết định nhất, chi phối các loại hình cơ cấu xã hội khác?",
-                "o": [
-                    "Cơ cấu xã hội - nghề nghiệp",
-                    "Cơ cấu xã hội - dân số",
-                    "Cơ cấu xã hội - dân tộc",
-                    "Cơ cấu xã hội - giai cấp"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Trong các nội dung của quyền dân tộc tự quyết thì nội dung nào được coi là cơ bản nhất, tiên quyết nhất?",
-                "o": [
-                    "Tự quyết về chính trị",
-                    "Tự quyết về kinh tế",
-                    "Tự quyết về văn hoá",
-                    "Tự quyết về lãnh thổ"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là điều kiện tiên quyết để xây dựng thành công nền dân chủ xã hội chủ nghĩa ở Việt Nam?",
-                "o": [
-                    "Xây dựng Đảng cộng sản Việt Nam trong sạch, vững mạnh",
-                    "Xây dựng nhà nước pháp quyền XHCN vững mạnh",
-                    "Củng cố vai trò, chức năng của Mặt trận Tổ quốc Việt Nam",
-                    "Tăng cường vai trò của các tổ chức chính trị - xã hội"
-                ],
-                "a": 0
-            },
-            {
-                "q": "“Đoàn kết, đoàn kết, đại đoàn kết; Thành công, thành công, đại thành công” là câu nói nổi tiếng của lãnh tụ nào?",
-                "o": [
-                    "Chủ tịch Hồ Chí Minh",
-                    "Tổng bí thư Trần Phú",
-                    "Tổng bí thư Nguyễn Phú Trọng",
-                    "Chủ tịch Tôn Đức Thắng"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Cuộc cách mạng đầu tiên của giai cấp công nhân và nhân dân lao động trên thế giới lật đổ chính quyền của giai cấp tư sản diễn ra ở nước nào?",
-                "o": [
-                    "Anh",
-                    "Pháp",
-                    "Đức",
-                    "Nga"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Cơ quan nào thống nhất quản lý nhà nước về tín ngưỡng, tôn giáo trong phạm vi cả nước?",
-                "o": [
-                    "Chính phủ",
-                    "Bộ Tư pháp",
-                    "Bộ Nội vụ",
-                    "Ủy ban Dân tộc"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Tôn giáo và tín ngưỡng khác nhau ở điểm nào?",
-                "o": [
-                    "Tôn giáo có hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tương đối chặt chẽ; tín ngưỡng thường chưa có hệ thống đó.",
-                    "Tín ngưỡng có giáo lý, giáo luật và tính tổ chức chặt chẽ hơn tôn giáo.",
-                    "Tôn giáo chỉ liên quan đến các đấng siêu nhiên, còn tín ngưỡng thì không.",
-                    "Tôn giáo và tín ngưỡng là hoàn toàn đồng nhất."
-                ],
-                "a": 0
-            },
-            {
-                "q": "Biểu hiện của tính quần chúng trong tôn giáo là gì?",
-                "o": [
-                    "Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của tầng lớp thống trị.",
-                    "Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của đông đảo các tầng lớp nhân dân.",
-                    "Tôn giáo luôn kêu gọi đấu tranh chống bất công, nghèo đói, bạo lực.",
-                    "Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của tầng lớp nhân dân lao động."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Sự biến đổi trong lễ nghi của các tôn giáo trong xã hội hiện đại thể hiện tính chất nào của tôn giáo?",
-                "o": [
-                    "Tính bảo thủ",
-                    "Tính lịch sử",
-                    "Tính chính trị",
-                    "Tính siêu nhiên"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Khi con người chưa có khả năng nhận thức đúng đắn về tự nhiên, họ thường làm gì?",
-                "o": [
-                    "Thần thánh hóa các hiện tượng tự nhiên",
-                    "Dựa vào khoa học để nghiên cứu",
-                    "Phủ nhận thế giới khách quan",
-                    "Tách rời khỏi cộng đồng"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Về mặt cấu trúc, một tôn giáo hoàn chỉnh thường bao gồm các yếu tố cơ bản nào?",
-                "o": [
-                    "Hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tôn giáo",
-                    "Các giáo lý, giáo luật trong sinh hoạt thần thánh, lễ nghi tôn giáo.",
-                    "Hệ thống Thần linh, giáo luật trong sinh hoạt thần thánh, lễ nghi tôn giáo.",
-                    "Niềm tin, giáo luật trong sinh hoạt thần thánh, lễ nghi tôn giáo."
-                ],
-                "a": 0
-            },
-            {
-                "q": "Sự kiện nào góp phần nối liền hệ thống xã hội chủ nghĩa từ Châu Âu sang Châu Á năm 1949?",
-                "o": [
-                    "Nước Việt Nam Dân chủ Cộng hòa ra đời.",
-                    "Chiến tranh Triều Tiên kết thúc.",
-                    "Nước Cộng hòa Nhân dân Trung Hoa ra đời.",
-                    "Liên Xô chế tạo thành công bom nguyên tử."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Mê tín là gì?",
-                "o": [
-                    "Những niềm tin, sự ngưỡng mộ đối với những người có đóng góp cho xã hội",
-                    "Tin vào các lực lượng siêu nhiên đến mức độ cuồng tín.",
-                    "Là niềm tin mê muội, viển vông, không dựa trên một cơ sở khoa học",
-                    "Cầu mong sự che chở của các đấng linh thiêng"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Quốc gia nào là lá cờ đầu của phong trào giải phóng dân tộc và xây dựng chủ nghĩa xã hội ở khu vực Châu Mỹ Latinh?",
-                "o": [
-                    "Venezuela",
-                    "Chile",
-                    "Cuba",
-                    "Brazil"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Trong số 16 tôn giáo có tổ chức được Nhà nước công nhận hoặc cấp đăng ký hoạt động tại Việt Nam, có bao nhiêu tôn giáo du nhập từ nước ngoài?",
-                "o": [
-                    "7",
-                    "8",
-                    "9",
-                    "10"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là tiêu chí quan trọng nhất để đánh giá một gia đình văn hóa trong bối cảnh Việt Nam hiện nay?",
-                "o": [
-                    "Gia đình có thu nhập cao và địa vị xã hội lớn.",
-                    "Gia đình đông con và tuân thủ mọi nghi lễ truyền thống.",
-                    "Gia đình hòa thuận, bình đẳng, tiến bộ, hạnh phúc và thực hiện tốt nghĩa vụ công dân.",
-                    "Gia đình không bao giờ xảy ra tranh luận hay mâu thuẫn."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Sự biến đổi của gia đình Việt Nam hiện nay chịu tác động mạnh mẽ nhất của yếu tố nào?",
-                "o": [
-                    "Sự thay đổi của các quy định trong Luật Hôn nhân và Gia đình.",
-                    "Tác động của các phong trào đấu tranh vì nữ quyền trên thế giới.",
-                    "Quá trình công nghiệp hóa, hiện đại hóa và hội nhập quốc tế.",
-                    "Sự gia tăng của các phương tiện truyền thông đại chúng hiện đại."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là phương hướng xây dựng gia đình Việt Nam hiện nay?",
-                "o": [
-                    "Phục hồi nguyên vẹn mô hình gia đình truyền thống với nhiều thế hệ cùng chung sống.",
-                    "Xây dựng gia đình no ấm, bình đẳng, tiến bộ, hạnh phúc và phát triển bền vững.",
-                    "Khuyến khích lối sống tự do, không bị ràng buộc bởi các trách nhiệm gia đình.",
-                    "Xóa bỏ chức năng kinh tế của gia đình, để nhà nước và xã hội đảm nhiệm."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Ý thức tự giác tộc người là gì?",
-                "o": [
-                    "Là ý thức về nguồn gốc và tộc danh của dân tộc mình",
-                    "Ý thức về sự chung lưng đấu cật, đoàn kết đấu tranh chống thiên tai, địch họa để dựng nước và giữ nước",
-                    "Là ý thức về tên tự gọi, về tiếng mẹ đẻ và các đặc trưng văn hóa tương đối bền vững",
-                    "Là ý thức của mỗi tộc người trong xây dựng và bảo vệ Tổ quốc Việt Nam xã hội chủ nghĩa"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Dân chủ XHCN ở Việt Nam được thực hiện thông qua hình thức nào?",
-                "o": [
-                    "Trưng cầu dân ý là duy nhất",
-                    "Dân chủ đại diện và dân chủ trực tiếp",
-                    "Không có bầu cử",
-                    "Chỉ thông qua mạng xã hội"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Việc các thành viên trong gia đình cùng nhau lao động, sản xuất, tạo ra của cải vật chất và bảo đảm đời sống vật chất là biểu hiện của chức năng nào?",
-                "o": [
-                    "Chức năng sinh sản",
-                    "Chức năng văn hóa, giáo dục",
-                    "Chức năng kinh tế",
-                    "Chức năng tái tạo sức lao động"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Tờ báo cách mạng đầu tiên của Việt Nam là:",
-                "o": [
-                    "Báo Nhân Dân",
-                    "Báo Tiếng Dân",
-                    "Báo Búa Liềm",
-                    "Báo Thanh Niên"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Việc truyền thụ các giá trị văn hóa, giữ gìn truyền thống cho thế hệ sau thuộc về chức năng nào của gia đình?",
-                "o": [
-                    "Chức năng kinh tế",
-                    "Chức năng sinh sản và nuôi dưỡng",
-                    "Chức năng tâm sinh lý",
-                    "Chức năng giáo dục"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Cơ sở hình thành nên gia đình là gì?",
-                "o": [
-                    "Quan hệ hôn nhân",
-                    "Quan hệ văn hóa",
-                    "Quan hệ chính trị",
-                    "Quan hệ xã hội"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Mô hình gia đình Việt Nam phổ biến trong bước chuyển biến từ \"xã hội nông nghiệp\" sang \"xã hội công nghiệp\" là mô hình nào?",
-                "o": [
-                    "Gia đình hạt nhân",
-                    "Gia đình truyền thống",
-                    "Gia đình nông nghiệp",
-                    "Gia đình hiện đại"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Trên phương diện văn hóa, trong bối cảnh hội nhập quốc tế sâu rộng, dân tộc Việt Nam cần làm gì để góp phần giữ vững độc lập dân tộc?",
-                "o": [
-                    "Chú trọng công tác bảo vệ toàn vẹn lãnh thổ quốc gia",
-                    "Tăng cường hội nhập kinh tế khu vực và thế giới",
-                    "Giáo dục lòng yêu nước và giữ gìn, phát huy bản sắc văn hóa dân tộc.",
-                    "Mở rộng tiếp thu những tinh hoa văn hóa nhân loại"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là điều kiện tiên quyết bảo đảm thành công của công cuộc đổi mới, công nghiệp hoá, hiện đại hoá đất nước?",
-                "o": [
-                    "Sự lãnh đạo của Đảng Cộng sản Việt Nam",
-                    "Sự quản lý của nhà nước XHCN Việt Nam",
-                    "Sự đoàn kết của toàn dân",
-                    "Sự lớn mạnh của giai cấp công nhân"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là nguyên tắc nền tảng trong chính sách tín ngưỡng, tôn giáo của Đảng và Nhà nước Việt Nam?",
-                "o": [
-                    "Tôn trọng tự do tín ngưỡng",
-                    "Bài trừ mê tín dị đoan",
-                    "Đoàn kết tôn giáo",
-                    "Chống lợi dụng tôn giáo"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Chức năng nào của gia đình có ý nghĩa quan trọng đối với sự phát triển kinh tế của một cộng đồng người?",
-                "o": [
-                    "Chức năng kinh tế và tổ chức tiêu dùng",
-                    "Chức năng xã hội hóa",
-                    "Chức năng sinh sản và nuôi dưỡng",
-                    "Chức năng tái sản xuất ra con người"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Tính đến năm 2022, có bao nhiêu tổ chức thuộc 16 tôn giáo được Nhà nước Việt Nam công nhận hoặc cấp đăng ký hoạt động?",
-                "o": [
-                    "43",
-                    "36",
-                    "38",
-                    "39"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Hôn nhân tự nguyện, tiến bộ được dựa trên cơ sở chính là gì?",
-                "o": [
-                    "Sự sắp đặt của cha mẹ và gia đình hai bên.",
-                    "Tình yêu chân chính giữa nam và nữ.",
-                    "Sự phù hợp về địa vị xã hội và tài sản.",
-                    "Các yếu tố về phong tục, tập quán lạc hậu"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Đâu là điểm tựa tinh thần vô cùng lớn lao cho mỗi người?",
-                "o": [
-                    "Nhà trường",
-                    "Chính phủ",
-                    "Nhà nước",
-                    "Gia đình"
-                ],
-                "a": 3
+                        "q": "Đối tượng nghiên cứu của Kinh tế chính trị Mác-Lênin là gì?",
+                        "o": [
+                                    "Sản xuất của cải vật chất",
+                                    "Quan hệ xã hội giữa người với người",
+                                    "Quan hệ xã hội của sản xuất và trao đổi trong sự liên hệ biện chứng với trình độ phát triển của LLSX và kiến trúc thượng tầng",
+                                    "Quá trình sản xuất, phân phối, trao đổi, tiêu dùng"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Thuật ngữ “kinh tế chính trị” được sử dụng lần đầu tiên vào năm nào?",
+                        "o": [
+                                    "1612",
+                                    "1615",
+                                    "1614",
+                                    "1618"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Giá trị hàng hóa được quyết định bởi yếu tố nào?",
+                        "o": [
+                                    "Sự khan hiếm hàng hóa",
+                                    "Sự hao phí sức lao động của con người",
+                                    "Lao động trừu tượng của người sản xuất kết tinh trong hàng hóa",
+                                    "Công dụng của hàng hóa"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Giá trị sử dụng của hàng hóa là gì?",
+                        "o": [
+                                    "Là tính chất sẵn có của hàng hóa",
+                                    "Là phạm trù lịch sử của hàng hóa",
+                                    "Là công dụng của hàng hóa có thể thỏa mãn nhu cầu nào đó của con người",
+                                    "Là thuộc tính tự nhiên của hàng hóa có thể thỏa mãn nhu cầu nào đó của con người"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Hình thức xuất khẩu chủ yếu của chủ nghĩa tư bản hiện nay là gì?",
+                        "o": [
+                                    "Xuất khẩu tư bản kết hợp xuất khẩu hàng hóa",
+                                    "Đầu tư trực tiếp kết hợp đầu tư gián tiếp",
+                                    "Đầu tư gián tiếp",
+                                    "Đầu tư trực tiếp"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Theo quan điểm của C.Mác, hàng hóa là gì?",
+                        "o": [
+                                    "Hàng hóa là sản phẩm của lao động để thỏa mãn nhu cầu vật chất và tinh thần của con người.",
+                                    "Hàng hóa là sản phẩm của lao động có thể thỏa mãn nhu cầu nào đó của con người thông qua trao đổi mua bán.",
+                                    "Hàng hóa là các sản phẩm có ích và do lao động của người sản xuất làm ra.",
+                                    "Hàng hóa là do lao động của người sản xuất làm ra"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Định nghĩa đúng về Tư bản là gì?",
+                        "o": [
+                                    "Tiền và máy móc thiết bị",
+                                    "Tiền có khả năng đẻ ra tiền",
+                                    "Giá trị mang lại giá trị thặng dư bằng cách bóc lột lao động làm thuê",
+                                    "Công cụ sản xuất và nguyên vật liệu"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Nền kinh tế tri thức được xem là gì?",
+                        "o": [
+                                    "Một phương thức sản xuất mới",
+                                    "Một hình thái kinh tế - xã hội mới",
+                                    "Một giai đoạn mới của CNTB hiện đại",
+                                    "Một nấc thang phát triển của lực lượng sản xuất"
+                        ],
+                        "a": 3
+            },
+            {
+                        "q": "Nhà kinh điển nào sau đây nghiên cứu sâu về CNTB độc quyền?",
+                        "o": [
+                                    "C. Mác",
+                                    "C. Mác và Ăngghen",
+                                    "VI.Lênin",
+                                    "Ph.Ăngghen"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Quá trình chuyển đổi nền sản xuất xã hội từ sử dụng sức lao động thủ công là chính sang sử dụng một cách phổ biến sức lao động với công nghệ, phương tiện, phương pháp tiên tiến hiện đại nhằm tạo ra năng suất lao động xã hội cao gọi là gì?",
+                        "o": [
+                                    "Công nghiệp hóa",
+                                    "Hiện đại hóa",
+                                    "Công nghiệp hóa, hiện đại hóa",
+                                    "Tự động hóa"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Ai là người đầu tiên đưa ra khái niệm “kinh tế chính trị”?",
+                        "o": [
+                                    "Antoien Montchretien",
+                                    "ToMas Mun",
+                                    "William Petty",
+                                    "Francois Quesnay"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Vì sao cạnh tranh không bị thủ tiêu trong giai đoạn chủ nghĩa tư bản độc quyền?",
+                        "o": [
+                                    "Vì tổ chức độc quyền cạnh tranh với các công ty ngoài độc quyền",
+                                    "Vì các tổ chức độc quyền cạnh tranh với nhau",
+                                    "Vì cạnh tranh là quy luật khách quan của kinh tế hàng hóa",
+                                    "Vì xí nghiệp trong nội bộ tổ chức độc quyền cạnh tranh với nhau"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Kinh tế- chính trị Mác - Lênin đã kế thừa và phát triển trực tiếp những thành tựu của trường phái kinh tế nào?",
+                        "o": [
+                                    "Chủ nghĩa trọng thương",
+                                    "Chủ nghĩa trọng nông",
+                                    "Kinh tế chính trị cổ điển Anh",
+                                    "Kinh tế- chính trị tầm thường"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Điều kiện ra đờivà tồn tại của sản xuất hàng hoá là gì?",
+                        "o": [
+                                    "Có sự phân công lao động xã hội và sự tách biệt về mặt kinh tế của chủ thể sản xuất",
+                                    "Có sự phân công lao động và sự tách biệt tương đối về kinh tế của chủ thể sản xuất",
+                                    "Có sự phân công lao động cá biệt và tư hữu về tư liệu sản xuất",
+                                    "Có sự phân công lao động xã hội và công hữu về tư liệu sản xuất"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Phương thức phát triển tốt nhất của các nước đang phát triển và kém phát triển trong xu thế toàn cầu hóa là gì?",
+                        "o": [
+                                    "Bảo hộ mậu dịch trong nước",
+                                    "Hội nhập kinh tế quốc tế",
+                                    "Hợp tác kinh tế với các nước có chung hệ thống chính trị",
+                                    "Hợp tác với các nước trong khu vực"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Quy luật giá trị yêu cầu việc sản xuất và trao đổi hàng hóa phải được tiến hành dựa trên cơ sở nào?",
+                        "o": [
+                                    "Hao phí lao động cá biệt",
+                                    "Hao phí lao động xã hội cần thiết",
+                                    "Hao phí thời gian lao động của người sản xuất hàng hóa",
+                                    "Hao phí lao động quá khứ và lao động sống của người sản xuất."
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Công thức nào là công thức chung của tư bản?",
+                        "o": [
+                                    "T - H - T’",
+                                    "T - H - Sức lao động",
+                                    "H - T - H",
+                                    "H - Sức lao động - H’"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Giá trị thặng dư là gì?",
+                        "o": [
+                                    "Lợi nhuận thu được của người sản xuất kinh doanh",
+                                    "Giá trị của tư bản tự tăng lên",
+                                    "Phần giá trị mới dôi ra ngoài giá trị sức lao động do công nhân làm thuê tạo ra",
+                                    "Hiệu số giữa giá trị hàng hóa và chi phí sản xuất"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Mô hình kinh tế khái quát trong thời kỳ quá độ lên CNXH ở nước ta hiện nay là gì?",
+                        "o": [
+                                    "Kinh tế thị trường có sự quản lý của nhà nước",
+                                    "Kinh tế nhiều thành phần theo định hướng XHCN",
+                                    "Kinh tế nhiều thành phần có sự quản lý của nhà nước",
+                                    "Kinh tế thị trường định hướng XHCN"
+                        ],
+                        "a": 3
+            },
+            {
+                        "q": "Đặc trưng của cuộc cách mạng công nghiệp lần thứ tư (4.0) là gì?",
+                        "o": [
+                                    "Sử dụng năng lượng nước và hơi nước để cơ khí hóa sản xuất",
+                                    "Sử dụng công nghệ thông tin và máy tính để tự động hóa sản xuất",
+                                    "Liên kết giữa thế giới thực và ảo để thực hiện công việc thông minh và hiệu quả",
+                                    "Sử dụng năng lượng điện để tạo dây chuyền sản xuất hàng loạt"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Ai là người phát hiện ra tính chất hai mặt của lao động sản xuất hàng hoá?",
+                        "o": [
+                                    "A.Smith",
+                                    "D.Ricardo",
+                                    "C.Mác",
+                                    "Ph. Ăng ghen"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Học thuyết kinh tế nào của C.Mác được coi là “hòn đá tảng”?",
+                        "o": [
+                                    "Học thuyết giá trị",
+                                    "Học thuyết giá trị thặng dư",
+                                    "Học thuyết tích lũy tư bản",
+                                    "Học thuyết tái sản xuấ tư bản xã hội"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Câu trả lời nào “không đúng” khi nói về kinh tế thị trường?",
+                        "o": [
+                                    "Đối lập với kinh tế tự nhiên",
+                                    "Đối lập với các chế độ xã hội",
+                                    "Là thành tựu chung của nhân loại",
+                                    "Phát triển mạnh nhất trong xã hội CNTB"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Kết quả cạnh tranh giữa các tổ chức độc quyền trong cùng một ngành là?",
+                        "o": [
+                                    "Mở rộng quy mô sản xuất của các tổ chức độc quyền",
+                                    "Sự thỏa hiệp hoặc phá sản của một tổ chức độc quyền",
+                                    "Tăng cường hợp tác giữa các tổ chức độc quyền",
+                                    "Tăng cường ứng dụng khoa học công nghệ vào sản xuất"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Khi hàng hóa bán đúng giá trị thì mối quan hệ giữa m và p là gì ?",
+                        "o": [
+                                    "p=m",
+                                    "p>m",
+                                    "p<m",
+                                    "p=0"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Nhân tố nào dưới đây không ảnh hưởng đến tỷ suất lợi nhuận?",
+                        "o": [
+                                    "Tỷ suất giá trị thặng dư",
+                                    "Cạnh tranh",
+                                    "Tốc độ chu chuyển của tư bản",
+                                    "Cấu tạo hữu cơ của tư bản"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Tư bản bất biến (C) là:",
+                        "o": [
+                                    "Giá trị của nó chuyển dần vào sản phẩm qua khấu hao",
+                                    "Giá trị của nó lớn lên trong quá trình sản xuất",
+                                    "Giá trị của nó không thay đổi và được chuyển sang sản phẩm sau một chu kỳ sản xuất",
+                                    "Giá trị của nó không biến đổi về lượng trong quá trình sản xuất và được chuyển nguyên vẹn vào giá trị sản phẩm."
+                        ],
+                        "a": 3
+            },
+            {
+                        "q": "Tiền lương tư bản chủ nghĩa được hiểu là gì ?",
+                        "o": [
+                                    "Giá trị của lao động",
+                                    "Sự trả công lao động",
+                                    "Giá cả của sức lao động",
+                                    "Giá trị sức lao động"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Hiểu như thế nào về phương pháp sản xuất giá trị thặng dư tuyệt đối?",
+                        "o": [
+                                    "Kéo dài thời gian của ngày lao động, còn thời gian lao động cần thiết không đổi",
+                                    "Tiết kiệm chi phí sản xuất",
+                                    "Sử dụng kỹ thuật tiên tiến, cải tiến tổ chức quản lý",
+                                    "Nâng cao năng suất lao động"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Sự ra đời của tư bản tài chính là kết quả của sự phát triển yếu tố nào sau đây?",
+                        "o": [
+                                    "Độc quyền ngân hàng",
+                                    "Sự phát triển của thị trường tài chính",
+                                    "Độc quyền công nghiệp",
+                                    "Quá trình xâm nhập liên kết độc quyền ngân hàng với độc quyền công nghiệp"
+                        ],
+                        "a": 3
+            },
+            {
+                        "q": "Nguyên nhân ra đời của CNTB độc quyền là gì?",
+                        "o": [
+                                    "Do cuộc đấu tranh giai cấp của giai cấp công nhân và nhân dân lao động",
+                                    "Do sự can thiệp của nhà nước tư sản",
+                                    "Do tích tụ và tập trung sản xuất dưới tác động của cách mạng khoa học công nghệ",
+                                    "Do tác động của phân công lao động xã hội"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Đâu là chức năng cơ bản nhất của tiền?",
+                        "o": [
+                                    "Chức năng thước đo giá trị",
+                                    "Chức năng phương tiện lưu thông",
+                                    "Chức năng phương tiện cất trữ",
+                                    "Chức năng phương tiện thanh toán"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Người sáng lập ra chủ nghĩa Mác là ai?",
+                        "o": [
+                                    "C. Mác",
+                                    "C.Mác và V.I. Lênin",
+                                    "C.Mác và Ph.Ăngghen",
+                                    "C.Mác, Ph.Ăngghen và V.I.Lênin"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Quan hệ cung cầu thuộc khâu nào của quá trình tái sản xuất xã hội?",
+                        "o": [
+                                    "Sản xuất và tiêu dùng",
+                                    "Tiêu dùng",
+                                    "Trao đổi",
+                                    "Phân phối và trao đổi"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Sự khác biệt cơ bản giữa kinh tế thị trường định hướng XHCN với kinh tế thị trường TBCN là gì?",
+                        "o": [
+                                    "Có sự điều tiết của nhà nước",
+                                    "Nền kinh tế nhiều thành phần",
+                                    "Vai trò chủ đạo của kinh tế nhà nước",
+                                    "Có nhiều hình thức sở hữu tư liệu sản xuất"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Tư bản bất biến (C) và tư bản khả biến (v) thuộc phạm trù tư bản nào?",
+                        "o": [
+                                    "Tư bản tiền tệ",
+                                    "Tư bản sản xuất",
+                                    "Tư bản hàng hóa",
+                                    "Tư bản lưu thông"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Giá trị của hàng hoá được quyết định bởi yếu tố nào?",
+                        "o": [
+                                    "Sự khan hiếm của hàng hoá",
+                                    "Sự hao phí sức lao động của con người",
+                                    "Lao động trừu tượng của người sản xuất kết tinh trong hàng hoá",
+                                    "Công dụng của hàng hoá"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Bản chất của CNTB độc quyền nhà nước là gì?",
+                        "o": [
+                                    "Sự kết hợp giữa tổ chức độc quyền tư nhân và nhà nước tư sản",
+                                    "Nhà nước tư sản can thiệp vào nền kinh tế, chi phối độc quyền",
+                                    "Các tổ chức độc quyền phụ thuộc vào nhà nước",
+                                    "Sự thỏa hiệp giữa nhà nước và tổ chức độc quyền"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Chủ thể xuất khẩu tư bản của CNTB ngày nay chủ yếu là ai?",
+                        "o": [
+                                    "Các tư bản tư nhân",
+                                    "Các tổ chức độc quyền tư nhân trong một nước",
+                                    "Các tổ chức độc quyền xuyên quốc gia",
+                                    "Các tư bản nhà nước"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Theo quan điểm của C.Mác, cơ cấu giá trị hàng hóa được xác định theo công thức nào?",
+                        "o": [
+                                    "G = c +( v + p)",
+                                    "G = c + ( v + m)",
+                                    "G = v + m",
+                                    "G = c + v"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Mô hình công nghiệp hóa cổ điển (nước Anh) bắt đầu từ ngành nào?",
+                        "o": [
+                                    "Công nghiệp dệt",
+                                    "Công nghiệp vật liệu xây dựng",
+                                    "Công nghiệp cơ khí, chế tạo máy",
+                                    "Công nghiệp chế biến thực phẩm"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Quan điểm đúng nhất về Kinh tế thị trường là gì?",
+                        "o": [
+                                    "Do chủ nghĩa tư bản sinh ra",
+                                    "Có cùng bản chất với kinh tế hàng hóa",
+                                    "Tồn tại chủ quan trong thời kỳ quá độ lên CNXH",
+                                    "Là sản phẩm riêng của CNTB"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Hình thức biểu hiện của quy luật giá trị thặng dư trong giai đoạn chủ nghĩa tư bản tự do cạnh tranh là gì?",
+                        "o": [
+                                    "Quy luật giá cả sản xuất",
+                                    "Quy luật giá cả độc quyền",
+                                    "Quy luật lợi nhuận độc quyền",
+                                    "Quy luật tỷ suất lợi nhuận bình quân"
+                        ],
+                        "a": 3
+            },
+            {
+                        "q": "Khi nghiên cứu phương thức sản xuất TBCN, C.Mác bắt đầu từ đâu?",
+                        "o": [
+                                    "Lưu thông hàng hóa",
+                                    "Sản xuất của cải vật chất",
+                                    "Sản xuất hàng hóa giản đơn và hàng hóa",
+                                    "Sản xuất giá trị thặng dư"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Quy luật giá trị tồn tại ở riêng ở nền sản xuất nào?",
+                        "o": [
+                                    "Nền sản xuất tự cung tự cấp",
+                                    "Nền sản xuất TBCN",
+                                    "Trong nền sản xuất vật chất nói chung",
+                                    "Trong nền sản xuất hàng hoá"
+                        ],
+                        "a": 3
+            },
+            {
+                        "q": "Tỷ suất giá trị thặng dư phản ánh điều gì ?",
+                        "o": [
+                                    "Trình độ bóc lột của nhà tư bản đối với công nhân làm thuê",
+                                    "Hiệu quả của tư bản đầu tư",
+                                    "Chỉ cho nhà tư bản biết nơi đầu tư có lợi nhất",
+                                    "Quy mô của sự bóc lột"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Đặc điểm của mô hình công nghiệp hóa của các nước NICs là gì?",
+                        "o": [
+                                    "Ưu tiên phát triển công nghiệp nhẹ",
+                                    "Ưu tiên phát triển công nghiệp nặng",
+                                    "Đẩy mạnh xuất khẩu, thu hút nguồn lực từ bên ngoài để tiến hành CNH-HĐH",
+                                    "Đẩy mạnh xuất khẩu, dựa vào nguồn lực trong nước là chính."
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Mục đích của công nghiệp hóa, hiện đại hóa là gì?",
+                        "o": [
+                                    "Tạo ra năng suất lao động cao hơn",
+                                    "Tạo ra một thị trường sôi động",
+                                    "Tạo ra nhiều cơ hội hơn cho người lao động",
+                                    "Xây dựng cơ cấu kinh tế hiện đại"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Sự phân chia tư bản thành tư bản bất biến và tư bản khả biến là để vạch ra điều gì?",
+                        "o": [
+                                    "Đặc điểm di chuyển giá trị của từng loại tư bản vào sản phẩm.",
+                                    "Nguồn gốc của giá trị thặng dư",
+                                    "Vai trò của lao động quá khứ và lao động sống trong sản xuất tư bản chủ nghĩa.",
+                                    "Bản chất của quá trình sản xuất giá trị thặng dư"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Khi cung hàng hóa lớn hơn cầu về hàng hóa thì giá cả hàng hóa sẽ như thế nào so với giá trị hàng hóa?",
+                        "o": [
+                                    "Giá cả hàng hóa nhỏ hơn giá trị hàng hóa",
+                                    "Giá cả hàng hóa lớn hơn giá trị hàng hóa",
+                                    "Giá cả hàng hóa bằng giá trị hàng hóa",
+                                    "Giá cả hàng hóa không ảnh hưởng bởi giá trị hàng hóa"
+                        ],
+                        "a": 0
+            },
+            {
+                        "q": "Theo kinh tế chính trị Mác – Lênin, doanh nghiệp hiểu và vận dụng các quy luật kinh tế để làm gì?",
+                        "o": [
+                                    "Tăng thu nhập bằng lẩn tránh thuế",
+                                    "Đưa ra chiến lược kinh doanh hiệu quả, phù hợp thị trường",
+                                    "Bóc lột sức lao động người làm thuê",
+                                    "Độc quyền kinh doanh"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Trong quan hệ sản xuất tư bản chủ nghĩa, nhà tư bản thu được giá trị thặng dư từ đâu?",
+                        "o": [
+                                    "Từ bán hàng hóa trên thị trường cao hơn giá trị",
+                                    "Từ sức lao động của công nhân",
+                                    "Từ sự hỗ trợ của nhà nước",
+                                    "Từ vay vốn ngân hàng"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Trong hợp đồng thuê mướn sức lao động, nhà tư bản đã làm gì để không vi phạm quy luật trao đổi ngang giá?",
+                        "o": [
+                                    "Trả lương cao hơn giá trị sức lao động",
+                                    "Không ký hợp đồng",
+                                    "Ký hợp đồng thỏa thuận tiền công với công nhân",
+                                    "Hạ thấp giá trị hàng hóa"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Tỷ suất giá trị thặng dư (m’) là tỷ số tính theo phần trăm giữa giá trị thặng dư (m) và bộ phận tư bản nào?",
+                        "o": [
+                                    "Tư bản bất biến (C)",
+                                    "Tư bản lưu thông",
+                                    "Tư bản cố định",
+                                    "Tư bản khả biến (V)"
+                        ],
+                        "a": 3
+            },
+            {
+                        "q": "Trong công thức chung của tư bản T – H – T’ cho thấy sự vận động của tư bản như thế nào?",
+                        "o": [
+                                    "Có giới hạn vì chỉ quay một vòng",
+                                    "Không có giới hạn vì mục đích là sinh lời",
+                                    "Dừng lại khi đã mua đủ hàng hóa",
+                                    "Phụ thuộc vào nhu cầu tiêu dùng"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Hàng hóa sức lao động được gọi là “đặc biệt” vì sao?",
+                        "o": [
+                                    "Vì chỉ có nhà nước mới bán",
+                                    "Vì khi sử dụng, nó tạo giá trị mới lớn hơn giá trị bản thân nó",
+                                    "Vì không có giá trị sử dụng",
+                                    "Vì chỉ mua được bằng tín dụng"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Trong công thức M = m’ × v, biến v biểu thị loại tư bản nào?",
+                        "o": [
+                                    "Tư bản bất biến",
+                                    "Tư bản khả biến",
+                                    "Tư bản cố định",
+                                    "Tư bản lưu thông"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Trong điều kiện ngày lao động 9 giờ, trong đó 3 giờ là thời gian lao động tất yếu và 6 giờ là thời gian lao động thặng dư, thì tỷ suất giá trị thặng dư bao nhiêu?",
+                        "o": [
+                                    "100%",
+                                    "150%",
+                                    "200%",
+                                    "250%"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Tổ chức độc quyền nào mà theo V.I. Lênin, đạt đến mức độ cao nhất về độc quyền cả về sản xuất, tiêu thụ và tài chính, do một ban quản trị thống nhất quản lý?",
+                        "o": [
+                                    "Cartel",
+                                    "Syndicate",
+                                    "Trust",
+                                    "Consortium"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Hình thức liên kết nào là sự liên kết giữa các doanh nghiệp cùng ngành?",
+                        "o": [
+                                    "Liên kết dọc",
+                                    "Liên kết ngang",
+                                    "Côngxoocxiom",
+                                    "Tài phiệt"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Trong giai đoạn chủ nghĩa tư bản độc quyền, mục đích chính của việc xuất khẩu tư bản là gì?",
+                        "o": [
+                                    "Thực hiện giá trị của hàng hóa",
+                                    "Chiếm đoạt giá trị thặng dư và nguồn lợi ở các nước nhập khẩu tư bản",
+                                    "Mở rộng quan hệ ngoại giao",
+                                    "Giải quyết vấn đề thất nghiệp trong nước"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Kinh tế thị trường được hiểu như thế nào?",
+                        "o": [
+                                    "Giai đoạn thấp của kinh tế hàng hóa",
+                                    "Trình độ phát triển cao của kinh tế hàng hóa",
+                                    "Một kiểu kinh tế riêng của chủ nghĩa tư bản",
+                                    "Một hình thức phân phối sản phẩm"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Những nước công nghiệp mới (NICs) đầu tiên nào ứng dụng mô hình công nghiệp hóa rút ngắn?",
+                        "o": [
+                                    "Thái Lan, Malaysia, Lào",
+                                    "Trung Quốc, Ấn Độ, Việt Nam",
+                                    "Nhật, Hàn Quốc, Singapore",
+                                    "Indonesia, Philippines, Campuchia"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Nhật Bản và các NICs đã đẩy mạnh hoạt động kinh tế nào để phục vụ chiến lược công nghiệp hóa?",
+                        "o": [
+                                    "Nhập khẩu lương thực",
+                                    "Xuất khẩu",
+                                    "Nhập khẩu dịch vụ",
+                                    "Đóng cửa thị trường"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Lý luận kinh tế của C.Mác thể hiện tập trung nhất trong tác phẩm nào?",
+                        "o": [
+                                    "Chính trị học",
+                                    "Bộ “Tư bản”",
+                                    "Sự giàu có của các quốc gia",
+                                    "Nhà nước và cách mạng"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Chủ nghĩa trọng nông coi nguồn gốc của cải là từ sản xuất nào?",
+                        "o": [
+                                    "Công nghiệp",
+                                    "Thương nghiệp",
+                                    "Nông nghiệp",
+                                    "Thương mại điện tử"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "C. Mác xây dựng hệ thống lý luận kinh tế một cách khoa học, toàn diện về nền sản xuất nào?",
+                        "o": [
+                                    "Nền sản xuất phong kiến",
+                                    "Nền sản xuất nô lệ",
+                                    "Nền sản xuất tư bản chủ nghĩa",
+                                    "Nền sản xuất xã hội chủ nghĩa"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Học thuyết kinh tế của C. Mác vượt lên trên kinh tế chính trị tư sản cổ điển Anh ở điểm nào?",
+                        "o": [
+                                    "Lần đầu nói về thương mại quốc tế",
+                                    "Giải thích nguồn gốc giá trị thặng dư",
+                                    "Loại bỏ hoàn toàn lý luận giá trị lao động",
+                                    "Phủ nhận cạnh tranh"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Lênin bổ sung phát triển các học thuyết của C.Mác chủ yếu bằng việc phân tích nội dung gì?",
+                        "o": [
+                                    "Sự ra đời của tiền",
+                                    "Bản chất của chủ nghĩa tư bản độc quyền và độc quyền nhà nước",
+                                    "Sự phát triển của nông nghiệp",
+                                    "Chính sách thuế quan"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Mục đích nghiên cứu cao nhất của Kinh tế chính trị Mác-Lênin là gì?",
+                        "o": [
+                                    "Tìm ra những mối liên hệ và sự lệ thuộc bên trong của các hiện tượng kinh tế.",
+                                    "Phát hiện ra các quy luật kinh tế chi phối quan hệ giữa người với người trong sản xuất và trao đổi.",
+                                    "Nghiên cứu bản thân của cải vật chất, nguồn gốc sự giàu có của xã hội",
+                                    "Hình thành các phạm trù và khái niệm như hàng hoá, tiền tệ."
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Bí mật của giá trị thặng dư nằm ở việc nhà tư bản làm gì?",
+                        "o": [
+                                    "Bán hàng hóa với giá cao hơn",
+                                    "Mua được hàng hóa đặc biệt – sức lao động",
+                                    "Giảm giá trị hàng hóa",
+                                    "Giảm chi phí nguyên liệu"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Khi sử dụng hàng hóa sức lao động, điều đặc biệt là gì?",
+                        "o": [
+                                    "Giá trị của hàng hóa sức lao động mất đi",
+                                    "Hàng hóa sức lao động chỉ tạo ra giá trị đúng bằng bản thân nó",
+                                    "Hàng hóa sức lao động tạo ra giá trị mới lớn hơn giá trị bản thân nó",
+                                    "Hàng hóa sức lao động không tạo ra giá trị nào"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Khi tích tụ và tập trung sản xuất đạt tới mức độ nhất định thì sẽ dễ dẫn đến hình thành hình thức nào trên thị trường?",
+                        "o": [
+                                    "Cạnh tranh hoàn hảo",
+                                    "Hàng hóa khan hiếm",
+                                    "Độc quyền",
+                                    "Thất nghiệp"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Trong các tình huống sau, tình huống nào phản ánh cạnh tranh trong nội bộ tổ chức độc quyền?",
+                        "o": [
+                                    "Tập đoàn A mua lại doanh nghiệp nhỏ B ngoài độc quyền",
+                                    "Hai tập đoàn độc quyền A và C cùng ngành xi măng thỏa thuận chia thị trường",
+                                    "Công ty thành viên X trong tập đoàn độc quyền tìm cách mua thêm cổ phần để trở thành cổ đông kiểm soát",
+                                    "Doanh nghiệp nhỏ D bị các doanh nghiệp độc quyền chèn ép nguồn nguyên liệu"
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Tại sao người tiêu dùng có thể bị thiệt hại khi doanh nghiệp lạm dụng vị thế độc quyền?",
+                        "o": [
+                                    "Vì hàng hóa luôn thiếu chất lượng",
+                                    "Vì giá bị áp đặt ở mức cao, lựa chọn ít",
+                                    "Vì không được mua hàng",
+                                    "Vì phải tự sản xuất hàng hóa"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Mô hình kinh tế thị trường ở Trung Quốc là mô hình gì?",
+                        "o": [
+                                    "Kinh tế thị trường tự do mới.",
+                                    "Kinh tế thị trường xã hội.",
+                                    "Kinh tế thị trường XHCN.",
+                                    "Kinh tế thị trường hỗn hợp."
+                        ],
+                        "a": 2
+            },
+            {
+                        "q": "Mục tiêu trực tiếp của CNH, HĐH là tạo ra gì?",
+                        "o": [
+                                    "Thị trường tiêu dùng lớn",
+                                    "Năng suất lao động xã hội cao",
+                                    "Lợi nhuận tối đa cho doanh nghiệp",
+                                    "Tốc độ đô thị hóa nhanh"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Hội nhập kinh tế quốc tế của một quốc gia là quá trình gì?",
+                        "o": [
+                                    "Tách rời nền kinh tế khỏi thế giới để tự chủ",
+                                    "Gắn kết nền kinh tế quốc gia với kinh tế thế giới",
+                                    "Chỉ xuất khẩu hàng hóa ra nước ngoài",
+                                    "Chỉ ký kết các hiệp định quân sự"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Nguyên nhân trực tiếp nào dẫn đến việc các tổ chức độc quyền có khả năng định ra giá cả độc quyền?",
+                        "o": [
+                                    "Sự phát triển của khoa học kỹ thuật",
+                                    "Nắm giữ địa vị thống trị trong sản xuất và lưu thông",
+                                    "Sự hình thành của tư bản tài chính",
+                                    "Sự dư thừa tư bản tương đối"
+                        ],
+                        "a": 1
+            },
+            {
+                        "q": "Theo V.I. Lênin, hình thức độc quyền nào ở Đức chủ yếu là thỏa thuận về thương nghiệp và kém ổn định nhất?",
+                        "o": [
+                                    "Trust",
+                                    "Cartel",
+                                    "Syndicate",
+                                    "Côngxoocxiom"
+                        ],
+                        "a": 1
             }
-        ];
-
+];
 
         const explanationData = [
-            "Đáp án đúng: C. Tômát Morơ. Tômát Morơ (Thomas More) viết Utopia, xuất bản năm 1516. (Đối chiếu: British Library: Thomas More/Utopia.)",
-            "Đáp án đúng: B. Tuyên ngôn của Đảng cộng sản. Tuyên ngôn của Đảng Cộng sản được công bố năm 1848. (Đối chiếu: Bài giảng trên lớp, tr. 5–6.)",
-            "Đáp án đúng: D. Giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 3, 16–17.)",
-            "Đáp án đúng: A. Sự sụp đổ của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau. Đây là kết luận trong lý luận Mác - Lênin về quy luật vận động của các hình thái kinh tế - xã hội. (Đối chiếu: Bài giảng trên lớp, tr. 5.)",
-            "Đáp án đúng: A. Nhà nước Xô Viết, năm 1917. Trong các lựa chọn, nhà nước Xô viết ra đời sau Cách mạng Tháng Mười năm 1917. Cần phân biệt với Công xã Paris năm 1871, nhà nước vô sản đầu tiên nhưng tồn tại ngắn ngủi. (Đối chiếu: Bài giảng trên lớp, tr. 43.)",
-            "Đáp án đúng: A. Iosif Vissarionovich Stalin. Stalin là lựa chọn đúng. Quyền lãnh đạo của ông được củng cố dần sau khi Lênin mất; không phải toàn bộ quá trình chuyển giao hoàn tất ngay năm 1924. (Đối chiếu: Library of Congress: niên biểu.)",
-            "Đáp án đúng: C. Độc lập dân tộc gắn với chủ nghĩa xã hội (Đối chiếu: Bài giảng trên lớp, tr. 10.)",
-            "Đáp án đúng: D. Giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 17.)",
-            "Đáp án đúng: C. Sứ mệnh lịch sử của giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 12.)",
-            "Đáp án đúng: B. Nhà nước (Đối chiếu: Bài giảng trên lớp, tr. 51.)",
-            "Đáp án đúng: C. Đất liền, hải đảo, vùng biển và vùng trời. C trùng cách liệt kê trong Điều 1 Hiến pháp năm 2013. B trong bản đề gốc cũng đủ bốn bộ phận nhưng khác thứ tự; câu hỏi đã làm rõ yêu cầu chọn cách liệt kê đúng theo văn bản. (Đối chiếu: Hiến pháp 2013, Điều 1.)",
-            "Đáp án đúng: B. 54 (Đối chiếu: Bài giảng trên lớp, tr. 69.)",
-            "Đáp án đúng: D. Phát triển về giáo dục. Giáo dục trực tiếp phát triển tri thức và kỹ năng. Câu gốc hỏi quá rộng vì phát triển kinh tế - xã hội cũng tác động đến nguồn lực con người; câu đã được làm rõ theo khía cạnh đào tạo. (Đối chiếu: Giáo trình Bộ GD&ĐT (bản cũ), tr. 171–176; đã làm rõ khía cạnh đào tạo.)",
-            "Đáp án đúng: D. Cả A, B, C (Đối chiếu: Bài giảng trên lớp, tr. 40–42.)",
-            "Đáp án đúng: A. Giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 17–18.)",
-            "Đáp án đúng: D. Đảng Cộng sản Trung Quốc (Đối chiếu: Bài giảng trên lớp, tr. 9–10.)",
-            "Đáp án đúng: A. Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân. Đây là quy luật chung. Với Việt Nam, sự ra đời của Đảng còn gắn với phong trào yêu nước. (Đối chiếu: Giáo trình Bộ GD&ĐT (bản cũ), mục quy luật hình thành Đảng.)",
-            "Đáp án đúng: A. Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân. (Đối chiếu: Bài giảng trên lớp, tr. 45–46.)",
-            "Đáp án đúng: B. Cách mạng tháng Mười Nga thành công và sự ra đời của nhà nước XHCN đầu tiên (1917) (Đối chiếu: Bài giảng trên lớp, tr. 43.)",
-            "Đáp án đúng: A. Công nhân có xu hướng trí tuệ hóa, có tính toàn cầu hóa, gia tăng nhanh về số lượng và chất lượng. Bài giảng trang 20 phân biệt những biến đổi mới với những điểm tương đồng. A nêu các biến đổi về trí tuệ hóa, toàn cầu hóa, số lượng và chất lượng; D thêm vai trò trong lực lượng sản xuất hiện đại, vốn là điểm tương đồng chứ không phải khác biệt mới. (Đối chiếu: Bài giảng trên lớp, tr. 20–21.)",
-            "Đáp án đúng: A. Quan hệ sở hữu đối với tư liệu sản xuất chủ yếu (Đối chiếu: Bài giảng trên lớp, tr. 17.)",
-            "Đáp án đúng: B. Sau cách mạng Tháng Tám 1945 (2/9/1945) (Đối chiếu: Bài giảng trên lớp, tr. 47.)",
-            "Đáp án đúng: C. Thế giới quan duy tâm (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
-            "Đáp án đúng: D. Xây dựng gia đình ấm no, hạnh phúc, tiến bộ, văn minh (Đối chiếu: Hệ giá trị gia đình: nguồn Chính phủ.)",
-            "Đáp án đúng: D. Thiết lập nhà nước kiểu mới mang bản chất giai cấp công nhân. Câu hỏi đã làm rõ nhiệm vụ chính trị trực tiếp. Các nhiệm vụ về sở hữu và xây dựng kinh tế còn tiếp tục trong quá trình xây dựng xã hội mới. (Đối chiếu: Bài giảng trên lớp, tr. 17–18.)",
-            "Đáp án đúng: C. Do sự bóc lột của giai cấp tư sản đối với giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 16–17, 20.)",
-            "Đáp án đúng: C. 3. Theo cách phân loại nền dân chủ như chế độ nhà nước trong giáo trình: dân chủ chủ nô, dân chủ tư sản và dân chủ xã hội chủ nghĩa; không tính dân chủ nguyên thủy là một chế độ nhà nước. (Đối chiếu: Bài giảng trên lớp, tr. 42–43.)",
-            "Đáp án đúng: B. Nhà nước xã hội chủ nghĩa. Phân biệt Nhà nước là trụ cột với Đảng giữ vai trò lãnh đạo hệ thống chính trị. (Đối chiếu: Giáo trình Bộ GD&ĐT (bản cũ), tr. 100.)",
-            "Đáp án đúng: C. 72 ngày. Công xã Paris tồn tại từ ngày 18/3 đến ngày 28/5/1871, thường được tính là 72 ngày. (Đối chiếu: Học viện Chính trị khu vực IV: Công xã Paris.)",
-            "Đáp án đúng: A. Châu Mỹ Latinh (Đối chiếu: Mô hình CNXH thế kỷ XXI tại Mỹ Latinh.)",
-            "Đáp án đúng: B. Pháp luật (Đối chiếu: Bài giảng trên lớp, tr. 41–42.)",
-            "Đáp án đúng: C. Chủ nghĩa Mác – Lênin và tư tưởng Hồ Chí Minh (Đối chiếu: Bài giảng trên lớp, tr. 10–11.)",
-            "Đáp án đúng: A. V.I.Lênin (Đối chiếu: Bài giảng trên lớp, tr. 6–8.)",
-            "Đáp án đúng: B. Một trong ba bộ phận hợp thành chủ nghĩa Mác-Lênin. (Đối chiếu: Bài giảng trên lớp, tr. 3.)",
-            "Đáp án đúng: C. Chủ nghĩa xã hội không tưởng Pháp. Trong các phương án, C là phù hợp nhất. Di sản trực tiếp là chủ nghĩa xã hội không tưởng phê phán đầu thế kỷ XIX, gồm cả các nhà tư tưởng Pháp và Anh. (Đối chiếu: Bài giảng trên lớp, tr. 4.)",
-            "Đáp án đúng: B. Sự xuất hiện giai cấp cùng những phân hóa, đối kháng, bất công... là điều không thể giải thích được (Đối chiếu: Bài giảng trên lớp, tr. 75.)",
-            "Đáp án đúng: D. Là một hiện tượng xã hội - văn hoá do con người sáng tạo ra. D phù hợp nhất trong các lựa chọn. Theo quan điểm Mác - Lênin, tôn giáo còn là một hình thái ý thức xã hội phản ánh hiện thực qua niềm tin vào lực lượng siêu nhiên. (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
-            "Đáp án đúng: A. Trực tiếp và gián tiếp (Đối chiếu: Bài giảng trên lớp, tr. 31–32.)",
-            "Đáp án đúng: B. Chủ nghĩa tư bản đã chuyển sang giai đoạn đế quốc chủ nghĩa. (Đối chiếu: Bài giảng trên lớp, tr. 7.)",
-            "Đáp án đúng: A. Xã hội \"dân giàu, nước mạnh, dân chủ, công bằng, văn minh\" (Đối chiếu: Bài giảng trên lớp, tr. 36–37.)",
-            "Đáp án đúng: B. Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa. Bỏ qua vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa; vẫn tiếp thu thành tựu khoa học, công nghệ và quản lý. (Đối chiếu: Bài giảng trên lớp, tr. 34.)",
-            "Đáp án đúng: C. Trở thành nước phát triển, thu nhập cao. Mốc mục tiêu được hỏi là năm 2045, khác với mục tiêu năm 2030. (Đối chiếu: Mục tiêu 2045: nguồn Chính phủ.)",
-            "Đáp án đúng: B. Đảng cộng sản (Đối chiếu: Bài giảng trên lớp, tr. 19.)",
-            "Đáp án đúng: B. Các nước đã trải qua giai đoạn chủ nghĩa tư bản phát triển. (Đối chiếu: Bài giảng trên lớp, tr. 31.)",
-            "Đáp án đúng: C. Hiến pháp và pháp luật (Đối chiếu: Bài giảng trên lớp, tr. 49–50.)",
-            "Đáp án đúng: A. Đảng cộng sản Việt Nam (Đối chiếu: Bài giảng trên lớp, tr. 50.)",
-            "Đáp án đúng: C. Có tính tổ chức, kỷ luật lao động và tâm lý lao động công nghiệp. (Đối chiếu: Bài giảng trên lớp, tr. 16–17.)",
-            "Đáp án đúng: D. Giai cấp tư sản (Đối chiếu: Bài giảng trên lớp, tr. 16, 20.)",
-            "Đáp án đúng: A. Tạo sức mạnh tổng hợp đảm bảo cho sự thắng lợi của cách mạng xã hội chủ nghĩa (Đối chiếu: Bài giảng trên lớp, tr. 56.)",
-            "Đáp án đúng: B. Liên minh giai cấp công nhân với giai cấp nông dân và đội ngũ trí thức do Đảng lãnh đạo. (Đối chiếu: Bài giảng trên lớp, tr. 56–58.)",
-            "Đáp án đúng: A. Để thích nghi với văn hóa, xã hội của quốc gia đó (Đối chiếu: Bài giảng trên lớp, tr. 79.)",
-            "Đáp án đúng: B. Mang bản chất giai cấp công nhân; phục vụ lợi ích cho nhân dân (Đối chiếu: Bài giảng trên lớp, tr. 50–52.)",
-            "Đáp án đúng: C. Năm 1995. Hai nước bình thường hóa quan hệ ngoại giao năm 1995. Hoa Kỳ dỡ bỏ cấm vận thương mại từ năm 1994. (Đối chiếu: Bộ Ngoại giao: bình thường hóa năm 1995.)",
-            "Đáp án đúng: D. Thị tộc, bộ lạc, bộ tộc, dân tộc (Đối chiếu: Giáo trình Bộ GD&ĐT (bản cũ), chương dân tộc.)",
-            "Đáp án đúng: B. Quan hệ huyết thống (Đối chiếu: Bài giảng trên lớp, tr. 85.)",
-            "Đáp án đúng: D. Nhà nước pháp quyền xã hội chủ nghĩa (Đối chiếu: Bài giảng trên lớp, tr. 49–50.)",
-            "Đáp án đúng: A. Đoàn kết các dân tộc (Đối chiếu: Bài giảng trên lớp, tr. 71.)",
-            "Đáp án đúng: A. Cộng đồng về ngôn ngữ. Bài giảng trang 67 gọi cộng đồng về ngôn ngữ là tiêu chí cơ bản để phân biệt các tộc người. D là tiêu chí quan trọng nhất; cần phân biệt hai cách hỏi. (Đối chiếu: Bài giảng trên lớp, tr. 67.)",
-            "Đáp án đúng: B. Chức năng nuôi dưỡng, giáo dục (Đối chiếu: Bài giảng trên lớp, tr. 87–88.)",
-            "Đáp án đúng: A. Giai cấp công nhân Việt Nam (Đối chiếu: Bài giảng trên lớp, tr. 58.)",
-            "Đáp án đúng: B. Phát triển kinh tế, tiến hành thành công công nghiệp hóa, hiện đại hóa (Đối chiếu: Bài giảng trên lớp, tr. 61–62.)",
-            "Đáp án đúng: D. Khi xã hội xuất hiện sự phân chia giai cấp và đối kháng về lợi ích giai cấp (Đối chiếu: Bài giảng trên lớp, tr. 76.)",
-            "Đáp án đúng: D. Chủ nghĩa xã hội (Đối chiếu: Bài giảng trên lớp, tr. 27–28.)",
-            "Đáp án đúng: D. Cách mạng Tháng Tám thành công và Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập (2/9/1945) (Đối chiếu: Hiến pháp 2013, Lời nói đầu.)",
-            "Đáp án đúng: D. Liên minh công - nông - trí thức. Liên minh công nhân - nông dân - trí thức là lực lượng nòng cốt, nền tảng xã hội của khối đại đoàn kết. Không nhầm với “đoàn kết trong Đảng” là hạt nhân theo cách diễn đạt về xây dựng Đảng. (Đối chiếu: Cẩm nang tư tưởng Hồ Chí Minh, Thư viện Quốc hội.)",
-            "Đáp án đúng: A. Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất định của lịch sử xã hội loài người (Đối chiếu: Bài giảng trên lớp, tr. 76.)",
-            "Đáp án đúng: D. Cả 3 đáp án trên (Đối chiếu: Bài giảng trên lớp, tr. 48, 80.)",
-            "Đáp án đúng: A. Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng. Đây là phương châm được luật thể chế hóa bằng các quyền và cơ chế cụ thể; không phải khẳng định cả sáu vế là một câu trích nguyên văn của luật. (Đối chiếu: Luật Thực hiện dân chủ ở cơ sở 2022; nguồn Quốc hội.)",
-            "Đáp án đúng: B. Phát huy sức mạnh của mọi giai cấp, mọi tầng lớp nhân dân, mọi thành phần dân tộc, tôn giáo cho công cuộc đổi mới, xây dựng và bảo vệ tổ quốc. (Đối chiếu: Bài giảng trên lớp, tr. 10–11.)",
-            "Đáp án đúng: D. Hiến pháp (Đối chiếu: Hiến pháp 2013, Điều 7.)",
-            "Đáp án đúng: A. Sự ra đời nền Đại công nghiệp (Đối chiếu: Bài giảng trên lớp, tr. 3, 16.)",
-            "Đáp án đúng: A. Phát hiện ra giai cấp công nhân là lực lượng xã hội có thể thủ tiêu CNTB, xây dựng CNXH. Trong các lựa chọn, A xác định lực lượng thực hiện sự chuyển biến xã hội. Về nền tảng lý luận, chủ nghĩa duy vật lịch sử và học thuyết giá trị thặng dư cũng là các phát kiến quan trọng. (Đối chiếu: Bài giảng trên lớp, tr. 5.)",
-            "Đáp án đúng: C. Sự đoàn kết, thống nhất của hai giai cấp công nhân và nông dân (Đối chiếu: Ý nghĩa biểu tượng liên minh công nhân – nông dân.)",
-            "Đáp án đúng: D. Cơ cấu xã hội - giai cấp (Đối chiếu: Bài giảng trên lớp, tr. 54–55.)",
-            "Đáp án đúng: A. Tự quyết về chính trị (Đối chiếu: Bài giảng trên lớp, tr. 68–69.)",
-            "Đáp án đúng: A. Xây dựng Đảng cộng sản Việt Nam trong sạch, vững mạnh (Đối chiếu: Bài giảng trên lớp, tr. 51.)",
-            "Đáp án đúng: A. Chủ tịch Hồ Chí Minh (Đối chiếu: Hồ Chí Minh: đoàn kết và đại đoàn kết.)",
-            "Đáp án đúng: B. Pháp. Cuộc cách mạng vô sản đầu tiên là Công xã Paris ở Pháp năm 1871. Cách mạng Tháng Mười Nga năm 1917 là cuộc cách mạng vô sản thắng lợi, lập nhà nước Xô viết. (Đối chiếu: Học viện Chính trị khu vực IV: Công xã Paris 1871.)",
-            "Đáp án đúng: A. Chính phủ. Chính phủ thống nhất quản lý trên phạm vi cả nước. Cần phân biệt với bộ chuyên ngành tham mưu và thực hiện quản lý. (Đối chiếu: Luật Tín ngưỡng, tôn giáo 2016, Điều 61; luật 2026, Điều 57.)",
-            "Đáp án đúng: A. Tôn giáo có hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tương đối chặt chẽ; tín ngưỡng thường chưa có hệ thống đó. Bài giảng trang 74 cho thấy tín ngưỡng vẫn có cách thức thể hiện niềm tin. Lựa chọn A được làm rõ về mức độ hệ thống và tổ chức, không phủ nhận nghi thức tín ngưỡng. (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
-            "Đáp án đúng: B. Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của đông đảo các tầng lớp nhân dân. (Đối chiếu: Bài giảng trên lớp, tr. 76.)",
-            "Đáp án đúng: B. Tính lịch sử (Đối chiếu: Bài giảng trên lớp, tr. 76, 78.)",
-            "Đáp án đúng: A. Thần thánh hóa các hiện tượng tự nhiên (Đối chiếu: Bài giảng trên lớp, tr. 75.)",
-            "Đáp án đúng: A. Hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tôn giáo (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
-            "Đáp án đúng: C. Nước Cộng hòa Nhân dân Trung Hoa ra đời. (Đối chiếu: Bài giảng trên lớp, tr. 8–9.)",
-            "Đáp án đúng: C. Là niềm tin mê muội, viển vông, không dựa trên một cơ sở khoa học (Đối chiếu: Bài giảng trên lớp, tr. 74–75.)",
-            "Đáp án đúng: C. Cuba (Đối chiếu: Lịch sử cách mạng Cuba.)",
-            "Đáp án đúng: C. 9. Trong cách thống kê 16 tôn giáo: 9 tôn giáo du nhập và 7 tôn giáo nội sinh. Tư cách pháp nhân áp dụng cho tổ chức tôn giáo, không phải cho khái niệm tôn giáo. (Đối chiếu: Báo Chính phủ: 9 tôn giáo du nhập.)",
-            "Đáp án đúng: C. Gia đình hòa thuận, bình đẳng, tiến bộ, hạnh phúc và thực hiện tốt nghĩa vụ công dân. (Đối chiếu: Bài giảng trên lớp, tr. 97.)",
-            "Đáp án đúng: C. Quá trình công nghiệp hóa, hiện đại hóa và hội nhập quốc tế. (Đối chiếu: Bài giảng trên lớp, tr. 92–93.)",
-            "Đáp án đúng: B. Xây dựng gia đình no ấm, bình đẳng, tiến bộ, hạnh phúc và phát triển bền vững. (Đối chiếu: Bài giảng trên lớp, tr. 95–97.)",
-            "Đáp án đúng: A. Là ý thức về nguồn gốc và tộc danh của dân tộc mình (Đối chiếu: Bài giảng trên lớp, tr. 67.)",
-            "Đáp án đúng: B. Dân chủ đại diện và dân chủ trực tiếp (Đối chiếu: Hiến pháp 2013, Điều 6.)",
-            "Đáp án đúng: C. Chức năng kinh tế (Đối chiếu: Bài giảng trên lớp, tr. 88–89.)",
-            "Đáp án đúng: D. Báo Thanh Niên (Đối chiếu: Bảo tàng Hồ Chí Minh: Báo Thanh Niên.)",
-            "Đáp án đúng: D. Chức năng giáo dục (Đối chiếu: Bài giảng trên lớp, tr. 87–89.)",
-            "Đáp án đúng: A. Quan hệ hôn nhân (Đối chiếu: Bài giảng trên lớp, tr. 85.)",
-            "Đáp án đúng: A. Gia đình hạt nhân (Đối chiếu: Bài giảng trên lớp, tr. 92.)",
-            "Đáp án đúng: C. Giáo dục lòng yêu nước và giữ gìn, phát huy bản sắc văn hóa dân tộc. Câu được giới hạn ở phương diện văn hóa để có đáp án duy nhất. Bảo vệ lãnh thổ và hội nhập cũng là những nhiệm vụ quan trọng ở các phương diện khác. (Đối chiếu: Bài giảng trên lớp, tr. 10–11.)",
-            "Đáp án đúng: A. Sự lãnh đạo của Đảng Cộng sản Việt Nam (Đối chiếu: Bài giảng trên lớp, tr. 11.)",
-            "Đáp án đúng: A. Tôn trọng tự do tín ngưỡng. Nguyên tắc là tôn trọng, bảo đảm quyền theo hoặc không theo tôn giáo. Bỏ cụm “hòn đá tảng” trong câu gốc vì không xác định được nguồn của cách gọi đó. (Đối chiếu: Bài giảng trên lớp, tr. 80.)",
-            "Đáp án đúng: A. Chức năng kinh tế và tổ chức tiêu dùng (Đối chiếu: Bài giảng trên lớp, tr. 88–89.)",
-            "Đáp án đúng: A. 43. Số 43 được dùng cho mốc năm 2022 trong đề, bao gồm các tổ chức được công nhận hoặc cấp đăng ký hoạt động. Không dùng số này như một khẳng định cho mọi thời điểm. (Đối chiếu: Ban Tôn giáo Chính phủ, số liệu mốc 2022.)",
-            "Đáp án đúng: B. Tình yêu chân chính giữa nam và nữ. (Đối chiếu: Bài giảng trên lớp, tr. 90–91.)",
-            "Đáp án đúng: D. Gia đình (Đối chiếu: Bài giảng trên lớp, tr. 86, 89.)"
-        ];
+            "Đáp án đúng: C. Quan hệ xã hội của sản xuất và trao đổi trong sự liên hệ biện chứng với trình độ phát triển của LLSX và kiến trúc thượng tầng",
+            "Đáp án đúng: B. 1615",
+            "Đáp án đúng: C. Lao động trừu tượng của người sản xuất kết tinh trong hàng hóa",
+            "Đáp án đúng: C. Là công dụng của hàng hóa có thể thỏa mãn nhu cầu nào đó của con người",
+            "Đáp án đúng: A. Xuất khẩu tư bản kết hợp xuất khẩu hàng hóa Phân biệt: câu này hỏi đặc điểm xuất khẩu của chủ nghĩa tư bản hiện nay, nên chọn A theo phần biểu hiện mới của xuất khẩu tư bản. Nếu chỉ hỏi hai hình thức xuất khẩu tư bản thì đó là đầu tư trực tiếp và đầu tư gián tiếp.",
+            "Đáp án đúng: B. Hàng hóa là sản phẩm của lao động có thể thỏa mãn nhu cầu nào đó của con người thông qua trao đổi mua bán.",
+            "Đáp án đúng: C. Giá trị mang lại giá trị thặng dư bằng cách bóc lột lao động làm thuê",
+            "Đáp án đúng: D. Một nấc thang phát triển của lực lượng sản xuất",
+            "Đáp án đúng: C. VI.Lênin",
+            "Đáp án đúng: C. Công nghiệp hóa, hiện đại hóa",
+            "Đáp án đúng: A. Antoien Montchretien",
+            "Đáp án đúng: C. Vì cạnh tranh là quy luật khách quan của kinh tế hàng hóa",
+            "Đáp án đúng: C. Kinh tế chính trị cổ điển Anh",
+            "Đáp án đúng: A. Có sự phân công lao động xã hội và sự tách biệt về mặt kinh tế của chủ thể sản xuất",
+            "Đáp án đúng: B. Hội nhập kinh tế quốc tế",
+            "Đáp án đúng: B. Hao phí lao động xã hội cần thiết",
+            "Đáp án đúng: A. T - H - T’",
+            "Đáp án đúng: C. Phần giá trị mới dôi ra ngoài giá trị sức lao động do công nhân làm thuê tạo ra",
+            "Đáp án đúng: D. Kinh tế thị trường định hướng XHCN",
+            "Đáp án đúng: C. Liên kết giữa thế giới thực và ảo để thực hiện công việc thông minh và hiệu quả",
+            "Đáp án đúng: C. C.Mác",
+            "Đáp án đúng: B. Học thuyết giá trị thặng dư",
+            "Đáp án đúng: B. Đối lập với các chế độ xã hội",
+            "Đáp án đúng: B. Sự thỏa hiệp hoặc phá sản của một tổ chức độc quyền",
+            "Đáp án đúng: A. p=m",
+            "Đáp án đúng: B. Cạnh tranh Chọn B theo nhóm nhân tố trực tiếp được bài giảng liệt kê: tỷ suất giá trị thặng dư, cấu tạo hữu cơ, tốc độ chu chuyển và tiết kiệm tư bản bất biến. Không hiểu rằng cạnh tranh hoàn toàn không ảnh hưởng đến tỷ suất lợi nhuận trong thực tế.",
+            "Đáp án đúng: D. Giá trị của nó không biến đổi về lượng trong quá trình sản xuất và được chuyển nguyên vẹn vào giá trị sản phẩm.",
+            "Đáp án đúng: C. Giá cả của sức lao động",
+            "Đáp án đúng: A. Kéo dài thời gian của ngày lao động, còn thời gian lao động cần thiết không đổi",
+            "Đáp án đúng: D. Quá trình xâm nhập liên kết độc quyền ngân hàng với độc quyền công nghiệp",
+            "Đáp án đúng: C. Do tích tụ và tập trung sản xuất dưới tác động của cách mạng khoa học công nghệ",
+            "Đáp án đúng: A. Chức năng thước đo giá trị",
+            "Đáp án đúng: C. C.Mác và Ph.Ăngghen",
+            "Đáp án đúng: C. Trao đổi",
+            "Đáp án đúng: C. Vai trò chủ đạo của kinh tế nhà nước",
+            "Đáp án đúng: B. Tư bản sản xuất",
+            "Đáp án đúng: C. Lao động trừu tượng của người sản xuất kết tinh trong hàng hoá",
+            "Đáp án đúng: A. Sự kết hợp giữa tổ chức độc quyền tư nhân và nhà nước tư sản",
+            "Đáp án đúng: C. Các tổ chức độc quyền xuyên quốc gia",
+            "Đáp án đúng: B. G = c + ( v + m)",
+            "Đáp án đúng: A. Công nghiệp dệt",
+            "Đáp án đúng: B. Có cùng bản chất với kinh tế hàng hóa",
+            "Đáp án đúng: D. Quy luật tỷ suất lợi nhuận bình quân Cách gọi chuẩn của nội dung này là quy luật lợi nhuận bình quân. D là phương án phù hợp nhất trong đề; quy luật giá cả sản xuất là hình thức biểu hiện của quy luật giá trị.",
+            "Đáp án đúng: C. Sản xuất hàng hóa giản đơn và hàng hóa",
+            "Đáp án đúng: D. Trong nền sản xuất hàng hoá",
+            "Đáp án đúng: A. Trình độ bóc lột của nhà tư bản đối với công nhân làm thuê",
+            "Đáp án đúng: C. Đẩy mạnh xuất khẩu, thu hút nguồn lực từ bên ngoài để tiến hành CNH-HĐH",
+            "Đáp án đúng: A. Tạo ra năng suất lao động cao hơn",
+            "Đáp án đúng: B. Nguồn gốc của giá trị thặng dư",
+            "Đáp án đúng: A. Giá cả hàng hóa nhỏ hơn giá trị hàng hóa",
+            "Đáp án đúng: B. Đưa ra chiến lược kinh doanh hiệu quả, phù hợp thị trường",
+            "Đáp án đúng: B. Từ sức lao động của công nhân",
+            "Đáp án đúng: C. Ký hợp đồng thỏa thuận tiền công với công nhân C là phương án phù hợp nhất trong bốn lựa chọn. Về lý luận, trao đổi ngang giá đòi hỏi mua sức lao động đúng giá trị; việc ký hợp đồng tự nó chưa bảo đảm điều đó.",
+            "Đáp án đúng: D. Tư bản khả biến (V)",
+            "Đáp án đúng: B. Không có giới hạn vì mục đích là sinh lời",
+            "Đáp án đúng: B. Vì khi sử dụng, nó tạo giá trị mới lớn hơn giá trị bản thân nó",
+            "Đáp án đúng: B. Tư bản khả biến",
+            "Đáp án đúng: C. 200% Tính: m′ = (6/3) × 100% = 200%.",
+            "Đáp án đúng: C. Trust Dấu hiệu quyết định là một ban quản trị thống nhất quản lý sản xuất, tiêu thụ và tài chính, nên chọn Trust (Tơrớt). Consortium (Côngxoócxiom) có quy mô liên kết lớn hơn; cụm “cao nhất” trong câu hỏi chưa chặt.",
+            "Đáp án đúng: B. Liên kết ngang",
+            "Đáp án đúng: B. Chiếm đoạt giá trị thặng dư và nguồn lợi ở các nước nhập khẩu tư bản",
+            "Đáp án đúng: B. Trình độ phát triển cao của kinh tế hàng hóa",
+            "Đáp án đúng: C. Nhật, Hàn Quốc, Singapore Chọn C theo nhóm nước mà đề hướng tới. Cách viết chính xác trong bài giảng là “Nhật Bản và các nước công nghiệp mới (NICs) như Hàn Quốc, Singapore”; không xếp Nhật Bản vào nhóm NICs.",
+            "Đáp án đúng: B. Xuất khẩu",
+            "Đáp án đúng: B. Bộ “Tư bản”",
+            "Đáp án đúng: C. Nông nghiệp",
+            "Đáp án đúng: C. Nền sản xuất tư bản chủ nghĩa",
+            "Đáp án đúng: B. Giải thích nguồn gốc giá trị thặng dư",
+            "Đáp án đúng: B. Bản chất của chủ nghĩa tư bản độc quyền và độc quyền nhà nước",
+            "Đáp án đúng: B. Phát hiện ra các quy luật kinh tế chi phối quan hệ giữa người với người trong sản xuất và trao đổi.",
+            "Đáp án đúng: B. Mua được hàng hóa đặc biệt – sức lao động",
+            "Đáp án đúng: C. Hàng hóa sức lao động tạo ra giá trị mới lớn hơn giá trị bản thân nó",
+            "Đáp án đúng: C. Độc quyền",
+            "Đáp án đúng: C. Công ty thành viên X trong tập đoàn độc quyền tìm cách mua thêm cổ phần để trở thành cổ đông kiểm soát",
+            "Đáp án đúng: B. Vì giá bị áp đặt ở mức cao, lựa chọn ít",
+            "Đáp án đúng: C. Kinh tế thị trường XHCN.",
+            "Đáp án đúng: B. Năng suất lao động xã hội cao",
+            "Đáp án đúng: B. Gắn kết nền kinh tế quốc gia với kinh tế thế giới",
+            "Đáp án đúng: B. Nắm giữ địa vị thống trị trong sản xuất và lưu thông",
+            "Đáp án đúng: B. Cartel"
+];
 
         function getExplanation(i) {
             return explanationData[i] || "Đáp án này phù hợp nhất với khái niệm được hỏi.";
         }
 
         function stripOptionPrefix(text) {
+            if (/^C\.\s*Mác/i.test(text)) return text;
             return text.replace(/^[A-D]\.\s*/, "");
         }
 
         function formatOptionText(displayIndex, originalText) {
-            return `${String.fromCharCode(65 + displayIndex)}. ${stripOptionPrefix(originalText)}`;
+            return `${String.fromCharCode(65 + displayIndex)}. ${originalText}`;
         }
 
         function renderOptionLabel(questionIndex, originalOptionIndex, displayIndex) {
@@ -2215,7 +1940,7 @@
 
         let currentScore = 0; let answeredQuestions = 0;
         const totalQuestions = quizData.length;
-        const SCORE_KEY = 'cnxhkh_history'; const REVIEW_KEY = 'cnxhkh_review';
+        const SCORE_KEY = 'ktct_history'; const REVIEW_KEY = 'ktct_review';
 
         function readStore(key, fallback = []) {
             try {
@@ -2246,13 +1971,13 @@
 
         // Âm thanh
         let audioCtx = null;
-        let soundEnabled = localStorage.getItem('cnxhkh_sound') !== 'false';
+        let soundEnabled = localStorage.getItem('ktct_sound') !== 'false';
         document.getElementById('btn-sound').innerText = soundEnabled ? '🎵' : '🔇';
 
         function initAudio() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
         function toggleSound() {
             soundEnabled = !soundEnabled;
-            localStorage.setItem('cnxhkh_sound', soundEnabled);
+            localStorage.setItem('ktct_sound', soundEnabled);
             document.getElementById('btn-sound').innerText = soundEnabled ? '🎵' : '🔇';
         }
         function playSound(type) {
@@ -2277,14 +2002,14 @@
         }
 
         // Dark Mode
-        let isDarkMode = localStorage.getItem('cnxhkh_dark') === 'true';
+        let isDarkMode = localStorage.getItem('ktct_dark') === 'true';
         if (isDarkMode) document.body.classList.add('dark-mode');
         document.getElementById('btn-dark').innerText = isDarkMode ? '☀️' : '🌙';
 
         function toggleDark() {
             isDarkMode = !isDarkMode;
             document.body.classList.toggle('dark-mode', isDarkMode);
-            localStorage.setItem('cnxhkh_dark', isDarkMode);
+            localStorage.setItem('ktct_dark', isDarkMode);
             document.getElementById('btn-dark').innerText = isDarkMode ? '☀️' : '🌙';
         }
 
@@ -2537,7 +2262,7 @@
                 document.getElementById('search-bar-wrap').style.display = 'block';
                 document.getElementById('bottom-actions').style.display = 'block';
                 document.getElementById('sidebar-legend').style.display = 'flex';
-                document.getElementById('main-title').innerText = "Môn Học: Chủ Nghĩa Xã Hội Khoa Học";
+                document.getElementById('main-title').innerText = "Môn Học: Kinh Tế Chính Trị Mác – Lênin";
                 document.getElementById('btn-toggle-review').innerHTML = `📚 Ôn tập (<span id="review-count">${reviewBank.size}</span>)`;
                 rContainer.style.display = 'none';
             }
@@ -2629,13 +2354,13 @@
 
         function exportQuizData() {
             const data = {
-                app: "cnxhkh_quiz_backup",
+                app: "ktct_quiz_backup",
                 version: 1,
                 exportedAt: new Date().toISOString(),
                 history: readStore(SCORE_KEY, []),
                 review: [...reviewBank],
-                darkMode: localStorage.getItem('cnxhkh_dark'),
-                sound: localStorage.getItem('cnxhkh_sound')
+                darkMode: localStorage.getItem('ktct_dark'),
+                sound: localStorage.getItem('ktct_sound')
             };
 
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
@@ -2643,7 +2368,7 @@
             const a = document.createElement("a");
             const date = new Date().toISOString().slice(0, 10);
             a.href = url;
-            a.download = `cnxhkh_quiz_backup_${date}.json`;
+            a.download = `ktct_quiz_backup_${date}.json`;
             document.body.appendChild(a);
             a.click();
             a.remove();
@@ -2659,8 +2384,8 @@
                 try {
                     const data = JSON.parse(e.target.result);
 
-                    if (data.app !== "cnxhkh_quiz_backup" || !Array.isArray(data.history) || !Array.isArray(data.review)) {
-                        alert("File khôi phục không đúng định dạng.");
+                    if (data.app !== "ktct_quiz_backup" || !Array.isArray(data.history) || !Array.isArray(data.review)) {
+                        alert("File khôi phục không đúng định dạng hoặc không phải của môn KTCT.");
                         return;
                     }
 
@@ -2668,8 +2393,8 @@
                     reviewBank = new Set(data.review.filter(i => Number.isInteger(i) && i >= 0 && i < quizData.length));
                     saveReviewToStore();
 
-                    if (data.darkMode !== null && data.darkMode !== undefined) localStorage.setItem('cnxhkh_dark', data.darkMode);
-                    if (data.sound !== null && data.sound !== undefined) localStorage.setItem('cnxhkh_sound', data.sound);
+                    if (data.darkMode !== null && data.darkMode !== undefined) localStorage.setItem('ktct_dark', data.darkMode);
+                    if (data.sound !== null && data.sound !== undefined) localStorage.setItem('ktct_sound', data.sound);
 
                     renderSidebar();
                     updateUI();
