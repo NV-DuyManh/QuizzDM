@@ -1,0 +1,2716 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "wr16ufyw55");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TN-CNXHKH - Trắc nghiệm Chủ nghĩa xã hội khoa học</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --primary-light: #ebf5fb;
+            --success: #2ecc71;
+            --success-bg: #d4edda;
+            --success-text: #155724;
+            --success-border: #c3e6cb;
+            --danger: #e74c3c;
+            --danger-bg: #f8d7da;
+            --danger-text: #721c24;
+            --danger-border: #f5c6cb;
+            --warning: #f39c12;
+            --purple: #9b59b6;
+            --purple-dark: #8e44ad;
+            --purple-bg: #f5eef8;
+            --dark: #2c3e50;
+            --light: #f4f7f6;
+            --gray: #bdc3c7;
+
+            --bg-color: #f4f7f6;
+            --text-main: #333;
+            --card-bg: #fff;
+            --border-color: #eee;
+            --nav-btn-bg: #fff;
+            --nav-btn-border: #ccc;
+        }
+
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-main: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333;
+            --nav-btn-bg: #2c2c2c;
+            --nav-btn-border: #444;
+            --primary-light: #182c40;
+            --success-bg: #0f3a20;
+            --success-border: #1e8449;
+            --success-text: #82e0aa;
+            --danger-bg: #4a151b;
+            --danger-border: #922b21;
+            --danger-text: #f5b7b1;
+            --purple-bg: #2a1b38;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #score-board {
+            position: sticky;
+            top: 0;
+            background: var(--dark);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 4px solid var(--success);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .score-info {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .score-info span {
+            color: var(--success);
+            font-size: 1.2em;
+        }
+
+        .progress-info {
+            font-size: 0.8em;
+            color: var(--gray);
+            font-weight: normal;
+        }
+
+        .top-btn-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .action-btn {
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.3s ease, filter 0.22s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+            filter: brightness(1.05);
+        }
+
+        .action-btn:active {
+            transform: translateY(0) scale(0.97);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+        }
+
+        .btn-exam {
+            background-color: var(--warning);
+            color: #fff;
+        }
+
+        .btn-exam:hover {
+            background-color: #d68910;
+        }
+
+        .btn-restart {
+            background-color: var(--danger);
+        }
+
+        .btn-restart:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-history {
+            background-color: var(--primary);
+        }
+
+        .btn-history:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-review-mode {
+            background-color: var(--purple);
+        }
+
+        .btn-review-mode:hover {
+            background-color: var(--purple-dark);
+        }
+
+        .btn-tool {
+            font-size: 1.1em;
+            padding: 10px 18px;
+            min-width: 68px;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .btn-tool:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 9px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        #btn-sound {
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+        }
+
+        #btn-sound:hover {
+            background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        }
+
+        #btn-dark {
+            background: linear-gradient(135deg, #243b55 0%, #141e30 100%);
+            color: #ffd166;
+        }
+
+        #btn-dark:hover {
+            background: linear-gradient(135deg, #2c5364 0%, #203a43 50%, #0f2027 100%);
+        }
+
+        body.dark-mode #btn-dark {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #2c3e50;
+        }
+
+        body.dark-mode #btn-dark:hover {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 2px solid var(--primary);
+            font-size: 1em;
+            outline: none;
+            background: var(--card-bg);
+            color: var(--text-main);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            box-sizing: border-box;
+        }
+
+        #layout-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        #main-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+            position: relative;
+            scroll-margin-top: 100px;
+            border-right: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .review-card {
+            border-left-color: var(--purple);
+        }
+
+        .exam-card {
+            border-left-color: var(--warning);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .question-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            width: 75%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            width: 25%;
+        }
+
+        .unknown-btn {
+            background-color: var(--purple);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .unknown-btn:hover {
+            background-color: var(--purple-dark);
+        }
+
+        .saved-btn {
+            background-color: var(--purple-dark);
+            box-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .options li {
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            overflow: hidden;
+            background-color: var(--card-bg);
+        }
+
+        .options li:not(.answered):not(.exam-selected):hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary);
+            transform: translateX(8px);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.15);
+        }
+
+        label {
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            margin: 0;
+            padding: 14px 18px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 15px;
+            transform: translateY(4px);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        input[type="radio"]:disabled {
+            cursor: not-allowed;
+        }
+
+        .correct-ans {
+            background-color: var(--success-bg) !important;
+            border-color: var(--success-border) !important;
+            color: var(--success-text) !important;
+            font-weight: bold;
+            transform: none !important;
+        }
+
+        .wrong-ans {
+            background-color: var(--danger-bg) !important;
+            border-color: var(--danger-border) !important;
+            color: var(--danger-text) !important;
+            text-decoration: line-through;
+            transform: none !important;
+        }
+
+        .exam-selected {
+            background-color: var(--primary-light) !important;
+            border-color: var(--primary) !important;
+            transform: none !important;
+        }
+
+        .explanation {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            border-left: 4px solid var(--success);
+            font-size: 1em;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .btn-save-review {
+            background-color: var(--purple);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: 0.3s;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .btn-save-review:hover:not(:disabled) {
+            background-color: var(--purple-dark);
+        }
+
+        .btn-save-review:disabled {
+            background-color: var(--success);
+            cursor: default;
+        }
+
+        #sidebar {
+            width: 320px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 90px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            max-height: 50vh;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .nav-grid::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .nav-grid::-webkit-scrollbar-thumb {
+            background: var(--gray);
+            border-radius: 5px;
+        }
+
+        .nav-btn {
+            background-color: var(--nav-btn-bg);
+            border: 1px solid var(--nav-btn-border);
+            border-radius: 4px;
+            padding: 8px 0;
+            font-weight: bold;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary);
+        }
+
+        .nav-correct {
+            background-color: var(--success) !important;
+            color: white !important;
+            border-color: var(--success) !important;
+        }
+
+        .nav-wrong {
+            background-color: var(--danger) !important;
+            color: white !important;
+            border-color: var(--danger) !important;
+        }
+
+        .nav-unknown {
+            background-color: var(--purple) !important;
+            color: white !important;
+            border-color: var(--purple) !important;
+            opacity: 0.9;
+        }
+
+        .nav-exam-answered {
+            background-color: var(--primary) !important;
+            color: white !important;
+            border-color: var(--primary) !important;
+        }
+
+        .legend {
+            margin-top: 20px;
+            font-size: 0.85em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .box {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            border: 1px solid var(--border-color);
+        }
+
+        .box.c {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .box.w {
+            background: var(--danger);
+            border-color: var(--danger);
+        }
+
+        .box.u {
+            background: var(--purple);
+            border-color: var(--purple);
+        }
+
+        .box.e {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .box.n {
+            background: var(--nav-btn-bg);
+        }
+
+        #exam-timer-display {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--warning);
+            display: none;
+            background: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: #d35400;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            width: 90%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideDown 0.3s;
+            color: var(--text-main);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            color: var(--gray);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .close-btn:hover {
+            color: var(--danger);
+        }
+
+        .high-score-board {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .history-list {
+            list-style: none;
+            padding: 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .history-item {
+            background: var(--bg-color);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-left-width: 4px;
+        }
+
+        .history-item.best {
+            border-left-color: #f1c40f;
+        }
+
+        .h-date {
+            font-size: 0.85em;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .h-score {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+
+        .history-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .h-percent {
+            font-size: 0.9em;
+            background: var(--success);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .badge {
+            font-size: 0.75em;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge-exam {
+            background: var(--danger);
+        }
+
+        .badge-practice {
+            background: var(--primary);
+        }
+
+        .badge-time {
+            background: var(--dark);
+        }
+
+        .btn-del-item {
+            background: none;
+            border: none;
+            color: var(--danger);
+            font-size: 1.2em;
+            cursor: pointer;
+            padding: 0 5px;
+            transition: transform 0.2s;
+        }
+
+        .btn-del-item:hover {
+            transform: scale(1.2);
+        }
+
+        .btn-clear-history {
+            background-color: transparent;
+            color: var(--danger);
+            border: 1px solid var(--danger);
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+
+        .btn-clear-history:hover {
+            background-color: var(--danger-bg);
+        }
+
+        .backup-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-backup-data,
+        .btn-import-data {
+            flex: 1;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .btn-backup-data {
+            background-color: var(--primary);
+        }
+
+        .btn-backup-data:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-import-data {
+            background-color: var(--purple);
+        }
+
+        .btn-import-data:hover {
+            background-color: var(--purple-dark);
+        }
+
+        .unknown-btn,
+        .btn-save-review,
+        .btn-del-item,
+        .btn-clear-history,
+        .btn-backup-data,
+        .btn-import-data,
+        .nav-btn {
+            transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease, background-color 0.3s ease;
+        }
+
+        .unknown-btn:hover,
+        .btn-save-review:hover,
+        .btn-backup-data:hover,
+        .btn-import-data:hover,
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 16px rgba(0, 0, 0, 0.18);
+            filter: brightness(1.05);
+        }
+
+        .btn-clear-history:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 16px rgba(231, 76, 60, 0.18);
+            filter: brightness(1.03);
+        }
+
+        .unknown-btn:active,
+        .btn-save-review:active,
+        .btn-clear-history:active,
+        .btn-backup-data:active,
+        .btn-import-data:active,
+        .nav-btn:active {
+            transform: translateY(0) scale(0.97);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #mobile-topbar-toggle {
+            display: none;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 2600;
+            width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(44, 62, 80, 0.92);
+            color: white;
+            font-size: 1.25em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(6px);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        #mobile-topbar-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+            background: rgba(52, 152, 219, 0.96);
+        }
+
+        #mobile-topbar-toggle:active {
+            transform: translateY(0) scale(0.96);
+        }
+
+        body.topbar-hidden #score-board {
+            display: none;
+        }
+
+        #mobile-scroll-top {
+            display: none;
+            position: fixed;
+            right: 12px;
+            bottom: 18px;
+            z-index: 2500;
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+        }
+
+        #mobile-scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 11px 24px rgba(0, 0, 0, 0.34);
+            filter: brightness(1.07);
+        }
+
+        #mobile-scroll-top:active {
+            transform: translateY(0) scale(0.96);
+        }
+
+        body.topbar-hidden #mobile-topbar-toggle {
+            background: rgba(52, 152, 219, 0.96);
+        }
+
+        @media (max-width: 900px) {
+            #mobile-topbar-toggle {
+                display: block;
+            }
+
+            #mobile-scroll-top {
+                display: block;
+            }
+
+            #layout-container {
+                flex-direction: column;
+            }
+
+            #sidebar {
+                width: 100%;
+                position: static;
+                box-sizing: border-box;
+                order: -1;
+                margin-bottom: 10px;
+            }
+
+            .nav-grid {
+                grid-template-columns: repeat(10, 1fr);
+                max-height: 25vh;
+            }
+
+            .question-title {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .question-header {
+                flex-direction: column;
+            }
+
+            .top-btn-group {
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .nav-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="../assets/subjects.css">
+    <script src="../assets/subjects.js" defer></script>
+</head>
+
+<body>
+
+    <div id="score-board">
+        <div id="score-board-info" class="score-info">
+            Điểm: <span id="score">0</span> / <span id="total-score">105</span>
+            <div class="progress-info">Đã trả lời: <span id="progress">0</span> câu</div>
+        </div>
+
+        <div id="exam-timer-display">⏱️ 60:00</div>
+
+        <div class="top-btn-group">
+            <button class="action-btn btn-tool" id="btn-sound" onclick="toggleSound()"
+                title="Bật/Tắt âm thanh">🎵</button>
+            <button class="action-btn btn-tool" id="btn-dark" onclick="toggleDark()"
+                title="Giao diện tối/sáng">🌙</button>
+
+            <button class="action-btn btn-exam" id="btn-exam-mode" onclick="startExamMode()">⏱️ Thi Thử</button>
+            <button class="action-btn btn-review-mode" id="btn-toggle-review" onclick="toggleReviewMode()">📚 Ôn tập
+                (<span id="review-count">0</span>)</button>
+            <button class="action-btn btn-history" onclick="openHistoryModal()">📜 Lịch sử</button>
+            <button class="action-btn btn-restart" onclick="location.reload()">🔄 Làm lại</button>
+        </div>
+    </div>
+
+    <button id="mobile-topbar-toggle" onclick="toggleTopBar()" title="Ẩn/hiện thanh công cụ">✕</button>
+    <button id="mobile-scroll-top" onclick="scrollToQuestionNav()" title="Về danh sách câu hỏi">⬆️</button>
+
+    <nav class="subject-tabs" aria-label="Chọn môn học">
+        <a class="subject-tab" href="../">KTCT</a>
+        <a class="subject-tab" href="./" aria-current="page">CNXHKH</a>
+    </nav>
+
+    <div class="search-container" id="search-bar-wrap">
+        <input type="text" id="search-input" placeholder="🔍 Tìm câu hỏi..." oninput="filterQuestions()">
+    </div>
+
+    <div id="layout-container">
+        <div id="main-content">
+            <div id="quiz-header">
+                <h1 id="main-title">Môn Học: Chủ Nghĩa Xã Hội Khoa Học</h1>
+                <p class="intro-text" id="main-desc">Actor: Duy Mạnh</p>
+            </div>
+
+            <div id="quiz-container"></div>
+            <div id="review-container" style="display: none;"></div>
+
+            <div id="bottom-actions" style="text-align: center; margin: 40px 0;">
+                <button class="action-btn"
+                    style="padding: 15px 30px; font-size: 1.2em; background-color: var(--success); margin: 0 auto;"
+                    onclick="saveScore(false, 'Luyện tập')">💾 Nộp Bài & Lưu Điểm</button>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="sidebar-title">Câu hỏi</div>
+            <div class="nav-grid" id="nav-grid"></div>
+            <div class="legend" id="sidebar-legend">
+                <div class="legend-item">
+                    <div class="box n"></div> Trống
+                </div>
+                <div class="legend-item" id="lg-correct">
+                    <div class="box c"></div> Đúng
+                </div>
+                <div class="legend-item" id="lg-wrong">
+                    <div class="box w"></div> Sai
+                </div>
+                <div class="legend-item" id="lg-exam" style="display:none;">
+                    <div class="box e"></div> Đã chọn
+                </div>
+                <div class="legend-item" id="lg-unknown">
+                    <div class="box u"></div> Ôn tập
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeHistoryModal()">&times;</span>
+            <h2 style="text-align: center; margin-top: 0;">📊 Lịch sử</h2>
+            <div class="high-score-board" id="high-score-display"></div>
+            <ul class="history-list" id="history-list"></ul>
+            <button class="btn-clear-history" id="clear-history-btn" onclick="clearAllHistory()">🗑️ Xóa hết</button>
+            <div class="backup-actions">
+                <button class="btn-backup-data" onclick="exportQuizData()">📤 Sao lưu</button>
+                <button class="btn-import-data" onclick="document.getElementById('import-data-file').click()">📥 Khôi phục</button>
+                <input type="file" id="import-data-file" accept=".json,application/json" style="display:none" onchange="importQuizData(event)">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quizData = [
+            {
+                "q": "Ai là người viết tác phẩm \"Không tưởng\" (Utôpia)?",
+                "o": [
+                    "Xanh Xi Mông",
+                    "Campanenla",
+                    "Tômát Morơ",
+                    "Uynxtenli"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Tác phẩm nào đánh dấu sự ra đời của Chủ nghĩa xã hội khoa học?",
+                "o": [
+                    "Chống Đuy - Rinh",
+                    "Tuyên ngôn của Đảng cộng sản",
+                    "Bộ Tư bản",
+                    "Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Đâu là giai cấp có lợi ích cơ bản đối lập với lợi ích của giai cấp tư sản?",
+                "o": [
+                    "Giai cấp nông dân",
+                    "Tiểu tư sản",
+                    "Tầng lớp trí thức",
+                    "Giai cấp công nhân"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Chủ nghĩa duy vật lịch sử đã luận giải như thế nào về mặt triết học của lịch sử phát triển chủ nghĩa tư bản?",
+                "o": [
+                    "Sự sụp đổ của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau",
+                    "Chủ nghĩa tư bản là đỉnh cao trong sự phát triển của lịch sử loài người",
+                    "Kinh tế tư bản chủ nghĩa phát triển tạo nên lực lượng sản xuất hiện đại",
+                    "Giai cấp tư sản là lực lượng xã hội đối đầu trực tiếp với giai cấp công nhân"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Đâu là Nhà nước xã hội chủ nghĩa đầu tiên trên thế giới?",
+                "o": [
+                    "Nhà nước Xô Viết, năm 1917",
+                    "Nhà nước XHCN Việt Nam",
+                    "Nhà nước Trung Quốc",
+                    "Nhà nước XHCN Cuba"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Người lãnh đạo Đảng cộng sản Liên Xô sau khi V.I.Lênin mất (1924) là ai?",
+                "o": [
+                    "Iosif Vissarionovich Stalin",
+                    "Georgy Maksimilianovich Malenkov",
+                    "Konstantin Ustinovich Chernenko",
+                    "Mikhail Sergeyevich Gorbachov"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Cách mạng Việt Nam diễn ra theo quy luật nào?",
+                "o": [
+                    "Kiên định mục tiêu chủ nghĩa xã hội",
+                    "Tính bạo lực cách mạng",
+                    "Độc lập dân tộc gắn với chủ nghĩa xã hội",
+                    "Thực hiện thời kỳ quá độ lên chủ nghĩa xã hội"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Đâu là giai cấp bị bóc lột giá trị thặng dư trong các nước tư bản?",
+                "o": [
+                    "Giai cấp nông dân",
+                    "Tiểu tư sản",
+                    "Tầng lớp trí thức",
+                    "Giai cấp công nhân"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Phạm trù nào là phạm trù trung tâm của chủ nghĩa xã hội khoa học?",
+                "o": [
+                    "Chủ nghĩa xã hội",
+                    "Đảng cộng sản",
+                    "Sứ mệnh lịch sử của giai cấp công nhân",
+                    "Cách mạng xã hội chủ nghĩa"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Tổ chức nào sẽ trực tiếp thực thi vấn đề dân chủ?",
+                "o": [
+                    "Các Đảng phái chính trị",
+                    "Nhà nước",
+                    "Pháp luật",
+                    "Các tổ chức chính trị - xã hội"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Theo Hiến pháp năm 2013, nước Cộng hoà xã hội chủ nghĩa Việt Nam bao gồm những bộ phận lãnh thổ nào?",
+                "o": [
+                    "Vùng biển, đất liền, các đảo và hải đảo.",
+                    "Vùng biển, đất liền, vùng trời và hải đảo",
+                    "Đất liền, hải đảo, vùng biển và vùng trời.",
+                    "Đất liền, hải đảo, vùng biển và vùng trời trên biển."
+                ],
+                "a": 2
+            },
+            {
+                "q": "Nước ta có bao nhiêu dân tộc cùng chung sống?",
+                "o": [
+                    "53",
+                    "54",
+                    "55",
+                    "56"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Yếu tố nào tác động trực tiếp đến việc phát triển nguồn lực con người?",
+                "o": [
+                    "Phát triển về chính trị",
+                    "Phát triển về kinh tế - xã hội",
+                    "Phát triển về văn hóa",
+                    "Phát triển về giáo dục"
+                ],
+                "a": 1
+            },
+            {
+                "q": "“Dân chủ” là gì?",
+                "o": [
+                    "Dân chủ là một hình thức hay hình thái nhà nước",
+                    "Dân chủ là một nguyên tắc thực thi quyền lực",
+                    "Dân chủ là quyền lực thuộc về nhân dân",
+                    "Cả A, B, C"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Cách mạng xã hội chủ nghĩa là do giai cấp, tầng lớp nào lãnh đạo?",
+                "o": [
+                    "Giai cấp công nhân",
+                    "Giai cấp nông dân",
+                    "Tầng lớp trí thức",
+                    "Tầng lớp tiểu tư sản"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Tổ chức chính trị lãnh đạo quá trình xây dựng CNXH ở Trung Quốc hiện nay là tổ chức nào?",
+                "o": [
+                    "Cộng hoà Nhân dân Trung Hoa",
+                    "Quốc vụ viện Trung Quốc",
+                    "Quân ủy Trung Quốc",
+                    "Đảng Cộng sản Trung Quốc"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Quy luật chung, phổ biến cho sự ra đời Đảng cộng sản?",
+                "o": [
+                    "Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân",
+                    "Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân với phong trào yêu nước chân chính",
+                    "Là sự phát triển của phong trào công nhân và chủ nghĩa xã hội",
+                    "Là theo chủ nghĩa Mác – Lênin và chủ nghĩa xã hội"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Bản chất của nhà nước xã hội chủ nghĩa về mặt chính trị là:",
+                "o": [
+                    "Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân.",
+                    "Mang bản chất của quần chúng nhân dân và chế độ xã hội chủ nghĩa",
+                    "Mang bản chất của giai cấp tư sản và quần chúng nhân dân",
+                    "Mang bản chất của giai cấp thống trị và quần chúng nhân dân"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Dân chủ xã hội chủ nghĩa được hình thành bắt đầu bởi sự kiện lịch sử nào?",
+                "o": [
+                    "Thắng lợi của cách mạng Trung Quốc năm 1939",
+                    "Cách mạng tháng Mười Nga thành công và sự ra đời của nhà nước XHCN đầu tiên (1917)",
+                    "Sự hình thành và phát triển của hệ thống xã hội chủ nghĩa ở Liên Xô và Đông Âu",
+                    "Thực tiễn đấu tranh giai cấp ở Pháp và công xã Paris 1817"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Giai cấp công nhân hiện đại đã có những khác biệt nào so với giai cấp công nhân thế kỷ 19?",
+                "o": [
+                    "Công nhân có xu hướng trí tuệ hóa, có tính toàn cầu hóa, gia tăng nhanh về số lượng và chất lượng",
+                    "Công nhân đã trở thành một phần của lực lượng sản xuất hiện đại, có tính toàn cầu hóa",
+                    "Gia tăng nhanh về số lượng và chất lượng",
+                    "Công nhân có xu hướng trí tuệ hóa, gia tăng nhanh về số lượng, chất lượng và trở thành một phần của lực lượng sản xuất hiện đại, có tính toàn cầu hóa"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Giai cấp công nhân ở các nước tư bản chủ nghĩa và xã hội chủ nghĩa có điểm khác biệt cơ bản nào?",
+                "o": [
+                    "Quan hệ sở hữu đối với tư liệu sản xuất chủ yếu",
+                    "Phương thức lao động và phương thức sản xuất",
+                    "Nguồn gốc xuất thân của giai cấp công nhân",
+                    "Sản phẩm lao động do giai cấp công nhân làm ra"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Chế độ dân chủ nhân dân ở Việt Nam được xác lập vào năm nào?",
+                "o": [
+                    "Sau khi thành lập Đảng cộng sản Việt Nam 1930",
+                    "Sau cách mạng Tháng Tám 1945 (2/9/1945)",
+                    "Sau chiến thắng Điện Biên Phủ 1954",
+                    "Sau thắng lợi mùa xuân 1975"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Thế giới quan tôn giáo thuộc vào loại hình thế giới quan nào?",
+                "o": [
+                    "Thế giới quan duy vật siêu hình",
+                    "Thế giới quan duy vật biện chứng",
+                    "Thế giới quan duy tâm",
+                    "Thế giới quan duy danh"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Đâu là hệ giá trị gia đình Việt Nam hiện nay?",
+                "o": [
+                    "Phát triển kinh tế - xã hội",
+                    "Nâng cao trình độ dân trí cho nhân dân lao động",
+                    "Giải phóng người phụ nữ",
+                    "Xây dựng gia đình ấm no, hạnh phúc, tiến bộ, văn minh"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Nhiệm vụ của giai cấp công nhân sau khi lật đổ quyền thống trị của giai cấp tư sản là gì?",
+                "o": [
+                    "Thay thế chế độ sở hữu tư nhân bằng chế độ sở hữu hỗn hợp",
+                    "Xóa bỏ chế độ sở hữu tư nhân TBCN",
+                    "Giành lấy lợi ích cho đại đa số trên cơ sở công hữu về tư liệu sản xuất chủ yếu",
+                    "Thiết lập nhà nước kiểu mới mang bản chất giai cấp công nhân"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Nguyên nhân dẫn đến tình trạng nghèo khổ của giai cấp công nhân dưới chủ nghĩa tư bản?",
+                "o": [
+                    "Sản xuất công nghiệp mở rộng",
+                    "Sự phát triển của khoa học – công nghệ",
+                    "Do sự bóc lột của giai cấp tư sản đối với giai cấp công nhân",
+                    "Sự hình thành các kiểu lao động mới như “chuyên gia quốc tế”, “làm việc tại nhà”."
+                ],
+                "a": 2
+            },
+            {
+                "q": "Với tư cách là một hình thái nhà nước, một chế độ chính trị thì trong lịch sử nhân loại, cho đến nay có bao nhiêu nền (chế độ) dân chủ?",
+                "o": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Tổ chức nào đóng vai trò trụ cột trong hệ thống chính trị ở Việt Nam hiện nay?",
+                "o": [
+                    "Đảng cộng sản Việt Nam",
+                    "Nhà nước xã hội chủ nghĩa",
+                    "Mặt trận Tổ quốc Việt Nam",
+                    "Các đoàn thể nhân dân"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Công xã Paris 1871 – Nhà nước kiểu mới của giai cấp vô sản tồn tại trong bao nhiêu ngày?",
+                "o": [
+                    "70 ngày",
+                    "71 ngày",
+                    "72 ngày",
+                    "73 ngày"
+                ],
+                "a": 2
+            },
+            {
+                "q": "“Chủ nghĩa xã hội thế kỷ XXI” là triết lý phát triển được ở đâu?",
+                "o": [
+                    "Châu Mỹ Latinh",
+                    "Bắc Mỹ",
+                    "Tây Âu",
+                    "Liên Xô cũ"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Đâu là công cụ điều chỉnh, chi phối để dân chủ không biến dạng thành các hành vi phản dân chủ?",
+                "o": [
+                    "Văn hóa",
+                    "Pháp luật",
+                    "Đoàn thể",
+                    "Hiệp hội"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Nền tảng tư tưởng và kim chỉ nam cho hành động của hệ thống chính trị Việt Nam là:",
+                "o": [
+                    "Chủ nghĩa Mác và tư tưởng Hồ Chí Minh",
+                    "Tư tưởng Hồ Chí Minh",
+                    "Chủ nghĩa Mác – Lênin và tư tưởng Hồ Chí Minh",
+                    "Hồ Chí Minh và Đảng Cộng sản Việt Nam."
+                ],
+                "a": 2
+            },
+            {
+                "q": "Người kế tục xuất sắc sự nghiệp cách mạng và khoa học của C.Mác và Ph.Ănghen là ai?",
+                "o": [
+                    "V.I.Lênin",
+                    "I.V.Stalin",
+                    "I.M.Kant",
+                    "Heghen"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Theo nghĩa hẹp, chủ nghĩa xã hội khoa học là gì?",
+                "o": [
+                    "Toàn bộ hệ tư tưởng của chủ nghĩa Mác-Lênin.",
+                    "Một trong ba bộ phận hợp thành chủ nghĩa Mác-Lênin.",
+                    "Lý luận về đấu tranh giai cấp.",
+                    "Học thuyết về nhà nước pháp quyền xã hội chủ nghĩa."
+                ],
+                "a": 1
+            },
+            {
+                "q": "Đâu là nguồn gốc lý luận trực tiếp ra đời Chủ nghĩa xã hội khoa học?",
+                "o": [
+                    "Triết học cổ điển Đức",
+                    "Kinh tế chính trị học cổ điển Anh",
+                    "Chủ nghĩa xã hội không tưởng Pháp",
+                    "Chủ nghĩa dân tộc"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Nguyên nhân kinh tế - xã hội cho sự ra đời của tôn giáo là gì?",
+                "o": [
+                    "Sự bất lực, yếu đuối của con người trước những hiện tượng của tự nhiên",
+                    "Sự xuất hiện giai cấp cùng những phân hóa, đối kháng, bất công... là điều không thể giải thích được",
+                    "Sự giới hạn trong nhận thức của con người trước tự nhiên, xã hội và chính bản thân mình.",
+                    "Sự sợ hãi trước những hiện tượng tự nhiên, xã hội…."
+                ],
+                "a": 1
+            },
+            {
+                "q": "Theo chủ nghĩa Mác - Lênin, bản chất của tôn giáo là gì?",
+                "o": [
+                    "Là một hình thái ý thức xã hội phản ánh đúng hiện thực khách quan",
+                    "Là một công cụ để giai cấp thống trị áp bức quần chúng",
+                    "Là một yếu tố tích cực thúc đẩy sự phát triển xã hội",
+                    "Là một hiện tượng xã hội - văn hoá do con người sáng tạo ra"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Quá độ từ chủ nghĩa tư bản lên chủ nghĩa xã hội trải qua những hình thức nào?",
+                "o": [
+                    "Trực tiếp và gián tiếp",
+                    "Tiệm tiến và trực tiếp",
+                    "Trực tiếp và tiếp biến",
+                    "Tiệm tiến và gián tiếp"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Lênin đã phát triển sáng tạo Chủ nghĩa xã hội khoa học trong bối cảnh lịch sử:",
+                "o": [
+                    "Chủ nghĩa tư bản đang trong giai đoạn tự do cạnh tranh.",
+                    "Chủ nghĩa tư bản đã chuyển sang giai đoạn đế quốc chủ nghĩa.",
+                    "Chủ nghĩa xã hội đã trở thành một hệ thống trên thế giới.",
+                    "Các cuộc cách mạng tư sản đang nổ ra mạnh mẽ ở châu Âu."
+                ],
+                "a": 1
+            },
+            {
+                "q": "Xã hội mà Việt Nam hướng đến trong quá trình xây dựng chủ nghĩa xã hội là một xã hội như thế nào?",
+                "o": [
+                    "Xã hội \"dân giàu, nước mạnh, dân chủ, công bằng, văn minh\"",
+                    "Xã hội có sự phát triển công nghiệp hiện đại, thu nhập trung bình cao",
+                    "Xã hội có tốc độ phát triển cao, thu nhập cao.",
+                    "Xã hội bảo đảm thu nhập cao, công bằng văn minh cho nhân dân."
+                ],
+                "a": 0
+            },
+            {
+                "q": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa ở Việt Nam là bỏ qua những yếu tố nào?",
+                "o": [
+                    "Bỏ qua sự thống trị về mặt kinh tế và chính trị của chủ nghĩa tư bản",
+                    "Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa",
+                    "Bỏ qua sự áp bức bóc lột và những thành tựu khoa học kỹ thuật của chủ nghĩa tư bản",
+                    "Bỏ qua giai đoạn phát triển cao của chủ nghĩa tư bản"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Mục tiêu về kinh tế của Việt Nam đến năm 2045 là:",
+                "o": [
+                    "Là nước đang phát triển, có công nghiệp theo hướng hiện đại, vượt qua mức thu nhập trung bình thấp",
+                    "Là nước đang phát triển có công nghiệp hiện đại, thu nhập trung bình cao",
+                    "Trở thành nước phát triển, thu nhập cao.",
+                    "Trở thành nước phát triển, vượt qua mức thu nhập trung bình thấp"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Đâu là đội tiên phong của giai cấp công nhân?",
+                "o": [
+                    "Nhà nước xã hội chủ nghĩa",
+                    "Đảng cộng sản",
+                    "Tổ chức Công Đoàn",
+                    "Quốc tế III"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Hình thức quá độ trực tiếp lên chủ nghĩa xã hội được áp dụng đối với những nước nào?",
+                "o": [
+                    "Các nước có Đảng cộng sản lãnh đạo",
+                    "Các nước đã trải qua giai đoạn chủ nghĩa tư bản phát triển.",
+                    "Các nước đã tiến hành cách mạng vô sản thành công",
+                    "Các nước chưa trải qua giai đoạn phát triển chủ nghĩa tư bản"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam hoạt động trên cơ sở nào?",
+                "o": [
+                    "Quyền lực của Quốc hội",
+                    "Sự hiểu biết pháp luật của nhân dân",
+                    "Hiến pháp và pháp luật",
+                    "Sự làm chủ của nhân dân"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam do tổ chức nào lãnh đạo?",
+                "o": [
+                    "Đảng cộng sản Việt Nam",
+                    "Quốc Hội Việt Nam",
+                    "Mặt trận Tổ quốc Việt Nam",
+                    "Liên đoàn Lao động Việt Nam"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Đâu là những đặc trưng đặc biệt của giai cấp công nhân?",
+                "o": [
+                    "Tinh thần đoàn kết và khả năng tạo ra của cải vật chất",
+                    "Giai cấp có địa vị chính trị - xã hội trong CNTB",
+                    "Có tính tổ chức, kỷ luật lao động và tâm lý lao động công nghiệp.",
+                    "Giai cấp giữ vai trò quản lý cao cấp trong sản xuất TBCN."
+                ],
+                "a": 2
+            },
+            {
+                "q": "Trong chủ nghĩa tư bản, giai cấp công nhân là giai cấp có mâu thuẫn đối kháng với:",
+                "o": [
+                    "Giai cấp nông dân",
+                    "Giai cấp địa chủ",
+                    "Tầng lớp trí thức",
+                    "Giai cấp tư sản"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Xét ở góc độ chính trị, tại sao giai cấp công nhân cần tiến hành liên minh với các giai tầng xã hội khác?",
+                "o": [
+                    "Tạo sức mạnh tổng hợp đảm bảo cho sự thắng lợi của cách mạng xã hội chủ nghĩa",
+                    "Điều hòa mâu thuẫn về lợi ích giữa giai cấp công nhân với các giai tầng xã hội khác.",
+                    "Đẩy mạnh công nghiệp hóa, hiện đại hóa, xây dựng nền tảng vật chất – kỹ thuật cần thiết cho chủ nghĩa xã hội.",
+                    "Thực hiện lợi ích của giai cấp công nhân, thực hiện thành công quá trình xây dựng chủ nghĩa xã hội"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Khối đại đoàn kết dân tộc ở Việt Nam được xây dựng trên nền tảng nào?",
+                "o": [
+                    "Sự phát triển kinh tế thị trường định hướng xã hội chủ nghĩa",
+                    "Liên minh giai cấp công nhân với giai cấp nông dân và đội ngũ trí thức do Đảng lãnh đạo.",
+                    "Thực hiện thành công chủ nghĩa xã hội ở Việt Nam",
+                    "Đoàn kết, tôn trọng lẫn nhau giữa các dân tộc – tộc người"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Vì sao các tôn giáo có sự thay đổi về giáo lý hoặc lễ nghi khi truyền bá sang các quốc gia khác?",
+                "o": [
+                    "Để thích nghi với văn hóa, xã hội của quốc gia đó",
+                    "Để tín đồ tôn giáo ở quốc gia đó di cư sang các vùng đất mới",
+                    "Để làm tốt chức năng đạo đức",
+                    "Phục vụ chức năng đền bù hư ảo"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Đâu là điểm khác biệt của Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam so với các nhà nước pháp quyền khác?",
+                "o": [
+                    "Thực hành trên cơ sở dân biết, dân bàn, dân làm, dân kiểm tra",
+                    "Mang bản chất giai cấp công nhân; phục vụ lợi ích cho nhân dân",
+                    "Quyền dân chủ của nhân dân được thực hành rộng rãi",
+                    "Dân có quyền bầu cử và bãi miễn đại biểu."
+                ],
+                "a": 2
+            },
+            {
+                "q": "Mốc thời gian nào Việt Nam chính thức bình thường hóa quan hệ với Hoa Kỳ, hoàn thành việc phá thế bị bao vây cấm vận?",
+                "o": [
+                    "Năm 1975",
+                    "Năm 2007",
+                    "Năm 1995",
+                    "Năm 1991"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Sắp xếp các hình thức cộng đồng từ thấp đến cao.",
+                "o": [
+                    "Thị tộc, bộ lạc, dân tộc, bộ tộc",
+                    "Bộ tộc, bộ lạc, thị tộc, dân tộc",
+                    "Bộ lạc, bộ tộc, thị tộc, dân tộc",
+                    "Thị tộc, bộ lạc, bộ tộc, dân tộc"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Quan hệ nào là mối quan hệ tự nhiên, là yếu tố mạnh mẽ nhất gắn kết các thành viên trong gia đình với nhau?",
+                "o": [
+                    "Quan hệ hôn nhân",
+                    "Quan hệ huyết thống",
+                    "Quan hệ dòng tộc",
+                    "Quan hệ nuôi dưỡng"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Mô hình nhà nước của Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội?",
+                "o": [
+                    "Nhà nước dân chủ xã hội chủ nghĩa",
+                    "Nhà nước chủ nghĩa cộng sản.",
+                    "Chuyên chính vô sản",
+                    "Nhà nước pháp quyền xã hội chủ nghĩa"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Đối với vấn đề dân tộc, đâu là nội dung có vị trí chiến lược trong sự nghiệp cách mạng của nước ta?",
+                "o": [
+                    "Đoàn kết các dân tộc",
+                    "Phát triển kinh tế, giáo dục đồng bộ",
+                    "Phải có sự phối hợp giữa các Hội đoàn thể",
+                    "Thúc đẩy phát triển công nghiệp hóa, hiện đại hóa"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Đâu là tiêu chí cơ bản để phân biệt các tộc người khác nhau?",
+                "o": [
+                    "Cộng đồng về ngôn ngữ",
+                    "Cộng đồng về văn hóa",
+                    "Cộng đồng về kinh tế",
+                    "Ý thức tự giác tộc người"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Trách nhiệm nuôi dưỡng, dạy dỗ con cái trở thành người có ích cho gia đình, cộng đồng và xã hội là thuộc về chức năng nào của gia đình?",
+                "o": [
+                    "Chức năng tái sản xuất ra con người",
+                    "Chức năng nuôi dưỡng, giáo dục",
+                    "Chức năng kinh tế và tổ chức tiêu dùng",
+                    "Chức năng thỏa mãn nhu cầu sinh lý, duy trì tình cảm gia đình"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Đâu là giai cấp giữ vai trò lãnh đạo trong cơ cấu xã hội – giai cấp ở Việt Nam hiện nay?",
+                "o": [
+                    "Giai cấp công nhân Việt Nam",
+                    "Giai cấp nông dân Việt Nam",
+                    "Tầng lớp trí thức Việt Nam",
+                    "Tầng lớp doanh nhân Việt Nam"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Nhiệm vụ trung tâm về mặt kinh tế của thời kỳ quá độ lên CNXH ở Việt Nam hiện nay là gì?",
+                "o": [
+                    "Thực hiện thành công thời kỳ quá độ lên CNXH",
+                    "Phát triển kinh tế, tiến hành thành công công nghiệp hóa, hiện đại hóa",
+                    "Xây dựng nhà nước pháp quyền XHCN, thực hiện thành công thời kỳ quá độ lên CNXH",
+                    "Xây dựng nền văn hóa Việt Nam tiên tiến, đậm đà bản sắc dân tộc"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Tính chính trị của tôn giáo xuất hiện trong điều kiện nào?",
+                "o": [
+                    "Khi con người bắt đầu xây dựng các công trình thờ tự lớn",
+                    "Ngay từ thời kỳ công xã nguyên thủy khi con người mới biết thờ cúng",
+                    "Khi xã hội không còn xuất hiện sự phân chia giai cấp và đối kháng về lợi ích",
+                    "Khi xã hội xuất hiện sự phân chia giai cấp và đối kháng về lợi ích giai cấp"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Giai đoạn thấp của hình thái kinh tế - xã hội CNCS còn gọi là gì?",
+                "o": [
+                    "Thời kỳ quá độ",
+                    "CNCS hoàn chỉnh",
+                    "Tiền chủ nghĩa cộng sản",
+                    "Chủ nghĩa xã hội"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Sự kiện lịch sử nào đánh dấu sự ra đời của nước Việt Nam Dân chủ Cộng hòa?",
+                "o": [
+                    "Đại hội đại biểu toàn quốc lần thứ II của Đảng (1951)",
+                    "Hiến pháp năm 1980",
+                    "Hiệp định Genève (1954)",
+                    "Cách mạng Tháng Tám thành công và Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập (2/9/1945)"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Đâu là hạt nhân của khối đại đoàn kết toàn dân tộc Việt Nam?",
+                "o": [
+                    "Có sự lãnh đạo của Đảng cộng sản",
+                    "Có sự thống nhất lợi ích giữa các giai cấp",
+                    "Sự tăng trưởng và phát triển kinh tế bền vững",
+                    "Liên minh công - nông - trí thức"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Vì sao tôn giáo là một phạm trù lịch sử?",
+                "o": [
+                    "Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất định của lịch sử xã hội loài người",
+                    "Nó là sản phẩm của con người và nó ảnh hưởng đến đời sống tinh thần của con người",
+                    "Nó có ảnh hưởng đến sự phát triển của đời sống vật chất",
+                    "Vì tôn giáo là sản phẩm của sự phát triển về nhận thức của con người."
+                ],
+                "a": 0
+            },
+            {
+                "q": "Đâu là yếu tố gây trở ngại đối với quá trình thực hiện dân chủ ở nước ta trong giai đoạn hiện nay?",
+                "o": [
+                    "Âm mưu “diễn biến hòa bình”, gây bạo loạn, lật đổ",
+                    "Âm mưu thực hiện “cách mạng màu” của các thế lực thù địch",
+                    "Vấn đề tự diễn biến, tự chuyển hóa",
+                    "Cả 3 đáp án trên"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Phương châm thực hiện dân chủ ở cơ sở được quy định trong Luật dân chủ cơ sở 2022 bao gồm những thành tố nào?",
+                "o": [
+                    "Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng",
+                    "Dân biết, dân bàn, dân làm, dân kiểm tra",
+                    "Dân biết, dân bàn, dân thụ hưởng",
+                    "Dân biết, dân bàn, dân làm, dân giám sát, dân thụ hưởng"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Vì sao trong giai đoạn hiện nay Việt Nam tiếp tục mở rộng và phát huy khối đại đoàn kết dân tộc?",
+                "o": [
+                    "Để thực hiện thành công các nhiệm vụ trên lĩnh vực chính trị, kinh tế, văn hóa – tư tưởng",
+                    "Phát huy sức mạnh của mọi giai cấp, mọi tầng lớp nhân dân, mọi thành phần dân tộc, tôn giáo cho công cuộc đổi mới, xây dựng và bảo vệ tổ quốc.",
+                    "Giữ vững và tăng cường vai trò lãnh đạo của giai cấp công nhân Việt Nam và Đảng cộng sản Việt Nam",
+                    "Đảm bảo phát triển kinh tế gắn liền với lợi ích của các giai tầng, xã hội."
+                ],
+                "a": 1
+            },
+            {
+                "q": "Đâu là nền tảng cho việc hoàn thiện pháp luật về bầu cử?",
+                "o": [
+                    "Cương lĩnh",
+                    "Đường lối",
+                    "Chủ trương",
+                    "Hiến pháp"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Sự ra đời và phát triển của giai cấp công nhân hiện đại gắn liền với điều kiện kinh tế nào?",
+                "o": [
+                    "Sự ra đời nền Đại công nghiệp",
+                    "Công trường thủ công phát triển",
+                    "Sự ra đời của động cơ hơi nước",
+                    "Sự phát triển của sản xuất thủ công nghiệp"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Nội dung cơ bản nhất mà nhờ đó chủ nghĩa xã hội từ không tưởng trở thành khoa học?",
+                "o": [
+                    "Phát hiện ra giai cấp công nhân là lực lượng xã hội có thể thủ tiêu CNTB, xây dựng CNXH.",
+                    "Phản ánh đúng khát vọng của nhân dân lao động bị áp bức.",
+                    "Lên án mạnh mẽ chủ nghĩa tư bản.",
+                    "Chỉ ra sự cần thiết phải thay thế chủ nghĩa tư bản bằng chủ nghĩa xã hội."
+                ],
+                "a": 0
+            },
+            {
+                "q": "Biểu tượng “Búa - Liềm” trên Đảng kỳ của Đảng cộng sản có ý nghĩa gì?",
+                "o": [
+                    "Sự lãnh đạo của Đảng cộng sản",
+                    "Sự thống nhất lợi ích giữa các giai cấp",
+                    "Sự đoàn kết, thống nhất của hai giai cấp công nhân và nông dân",
+                    "Liên kết để phát triển kinh tế bền vững"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Trong xã hội có giai cấp, cơ cấu nào có vị trí quyết định nhất, chi phối các loại hình cơ cấu xã hội khác?",
+                "o": [
+                    "Cơ cấu xã hội - nghề nghiệp",
+                    "Cơ cấu xã hội - dân số",
+                    "Cơ cấu xã hội - dân tộc",
+                    "Cơ cấu xã hội - giai cấp"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Trong các nội dung của quyền dân tộc tự quyết thì nội dung nào được coi là cơ bản nhất, tiên quyết nhất?",
+                "o": [
+                    "Tự quyết về chính trị",
+                    "Tự quyết về kinh tế",
+                    "Tự quyết về văn hoá",
+                    "Tự quyết về lãnh thổ"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Đâu là điều kiện tiên quyết để xây dựng thành công nền dân chủ xã hội chủ nghĩa ở Việt Nam?",
+                "o": [
+                    "Xây dựng Đảng cộng sản Việt Nam trong sạch, vững mạnh",
+                    "Xây dựng nhà nước pháp quyền XHCN vững mạnh",
+                    "Củng cố vai trò, chức năng của Mặt trận Tổ quốc Việt Nam",
+                    "Tăng cường vai trò của các tổ chức chính trị - xã hội"
+                ],
+                "a": 0
+            },
+            {
+                "q": "“Đoàn kết, đoàn kết, đại đoàn kết; Thành công, thành công, đại thành công” là câu nói nổi tiếng của lãnh tụ nào?",
+                "o": [
+                    "Chủ tịch Hồ Chí Minh",
+                    "Tổng bí thư Trần Phú",
+                    "Tổng bí thư Nguyễn Phú Trọng",
+                    "Chủ tịch Tôn Đức Thắng"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Cuộc cách mạng đầu tiên của giai cấp công nhân và nhân dân lao động trên thế giới lật đổ chính quyền của giai cấp tư sản diễn ra ở nước nào?",
+                "o": [
+                    "Anh",
+                    "Pháp",
+                    "Đức",
+                    "Nga"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Cơ quan nào thống nhất quản lý nhà nước về tín ngưỡng, tôn giáo trong phạm vi cả nước?",
+                "o": [
+                    "Chính phủ",
+                    "Bộ Tư pháp",
+                    "Bộ Nội vụ",
+                    "Ủy ban Dân tộc"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Tôn giáo và tín ngưỡng khác nhau ở điểm nào?",
+                "o": [
+                    "Tôn giáo có hệ thống giáo lý, giáo luật, lễ nghi, còn tín ngưỡng thì không.",
+                    "Tín ngưỡng có giáo lý, giáo luật và tính tổ chức chặt chẽ hơn tôn giáo.",
+                    "Tôn giáo chỉ liên quan đến các đấng siêu nhiên, còn tín ngưỡng thì không.",
+                    "Tôn giáo và tín ngưỡng là hoàn toàn đồng nhất."
+                ],
+                "a": 0
+            },
+            {
+                "q": "Biểu hiện của tính quần chúng trong tôn giáo là gì?",
+                "o": [
+                    "Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của tầng lớp thống trị.",
+                    "Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của đông đảo các tầng lớp nhân dân.",
+                    "Tôn giáo luôn kêu gọi đấu tranh chống bất công, nghèo đói, bạo lực.",
+                    "Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của tầng lớp nhân dân lao động."
+                ],
+                "a": 1
+            },
+            {
+                "q": "Sự biến đổi trong lễ nghi của các tôn giáo trong xã hội hiện đại thể hiện tính chất nào của tôn giáo?",
+                "o": [
+                    "Tính bảo thủ",
+                    "Tính lịch sử",
+                    "Tính chính trị",
+                    "Tính siêu nhiên"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Khi con người chưa có khả năng nhận thức đúng đắn về tự nhiên, họ thường làm gì?",
+                "o": [
+                    "Thần thánh hóa các hiện tượng tự nhiên",
+                    "Dựa vào khoa học để nghiên cứu",
+                    "Phủ nhận thế giới khách quan",
+                    "Tách rời khỏi cộng đồng"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Về mặt cấu trúc, một tôn giáo hoàn chỉnh thường bao gồm các yếu tố cơ bản nào?",
+                "o": [
+                    "Hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tôn giáo",
+                    "Các giáo lý, giáo luật trong sinh hoạt thần thánh, lễ nghi tôn giáo.",
+                    "Hệ thống Thần linh, giáo luật trong sinh hoạt thần thánh, lễ nghi tôn giáo.",
+                    "Niềm tin, giáo luật trong sinh hoạt thần thánh, lễ nghi tôn giáo."
+                ],
+                "a": 0
+            },
+            {
+                "q": "Sự kiện nào góp phần nối liền hệ thống xã hội chủ nghĩa từ Châu Âu sang Châu Á năm 1949?",
+                "o": [
+                    "Nước Việt Nam Dân chủ Cộng hòa ra đời.",
+                    "Chiến tranh Triều Tiên kết thúc.",
+                    "Nước Cộng hòa Nhân dân Trung Hoa ra đời.",
+                    "Liên Xô chế tạo thành công bom nguyên tử."
+                ],
+                "a": 2
+            },
+            {
+                "q": "Mê tín là gì?",
+                "o": [
+                    "Những niềm tin, sự ngưỡng mộ đối với những người có đóng góp cho xã hội",
+                    "Tin vào các lực lượng siêu nhiên đến mức độ cuồng tín.",
+                    "Là niềm tin mê muội, viển vông, không dựa trên một cơ sở khoa học",
+                    "Cầu mong sự che chở của các đấng linh thiêng"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Quốc gia nào là lá cờ đầu của phong trào giải phóng dân tộc và xây dựng chủ nghĩa xã hội ở khu vực Châu Mỹ Latinh?",
+                "o": [
+                    "Venezuela",
+                    "Chile",
+                    "Cuba",
+                    "Brazil"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Trong số 16 tôn giáo được Nhà nước thừa nhận tư cách pháp nhân, có bao nhiêu tôn giáo từ nước ngoài du nhập vào Việt Nam?",
+                "o": [
+                    "7",
+                    "8",
+                    "9",
+                    "10"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Đâu là tiêu chí quan trọng nhất để đánh giá một gia đình văn hóa trong bối cảnh Việt Nam hiện nay?",
+                "o": [
+                    "Gia đình có thu nhập cao và địa vị xã hội lớn.",
+                    "Gia đình đông con và tuân thủ mọi nghi lễ truyền thống.",
+                    "Gia đình hòa thuận, bình đẳng, tiến bộ, hạnh phúc và thực hiện tốt nghĩa vụ công dân.",
+                    "Gia đình không bao giờ xảy ra tranh luận hay mâu thuẫn."
+                ],
+                "a": 2
+            },
+            {
+                "q": "Sự biến đổi của gia đình Việt Nam hiện nay chịu tác động mạnh mẽ nhất của yếu tố nào?",
+                "o": [
+                    "Sự thay đổi của các quy định trong Luật Hôn nhân và Gia đình.",
+                    "Tác động của các phong trào đấu tranh vì nữ quyền trên thế giới.",
+                    "Quá trình công nghiệp hóa, hiện đại hóa và hội nhập quốc tế.",
+                    "Sự gia tăng của các phương tiện truyền thông đại chúng hiện đại."
+                ],
+                "a": 2
+            },
+            {
+                "q": "Đâu là phương hướng xây dựng gia đình Việt Nam hiện nay?",
+                "o": [
+                    "Phục hồi nguyên vẹn mô hình gia đình truyền thống với nhiều thế hệ cùng chung sống.",
+                    "Xây dựng gia đình no ấm, bình đẳng, tiến bộ, hạnh phúc và phát triển bền vững.",
+                    "Khuyến khích lối sống tự do, không bị ràng buộc bởi các trách nhiệm gia đình.",
+                    "Xóa bỏ chức năng kinh tế của gia đình, để nhà nước và xã hội đảm nhiệm."
+                ],
+                "a": 2
+            },
+            {
+                "q": "Ý thức tự giác tộc người là gì?",
+                "o": [
+                    "Là ý thức về nguồn gốc và tộc danh của dân tộc mình",
+                    "Ý thức về sự chung lưng đấu cật, đoàn kết đấu tranh chống thiên tai, địch họa để dựng nước và giữ nước",
+                    "Là ý thức về tên tự gọi, về tiếng mẹ đẻ và các đặc trưng văn hóa tương đối bền vững",
+                    "Là ý thức của mỗi tộc người trong xây dựng và bảo vệ Tổ quốc Việt Nam xã hội chủ nghĩa"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Dân chủ XHCN ở Việt Nam được thực hiện thông qua hình thức nào?",
+                "o": [
+                    "Trưng cầu dân ý là duy nhất",
+                    "Dân chủ đại diện và dân chủ trực tiếp",
+                    "Không có bầu cử",
+                    "Chỉ thông qua mạng xã hội"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Việc các thành viên trong gia đình cùng nhau lao động, sản xuất, tạo ra của cải vật chất và bảo đảm đời sống vật chất là biểu hiện của chức năng nào?",
+                "o": [
+                    "Chức năng sinh sản",
+                    "Chức năng văn hóa, giáo dục",
+                    "Chức năng kinh tế",
+                    "Chức năng tái tạo sức lao động"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Tờ báo cách mạng đầu tiên của Việt Nam là:",
+                "o": [
+                    "Báo Nhân Dân",
+                    "Báo Tiếng Dân",
+                    "Báo Búa Liềm",
+                    "Báo Thanh Niên"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Việc truyền thụ các giá trị văn hóa, giữ gìn truyền thống cho thế hệ sau thuộc về chức năng nào của gia đình?",
+                "o": [
+                    "Chức năng kinh tế",
+                    "Chức năng sinh sản và nuôi dưỡng",
+                    "Chức năng tâm sinh lý",
+                    "Chức năng giáo dục"
+                ],
+                "a": 3
+            },
+            {
+                "q": "Cơ sở hình thành nên gia đình là gì?",
+                "o": [
+                    "Quan hệ hôn nhân",
+                    "Quan hệ văn hóa",
+                    "Quan hệ chính trị",
+                    "Quan hệ xã hội"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Mô hình gia đình Việt Nam phổ biến trong bước chuyển biến từ \"xã hội nông nghiệp\" sang \"xã hội công nghiệp\" là mô hình nào?",
+                "o": [
+                    "Gia đình hạt nhân",
+                    "Gia đình truyền thống",
+                    "Gia đình nông nghiệp",
+                    "Gia đình hiện đại"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Trong bối cảnh hội nhập quốc tế sâu rộng, dân tộc Việt Nam cần làm gì để giữ vững độc lập dân tộc?",
+                "o": [
+                    "Chú trọng công tác bảo vệ toàn vẹn lãnh thổ quốc gia",
+                    "Tăng cường hội nhập kinh tế khu vực và thế giới",
+                    "Giáo dục lòng yêu nước và giữ gìn, phát huy bản sắc văn hóa dân tộc.",
+                    "Mở rộng tiếp thu những tinh hoa văn hóa nhân loại"
+                ],
+                "a": 2
+            },
+            {
+                "q": "Đâu là điều kiện tiên quyết bảo đảm thành công của công cuộc đổi mới, công nghiệp hoá, hiện đại hoá đất nước?",
+                "o": [
+                    "Sự lãnh đạo của Đảng Cộng sản Việt Nam",
+                    "Sự quản lý của nhà nước XHCN Việt Nam",
+                    "Sự đoàn kết của toàn dân",
+                    "Sự lớn mạnh của giai cấp công nhân"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Nguyên tắc nào được xem là \"hòn đá tảng\" trong chính sách tôn giáo của Đảng ta?",
+                "o": [
+                    "Tôn trọng tự do tín ngưỡng",
+                    "Bài trừ mê tín dị đoan",
+                    "Đoàn kết tôn giáo",
+                    "Chống lợi dụng tôn giáo"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Chức năng nào của gia đình có ý nghĩa quan trọng đối với sự phát triển kinh tế của 1 cộng đồng người?",
+                "o": [
+                    "Chức năng kinh tế và tổ chức tiêu dùng",
+                    "Chức năng xã hội hóa",
+                    "Chức năng sinh sản và nuôi dưỡng",
+                    "Chức năng tái sản xuất ra con người"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Tính đến 2022, ở Việt Nam, Nhà nước đã công nhận bao nhiêu tổ chức tôn giáo?",
+                "o": [
+                    "43",
+                    "36",
+                    "38",
+                    "39"
+                ],
+                "a": 0
+            },
+            {
+                "q": "Hôn nhân tự nguyện, tiến bộ được dựa trên cơ sở chính là gì?",
+                "o": [
+                    "Sự sắp đặt của cha mẹ và gia đình hai bên.",
+                    "Tình yêu chân chính giữa nam và nữ.",
+                    "Sự phù hợp về địa vị xã hội và tài sản.",
+                    "Các yếu tố về phong tục, tập quán lạc hậu"
+                ],
+                "a": 1
+            },
+            {
+                "q": "Đâu là điểm tựa tinh thần vô cùng lớn lao cho mỗi người?",
+                "o": [
+                    "Nhà trường",
+                    "Chính phủ",
+                    "Nhà nước",
+                    "Gia đình"
+                ],
+                "a": 3
+            }
+        ];
+
+
+        const explanationData = [
+            "Đáp án: C. Tômát Morơ (Đối chiếu: British Library: Thomas More/Utopia.)",
+            "Đáp án: B. Tuyên ngôn của Đảng cộng sản (Đối chiếu: Bài giảng trên lớp, tr. 5–6.)",
+            "Đáp án: D. Giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 3, 16–17.)",
+            "Đáp án: A. Sự sụp đổ của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau (Đối chiếu: Bài giảng trên lớp, tr. 5.)",
+            "Đáp án: A. Nhà nước Xô Viết, năm 1917 (Đối chiếu: Bài giảng trên lớp, tr. 43.)",
+            "Đáp án: A. Iosif Vissarionovich Stalin (Đối chiếu: Library of Congress: niên biểu.)",
+            "Đáp án: C. Độc lập dân tộc gắn với chủ nghĩa xã hội (Đối chiếu: Bài giảng trên lớp, tr. 10.)",
+            "Đáp án: D. Giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 17.)",
+            "Đáp án: C. Sứ mệnh lịch sử của giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 12.)",
+            "Đáp án: B. Nhà nước (Đối chiếu: Bài giảng trên lớp, tr. 51.)",
+            "Đáp án: C. Đất liền, hải đảo, vùng biển và vùng trời. (Đối chiếu: Hiến pháp 2013, Điều 1.)",
+            "Đáp án: B. 54 (Đối chiếu: Bài giảng trên lớp, tr. 69.)",
+            "Đáp án theo cô: B. Phát triển về kinh tế - xã hội",
+            "Đáp án: D. Cả A, B, C (Đối chiếu: Bài giảng trên lớp, tr. 40–42.)",
+            "Đáp án: A. Giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 17–18.)",
+            "Đáp án: D. Đảng Cộng sản Trung Quốc (Đối chiếu: Bài giảng trên lớp, tr. 9–10.)",
+            "Đáp án: A. Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân (Đối chiếu: Giáo trình Bộ GD&amp;ĐT (bản cũ), mục quy luật hình thành Đảng.)",
+            "Đáp án: A. Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân. (Đối chiếu: Bài giảng trên lớp, tr. 45–46.)",
+            "Đáp án: B. Cách mạng tháng Mười Nga thành công và sự ra đời của nhà nước XHCN đầu tiên (1917) (Đối chiếu: Bài giảng trên lớp, tr. 43.)",
+            "Đáp án theo cô: D. Công nhân có xu hướng trí tuệ hóa, gia tăng nhanh về số lượng, chất lượng và trở thành một phần của lực lượng sản xuất hiện đại, có tính toàn cầu hóa",
+            "Đáp án: A. Quan hệ sở hữu đối với tư liệu sản xuất chủ yếu (Đối chiếu: Bài giảng trên lớp, tr. 17.)",
+            "Đáp án: B. Sau cách mạng Tháng Tám 1945 (2/9/1945) (Đối chiếu: Bài giảng trên lớp, tr. 47.)",
+            "Đáp án: C. Thế giới quan duy tâm (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
+            "Đáp án: D. Xây dựng gia đình ấm no, hạnh phúc, tiến bộ, văn minh (Đối chiếu: Hệ giá trị gia đình: nguồn Chính phủ.)",
+            "Đáp án: D. Thiết lập nhà nước kiểu mới mang bản chất giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 17–18.)",
+            "Đáp án: C. Do sự bóc lột của giai cấp tư sản đối với giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 16–17, 20.)",
+            "Đáp án: C. 3 (Đối chiếu: Bài giảng trên lớp, tr. 42–43.)",
+            "Đáp án: B. Nhà nước xã hội chủ nghĩa (Đối chiếu: Giáo trình Bộ GD&amp;ĐT (bản cũ), tr. 100.)",
+            "Đáp án: C. 72 ngày (Đối chiếu: Học viện Chính trị khu vực IV: Công xã Paris.)",
+            "Đáp án: A. Châu Mỹ Latinh (Đối chiếu: Mô hình CNXH thế kỷ XXI tại Mỹ Latinh.)",
+            "Đáp án: B. Pháp luật (Đối chiếu: Bài giảng trên lớp, tr. 41–42.)",
+            "Đáp án: C. Chủ nghĩa Mác – Lênin và tư tưởng Hồ Chí Minh (Đối chiếu: Bài giảng trên lớp, tr. 10–11.)",
+            "Đáp án: A. V.I.Lênin (Đối chiếu: Bài giảng trên lớp, tr. 6–8.)",
+            "Đáp án: B. Một trong ba bộ phận hợp thành chủ nghĩa Mác-Lênin. (Đối chiếu: Bài giảng trên lớp, tr. 3.)",
+            "Đáp án: C. Chủ nghĩa xã hội không tưởng Pháp (Đối chiếu: Bài giảng trên lớp, tr. 4.)",
+            "Đáp án: B. Sự xuất hiện giai cấp cùng những phân hóa, đối kháng, bất công... là điều không thể giải thích được (Đối chiếu: Bài giảng trên lớp, tr. 75.)",
+            "Đáp án: D. Là một hiện tượng xã hội - văn hoá do con người sáng tạo ra (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
+            "Đáp án: A. Trực tiếp và gián tiếp (Đối chiếu: Bài giảng trên lớp, tr. 31–32.)",
+            "Đáp án: B. Chủ nghĩa tư bản đã chuyển sang giai đoạn đế quốc chủ nghĩa. (Đối chiếu: Bài giảng trên lớp, tr. 7.)",
+            "Đáp án: A. Xã hội \"dân giàu, nước mạnh, dân chủ, công bằng, văn minh\" (Đối chiếu: Bài giảng trên lớp, tr. 36–37.)",
+            "Đáp án: B. Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa (Đối chiếu: Bài giảng trên lớp, tr. 34.)",
+            "Đáp án: C. Trở thành nước phát triển, thu nhập cao. (Đối chiếu: Mục tiêu 2045: nguồn Chính phủ.)",
+            "Đáp án: B. Đảng cộng sản (Đối chiếu: Bài giảng trên lớp, tr. 19.)",
+            "Đáp án: B. Các nước đã trải qua giai đoạn chủ nghĩa tư bản phát triển. (Đối chiếu: Bài giảng trên lớp, tr. 31.)",
+            "Đáp án: C. Hiến pháp và pháp luật (Đối chiếu: Bài giảng trên lớp, tr. 49–50.)",
+            "Đáp án: A. Đảng cộng sản Việt Nam (Đối chiếu: Bài giảng trên lớp, tr. 50.)",
+            "Đáp án: C. Có tính tổ chức, kỷ luật lao động và tâm lý lao động công nghiệp. (Đối chiếu: Bài giảng trên lớp, tr. 16–17.)",
+            "Đáp án: D. Giai cấp tư sản (Đối chiếu: Bài giảng trên lớp, tr. 16, 20.)",
+            "Đáp án: A. Tạo sức mạnh tổng hợp đảm bảo cho sự thắng lợi của cách mạng xã hội chủ nghĩa (Đối chiếu: Bài giảng trên lớp, tr. 56.)",
+            "Đáp án: B. Liên minh giai cấp công nhân với giai cấp nông dân và đội ngũ trí thức do Đảng lãnh đạo. (Đối chiếu: Bài giảng trên lớp, tr. 56–58.)",
+            "Đáp án: A. Để thích nghi với văn hóa, xã hội của quốc gia đó (Đối chiếu: Bài giảng trên lớp, tr. 79.)",
+            "Đáp án theo cô: C. Quyền dân chủ của nhân dân được thực hành rộng rãi",
+            "Đáp án: C. Năm 1995 (Đối chiếu: Bộ Ngoại giao: bình thường hóa năm 1995.)",
+            "Đáp án: D. Thị tộc, bộ lạc, bộ tộc, dân tộc (Đối chiếu: Giáo trình Bộ GD&amp;ĐT (bản cũ), chương dân tộc.)",
+            "Đáp án: B. Quan hệ huyết thống (Đối chiếu: Bài giảng trên lớp, tr. 85.)",
+            "Đáp án: D. Nhà nước pháp quyền xã hội chủ nghĩa (Đối chiếu: Bài giảng trên lớp, tr. 49–50.)",
+            "Đáp án: A. Đoàn kết các dân tộc (Đối chiếu: Bài giảng trên lớp, tr. 71.)",
+            "Đáp án: A. Cộng đồng về ngôn ngữ (Đối chiếu: Bài giảng trên lớp, tr. 67.)",
+            "Đáp án: B. Chức năng nuôi dưỡng, giáo dục (Đối chiếu: Bài giảng trên lớp, tr. 87–88.)",
+            "Đáp án: A. Giai cấp công nhân Việt Nam (Đối chiếu: Bài giảng trên lớp, tr. 58.)",
+            "Đáp án: B. Phát triển kinh tế, tiến hành thành công công nghiệp hóa, hiện đại hóa (Đối chiếu: Bài giảng trên lớp, tr. 61–62.)",
+            "Đáp án: D. Khi xã hội xuất hiện sự phân chia giai cấp và đối kháng về lợi ích giai cấp (Đối chiếu: Bài giảng trên lớp, tr. 76.)",
+            "Đáp án: D. Chủ nghĩa xã hội (Đối chiếu: Bài giảng trên lớp, tr. 27–28.)",
+            "Đáp án: D. Cách mạng Tháng Tám thành công và Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập (2/9/1945) (Đối chiếu: Hiến pháp 2013, Lời nói đầu.)",
+            "Đáp án: D. Liên minh công - nông - trí thức (Đối chiếu: Cẩm nang tư tưởng Hồ Chí Minh, Thư viện Quốc hội.)",
+            "Đáp án: A. Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất định của lịch sử xã hội loài người (Đối chiếu: Bài giảng trên lớp, tr. 76.)",
+            "Đáp án: D. Cả 3 đáp án trên (Đối chiếu: Bài giảng trên lớp, tr. 48, 80.)",
+            "Đáp án: A. Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng (Đối chiếu: Luật Thực hiện dân chủ ở cơ sở 2022; nguồn Quốc hội.)",
+            "Đáp án: B. Phát huy sức mạnh của mọi giai cấp, mọi tầng lớp nhân dân, mọi thành phần dân tộc, tôn giáo cho công cuộc đổi mới, xây dựng và bảo vệ tổ quốc. (Đối chiếu: Bài giảng trên lớp, tr. 10–11.)",
+            "Đáp án: D. Hiến pháp (Đối chiếu: Hiến pháp 2013, Điều 7.)",
+            "Đáp án: A. Sự ra đời nền Đại công nghiệp (Đối chiếu: Bài giảng trên lớp, tr. 3, 16.)",
+            "Đáp án: A. Phát hiện ra giai cấp công nhân là lực lượng xã hội có thể thủ tiêu CNTB, xây dựng CNXH. (Đối chiếu: Bài giảng trên lớp, tr. 5.)",
+            "Đáp án: C. Sự đoàn kết, thống nhất của hai giai cấp công nhân và nông dân (Đối chiếu: Ý nghĩa biểu tượng liên minh công nhân – nông dân.)",
+            "Đáp án: D. Cơ cấu xã hội - giai cấp (Đối chiếu: Bài giảng trên lớp, tr. 54–55.)",
+            "Đáp án: A. Tự quyết về chính trị (Đối chiếu: Bài giảng trên lớp, tr. 68–69.)",
+            "Đáp án: A. Xây dựng Đảng cộng sản Việt Nam trong sạch, vững mạnh (Đối chiếu: Bài giảng trên lớp, tr. 51.)",
+            "Đáp án: A. Chủ tịch Hồ Chí Minh (Đối chiếu: Hồ Chí Minh: đoàn kết và đại đoàn kết.)",
+            "Đáp án theo cô: D. Nga",
+            "Đáp án: A. Chính phủ (Đối chiếu: Luật Tín ngưỡng, tôn giáo 2016, Điều 61; luật 2026, Điều 57.)",
+            "Đáp án: A. Tôn giáo có hệ thống giáo lý, giáo luật, lễ nghi, còn tín ngưỡng thì không. (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
+            "Đáp án: B. Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của đông đảo các tầng lớp nhân dân. (Đối chiếu: Bài giảng trên lớp, tr. 76.)",
+            "Đáp án: B. Tính lịch sử (Đối chiếu: Bài giảng trên lớp, tr. 76, 78.)",
+            "Đáp án: A. Thần thánh hóa các hiện tượng tự nhiên (Đối chiếu: Bài giảng trên lớp, tr. 75.)",
+            "Đáp án: A. Hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tôn giáo (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
+            "Đáp án: C. Nước Cộng hòa Nhân dân Trung Hoa ra đời. (Đối chiếu: Bài giảng trên lớp, tr. 8–9.)",
+            "Đáp án: C. Là niềm tin mê muội, viển vông, không dựa trên một cơ sở khoa học (Đối chiếu: Bài giảng trên lớp, tr. 74–75.)",
+            "Đáp án: C. Cuba (Đối chiếu: Lịch sử cách mạng Cuba.)",
+            "Đáp án: C. 9 (Đối chiếu: Báo Chính phủ: 9 tôn giáo du nhập.)",
+            "Đáp án: C. Gia đình hòa thuận, bình đẳng, tiến bộ, hạnh phúc và thực hiện tốt nghĩa vụ công dân. (Đối chiếu: Bài giảng trên lớp, tr. 97.)",
+            "Đáp án: C. Quá trình công nghiệp hóa, hiện đại hóa và hội nhập quốc tế. (Đối chiếu: Bài giảng trên lớp, tr. 92–93.)",
+            "Đáp án theo cô: C. Khuyến khích lối sống tự do, không bị ràng buộc bởi các trách nhiệm gia đình.",
+            "Đáp án: A. Là ý thức về nguồn gốc và tộc danh của dân tộc mình (Đối chiếu: Bài giảng trên lớp, tr. 67.)",
+            "Đáp án: B. Dân chủ đại diện và dân chủ trực tiếp (Đối chiếu: Hiến pháp 2013, Điều 6.)",
+            "Đáp án: C. Chức năng kinh tế (Đối chiếu: Bài giảng trên lớp, tr. 88–89.)",
+            "Đáp án: D. Báo Thanh Niên (Đối chiếu: Bảo tàng Hồ Chí Minh: Báo Thanh Niên.)",
+            "Đáp án: D. Chức năng giáo dục (Đối chiếu: Bài giảng trên lớp, tr. 87–89.)",
+            "Đáp án: A. Quan hệ hôn nhân (Đối chiếu: Bài giảng trên lớp, tr. 85.)",
+            "Đáp án: A. Gia đình hạt nhân (Đối chiếu: Bài giảng trên lớp, tr. 92.)",
+            "Đáp án: C. Giáo dục lòng yêu nước và giữ gìn, phát huy bản sắc văn hóa dân tộc. (Đối chiếu: Bài giảng trên lớp, tr. 10–11.)",
+            "Đáp án: A. Sự lãnh đạo của Đảng Cộng sản Việt Nam (Đối chiếu: Bài giảng trên lớp, tr. 11.)",
+            "Đáp án: A. Tôn trọng tự do tín ngưỡng (Đối chiếu: Bài giảng trên lớp, tr. 80.)",
+            "Đáp án: A. Chức năng kinh tế và tổ chức tiêu dùng (Đối chiếu: Bài giảng trên lớp, tr. 88–89.)",
+            "Đáp án: A. 43 (Đối chiếu: Ban Tôn giáo Chính phủ, số liệu mốc 2022.)",
+            "Đáp án: B. Tình yêu chân chính giữa nam và nữ. (Đối chiếu: Bài giảng trên lớp, tr. 90–91.)",
+            "Đáp án: D. Gia đình (Đối chiếu: Bài giảng trên lớp, tr. 86, 89.)"
+        ];
+
+        function getExplanation(i) {
+            return explanationData[i] || "Đáp án này phù hợp nhất với khái niệm được hỏi.";
+        }
+
+        function stripOptionPrefix(text) {
+            return text.replace(/^[A-D]\.\s*/, "");
+        }
+
+        function formatOptionText(displayIndex, originalText) {
+            return `${String.fromCharCode(65 + displayIndex)}. ${stripOptionPrefix(originalText)}`;
+        }
+
+        function renderOptionLabel(questionIndex, originalOptionIndex, displayIndex) {
+            return `<label><input type="radio" name="q${questionIndex}" onchange="checkAnswer(${questionIndex}, ${originalOptionIndex})">${formatOptionText(displayIndex, quizData[questionIndex].o[originalOptionIndex])}</label>`;
+        }
+
+        function resetOptionLabelsToOriginal(questionIndex) {
+            quizData[questionIndex].o.forEach((_, optionIndex) => {
+                const li = document.getElementById(`li-${questionIndex}-${optionIndex}`);
+                if (li) li.innerHTML = renderOptionLabel(questionIndex, optionIndex, optionIndex);
+            });
+        }
+
+        function shuffleExamAnswers(questionIndex) {
+            const order = shuffleArray(quizData[questionIndex].o.map((_, optionIndex) => optionIndex));
+            const ul = document.querySelector(`#q-card-${questionIndex} .options`);
+            if (!ul) return;
+            order.forEach((originalOptionIndex, displayIndex) => {
+                const li = document.getElementById(`li-${questionIndex}-${originalOptionIndex}`);
+                if (li) {
+                    li.innerHTML = renderOptionLabel(questionIndex, originalOptionIndex, displayIndex);
+                    ul.appendChild(li);
+                }
+            });
+        }
+
+
+        let currentScore = 0; let answeredQuestions = 0;
+        const totalQuestions = quizData.length;
+        const SCORE_KEY = 'cnxhkh_history'; const REVIEW_KEY = 'cnxhkh_review';
+
+        function readStore(key, fallback = []) {
+            try {
+                const raw = localStorage.getItem(key);
+                return raw ? JSON.parse(raw) : fallback;
+            } catch (e) {
+                console.warn('Không đọc được dữ liệu localStorage:', key, e);
+                return fallback;
+            }
+        }
+
+        function writeStore(key, value) {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+                return true;
+            } catch (e) {
+                alert("Trình duyệt không cho lưu dữ liệu. Hãy kiểm tra chế độ ẩn danh, quyền lưu dữ liệu trang web hoặc dung lượng bộ nhớ.");
+                console.error('Không lưu được dữ liệu localStorage:', key, e);
+                return false;
+            }
+        }
+
+        let reviewBank = new Set(readStore(REVIEW_KEY, []).filter(i => Number.isInteger(i) && i >= 0 && i < quizData.length));
+        saveReviewToStore();
+        let isReviewMode = false; let isExamMode = false;
+        let examAnswers = {}; let examTimer; let timeRemaining = 3600;
+        let examOrder = quizData.map((_, i) => i);
+
+        // Âm thanh
+        let audioCtx = null;
+        let soundEnabled = localStorage.getItem('cnxhkh_sound') !== 'false';
+        document.getElementById('btn-sound').innerText = soundEnabled ? '🎵' : '🔇';
+
+        function initAudio() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            localStorage.setItem('cnxhkh_sound', soundEnabled);
+            document.getElementById('btn-sound').innerText = soundEnabled ? '🎵' : '🔇';
+        }
+        function playSound(type) {
+            if (!soundEnabled) return;
+            initAudio(); if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+            if (type === 'correct') {
+                osc.type = 'sine'; osc.frequency.setValueAtTime(600, now); osc.frequency.exponentialRampToValueAtTime(1200, now + 0.1);
+                gain.gain.setValueAtTime(0.1, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                osc.start(now); osc.stop(now + 0.2);
+            } else if (type === 'wrong') {
+                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(150, now); osc.frequency.exponentialRampToValueAtTime(100, now + 0.2);
+                gain.gain.setValueAtTime(0.1, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                osc.start(now); osc.stop(now + 0.2);
+            } else if (type === 'tick') {
+                osc.type = 'sine'; osc.frequency.setValueAtTime(400, now);
+                gain.gain.setValueAtTime(0.05, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+                osc.start(now); osc.stop(now + 0.05);
+            }
+        }
+
+        // Dark Mode
+        let isDarkMode = localStorage.getItem('cnxhkh_dark') === 'true';
+        if (isDarkMode) document.body.classList.add('dark-mode');
+        document.getElementById('btn-dark').innerText = isDarkMode ? '☀️' : '🌙';
+
+        function toggleDark() {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            localStorage.setItem('cnxhkh_dark', isDarkMode);
+            document.getElementById('btn-dark').innerText = isDarkMode ? '☀️' : '🌙';
+        }
+
+        function shuffleArray(arr) {
+            const shuffled = [...arr];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function applyExamQuestionOrder() {
+            examOrder.forEach((questionIndex, displayIndex) => {
+                const card = document.getElementById(`q-card-${questionIndex}`);
+                const title = document.getElementById(`q-title-${questionIndex}`);
+
+                if (card) container.appendChild(card);
+                if (title) title.innerText = `Câu ${displayIndex + 1}: ${quizData[questionIndex].q}`;
+            });
+        }
+
+        // Tìm kiếm
+        function filterQuestions() {
+            const term = document.getElementById('search-input').value.toLowerCase();
+            quizData.forEach((item, i) => {
+                const text = (item.q + " " + item.o.join(" ")).toLowerCase();
+                const card = document.getElementById(`q-card-${i}`);
+                if (card && !isReviewMode && !isExamMode) card.style.display = text.includes(term) ? 'block' : 'none';
+            });
+        }
+
+        const container = document.getElementById('quiz-container');
+        const rContainer = document.getElementById('review-container');
+        const navGrid = document.getElementById('nav-grid');
+
+        function saveReviewToStore() { writeStore(REVIEW_KEY, [...reviewBank]); }
+        function updateUI() {
+            document.getElementById('score').innerText = currentScore;
+            const totalScoreEl = document.getElementById('total-score');
+            if (totalScoreEl) totalScoreEl.innerText = totalQuestions;
+            document.getElementById('progress').innerText = answeredQuestions;
+            const reviewCountEl = document.getElementById('review-count');
+            if (reviewCountEl) reviewCountEl.innerText = reviewBank.size;
+        }
+
+        function renderSidebar(order = quizData.map((_, i) => i), useDisplayOrder = false) {
+            let html = '';
+            order.forEach((questionIndex, displayIndex) => {
+                const cls = reviewBank.has(questionIndex) ? 'nav-btn nav-unknown' : 'nav-btn';
+                const label = useDisplayOrder ? displayIndex + 1 : questionIndex + 1;
+                html += `<button class="${cls}" id="nav-btn-${questionIndex}" onclick="scrollToQ(${questionIndex})">${label}</button>`;
+            });
+            navGrid.innerHTML = html;
+        }
+
+        function renderQuestions() {
+            quizData.forEach((item, i) => {
+                const card = document.createElement('div'); card.className = 'question-card'; card.id = `q-card-${i}`;
+                let opts = '';
+                item.o.forEach((opt, oi) => {
+                    opts += `<li id="li-${i}-${oi}">${renderOptionLabel(i, oi, oi)}</li>`;
+                });
+                const isSaved = reviewBank.has(i);
+                card.innerHTML = `
+                    <div class="question-header">
+                        <div class="question-title" id="q-title-${i}">Câu ${i + 1}: ${item.q}</div>
+                        <div class="header-actions">
+                            <button class="unknown-btn ${isSaved ? 'saved-btn' : ''}" id="ubtn-${i}" onclick="markUnknown(${i})">${isSaved ? '⭐ Đã lưu' : '❓ Không biết'}</button>
+                        </div>
+                    </div>
+                    <ul class="options">${opts}</ul>
+                    <div class="explanation" id="exp-${i}">
+                        💡 <strong>Giải thích:</strong> ${getExplanation(i)}
+                        <br><button class="btn-save-review" id="srev-${i}" style="display:none;" onclick="addWrongReview(${i})">➕ Lưu vào Ôn tập</button>
+                    </div>`;
+                container.appendChild(card);
+            });
+        }
+
+        function scrollToQ(i) {
+            const id = isReviewMode ? `rq-card-${i}` : `q-card-${i}`;
+            const el = document.getElementById(id);
+            if (el && el.style.display !== 'none') {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                el.style.boxShadow = isReviewMode ? '0 0 20px rgba(155, 89, 182, 0.5)' : (isExamMode ? '0 0 20px rgba(243, 156, 18, 0.5)' : '0 0 20px rgba(52, 152, 219, 0.5)');
+                setTimeout(() => el.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)', 1000);
+            }
+        }
+
+        function checkAnswer(i, oi) {
+            const item = quizData[i]; const btn = document.getElementById(`nav-btn-${i}`);
+            const parentLi = document.getElementById(`li-${i}-${oi}`);
+            const allLis = document.querySelectorAll(`#q-card-${i} .options li`);
+
+            if (isExamMode) {
+                examAnswers[i] = oi;
+                allLis.forEach(li => li.classList.remove('exam-selected'));
+                parentLi.classList.add('exam-selected');
+                btn.className = 'nav-btn nav-exam-answered';
+                playSound('tick');
+                document.getElementById('progress').innerText = Object.keys(examAnswers).length;
+                return;
+            }
+
+            allLis.forEach(li => li.classList.add('answered'));
+
+            if (oi === item.a) {
+                parentLi.classList.add('correct-ans');
+                btn.className = 'nav-btn nav-correct';
+                currentScore++; playSound('correct');
+            } else {
+                parentLi.classList.add('wrong-ans');
+                document.getElementById(`li-${i}-${item.a}`).classList.add('correct-ans');
+                btn.className = 'nav-btn nav-wrong';
+                playSound('wrong');
+            }
+            document.getElementById(`srev-${i}`).style.display = 'inline-block';
+            const radios = document.getElementsByName(`q${i}`); radios.forEach(r => r.disabled = true);
+            document.getElementById(`ubtn-${i}`).style.display = 'none';
+            document.getElementById(`exp-${i}`).style.display = 'block';
+            answeredQuestions++; updateUI();
+        }
+
+        function markUnknown(i) {
+            if (isExamMode) return;
+            reviewBank.add(i); saveReviewToStore();
+            const allLis = document.querySelectorAll(`#q-card-${i} .options li`);
+            allLis.forEach(li => li.classList.add('answered'));
+            document.getElementById(`li-${i}-${quizData[i].a}`).classList.add('correct-ans');
+            const radios = document.getElementsByName(`q${i}`); radios.forEach(r => r.disabled = true);
+            document.getElementById(`ubtn-${i}`).style.display = 'none';
+            document.getElementById(`exp-${i}`).style.display = 'block';
+            document.getElementById(`nav-btn-${i}`).className = 'nav-btn nav-unknown';
+            answeredQuestions++; updateUI(); playSound('tick');
+        }
+
+        function addWrongReview(i) {
+            reviewBank.add(i); saveReviewToStore();
+            const b = document.getElementById(`srev-${i}`); b.innerText = "✔️ Đã lưu"; b.disabled = true;
+            document.getElementById(`nav-btn-${i}`).className = 'nav-btn nav-unknown'; updateUI();
+        }
+
+        function formatTime(secs) {
+            const m = Math.floor(secs / 60); const s = secs % 60;
+            return `⏱️ ${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+        function formatTimeUsed(secs) {
+            const m = Math.floor(secs / 60); const s = secs % 60;
+            return `${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+
+        function startExamMode() {
+            if (!confirm("Bắt đầu thi 60 phút?")) return;
+            isExamMode = true; isReviewMode = false; currentScore = 0; answeredQuestions = 0; examAnswers = {};
+
+            //xáo câu hỏi
+            examOrder = shuffleArray(quizData.map((_, i) => i));
+
+            renderSidebar(examOrder, true);
+            applyExamQuestionOrder();
+            document.getElementById('search-bar-wrap').style.display = 'none';
+            document.getElementById('score-board-info').style.display = 'none';
+            document.getElementById('exam-timer-display').style.display = 'block';
+            document.getElementById('btn-exam-mode').style.display = 'none';
+            document.getElementById('btn-toggle-review').style.display = 'none';
+            document.getElementById('lg-correct').style.display = 'none';
+            document.getElementById('lg-wrong').style.display = 'none';
+            document.getElementById('lg-unknown').style.display = 'none';
+            document.getElementById('lg-exam').style.display = 'flex';
+            document.getElementById('bottom-actions').innerHTML = `<button class="action-btn" style="padding: 15px 30px; font-size: 1.2em; background-color: var(--danger); margin: 0 auto;" onclick="submitExam()">📤 Nộp Bài</button>`;
+            quizData.forEach((_, i) => {
+                document.getElementById(`nav-btn-${i}`).className = 'nav-btn';
+                document.getElementById(`q-card-${i}`).classList.add('exam-card');
+                resetOptionLabelsToOriginal(i);
+
+                //xáo đáp án
+                // shuffleExamAnswers(i);
+
+                const lis = document.querySelectorAll(`#q-card-${i} li`);
+                lis.forEach(li => li.className = '');
+                const radios = document.getElementsByName(`q${i}`);
+                radios.forEach(r => { r.disabled = false; r.checked = false; });
+                document.getElementById(`exp-${i}`).style.display = 'none';
+                document.getElementById(`ubtn-${i}`).style.display = 'none';
+            });
+            timeRemaining = 3600;
+            document.getElementById('exam-timer-display').innerText = formatTime(timeRemaining);
+            examTimer = setInterval(() => {
+                timeRemaining--;
+                document.getElementById('exam-timer-display').innerText = formatTime(timeRemaining);
+                if (timeRemaining <= 180) document.getElementById('exam-timer-display').style.color = 'var(--danger)';
+                if (timeRemaining <= 0) { clearInterval(examTimer); submitExam(); }
+            }, 1000);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function submitExam() {
+            clearInterval(examTimer);
+            let timeUsed = 3600 - timeRemaining;
+            let timeStr = formatTimeUsed(timeUsed);
+            let score = 0;
+            quizData.forEach((item, i) => {
+                const ans = examAnswers[i];
+                const btn = document.getElementById(`nav-btn-${i}`);
+                document.getElementById(`q-card-${i}`).classList.remove('exam-card');
+                const radios = document.getElementsByName(`q${i}`);
+                radios.forEach(r => r.disabled = true);
+                document.getElementById(`exp-${i}`).style.display = 'block';
+                if (ans === item.a) {
+                    score++; document.getElementById(`li-${i}-${ans}`).classList.add('correct-ans');
+                    btn.className = 'nav-btn nav-correct';
+                } else {
+                    if (ans !== undefined) document.getElementById(`li-${i}-${ans}`).classList.add('wrong-ans');
+                    document.getElementById(`li-${i}-${item.a}`).classList.add('correct-ans');
+                    btn.className = 'nav-btn nav-wrong';
+                }
+            });
+            isExamMode = false; currentScore = score; answeredQuestions = totalQuestions;
+            document.getElementById('score-board-info').style.display = 'block';
+            document.getElementById('exam-timer-display').style.display = 'none';
+            document.getElementById('btn-exam-mode').style.display = 'inline-flex';
+            document.getElementById('btn-toggle-review').style.display = 'inline-flex';
+            document.getElementById('search-bar-wrap').style.display = 'block';
+            document.getElementById('lg-correct').style.display = 'flex';
+            document.getElementById('lg-wrong').style.display = 'flex';
+            document.getElementById('lg-unknown').style.display = 'flex';
+            document.getElementById('lg-exam').style.display = 'none';
+            document.getElementById('main-title').innerText = "KẾT QUẢ THI";
+            document.getElementById('bottom-actions').innerHTML = `<button class="action-btn" style="padding: 15px 30px; font-size: 1.2em; background-color: var(--primary); margin: 0 auto;" onclick="location.reload()">🔄 Kết thúc</button>`;
+            updateUI(); playSound(score / totalQuestions >= 0.5 ? 'correct' : 'wrong');
+            saveScore(true, 'Thi thử', timeStr);
+            alert(`Kết quả: ${score}/${totalQuestions}. Thời gian: ${timeStr}`);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleReviewMode() {
+            if (isExamMode) return alert("Không thể mở Ôn tập khi đang thi!");
+            if (!isReviewMode) {
+                if (reviewBank.size === 0) return alert("Chưa có câu nào!");
+                isReviewMode = true; container.style.display = 'none';
+                document.getElementById('search-bar-wrap').style.display = 'none';
+                document.getElementById('bottom-actions').style.display = 'none';
+                document.getElementById('sidebar-legend').style.display = 'none';
+                document.getElementById('main-title').innerText = "📚 Ôn Tập";
+                document.getElementById('btn-toggle-review').innerHTML = '⬅️ Quay lại';
+                rContainer.style.display = 'block'; renderReview();
+            } else {
+                isReviewMode = false; container.style.display = 'block';
+                document.getElementById('search-bar-wrap').style.display = 'block';
+                document.getElementById('bottom-actions').style.display = 'block';
+                document.getElementById('sidebar-legend').style.display = 'flex';
+                document.getElementById('main-title').innerText = "Môn Học: Chủ Nghĩa Xã Hội Khoa Học";
+                document.getElementById('btn-toggle-review').innerHTML = `📚 Ôn tập (<span id="review-count">${reviewBank.size}</span>)`;
+                rContainer.style.display = 'none';
+            }
+        }
+
+        function renderReview() {
+            rContainer.innerHTML = '';
+            reviewBank.forEach(i => {
+                const item = quizData[i];
+                const card = document.createElement('div'); card.className = 'question-card review-card'; card.id = `rq-card-${i}`;
+                let opts = '';
+                item.o.forEach((opt, oi) => {
+                    opts += `<li id="rli-${i}-${oi}"><label><input type="radio" name="rq${i}" onchange="checkReview(${i}, ${oi})">${formatOptionText(oi, opt)}</label></li>`;
+                });
+                card.innerHTML = `
+                    <div class="question-header">
+                        <div class="question-title">Câu ${i + 1}: ${item.q}</div>
+                        <div class="header-actions">
+                            <button class="action-btn" id="rret-${i}" style="display:none; background-color: var(--primary); padding: 5px 10px; font-size: 0.8em;" onclick="retryReview(${i})">🔄 Lại</button>
+                            <button class="action-btn" style="background-color: var(--success); padding: 5px 10px; font-size: 0.8em;" onclick="doneReview(${i})">✔️ Thuộc</button>
+                        </div>
+                    </div>
+                    <ul class="options">${opts}</ul>
+                    <div class="explanation" id="rexp-${i}">💡 <strong>Giải thích:</strong> ${getExplanation(i)}</div>`;
+                rContainer.appendChild(card);
+            });
+        }
+
+        function checkReview(i, oi) {
+            if (oi === quizData[i].a) document.getElementById(`rli-${i}-${oi}`).classList.add('correct-ans');
+            else {
+                document.getElementById(`rli-${i}-${oi}`).classList.add('wrong-ans');
+                document.getElementById(`rli-${i}-${quizData[i].a}`).classList.add('correct-ans');
+            }
+            const radios = document.getElementsByName(`rq${i}`); radios.forEach(r => r.disabled = true);
+            document.getElementById(`rexp-${i}`).style.display = 'block'; document.getElementById(`rret-${i}`).style.display = 'block';
+        }
+
+        function retryReview(i) {
+            const allLis = document.querySelectorAll(`#rq-card-${i} .options li`);
+            allLis.forEach(li => li.className = '');
+            const radios = document.getElementsByName(`rq${i}`);
+            radios.forEach(r => { r.disabled = false; r.checked = false; });
+            document.getElementById(`rexp-${i}`).style.display = 'none'; document.getElementById(`rret-${i}`).style.display = 'none';
+            const rCard = document.getElementById(`rq-card-${i}`);
+            if (rCard) rCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function doneReview(i) {
+            reviewBank.delete(i); saveReviewToStore();
+            document.getElementById(`rq-card-${i}`).style.display = 'none';
+            document.getElementById(`nav-btn-${i}`).className = 'nav-btn';
+            updateUI();
+            if (reviewBank.size === 0) toggleReviewMode();
+        }
+
+        function saveScore(isAuto = false, mode = 'Luyện tập', timeText = '') {
+            let history = readStore(SCORE_KEY, []);
+            const percent = Math.round((currentScore / totalQuestions) * 100);
+            history.unshift({ id: Date.now(), date: new Date().toLocaleString('vi-VN'), score: currentScore, total: totalQuestions, percent, mode, time: timeText });
+            writeStore(SCORE_KEY, history.slice(0, 30));
+            if (!isAuto) { alert("Lưu thành công!"); openHistoryModal(); }
+        }
+
+        function loadHistory() {
+            const history = readStore(SCORE_KEY, []);
+            const list = document.getElementById('history-list'); const hs = document.getElementById('high-score-display');
+            if (history.length === 0) {
+                list.innerHTML = '<li>Trống</li>'; hs.innerHTML = '🏆 Trống'; return;
+            }
+            let best = history.reduce((prev, curr) => (prev.percent > curr.percent) ? prev : curr);
+            hs.innerHTML = `🏆 Cao nhất: ${best.score}/${best.total} (${best.percent}%)`;
+            list.innerHTML = history.map(h => `
+                <li class="history-item ${h.id === best.id ? 'best' : ''}">
+                    <div>
+                        <div class="h-date">${h.date} <span class="badge ${h.mode === 'Thi thử' ? 'badge-exam' : 'badge-practice'}">${h.mode}</span> ${h.time ? '⏱️ ' + h.time : ''}</div>
+                        <div class="h-score">${h.score}/${h.total}</div>
+                    </div>
+                    <div class="history-right"><span>${h.percent}%</span><button class="btn-del-item" onclick="delHistory(${h.id})">❌</button></div>
+                </li>`).join('');
+        }
+
+        function delHistory(id) {
+            if (!confirm("Xóa?")) return;
+            let history = readStore(SCORE_KEY, []);
+            writeStore(SCORE_KEY, history.filter(h => h.id !== id)); loadHistory();
+        }
+        function clearAllHistory() { if (confirm("Xóa hết?")) { localStorage.removeItem(SCORE_KEY); loadHistory(); } }
+
+        function exportQuizData() {
+            const data = {
+                app: "cnxhkh_quiz_backup",
+                version: 1,
+                exportedAt: new Date().toISOString(),
+                history: readStore(SCORE_KEY, []),
+                review: [...reviewBank],
+                darkMode: localStorage.getItem('cnxhkh_dark'),
+                sound: localStorage.getItem('cnxhkh_sound')
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            const date = new Date().toISOString().slice(0, 10);
+            a.href = url;
+            a.download = `cnxhkh_quiz_backup_${date}.json`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+        }
+
+        function importQuizData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+
+                    if (data.app !== "cnxhkh_quiz_backup" || !Array.isArray(data.history) || !Array.isArray(data.review)) {
+                        alert("File khôi phục không đúng định dạng.");
+                        return;
+                    }
+
+                    writeStore(SCORE_KEY, data.history.slice(0, 30));
+                    reviewBank = new Set(data.review.filter(i => Number.isInteger(i) && i >= 0 && i < quizData.length));
+                    saveReviewToStore();
+
+                    if (data.darkMode !== null && data.darkMode !== undefined) localStorage.setItem('cnxhkh_dark', data.darkMode);
+                    if (data.sound !== null && data.sound !== undefined) localStorage.setItem('cnxhkh_sound', data.sound);
+
+                    renderSidebar();
+                    updateUI();
+                    loadHistory();
+
+                    alert("Khôi phục dữ liệu thành công!");
+                } catch (err) {
+                    alert("Không đọc được file khôi phục.");
+                    console.error(err);
+                } finally {
+                    event.target.value = "";
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function toggleTopBar() {
+            const isHidden = document.body.classList.toggle('topbar-hidden');
+            const btn = document.getElementById('mobile-topbar-toggle');
+            if (btn) btn.innerText = isHidden ? '☰' : '✕';
+        }
+
+        function scrollToQuestionNav() {
+            const target = document.getElementById('sidebar') || document.getElementById('layout-container') || document.body;
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        const modal = document.getElementById("historyModal");
+        function openHistoryModal() { loadHistory(); modal.style.display = "block"; }
+        function closeHistoryModal() { modal.style.display = "none"; }
+        window.onclick = (e) => { if (e.target == modal) closeHistoryModal(); }
+
+        renderSidebar(); renderQuestions(); updateUI();
+    </script>
+</body>
+
+</html>
