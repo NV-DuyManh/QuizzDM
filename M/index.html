@@ -1,0 +1,3012 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "wr16ufyw55");
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS466 - Trắc nghiệm Python, Lập trình mạng & Network Automation</title>
+    <style>
+
+        :root {
+            --primary: #3498db;
+            --primary-light: #ebf5fb;
+            --success: #2ecc71;
+            --success-bg: #d4edda;
+            --success-text: #155724;
+            --success-border: #c3e6cb;
+            --danger: #e74c3c;
+            --danger-bg: #f8d7da;
+            --danger-text: #721c24;
+            --danger-border: #f5c6cb;
+            --warning: #f39c12;
+            --purple: #9b59b6;
+            --purple-dark: #8e44ad;
+            --purple-bg: #f5eef8;
+            --dark: #2c3e50;
+            --light: #f4f7f6;
+            --gray: #bdc3c7;
+
+            --bg-color: #f4f7f6;
+            --text-main: #333;
+            --card-bg: #fff;
+            --border-color: #eee;
+            --nav-btn-bg: #fff;
+            --nav-btn-border: #ccc;
+        }
+
+        body.dark-mode {
+            --bg-color: #121212;
+            --text-main: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --border-color: #333;
+            --nav-btn-bg: #2c2c2c;
+            --nav-btn-border: #444;
+            --primary-light: #182c40;
+            --success-bg: #0f3a20;
+            --success-border: #1e8449;
+            --success-text: #82e0aa;
+            --danger-bg: #4a151b;
+            --danger-border: #922b21;
+            --danger-text: #f5b7b1;
+            --purple-bg: #2a1b38;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            padding-bottom: 50px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #score-board {
+            position: sticky;
+            top: 0;
+            background: var(--dark);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-bottom: 4px solid var(--success);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .score-info {
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        .score-info span {
+            color: var(--success);
+            font-size: 1.2em;
+        }
+
+        .progress-info {
+            font-size: 0.8em;
+            color: var(--gray);
+            font-weight: normal;
+        }
+
+        .top-btn-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .action-btn {
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.3s ease, filter 0.22s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+            filter: brightness(1.05);
+        }
+
+        .action-btn:active {
+            transform: translateY(0) scale(0.97);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+        }
+
+        .btn-exam {
+            background-color: var(--warning);
+            color: #fff;
+        }
+
+        .btn-exam:hover {
+            background-color: #d68910;
+        }
+
+        .btn-restart {
+            background-color: var(--danger);
+        }
+
+        .btn-restart:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-history {
+            background-color: var(--primary);
+        }
+
+        .btn-history:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-review-mode {
+            background-color: var(--purple);
+        }
+
+        .btn-review-mode:hover {
+            background-color: var(--purple-dark);
+        }
+
+        .btn-tool {
+            font-size: 1.1em;
+            padding: 10px 18px;
+            min-width: 68px;
+            justify-content: center;
+            border-radius: 10px;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .btn-tool:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 9px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        #btn-sound {
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            color: #ffffff;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+        }
+
+        #btn-sound:hover {
+            background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        }
+
+        #btn-dark {
+            background: linear-gradient(135deg, #243b55 0%, #141e30 100%);
+            color: #ffd166;
+        }
+
+        #btn-dark:hover {
+            background: linear-gradient(135deg, #2c5364 0%, #203a43 50%, #0f2027 100%);
+        }
+
+        body.dark-mode #btn-dark {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #2c3e50;
+        }
+
+        body.dark-mode #btn-dark:hover {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto 0 auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 2px solid var(--primary);
+            font-size: 1em;
+            outline: none;
+            background: var(--card-bg);
+            color: var(--text-main);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+            box-sizing: border-box;
+        }
+
+        #layout-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        #main-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s ease;
+            position: relative;
+            scroll-margin-top: 100px;
+            border-right: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .review-card {
+            border-left-color: var(--purple);
+        }
+
+        .exam-card {
+            border-left-color: var(--warning);
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .question-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            width: 75%;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            width: 25%;
+        }
+
+        .unknown-btn {
+            background-color: var(--purple);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .unknown-btn:hover {
+            background-color: var(--purple-dark);
+        }
+
+        .saved-btn {
+            background-color: var(--purple-dark);
+            box-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .options li {
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            transition: all 0.2s ease;
+            overflow: hidden;
+            background-color: var(--card-bg);
+        }
+
+        .options li:not(.answered):not(.exam-selected):hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary);
+            transform: translateX(8px);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.15);
+        }
+
+        label {
+            cursor: pointer;
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            margin: 0;
+            padding: 14px 18px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 15px;
+            transform: translateY(4px);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        input[type="radio"]:disabled {
+            cursor: not-allowed;
+        }
+
+        .correct-ans {
+            background-color: var(--success-bg) !important;
+            border-color: var(--success-border) !important;
+            color: var(--success-text) !important;
+            font-weight: bold;
+            transform: none !important;
+        }
+
+        .wrong-ans {
+            background-color: var(--danger-bg) !important;
+            border-color: var(--danger-border) !important;
+            color: var(--danger-text) !important;
+            text-decoration: line-through;
+            transform: none !important;
+        }
+
+        .exam-selected {
+            background-color: var(--primary-light) !important;
+            border-color: var(--primary) !important;
+            transform: none !important;
+        }
+
+        .explanation {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: var(--success-bg);
+            color: var(--success-text);
+            border-left: 4px solid var(--success);
+            font-size: 1em;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .btn-save-review {
+            background-color: var(--purple);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: 0.3s;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .btn-save-review:hover:not(:disabled) {
+            background-color: var(--purple-dark);
+        }
+
+        .btn-save-review:disabled {
+            background-color: var(--success);
+            cursor: default;
+        }
+
+        #sidebar {
+            width: 320px;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 90px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+            max-height: 50vh;
+            overflow-y: auto;
+            padding-right: 5px;
+        }
+
+        .nav-grid::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .nav-grid::-webkit-scrollbar-thumb {
+            background: var(--gray);
+            border-radius: 5px;
+        }
+
+        .nav-btn {
+            background-color: var(--nav-btn-bg);
+            border: 1px solid var(--nav-btn-border);
+            border-radius: 4px;
+            padding: 8px 0;
+            font-weight: bold;
+            color: var(--text-main);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .nav-btn:hover {
+            background-color: var(--primary-light);
+            border-color: var(--primary);
+        }
+
+        .nav-correct {
+            background-color: var(--success) !important;
+            color: white !important;
+            border-color: var(--success) !important;
+        }
+
+        .nav-wrong {
+            background-color: var(--danger) !important;
+            color: white !important;
+            border-color: var(--danger) !important;
+        }
+
+        .nav-unknown {
+            background-color: var(--purple) !important;
+            color: white !important;
+            border-color: var(--purple) !important;
+            opacity: 0.9;
+        }
+
+        .nav-exam-answered {
+            background-color: var(--primary) !important;
+            color: white !important;
+            border-color: var(--primary) !important;
+        }
+
+        .legend {
+            margin-top: 20px;
+            font-size: 0.85em;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .box {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            border: 1px solid var(--border-color);
+        }
+
+        .box.c {
+            background: var(--success);
+            border-color: var(--success);
+        }
+
+        .box.w {
+            background: var(--danger);
+            border-color: var(--danger);
+        }
+
+        .box.u {
+            background: var(--purple);
+            border-color: var(--purple);
+        }
+
+        .box.e {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .box.n {
+            background: var(--nav-btn-bg);
+        }
+
+        #exam-timer-display {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--warning);
+            display: none;
+            background: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            color: #d35400;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            width: 90%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: slideDown 0.3s;
+            color: var(--text-main);
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            color: var(--gray);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .close-btn:hover {
+            color: var(--danger);
+        }
+
+        .high-score-board {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .history-list {
+            list-style: none;
+            padding: 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .history-item {
+            background: var(--bg-color);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-left-width: 4px;
+        }
+
+        .history-item.best {
+            border-left-color: #f1c40f;
+        }
+
+        .h-date {
+            font-size: 0.85em;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .h-score {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 5px;
+        }
+
+        .history-right {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .h-percent {
+            font-size: 0.9em;
+            background: var(--success);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .badge {
+            font-size: 0.75em;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .badge-exam {
+            background: var(--danger);
+        }
+
+        .badge-practice {
+            background: var(--primary);
+        }
+
+        .badge-time {
+            background: var(--dark);
+        }
+
+        .btn-del-item {
+            background: none;
+            border: none;
+            color: var(--danger);
+            font-size: 1.2em;
+            cursor: pointer;
+            padding: 0 5px;
+            transition: transform 0.2s;
+        }
+
+        .btn-del-item:hover {
+            transform: scale(1.2);
+        }
+
+        .btn-clear-history {
+            background-color: transparent;
+            color: var(--danger);
+            border: 1px solid var(--danger);
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+
+        .btn-clear-history:hover {
+            background-color: var(--danger-bg);
+        }
+
+        .backup-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-backup-data,
+        .btn-import-data {
+            flex: 1;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .btn-backup-data {
+            background-color: var(--primary);
+        }
+
+        .btn-backup-data:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-import-data {
+            background-color: var(--purple);
+        }
+
+        .btn-import-data:hover {
+            background-color: var(--purple-dark);
+        }
+
+        .unknown-btn,
+        .btn-save-review,
+        .btn-del-item,
+        .btn-clear-history,
+        .btn-backup-data,
+        .btn-import-data,
+        .nav-btn {
+            transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease, background-color 0.3s ease;
+        }
+
+        .unknown-btn:hover,
+        .btn-save-review:hover,
+        .btn-backup-data:hover,
+        .btn-import-data:hover,
+        .nav-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 16px rgba(0, 0, 0, 0.18);
+            filter: brightness(1.05);
+        }
+
+        .btn-clear-history:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 16px rgba(231, 76, 60, 0.18);
+            filter: brightness(1.03);
+        }
+
+        .unknown-btn:active,
+        .btn-save-review:active,
+        .btn-clear-history:active,
+        .btn-backup-data:active,
+        .btn-import-data:active,
+        .nav-btn:active {
+            transform: translateY(0) scale(0.97);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #mobile-topbar-toggle {
+            display: none;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 2600;
+            width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(44, 62, 80, 0.92);
+            color: white;
+            font-size: 1.25em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.22);
+            backdrop-filter: blur(6px);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        #mobile-topbar-toggle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+            background: rgba(52, 152, 219, 0.96);
+        }
+
+        #mobile-topbar-toggle:active {
+            transform: translateY(0) scale(0.96);
+        }
+
+        body.topbar-hidden #score-board {
+            display: none;
+        }
+
+        #mobile-scroll-top {
+            display: none;
+            position: fixed;
+            right: 12px;
+            bottom: 18px;
+            z-index: 2500;
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.28);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+        }
+
+        #mobile-scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 11px 24px rgba(0, 0, 0, 0.34);
+            filter: brightness(1.07);
+        }
+
+        #mobile-scroll-top:active {
+            transform: translateY(0) scale(0.96);
+        }
+
+        body.topbar-hidden #mobile-topbar-toggle {
+            background: rgba(52, 152, 219, 0.96);
+        }
+
+        @media (max-width: 900px) {
+            #mobile-topbar-toggle {
+                display: block;
+            }
+
+            #mobile-scroll-top {
+                display: block;
+            }
+
+            #layout-container {
+                flex-direction: column;
+            }
+
+            #sidebar {
+                width: 100%;
+                position: static;
+                box-sizing: border-box;
+                order: -1;
+                margin-bottom: 10px;
+            }
+
+            .nav-grid {
+                grid-template-columns: repeat(10, 1fr);
+                max-height: 25vh;
+            }
+
+            .question-title {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .question-header {
+                flex-direction: column;
+            }
+
+            .top-btn-group {
+                justify-content: center;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .nav-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+
+        .code-block-wrapper {
+            margin: 12px 0 16px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .code-block-wrapper pre {
+            margin: 0;
+            padding: 14px 18px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Cascadia Code', 'Fira Code', 'Consolas', 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.5;
+            overflow-x: auto;
+            border-left: 4px solid var(--primary);
+            white-space: pre;
+        }
+
+        body.dark-mode .code-block-wrapper pre {
+            background: #0d1117;
+            border-left-color: #388bfd;
+        }
+
+        .q-text-pre {
+            white-space: pre-line;
+            display: inline;
+        }
+
+        .exp-section {
+            margin-top: 6px;
+        }
+
+        .exp-tip {
+            margin-top: 8px;
+            background: rgba(46, 204, 113, 0.15);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--success);
+        }
+
+        body.dark-mode .exp-tip {
+            background: rgba(46, 204, 113, 0.1);
+        }
+
+        .exp-source {
+            margin-top: 6px;
+            font-style: italic;
+            color: var(--danger-text);
+        }
+
+        @media (max-width: 900px) {
+            #main-content { width: 100%; }
+            .q-text-pre, .options label { overflow-wrap: anywhere; }
+        }
+    </style>
+    <meta name="robots" content="noindex, nofollow, noarchive">
+</head>
+
+<body data-subject="cs466-m">
+
+    <div id="score-board">
+        <div id="score-board-info" class="score-info">
+            Điểm: <span id="score">0</span> / <span id="total-score">67</span>
+            <div class="progress-info">Đã trả lời: <span id="progress">0</span> câu</div>
+        </div>
+
+        <div id="exam-timer-display">⏱️ 60:00</div>
+
+        <div class="top-btn-group">
+            <button class="action-btn btn-tool" id="btn-sound" onclick="toggleSound()"
+                title="Bật/Tắt âm thanh">🎵</button>
+            <button class="action-btn btn-tool" id="btn-dark" onclick="toggleDark()"
+                title="Giao diện tối/sáng">🌙</button>
+
+            <button class="action-btn btn-exam" id="btn-exam-mode" onclick="startExamMode()">⏱️ Thi Thử</button>
+            <button class="action-btn btn-review-mode" id="btn-toggle-review" onclick="toggleReviewMode()">📚 Ôn tập
+                (<span id="review-count">0</span>)</button>
+            <button class="action-btn btn-history" onclick="openHistoryModal()">📜 Lịch sử</button>
+            <button class="action-btn btn-restart" onclick="location.reload()">🔄 Làm lại</button>
+        </div>
+    </div>
+
+    <button id="mobile-topbar-toggle" onclick="toggleTopBar()" title="Ẩn/hiện thanh công cụ">✕</button>
+    <button id="mobile-scroll-top" onclick="scrollToQuestionNav()" title="Về danh sách câu hỏi">⬆️</button>
+
+    <div class="search-container" id="search-bar-wrap">
+        <input type="text" id="search-input" placeholder="🔍 Tìm câu hỏi, mã code..." oninput="filterQuestions()">
+    </div>
+
+    <div id="layout-container">
+        <div id="main-content">
+            <div id="quiz-header">
+                <h1 id="main-title">Môn Học: CS466 — Python & Network Automation</h1>
+                <p class="intro-text" id="main-desc">Lập trình mạng và tự động hóa mạng • 39 câu trắc nghiệm</p>
+            </div>
+
+            <div id="quiz-container"></div>
+            <div id="review-container" style="display: none;"></div>
+
+            <div id="bottom-actions" style="text-align: center; margin: 40px 0;">
+                <button class="action-btn"
+                    style="padding: 15px 30px; font-size: 1.2em; background-color: var(--success); margin: 0 auto;"
+                    onclick="saveScore(false, 'Luyện tập')">💾 Nộp Bài & Lưu Điểm</button>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="sidebar-title">Câu hỏi (67 câu)</div>
+            <div class="nav-grid" id="nav-grid"></div>
+            <div class="legend" id="sidebar-legend">
+                <div class="legend-item">
+                    <div class="box n"></div> Trống
+                </div>
+                <div class="legend-item" id="lg-correct">
+                    <div class="box c"></div> Đúng
+                </div>
+                <div class="legend-item" id="lg-wrong">
+                    <div class="box w"></div> Sai
+                </div>
+                <div class="legend-item" id="lg-exam" style="display:none;">
+                    <div class="box e"></div> Đã chọn
+                </div>
+                <div class="legend-item" id="lg-unknown">
+                    <div class="box u"></div> Ôn tập
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="historyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeHistoryModal()">&times;</span>
+            <h2 style="text-align: center; margin-top: 0;">📊 Lịch sử CS466</h2>
+            <div class="high-score-board" id="high-score-display"></div>
+            <ul class="history-list" id="history-list"></ul>
+            <button class="btn-clear-history" id="clear-history-btn" onclick="clearAllHistory()">🗑️ Xóa hết</button>
+            <div class="backup-actions">
+                <button class="btn-backup-data" onclick="exportQuizData()">📤 Sao lưu</button>
+                <button class="btn-import-data" onclick="document.getElementById('import-data-file').click()">📥 Khôi phục</button>
+                <input type="file" id="import-data-file" accept=".json,application/json" style="display:none" onchange="importQuizData(event)">
+            </div>
+        </div>
+    </div>
+
+        <script src="questions.js"></script>
+    <script>
+        if (typeof quizData === 'undefined') {
+            window.quizData = [
+    {
+        "id": "cs466-001",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "devices = [{\"ip\":\"10.0.0.1\",\"up\":True},{\"ip\":\"10.0.0.2\",\"up\":False}]\nprint([d[\"ip\"] for d in devices if d[\"up\"]])",
+        "o": [
+            "[\"10.0.0.1\"]",
+            "[\"10.0.0.2\"]",
+            "[True]"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Điều kiện if d[\"up\"] chỉ giữ thiết bị có up=True. Thiết bị đầu được giữ, rồi d[\"ip\"] lấy IP \"10.0.0.1\". Thiết bị thứ hai có up=False nên bị loại. Kết quả là list IP, không phải list Boolean.",
+        "tip": "Đọc list comprehension theo thứ tự: duyệt từng phần tử → kiểm tra if → lấy biểu thức ở đầu. Đừng thấy True trong điều kiện rồi chọn [True].",
+        "sourceNote": "Đề gốc chỉ có A, B, C."
+    },
+    {
+        "id": "cs466-002",
+        "q": "Một REST API hỗ trợ:\nGET /students\nGET /students/5\nPOST /students\nDELETE /students/5\nPhát biểu nào sau đây đúng?",
+        "code": "",
+        "o": [
+            "POST /students thường được sử dụng để tạo sinh viên mới.",
+            "GET /students/5 dùng để xóa sinh viên có mã 5.",
+            "DELETE /students/5 dùng để lấy thông tin sinh viên có mã 5.",
+            "GET /students dùng để thêm sinh viên mới."
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Trong thiết kế REST thông dụng, POST /students tạo sinh viên mới. GET /students lấy danh sách, GET /students/5 lấy sinh viên có mã 5, còn DELETE /students/5 xóa sinh viên đó. B, C, D nhầm chức năng của phương thức.",
+        "tip": "GET lấy — POST tạo — DELETE xóa. Đọc phương thức trước, sau đó mới đọc URL để xác định tài nguyên được tác động.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-003",
+        "q": "Khi đọc một file cấu hình YAML thông thường bằng PyYAML, cách nào an toàn hơn?",
+        "code": "",
+        "o": [
+            "pickle.loads(f.read())",
+            "yaml.safe_load(f)",
+            "yaml.load(f) không kiểm soát Loader",
+            "eval(f.read())"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "safe_load() đọc các kiểu YAML thông thường và hạn chế khả năng dựng đối tượng Python tùy ý. eval() thực thi biểu thức Python; pickle không phải bộ đọc YAML và giải tuần tự dữ liệu không tin cậy có thể nguy hiểm. yaml.load() không kiểm soát Loader không đáp ứng yêu cầu an toàn hơn.",
+        "tip": "Thấy YAML + đọc cấu hình + an toàn hơn → safe_load(). Phân biệt đọc dữ liệu với thực thi mã.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-004",
+        "q": "Trên một TCP socket đã kết nối, cặp phương thức nào phù hợp để gửi toàn bộ buffer và nhận dữ liệu?",
+        "code": "",
+        "o": [
+            "sendall()/recv()",
+            "bind()/listen()",
+            "connect()/accept()",
+            "write()/read()"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "sendall() tiếp tục gửi đến khi hết buffer hoặc gặp lỗi; recv() nhận dữ liệu trên socket. bind/listen và connect/accept phục vụ thiết lập địa chỉ hoặc kết nối. write/read không phải cặp phương thức trực tiếp được hỏi của đối tượng socket này.",
+        "tip": "sendall = gửi hết buffer hoặc báo lỗi; recv = nhận. Không suy ra rằng một lần recv() chắc chắn nhận hết dữ liệu đã gửi.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-005",
+        "q": "Với Paramiko, chính sách nào phù hợp khi muốn từ chối host key chưa được tin cậy thay vì tự động chấp nhận?",
+        "code": "",
+        "o": [
+            "AutoAddPolicy()",
+            "RejectPolicy()",
+            "WarningPolicy() luôn chấp nhận",
+            "Không cần host-key policy"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "RejectPolicy() từ chối host key chưa có trong danh sách tin cậy. AutoAddPolicy() tự thêm khóa mới; WarningPolicy() cảnh báo rồi chấp nhận khóa chưa biết, nên không đáp ứng yêu cầu từ chối.",
+        "tip": "Reject = từ chối; AutoAdd = tự thêm. Host key dùng để xác minh máy chủ SSH, không phải mật khẩu đăng nhập của người dùng.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-006",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "d = {\"a\": 1, \"b\": 2}\nd[\"c\"] = d.get(\"a\", 0) + d.get(\"x\", 5)\nprint(d[\"c\"])",
+        "o": [
+            "5",
+            "6",
+            "1",
+            "Lỗi"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Khóa \"a\" có giá trị 1, nên get(\"a\", 0) trả 1. Khóa \"x\" không tồn tại, nên get(\"x\", 5) trả mặc định 5. Tổng 1 + 5 = 6 được gán vào \"c\".",
+        "tip": "Với get(k, mặc định): có khóa lấy giá trị, thiếu khóa lấy mặc định. Tính từng vế riêng rồi cộng.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-007",
+        "q": "Netmiko phù hợp nhất cho trường hợp nào?",
+        "code": "",
+        "o": [
+            "Tự động hóa tương tác CLI với nhiều platform thiết bị mạng qua SSH",
+            "Xây dựng HTTP web server",
+            "Huấn luyện mô hình machine learning",
+            "Truy vấn cơ sở dữ liệu SQL"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Netmiko hỗ trợ kết nối và gửi lệnh CLI qua SSH tới nhiều nền tảng thiết bị mạng, đặc biệt router/switch. HTTP server, huấn luyện mô hình và truy vấn SQL không phải mục đích chính của thư viện.",
+        "tip": "Nhận diện cụm router/switch + CLI + SSH theo platform → Netmiko. Không chọn theo từ “Python” chung chung.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-008",
+        "q": "Cho đoạn code sau. Để đoạn code trên hoạt động đúng, dữ liệu Server trả về phù hợp nhất là:",
+        "code": "response = requests.get(\"http://127.0.0.1:5000/students\")\nstudents = response.json()\nprint(students[0][\"name\"])",
+        "o": [
+            "[{\"name\": \"An\"}, {\"name\": \"Bình\"}]",
+            "{\"name\": \"An\"}",
+            "An, Bình",
+            "{\"students\": \"An\"}"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "students[0] lấy phần tử đầu của list; phần tử này phải có khóa \"name\". A đáp ứng cấu trúc và in \"An\". B và D là đối tượng JSON không có cấu trúc list được yêu cầu; C không phải JSON hợp lệ như được trình bày.",
+        "tip": "[0] chọn phần tử đầu; [\"name\"] chọn trường. Đi từ ngoài vào trong để suy ra cấu trúc: list bên ngoài, dictionary bên trong.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-009",
+        "q": "Cho đoạn mã sau. Kết quả được in ra là:",
+        "code": "devices = [\"R1\", \"R2\", \"SW1\"]\nfor i, d in enumerate(devices, start=10):\n    print(f\"{i}:{d}\", end=\" \")",
+        "o": [
+            "0:R1 1:R2 2:SW1",
+            "10:R1 11:R2 12:SW1",
+            "R1:10 R2:11 SW1:12",
+            "Error"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "enumerate(..., start=10) đánh số 10, 11, 12. F-string {i}:{d} in số trước, tên thiết bị sau. end=\" \" giữ các kết quả trên cùng dòng, ngăn cách bằng dấu cách.",
+        "tip": "Kiểm tra hai điểm: bắt đầu từ bao nhiêu và số hay tên được in trước. A sai điểm bắt đầu; C đảo thứ tự.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-010",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "x = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)",
+        "o": [
+            "[4]",
+            "[1, 2, 3]",
+            "Lỗi",
+            "[1, 2, 3, 4]"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "y = x làm hai biến cùng tham chiếu một list, không tạo bản sao. append(4) thêm phần tử vào list chung, nên đọc qua x cũng thấy phần tử mới.",
+        "tip": "y = x dùng chung; y = x.copy() tạo list khác. Với câu hỏi list, xác định biến đang dùng chung hay dùng bản sao trước khi tính kết quả.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-011",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "base = {\"timeout\": 3, \"retries\": 2}\noverride = {\"timeout\": 5}\ncfg = {**base, **override}\nprint(cfg[\"timeout\"], cfg[\"retries\"])",
+        "o": [
+            "5 3",
+            "3 2",
+            "Error",
+            "5 2"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "Dictionary phía sau ghi đè giá trị của khóa trùng. \"timeout\" trở thành 5, còn \"retries\" không bị ghi đè nên vẫn là 2.",
+        "tip": "Khóa trùng: bên sau thắng; khóa không trùng: giữ lại. Không cộng các giá trị khi gặp cú pháp gộp dictionary.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-012",
+        "q": "Trong TCP server, phương thức nào dùng để gắn socket với địa chỉ IP và cổng cục bộ?",
+        "code": "",
+        "o": [
+            "connect()",
+            "bind()",
+            "accept()",
+            "recv()"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "bind() gắn socket vào IP và cổng cục bộ. connect() kết nối tới địa chỉ đích; accept() nhận kết nối; recv() nhận dữ liệu.",
+        "tip": "bind gắn — connect nối — accept nhận kết nối — recv nhận dữ liệu. Chú ý câu hỏi đang nói về thiết lập hay trao đổi dữ liệu.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-013",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "import re\nresult = bool(re.fullmatch(r\"Gi\\d+/\\d+\", \"Gi0/1\"))\nprint(result)",
+        "o": [
+            "Error",
+            "False",
+            "True",
+            "None"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Mẫu yêu cầu Gi, một hoặc nhiều chữ số, dấu /, rồi một hoặc nhiều chữ số. \"Gi0/1\" khớp toàn bộ. fullmatch() trả đối tượng Match và bool() chuyển nó thành True.",
+        "tip": "\\d = chữ số; + = ít nhất một; fullmatch = khớp cả chuỗi. Đừng nhầm với search() chỉ cần khớp một đoạn.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-014",
+        "q": "Điểm khác biệt đúng giữa TCP và UDP là:",
+        "code": "",
+        "o": [
+            "TCP có cơ chế kết nối và hỗ trợ truyền dữ liệu tin cậy hơn UDP.",
+            "UDP đảm bảo dữ liệu luôn đến đúng thứ tự.",
+            "TCP không cần thiết lập kết nối, UDP cần kết nối.",
+            "TCP chỉ sử dụng được trong mạng LAN."
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "TCP hướng kết nối, có cơ chế xác nhận, truyền lại và cung cấp luồng bytes đúng thứ tự. UDP không tự bảo đảm giao nhận hoặc thứ tự. C đảo ngược đặc điểm; D sai vì TCP có thể dùng qua Internet.",
+        "tip": "TCP: kết nối, truyền lại, đúng thứ tự. UDP: datagram, không tự bảo đảm các điều đó. Tránh các lựa chọn có từ tuyệt đối như “luôn” khi chúng trái đặc điểm giao thức.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-015",
+        "q": "Trong Python, kết quả của đoạn code sau là gì?",
+        "code": "data = [10, 20, 30, 40, 50]\nprint(data[-4:-1])",
+        "o": [
+            "[10, 20, 30]",
+            "[20, 30, 40]",
+            "[20, 30, 40, 50]",
+            "[30, 40, 50]"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "-4 trỏ tới 20; chỉ số kết thúc -1 trỏ tới 50 nhưng không được lấy. Lát cắt gồm 20, 30, 40.",
+        "tip": "Chỉ số âm đếm từ cuối; lát cắt lấy đầu, bỏ cuối. Đánh dấu hai mốc trước rồi mới chọn phần tử.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-016",
+        "q": "Một script nhận số cổng dưới dạng chuỗi \"443\". Phương thức nào thích hợp để kiểm tra chuỗi không rỗng và tất cả ký tự đều là chữ số?",
+        "code": "",
+        "o": [
+            "isspace()",
+            "isalpha()",
+            "isdigit()",
+            "isprintable()"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "isdigit() trả True khi chuỗi có ít nhất một ký tự và mọi ký tự đều là chữ số. isspace() kiểm tra ký tự trắng; isalpha() kiểm tra chữ; isprintable() kiểm tra khả năng hiển thị.",
+        "tip": "digit = chữ số. \"\".isdigit() là False. Để xác thực cổng thực tế còn cần kiểm tra khoảng giá trị; isdigit() còn chấp nhận một số chữ số Unicode.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-017",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "numbers = (10, 20, 30, 40)\nprint(numbers[-1])",
+        "o": [
+            "10",
+            "30",
+            "40",
+            "20"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Chỉ số -1 truy cập phần tử cuối tuple, ở đây là 40. Tuple hỗ trợ truy cập bằng chỉ số âm giống list.",
+        "tip": "[0] đầu tiên — [-1] cuối cùng — [-2] áp cuối.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-018",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "s = \"python-api\"\nprint(s.startswith(\"py\") and s.endswith(\"api\"))",
+        "o": [
+            "False",
+            "True",
+            "python-api",
+            "Lỗi"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Chuỗi bắt đầu bằng \"py\" và kết thúc bằng \"api\", nên hai điều kiện đều True. Kết quả được in là Boolean, không phải chuỗi gốc.",
+        "tip": "startswith kiểm tra đầu; endswith kiểm tra cuối; and cần cả hai đúng. Tính từng điều kiện riêng trước khi nối bằng and.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-019",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "devices = [\"R1\", \"R2\", \"R3\"]\nfor i, d in enumerate(devices, start=1):\n    print(f\"{i}:{d}\", end=\" \")",
+        "o": [
+            "R1:1 R2:2 R3:3",
+            "Error",
+            "1:R1 2:R2 3:R3",
+            "0:R1 1:R2 2:R3"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Số thứ tự bắt đầu từ 1, lần lượt ghép với R1, R2, R3. F-string đặt số trước tên, còn end=\" \" giữ kết quả trên cùng dòng.",
+        "tip": "Nhìn start=1 và {i}:{d}. A đảo thứ tự; D bỏ qua tham số start.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-020",
+        "q": "Đoạn mã post-check sau in ra giá trị nào?",
+        "code": "expected = {\"R1\": \"up\"}\nactual = {\"R1\": \"up\"}\nprint(actual[\"R1\"] == expected[\"R1\"])",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Giá trị ở khóa \"R1\" của hai dictionary đều là \"up\". Hai chuỗi bằng nhau nên == trả True.",
+        "tip": "= gán; == so sánh. Post-check so trạng thái thực tế với mong đợi; kết quả True ở đây chỉ chứng minh hai giá trị bằng nhau.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-021",
+        "q": "Một script network automation chạy trên CI/CD cần token để gọi REST API. Cách quản lý token nào phù hợp nhất?",
+        "code": "",
+        "o": [
+            "Đặt token làm một phần của tên file cấu hình",
+            "Hardcode token trực tiếp trong source code",
+            "Ghi token vào file log để dễ kiểm tra",
+            "Sử dụng secret manager hoặc cơ chế cung cấp secret tại runtime, áp dụng quyền tối thiểu và không ghi secret vào log"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "Cấp token khi chạy giúp tránh lưu bí mật trong source code. Quyền tối thiểu giới hạn tác động của token, còn không ghi secret vào log giảm nguy cơ rò rỉ. Tên file, mã nguồn và log đều không phải nơi phù hợp để công khai token.",
+        "tip": "Nhớ ba ý cấp lúc chạy — quyền tối thiểu — không lộ log. Không nhầm “dễ kiểm tra” với quản lý secret đúng cách.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-022",
+        "q": "Trong Python, json.dumps(payload) chủ yếu dùng để làm gì?",
+        "code": "",
+        "o": [
+            "Chuyển đối tượng Python thành chuỗi JSON",
+            "Đọc chuỗi JSON thành dictionary",
+            "Mở kết nối TCP",
+            "Đọc file YAML an toàn"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "json.dumps() chuyển đối tượng Python được hỗ trợ thành chuỗi JSON. json.loads() làm chiều ngược lại. Đây là chuyển đổi dữ liệu, không mở kết nối hay đọc YAML.",
+        "tip": "dumps ghi JSON — loads đọc JSON. Chữ s gắn với xử lý chuỗi; dumps() chưa tạo bytes để gửi qua socket.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-023",
+        "q": "Cho output CLI là \" Gi0/1 up \". Nếu chỉ muốn loại bỏ whitespace ở đầu chuỗi và giữ nguyên whitespace ở cuối, phương thức phù hợp là:",
+        "code": "",
+        "o": [
+            "lstrip()",
+            "replace()",
+            "strip()",
+            "rstrip()"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "lstrip() chỉ loại whitespace đầu chuỗi. rstrip() xử lý cuối, còn strip() xử lý cả hai đầu nên không đáp ứng yêu cầu giữ whitespace ở cuối. replace() cần chỉ rõ nội dung thay thế và không phải lựa chọn trực tiếp phù hợp nhất.",
+        "tip": "L=Left, R=Right. Gạch chân từ “chỉ” và “giữ nguyên” để không chọn nhầm strip().",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-024",
+        "q": "Trong TCP Server, phương thức accept() thường:",
+        "code": "",
+        "o": [
+            "Gửi dữ liệu cho Client",
+            "Đóng Socket",
+            "Chuyển chuỗi sang byte",
+            "Chờ cho đến khi có Client kết nối"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "Trên listening socket ở chế độ blocking thông thường, accept() chờ kết nối đến rồi trả socket kết nối mới và địa chỉ Client. Gửi dùng sendall(), đóng dùng close(), đổi chuỗi thành bytes dùng encode().",
+        "tip": "listen lắng nghe — accept nhận kết nối. Với non-blocking hoặc timeout, hành vi chờ có thể khác; đề dùng từ “thường”.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-025",
+        "q": "Trong logging, cách nào phù hợp hơn để tránh lộ token bí mật?",
+        "code": "",
+        "o": [
+            "Ghi toàn bộ token ở mức DEBUG",
+            "Mask/redact giá trị nhạy cảm trước khi ghi log",
+            "Nối token vào exception message",
+            "In toàn bộ biến môi trường"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Mask/redact là che hoặc loại bỏ thông tin nhạy cảm trước khi ghi log. DEBUG vẫn là log và có thể bị thu thập; exception message và biến môi trường cũng có thể chứa token.",
+        "tip": "Log sự kiện cần biết, không log bí mật. Không chọn DEBUG chỉ vì nghĩ mức này “ẩn” hoặc chỉ dùng lúc phát triển.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-026",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "devices = [\n    {\"name\": \"R1\", \"latency\": 15},\n    {\"name\": \"R2\", \"latency\": 8},\n    {\"name\": \"R3\", \"latency\": 20}\n]\nbest = min(devices, key=lambda d: d[\"latency\"])\nprint(best[\"name\"])",
+        "o": [
+            "R3",
+            "R2",
+            "Error",
+            "R1"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "key yêu cầu so sánh các thiết bị theo latency. Giá trị nhỏ nhất trong 15, 8, 20 là 8, thuộc R2. min() trả về dictionary của R2 rồi [\"name\"] lấy tên.",
+        "tip": "Xem key trước để biết tiêu chí; min nhỏ nhất, max lớn nhất. Đừng so tên thiết bị khi key đang lấy độ trễ.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-027",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "def tinh(a, b=2):\n    return a * b\nprint(tinh(5))",
+        "o": [
+            "5",
+            "7",
+            "10",
+            "Lỗi do thiếu tham số b"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "a=5; không truyền b nên dùng giá trị mặc định 2. Hàm tính 5 * 2 và trả 10, sau đó print() hiển thị kết quả.",
+        "tip": "Không truyền tham số thì dùng mặc định nếu có. Thay giá trị vào công thức trước khi tính; không cộng khi hàm dùng dấu *.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-028",
+        "q": "Cho đoạn code phía Client sau. Lệnh recv(1024) có ý nghĩa là:",
+        "code": "client.sendall(\"Hello\".encode(\"utf-8\"))\ndata = client.recv(1024)",
+        "o": [
+            "Gửi 1024 byte dữ liệu",
+            "Chờ 1024 Client kết nối",
+            "Nhận chính xác 1024 ký tự",
+            "Nhận tối đa 1024 byte dữ liệu"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "recv(1024) nhận tối đa 1024 bytes trong lần gọi đó. Dữ liệu thực nhận có thể ít hơn; giá trị trả về là bytes, không phải số ký tự Unicode.",
+        "tip": "recv(N) = nhận tối đa N bytes. Hai bẫy cần tránh là “chính xác” và “ký tự”.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-029",
+        "q": "Cho TCP Server sau. Biến conn được sử dụng để:",
+        "code": "server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver.bind((\"127.0.0.1\", 9001))\nserver.listen(5)\nconn, addr = server.accept()",
+        "o": [
+            "Trao đổi dữ liệu với Client đã kết nối",
+            "Chứa địa chỉ IP của Server",
+            "Lắng nghe các kết nối mới",
+            "Chứa số cổng của Client"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "accept() trả connected socket conn và địa chỉ Client addr. conn dùng để gửi/nhận với Client đó; server là listening socket. Vì vậy conn không phải địa chỉ hay số cổng.",
+        "tip": "server đón kết nối — conn trao đổi dữ liệu — addr chứa địa chỉ. Nhớ hai socket có hai vai trò khác nhau.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-030",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "numbers = [1, 2, 3, 4, 5]\nresult = [x * 2 for x in numbers if x % 2 == 1]\nprint(result)",
+        "o": [
+            "[1, 3, 5]",
+            "[2, 6, 10]",
+            "[2, 4, 6, 8, 10]",
+            "[4, 8]"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Điều kiện % 2 == 1 giữ số lẻ 1, 3, 5; nhân từng số với 2 được 2, 6, 10. A chỉ lọc mà chưa nhân; C bỏ qua điều kiện; D xử lý số chẵn.",
+        "tip": "Lọc trước → nhân sau. % 2 == 1 chọn lẻ; % 2 == 0 chọn chẵn.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-031",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "import json\nraw = '{\"device\":\"R1\",\"status\":\"up\"}'\ndata = json.loads(raw)\nprint(data.get(\"status\"))",
+        "o": [
+            "up",
+            "R1",
+            "status"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "json.loads() chuyển chuỗi JSON thành dictionary. get(\"status\") lấy giá trị \"up\", không lấy tên khóa \"status\" hoặc giá trị của khóa \"device\".",
+        "tip": "loads đọc JSON — get lấy theo khóa. Phân biệt tên khóa với giá trị của khóa.",
+        "sourceNote": "Đề gốc chỉ có A, B, C."
+    },
+    {
+        "id": "cs466-032",
+        "q": "Ansible check mode chủ yếu được dùng để làm gì?",
+        "code": "",
+        "o": [
+            "Mô phỏng/ước lượng thay đổi đối với module hỗ trợ mà chưa áp dụng thay đổi",
+            "Tự động rollback mọi lỗi",
+            "Bỏ qua inventory",
+            "Tắt SSH trên host đích"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Check mode giúp xem thay đổi dự kiến của module có hỗ trợ. Nó không tự hoàn tác, không bỏ qua inventory và không tắt SSH. Không phải mọi module đều mô phỏng đầy đủ; task không hỗ trợ có thể bị bỏ qua.",
+        "tip": "Check = xem trước; rollback = khôi phục sau thay đổi. Chú ý cụm “module hỗ trợ”; không suy ra mọi task đều được mô phỏng.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-033",
+        "q": "Đoạn mã nào phù hợp hơn cho một script gọi REST API cần tránh chờ vô hạn và cần phát hiện HTTP 4xx/5xx?",
+        "code": "",
+        "o": [
+            "r = requests.get(url, timeout=5); r.raise_for_status()",
+            "requests.get(url, verify=False)",
+            "requests.get(url)",
+            "eval(requests.get(url).text)"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "timeout=5 giới hạn chờ kết nối/đọc; raise_for_status() báo HTTPError cho phản hồi 4xx/5xx. verify=False chỉ tắt xác minh TLS; gọi GET không timeout không đáp ứng yêu cầu giới hạn chờ. eval() thực thi nội dung và không phải cách xử lý phản hồi an toàn.",
+        "tip": "Có hai yêu cầu thì tìm đủ hai thao tác: timeout cho thời gian chờ + raise_for_status cho HTTP lỗi. Timeout không phải giới hạn tổng thời gian tuyệt đối của toàn request.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-034",
+        "q": "Trong Ansible, tùy chọn --limit hữu ích nhất để làm gì?",
+        "code": "",
+        "o": [
+            "Giới hạn phạm vi host được chạy playbook",
+            "Tăng số CPU của host",
+            "Tự động tạo secret",
+            "Thay thế inventory"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "--limit thu hẹp tập host trong phạm vi host mà play đã chọn, dựa trên tên, nhóm hoặc mẫu. Nó không thay thế inventory và không thay tài nguyên máy hay tạo secret.",
+        "tip": "Inventory khai báo host — play chọn host — limit thu hẹp phạm vi. “Limit” nghĩa là giới hạn.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-035",
+        "q": "Cho đoạn mã sau. Kết quả được in ra là:",
+        "code": "label = \" edge-r1\\n\"\nprint(label.strip().upper())",
+        "o": [
+            "EDGE-R1",
+            "edge-r1",
+            "EDGE-R1"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0,
+            2
+        ],
+        "explanation": "strip() bỏ whitespace hai đầu, gồm dấu cách đầu và ký tự xuống dòng cuối. upper() đổi chữ thành hoa, tạo \"EDGE-R1\". B chưa chuyển chữ hoa. A và C cùng hiển thị kết quả đúng.",
+        "tip": "strip làm sạch hai đầu → upper viết hoa. Học kết quả \"EDGE-R1\" thay vì cố nhớ một chữ cái khi đề bị trùng lựa chọn.",
+        "sourceNote": "Chỉ có A, B, C; không có D. Hai lựa chọn A/C giống nhau. Trong ứng dụng luyện tập, chọn A hoặc C đều phải được tính đúng."
+    },
+    {
+        "id": "cs466-036",
+        "q": "Một REST API có endpoint:\nPOST /students\nRequest Body: {\"name\": \"An\", \"score\": 8.5}\nNếu dữ liệu được tạo mới thành công, HTTP Status Code phù hợp nhất là:",
+        "code": "",
+        "o": [
+            "404 Not Found",
+            "500 Internal Server Error",
+            "201 Created",
+            "200 OK"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "201 Created thể hiện yêu cầu đã thành công và tạo tài nguyên mới. 200 OK là thành công nói chung nên kém cụ thể hơn; 404 là không tìm thấy, 500 là lỗi phía server.",
+        "tip": "Gạch chân “tạo mới” → Created → 201. Nhớ 200 thành công chung, 404 không tìm thấy, 500 lỗi server.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-037",
+        "q": "Một inventory có nhiều địa chỉ IP bị lặp. Nếu chỉ cần tập hợp các địa chỉ duy nhất, kiểu dữ liệu nào phù hợp nhất?",
+        "code": "",
+        "o": [
+            "str",
+            "tuple",
+            "list",
+            "set"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "set lưu các phần tử duy nhất, tự loại giá trị trùng. List và tuple vẫn có thể chứa phần tử lặp; str là chuỗi, không phải kiểu tập hợp phù hợp cho yêu cầu này.",
+        "tip": "Chỉ cần duy nhất → set. Nếu đề yêu cầu giữ thứ tự xuất hiện đầu tiên, dùng cách như list(dict.fromkeys(items)); set không bảo đảm thứ tự đó.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-038",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "name = \" sw-core-01\\n\"\nprint(name.strip().upper())",
+        "o": [
+            "sw-core-01",
+            "Error",
+            "SW-CORE-01",
+            "SW-CORE-01"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2,
+            3
+        ],
+        "explanation": "strip() bỏ whitespace hai đầu; upper() đổi chữ sang hoa, cho \"SW-CORE-01\". Các chữ số và dấu gạch nối giữ nguyên. A chưa chuyển chữ hoa; B sai vì code hợp lệ.",
+        "tip": "upper chỉ đổi hoa/thường, không đổi chữ số và dấu gạch nối. Tính giá trị trước khi nhìn chữ cái đáp án.",
+        "sourceNote": "C và D giống nhau. Trong ứng dụng luyện tập, chọn C hoặc D đều phải được tính đúng."
+    },
+    {
+        "id": "cs466-039",
+        "q": "Cho UDP Server sau. Biến addr chứa:",
+        "code": "server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\nserver.bind((\"0.0.0.0\", 6000))\ndata, addr = server.recvfrom(1024)",
+        "o": [
+            "Nội dung Client gửi",
+            "Địa chỉ IP của Server",
+            "Địa chỉ IP và cổng của Client gửi dữ liệu",
+            "Kích thước gói tin"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "recvfrom() trả dữ liệu nhận được và địa chỉ nguồn. Với IPv4, addr là tuple (IP, port) của bên gửi datagram. Nội dung nằm ở data; \"0.0.0.0\", 6000 trong bind() là địa chỉ phía Server, không phải giá trị nguồn trả về trong addr.",
+        "tip": "recvfrom = nhận từ ai → data và địa chỉ người gửi. Phân biệt địa chỉ trong bind() với địa chỉ do recvfrom() trả về.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-040",
+        "q": "Trong Python, cho đoạn code sau. Kết quả hiển thị trên màn hình sẽ là:",
+        "code": "dictSt = {}\ndictSt[\"good bye\"] = \"Tạm biệt\"\ndictSt[\"How are you?\"] = \"Bạn khỏe không?\"\nprint(dictSt[1])",
+        "o": [
+            "{\"good bye\": \"Tạm biệt\"}",
+            "\"Xin chào\"",
+            "\"Tạm biệt\"",
+            "Thông báo lỗi"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "Dictionary chỉ có hai khóa chuỗi \"good bye\" và \"How are you?\", không có khóa số 1. Truy cập dictSt[1] gây KeyError; số 1 không được hiểu là vị trí phần tử.",
+        "tip": "Dictionary tra theo khóa, không tra theo vị trí như list. Khóa không tồn tại với d[k] → KeyError.",
+        "sourceQuestion": 1,
+        "sourceNote": "Câu 1 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-041",
+        "q": "Trong Python, độ dài tối đa khi khai báo tên biến là bao nhiêu?",
+        "code": "",
+        "o": [
+            "20 kí tự",
+            "100 kí tự",
+            "256 kí tự",
+            "Không có đáp án nào"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "Python không quy định giới hạn độ dài tên định danh là 20, 100 hay 256 ký tự. Vì vậy, trong các phương án đã cho, chọn D. Giới hạn tài nguyên của máy là vấn đề khác.",
+        "tip": "Tên biến Python không có giới hạn độ dài cố định theo cú pháp → loại các con số cho sẵn.",
+        "sourceQuestion": 2,
+        "sourceNote": "Câu 2 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-042",
+        "q": "Trong Python, phương thức nào trả về giá trị True nếu tất cả các ký tự của một chuỗi đều là chữ hoa?",
+        "code": "",
+        "o": [
+            "isflower()",
+            "isupper()",
+            "islower()",
+            "super()"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "isupper() trả True nếu chuỗi có ít nhất một ký tự có phân biệt hoa/thường và mọi ký tự loại đó đều viết hoa. Chữ số hoặc dấu câu không làm kết quả thành False; chuỗi chỉ gồm chữ số thì trả False. islower() kiểm tra chữ thường.",
+        "tip": "upper = hoa; lower = thường; tiền tố is = kiểm tra. Không nhầm isupper() với upper() là chuyển sang chữ hoa.",
+        "sourceQuestion": 4,
+        "sourceNote": "Câu 4 trong ảnh người dùng cung cấp. Giữ nguyên phương án isflower() như ảnh; đây không phải phương thức của str."
+    },
+    {
+        "id": "cs466-043",
+        "q": "Trong Python, tên biến nào sau đây không đúng cú pháp?",
+        "code": "",
+        "o": [
+            "_variable = 1",
+            "__variable__ = 1",
+            "1_variable = 1",
+            "Không có đáp án nào"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Tên biến có thể bắt đầu bằng chữ cái hoặc dấu gạch dưới, nhưng không được bắt đầu bằng chữ số. Vì vậy 1_variable sai cú pháp, còn hai tên bắt đầu bằng dấu gạch dưới đều hợp lệ.",
+        "tip": "Số được đứng sau, không được đứng đầu tên biến.",
+        "sourceQuestion": 5,
+        "sourceNote": "Câu 5 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-044",
+        "q": "Sinh viên hãy cho biết trong Python, khi gặp câu lệnh nào thì sẽ kết thúc vòng lặp hiện tại và bắt đầu vòng lặp mới.",
+        "code": "",
+        "o": [
+            "pass",
+            "break",
+            "continue",
+            "Cả A và C"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Theo ý của đề là kết thúc lượt lặp đang thực hiện và sang lượt tiếp theo: continue bỏ qua phần còn lại của lượt hiện tại. break thoát hẳn vòng lặp; pass không thực hiện hành động nào.",
+        "tip": "continue = sang lượt tiếp; break = thoát vòng lặp; pass = không làm gì.",
+        "sourceQuestion": 6,
+        "sourceNote": "Câu 6 trong ảnh người dùng cung cấp. Cụm \"vòng lặp mới\" trong đề được hiểu là lượt lặp tiếp theo của cùng vòng lặp."
+    },
+    {
+        "id": "cs466-045",
+        "q": "Trong Python, cho đoạn code sau. Kết quả sẽ là:",
+        "code": "tuple = ('abcd', 786, 2.23, 'john', 70.2)\nprint(tuple[1:3])",
+        "o": [
+            "('abcd', 786, 2.23, 'john', 70.2)",
+            "('786', '2.23')",
+            "(786, 2.23)",
+            "Không có nào ở trên."
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Lát cắt [1:3] lấy chỉ số 1 và 2, bỏ chỉ số 3. Hai phần tử là số 786 và 2.23, nên kết quả là tuple (786, 2.23), không phải hai chuỗi có dấu nháy.",
+        "tip": "Lát cắt lấy đầu, bỏ cuối; giữ nguyên kiểu của phần tử.",
+        "sourceQuestion": 7,
+        "sourceNote": "Câu 7 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-046",
+        "q": "Trong Python, cho đoạn code sau. Kết quả hiển thị trên màn hình sẽ là:",
+        "code": "ds = [10,20,30,40,50,60]\nprint(ds[-4:-1])",
+        "o": [
+            "[10,20,30,40,50,60]",
+            "[30,40,50]",
+            "[10,20,30,40,50]",
+            "Thông báo lỗi"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "List có 6 phần tử: -4 trỏ tới 30, còn -1 trỏ tới 60. Lát cắt bỏ mốc kết thúc nên chỉ lấy 30, 40, 50.",
+        "tip": "Đếm chỉ số âm từ cuối: 60 là -1, 50 là -2, 40 là -3, 30 là -4.",
+        "sourceQuestion": 8,
+        "sourceNote": "Câu 8 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-047",
+        "q": "Trong Python, kết quả của lệnh sau là gì?",
+        "code": "print(2*(1, 2, 3,4))",
+        "o": [
+            "[1, 2, 3, 4, 1, 2, 3, 4]",
+            "(1, 2, 3, 4, 1, 2, 3, 4)",
+            "(2, 4, 6, 8)",
+            "(1, 2, 3,4) (1, 2, 3,4)"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Nhân tuple với số nguyên 2 là lặp lại toàn bộ dãy hai lần, không nhân từng phần tử. Kết quả vẫn là một tuple gồm 8 phần tử.",
+        "tip": "Số × tuple/list/chuỗi = lặp lại dãy; không phải nhân từng phần tử.",
+        "sourceQuestion": 9,
+        "sourceNote": "Câu 9 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-048",
+        "q": "Trong Python, cho đoạn code sau. Kết quả sẽ là:",
+        "code": "cars = ['bmw', 'audi', 'toyota', 'subaru']\nprint(cars[len(cars)-1])",
+        "o": [
+            "Thông báo lỗi",
+            "'toyota'",
+            "'subaru'",
+            "['bmw', 'audi', 'toyota']"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "len(cars) là 4, nên chỉ số được truy cập là 3. List đánh số từ 0, phần tử tại chỉ số 3 là subaru. print() in subaru không kèm dấu nháy.",
+        "tip": "Phần tử cuối: list[len(list)-1], tương đương list[-1].",
+        "sourceQuestion": 10,
+        "sourceNote": "Câu 10 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-049",
+        "q": "Trong Python, đoạn mã Python sau đây sẽ in ra kết quả gì?",
+        "code": "n = 10\nfor i in range(n, 1, -1):\n    if i % 2 == 0:\n        print(i, end=\" \")",
+        "o": [
+            "8 6 4 2",
+            "10 9 8 7 6 5 4 3 2 1",
+            "10 8 6 4 2",
+            "10 8 6 4"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "range(10, 1, -1) lần lượt tạo 10 đến 2, không lấy 1. Điều kiện i % 2 == 0 chỉ giữ các số chẵn. end=\" \" in các số trên cùng dòng.",
+        "tip": "range lấy đầu, bỏ cuối; % 2 == 0 giữ số chẵn.",
+        "sourceQuestion": 11,
+        "sourceNote": "Câu 11 trong ảnh người dùng cung cấp. Ảnh không thể hiện rõ thụt lề. Khối if và print được thụt lề theo cấu trúc vòng lặp và ý của các phương án; nếu không thụt lề, Python sẽ báo IndentationError."
+    },
+    {
+        "id": "cs466-050",
+        "q": "Trong Python, đoạn mã sau đây in ra kết quả gì?",
+        "code": "my_list = [1, 2, 3, 4, 5]\nresult = my_list[-2:]\nprint(result)",
+        "o": [
+            "[4, 5]",
+            "[3, 4, 5]",
+            "[2, 3, 4, 5]",
+            "[2, 3, 4]"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Chỉ số -2 là phần tử áp cuối, tức 4. Không ghi mốc kết thúc nghĩa là lấy đến hết list, nên kết quả là [4, 5].",
+        "tip": "[-2:] = lấy hai phần tử cuối.",
+        "sourceQuestion": 12,
+        "sourceNote": "Câu 12 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-051",
+        "q": "Trong Python, hàm nào được sử dụng để đảo ngược danh sách trong list?",
+        "code": "",
+        "o": [
+            "invert()",
+            "rotate()",
+            "reverse()",
+            "None of the above"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Phương thức list.reverse() đảo thứ tự phần tử ngay trên list hiện có và trả về None. invert() và rotate() không phải phương thức của list.",
+        "tip": "reverse = đảo ngược. Muốn bản sao đảo ngược có thể dùng list[::-1].",
+        "sourceQuestion": 13,
+        "sourceNote": "Câu 13 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-052",
+        "q": "Trong Python, đoạn mã sau đây thực hiện chức năng gì?",
+        "code": "S=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)",
+        "o": [
+            "Nhận dữ liệu từ client và trả về cùng với địa chỉ của client.",
+            "Tạo một đối tượng socket với IPv4 và giao thức UDP",
+            "Tạo một đối tượng socket với IPv4 và giao thức TCP",
+            "Gán địa chỉ và cổng cho socket để lắng nghe các gói tin đến từ client."
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "AF_INET chọn họ địa chỉ IPv4; SOCK_DGRAM chọn socket datagram, thông thường dùng UDP. Lệnh chỉ tạo socket, chưa bind địa chỉ hay nhận dữ liệu.",
+        "tip": "INET = IPv4; DGRAM = UDP; STREAM = TCP.",
+        "sourceQuestion": 14,
+        "sourceNote": "Câu 14 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-053",
+        "q": "Đoạn mã nào sau đây tạo một danh sách (list) trong Python?",
+        "code": "",
+        "o": [
+            "my_list = (1, 2, 3)",
+            "my_list = <1, 2, 3>",
+            "my_list = {1, 2, 3}",
+            "my_list = [1, 2, 3]"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "Ngoặc vuông [] tạo list. Ngoặc tròn trong A tạo tuple; ngoặc nhọn chứa các giá trị không có cặp khóa:giá trị tạo set; B sai cú pháp.",
+        "tip": "[] list; () tuple; {giá trị} set; {khóa: giá trị} dictionary.",
+        "sourceQuestion": 15,
+        "sourceNote": "Câu 15 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-054",
+        "q": "Trong Python, đoạn mã sau đây in ra kết quả gì?",
+        "code": "x = 10\ny = \"20\"\nresult = x + y\nprint(result)",
+        "o": [
+            "Error",
+            "30",
+            "\"1020\"",
+            "\"2010\""
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "x là int còn y là str. Python không tự đổi chuỗi sang số hoặc số sang chuỗi khi cộng hai kiểu này, nên x + y gây TypeError trước khi print được thực hiện.",
+        "tip": "Số + chuỗi → lỗi. x + int(y) mới là 30; str(x) + y mới là \"1020\".",
+        "sourceQuestion": 16,
+        "sourceNote": "Câu 16 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-055",
+        "q": "Đoạn mã nào sau đây đúng để tạo một từ điển (dictionary) trong Python?",
+        "code": "",
+        "o": [
+            "my_dict = {1, 2, 3, 4}",
+            "my_dict = {1: 'a', 2: 'b'}",
+            "my_dict = [1, 'a', 2, 'b']",
+            "my_dict = (1, 'a', 2, 'b')"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Dictionary dùng ngoặc nhọn và các cặp khóa:giá trị. B tạo hai cặp 1: \"a\" và 2: \"b\". A là set, C là list, D là tuple.",
+        "tip": "Từ điển phải có dấu hai chấm giữa khóa và giá trị.",
+        "sourceQuestion": 17,
+        "sourceNote": "Câu 17 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-056",
+        "q": "Thư viện nào trong Python được sử dụng phổ biến để gửi yêu cầu HTTP và xử lý phản hồi?",
+        "code": "",
+        "o": [
+            "urllib.",
+            "socket.",
+            "json.",
+            "requests."
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "Requests cung cấp giao diện tiện dùng như requests.get(), requests.post() và các thuộc tính/phương thức xử lý response. urllib cũng hỗ trợ HTTP, nhưng theo cách hỏi và các lựa chọn của bộ đề, đáp án là Requests; socket làm việc ở mức thấp, json xử lý định dạng dữ liệu.",
+        "tip": "HTTP request và response với giao diện tiện dùng → requests.",
+        "sourceQuestion": 18,
+        "sourceNote": "Câu 18 trong ảnh người dùng cung cấp. urllib cũng có thể gửi HTTP; đề hỏi thư viện được dùng phổ biến, không hỏi thư viện duy nhất có khả năng này."
+    },
+    {
+        "id": "cs466-057",
+        "q": "Trong Python, phương thức nào của socket cho phép thiết lập kết nối với một địa chỉ IP và cổng?",
+        "code": "",
+        "o": [
+            "accept()",
+            "connect()",
+            "bind()",
+            "listen()"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "connect((IP, port)) kết nối socket tới địa chỉ đích. bind() gắn địa chỉ cục bộ; listen() đặt socket vào trạng thái lắng nghe; accept() nhận kết nối đến.",
+        "tip": "connect nối tới đích; bind gắn địa chỉ của mình.",
+        "sourceQuestion": 19,
+        "sourceNote": "Câu 19 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-058",
+        "q": "Trong Python, câu lệnh pip install Django thực hiện chức năng gì?",
+        "code": "",
+        "o": [
+            "Cài đặt framework Django từ Python Package Index (PyPI).",
+            "Tạo một project Django mới.",
+            "Khởi động server cho ứng dụng Django.",
+            "Tạo một ứng dụng Django mới."
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "pip install Django cài gói Django; mặc định pip lấy gói từ PyPI nếu không cấu hình nguồn khác. Tạo project dùng django-admin startproject; chạy server dùng manage.py runserver; tạo app dùng manage.py startapp.",
+        "tip": "pip install = cài thư viện/framework, không tạo project hay chạy server.",
+        "sourceQuestion": 20,
+        "sourceNote": "Câu 20 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-059",
+        "q": "Cho đoạn code sau. Kết quả hiển thị trên màn hình sẽ là:",
+        "code": "tupleString = (\"Chong\", \"Dich\", \"Covid-19\")\nprint(\"Chung_tay\" + tupleString)",
+        "o": [
+            "\"Chung_tay Chong Dich Covid-19\"",
+            "\"Chung_tayChongDichCovid-19\"",
+            "Thông báo lỗi",
+            "\"Chung_tay\" (\"Chong\", \"Dich\", \"Covid19\")"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "\"Chung_tay\" là str, còn tupleString là tuple. Toán tử + không nối trực tiếp str với tuple, nên biểu thức gây TypeError.",
+        "tip": "Chuỗi + tuple → lỗi, không tự nối từng phần tử bên trong tuple.",
+        "sourceQuestion": 21,
+        "sourceNote": "Câu 21 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-060",
+        "q": "lst chứa giá trị nào sau khi thực hiện các lệnh sau? lst = [1,4,3]; lst.insert(2,2)",
+        "code": "",
+        "o": [
+            "[1,2,3,4]",
+            "[1,2,4,3]",
+            "[1,4,3,2]",
+            "[2,1,4,3]",
+            "[1,4,2,3]"
+        ],
+        "a": 4,
+        "correctAnswers": [
+            4
+        ],
+        "explanation": "Thực tế insert(2, 2) chèn giá trị 2 trước phần tử ở chỉ số 2 (giá trị 3), cho [1, 4, 2, 3]. Không phương án nào trong bốn lựa chọn gốc khớp kết quả này. E là kết quả đúng được bổ sung, không sửa các phương án gốc.",
+        "tip": "insert(vị trí, giá trị): chỉ số bắt đầu từ 0; chèn trước phần tử ở vị trí đó.",
+        "sourceQuestion": 22,
+        "sourceNote": "Câu 22 trong ảnh người dùng cung cấp. Đề gốc không có phương án [1,4,2,3]. Giữ nguyên A–D và bổ sung E: [1,4,2,3], cùng cách xử lý câu 24."
+    },
+    {
+        "id": "cs466-061",
+        "q": "Trong Python, để đọc một dòng trong tập tin sử dụng phương thức nào sau đây?",
+        "code": "",
+        "o": [
+            "readline()",
+            "getline()",
+            "line()",
+            "read()"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "readline() đọc một dòng từ đối tượng file, thường giữ ký tự xuống dòng nếu có. read() đọc số ký tự được yêu cầu hoặc toàn bộ phần còn lại, không mặc định chỉ một dòng.",
+        "tip": "read + line = đọc một dòng.",
+        "sourceQuestion": 23,
+        "sourceNote": "Câu 23 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-062",
+        "q": "Phương thức nào chuyển một văn bản thành văn bản chứa các từ được viết hoa kí tự đầu tiên?",
+        "code": "",
+        "o": [
+            "lower()",
+            "tocap()",
+            "upper()",
+            "capitalize()",
+            "title()"
+        ],
+        "a": 4,
+        "correctAnswers": [
+            4
+        ],
+        "explanation": "title() viết hoa ký tự đầu mỗi từ theo quy tắc của Python. capitalize() chỉ viết hoa ký tự đầu toàn chuỗi và chuyển phần còn lại thành chữ thường; upper() viết hoa tất cả; lower() viết thường; tocap() không phải phương thức của str.",
+        "tip": "Mỗi từ → title(); đầu toàn chuỗi → capitalize(); toàn bộ chữ → upper().",
+        "sourceQuestion": 24,
+        "sourceNote": "Câu 24 trong ảnh người dùng cung cấp. Bốn lựa chọn gốc không có đáp án đúng. Theo yêu cầu người dùng, giữ A–D và bổ sung E: title()."
+    },
+    {
+        "id": "cs466-063",
+        "q": "Đầu ra của đoạn lệnh sau là gì?",
+        "code": "str = '20'\nprint(str * 2)",
+        "o": [
+            "2020",
+            "40",
+            "Thông báo lỗi",
+            "Các đáp án A,B,C đều sai"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "str chứa chuỗi \"20\". Nhân chuỗi với 2 lặp lại chuỗi hai lần, tạo \"2020\"; print() hiển thị 2020. Không phải phép nhân số 20 với 2.",
+        "tip": "Có dấu nháy thì là chuỗi: \"20\" * 2 → \"2020\".",
+        "sourceQuestion": 25,
+        "sourceNote": "Câu 25 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-064",
+        "q": "Cho đoạn code sau. Kết quả hiển thị trên màn hình sẽ là:",
+        "code": "ds = ['P', 'Y', 'T', 'H', 'O', 'N']\nprint('-'.join(ds).lower())",
+        "o": [
+            "[P-Y-T-H-O-N]",
+            "P-Y-T-H-O-N",
+            "[p-y-t-h-o-n]",
+            "p-y-t-h-o-n"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "join nối các phần tử bằng dấu gạch ngang, cho \"P-Y-T-H-O-N\". lower() chuyển sang chữ thường; print() hiển thị p-y-t-h-o-n, không có ngoặc vuông.",
+        "tip": "join nối → lower viết thường. Kết quả là chuỗi, không phải list.",
+        "sourceQuestion": 26,
+        "sourceNote": "Câu 26 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-065",
+        "q": "Cho đoạn code sau. Kết quả sẽ là:",
+        "code": "d = {}\nd[\"jon\"] = 22\nd[\"bob\"] = 27\nd[\"tom\"] = 53\nd[\"rob\"] = 87\nprint(len(d))",
+        "o": [
+            "{22, 27, 53, 87}",
+            "{'jon': 44, 'bob': 27, 'tom':53, 'rob':87}",
+            "4",
+            "{'jon', 'bob', 'tom', 'rob'}"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Dictionary có bốn khóa khác nhau: jon, bob, tom, rob. len(d) đếm số cặp khóa–giá trị, nên in 4; không in tập giá trị hoặc tên khóa.",
+        "tip": "len(dictionary) = số khóa, không phải tổng các giá trị.",
+        "sourceQuestion": 27,
+        "sourceNote": "Câu 27 trong ảnh người dùng cung cấp."
+    },
+    {
+        "id": "cs466-066",
+        "q": "Trong Python, đoạn mã sau đây cho kết quả là gì?",
+        "code": "for i, u in enumerate(['P','y','t','h','o','n']):\n    print(i,u,sep='_',end=';')",
+        "o": [
+            "0_P;1_y;2_;3_h;4_o;5_n;",
+            "python-5;",
+            "0-python;",
+            "0_P;1_y;2_t;3_h;4_o;5_n;"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "enumerate mặc định đánh số từ 0. sep=\"_\" đặt dấu gạch dưới giữa số và chữ; end=\";\" đặt dấu chấm phẩy sau mỗi lần in. Sáu phần tử cho 0_P;1_y;2_t;3_h;4_o;5_n;.",
+        "tip": "enumerate mặc định từ 0; sep ngăn cách đối số; end kết thúc mỗi lần print.",
+        "sourceQuestion": "không đánh số, giữa 27 và 28",
+        "sourceNote": "Câu không đánh số, giữa 27 và 28 trong ảnh người dùng cung cấp. Đặt cuối nhóm bổ sung theo vị trí xuất hiện trong ảnh; không tự gán số câu gốc."
+    },
+    {
+        "id": "cs466-067",
+        "q": "Trong Python, đâu là kết quả của đoạn code dưới đây?",
+        "code": "tp = (11, 22, 33, 44, 55, 66, 77, 88, 99, 110)\ntp1 = tp[:4]\nprint(tp)",
+        "o": [
+            "(11, 22, 33, 44)",
+            "11, 22, 33, 44",
+            "(11, 22, 33)",
+            "(11, 22, 33, 44, 55, 66, 77, 88, 99, 110)"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "tp[:4] tạo tuple gồm bốn phần tử đầu rồi gán vào tp1. Lệnh cuối in tp, không in tp1; tp gốc không bị thay đổi nên in toàn bộ 10 phần tử.",
+        "tip": "Nhìn tên biến trong print trước khi chọn đáp án. Tạo lát cắt không sửa tuple gốc.",
+        "sourceQuestion": 28,
+        "sourceNote": "Câu 28 trong ảnh người dùng cung cấp."
+    }
+];
+        }
+    </script>
+    <script>
+        function escapeHTML(str) {
+            if (str === null || str === undefined) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function getExplanation(i) {
+            const item = quizData[i];
+            if (!item) return "Đáp án chuẩn theo học phần CS466.";
+            let html = `<div>💡 <strong>Vì sao đúng:</strong> ${escapeHTML(item.explanation)}</div>`;
+            if (item.tip) {
+                html += `<div class="exp-tip">🎯 <strong>Mẹo / Kỹ năng:</strong> ${escapeHTML(item.tip)}</div>`;
+            }
+            if (item.sourceNote) {
+                html += `<div class="exp-source">📌 <strong>Lưu ý nguồn:</strong> ${escapeHTML(item.sourceNote)}</div>`;
+            }
+            return html;
+        }
+
+        function formatOptionText(displayIndex, originalText) {
+            return `${String.fromCharCode(65 + displayIndex)}. ${originalText}`;
+        }
+
+        function renderOptionLabel(questionIndex, originalOptionIndex, displayIndex) {
+            const optText = quizData[questionIndex].o[originalOptionIndex];
+            return `<label><input type="radio" name="q${questionIndex}" onchange="checkAnswer(${questionIndex}, ${originalOptionIndex})">${formatOptionText(displayIndex, escapeHTML(optText))}</label>`;
+        }
+
+        function resetOptionLabelsToOriginal(questionIndex) {
+            quizData[questionIndex].o.forEach((_, optionIndex) => {
+                const li = document.getElementById(`li-${questionIndex}-${optionIndex}`);
+                if (li) li.innerHTML = renderOptionLabel(questionIndex, optionIndex, optionIndex);
+            });
+        }
+
+        let currentScore = 0;
+        let answeredQuestions = 0;
+        const totalQuestions = quizData.length;
+        const SCORE_KEY = 'cs466_m_history';
+        const REVIEW_KEY = 'cs466_m_review';
+
+        function readStore(key, fallback = []) {
+            try {
+                const raw = localStorage.getItem(key);
+                return raw ? JSON.parse(raw) : fallback;
+            } catch (e) {
+                console.warn('Không đọc được dữ liệu localStorage:', key, e);
+                return fallback;
+            }
+        }
+
+        function writeStore(key, value) {
+            try {
+                localStorage.setItem(key, JSON.stringify(value));
+                return true;
+            } catch (e) {
+                alert("Trình duyệt không cho lưu dữ liệu. Hãy kiểm tra chế độ ẩn danh, quyền lưu dữ liệu trang web hoặc dung lượng bộ nhớ.");
+                console.error('Không lưu được dữ liệu localStorage:', key, e);
+                return false;
+            }
+        }
+
+        let reviewBank = new Set(readStore(REVIEW_KEY, []).filter(i => Number.isInteger(i) && i >= 0 && i < quizData.length));
+        saveReviewToStore();
+        let isReviewMode = false;
+        window.isExamMode = false;
+        let examAnswers = {};
+        let examTimer;
+        let timeRemaining = 3600;
+        let examOrder = quizData.map((_, i) => i);
+
+        // Âm thanh
+        let audioCtx = null;
+        let soundEnabled = localStorage.getItem('cs466_m_sound') !== 'false';
+        document.getElementById('btn-sound').innerText = soundEnabled ? '🎵' : '🔇';
+
+        function initAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            localStorage.setItem('cs466_m_sound', soundEnabled);
+            document.getElementById('btn-sound').innerText = soundEnabled ? '🎵' : '🔇';
+        }
+
+        function playSound(type) {
+            if (!soundEnabled) return;
+            initAudio();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            const now = audioCtx.currentTime;
+            if (type === 'correct') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(600, now);
+                osc.frequency.exponentialRampToValueAtTime(1200, now + 0.1);
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                osc.start(now);
+                osc.stop(now + 0.2);
+            } else if (type === 'wrong') {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.exponentialRampToValueAtTime(100, now + 0.2);
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                osc.start(now);
+                osc.stop(now + 0.2);
+            } else if (type === 'tick') {
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(400, now);
+                gain.gain.setValueAtTime(0.05, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+                osc.start(now);
+                osc.stop(now + 0.05);
+            }
+        }
+
+        // Dark Mode
+        let isDarkMode = localStorage.getItem('cs466_m_dark') === 'true';
+        if (isDarkMode) document.body.classList.add('dark-mode');
+        document.getElementById('btn-dark').innerText = isDarkMode ? '☀️' : '🌙';
+
+        function toggleDark() {
+            isDarkMode = !isDarkMode;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            localStorage.setItem('cs466_m_dark', isDarkMode);
+            document.getElementById('btn-dark').innerText = isDarkMode ? '☀️' : '🌙';
+        }
+
+        function shuffleArray(arr) {
+            const shuffled = [...arr];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function applyExamQuestionOrder() {
+            examOrder.forEach((questionIndex, displayIndex) => {
+                const card = document.getElementById(`q-card-${questionIndex}`);
+                const title = document.getElementById(`q-title-${questionIndex}`);
+                if (card) container.appendChild(card);
+                if (title) title.innerHTML = `Câu ${displayIndex + 1} (${quizData[questionIndex].id}): <span class="q-text-pre">${escapeHTML(quizData[questionIndex].q)}</span>`;
+            });
+        }
+
+        // Tìm kiếm
+        function filterQuestions() {
+            const term = document.getElementById('search-input').value.toLowerCase();
+            quizData.forEach((item, i) => {
+                const text = (item.q + " " + (item.code || "") + " " + item.o.join(" ")).toLowerCase();
+                const card = document.getElementById(`q-card-${i}`);
+                if (card && !isReviewMode && !window.isExamMode) card.style.display = text.includes(term) ? 'block' : 'none';
+            });
+        }
+
+        const container = document.getElementById('quiz-container');
+        const rContainer = document.getElementById('review-container');
+        const navGrid = document.getElementById('nav-grid');
+
+        function saveReviewToStore() {
+            writeStore(REVIEW_KEY, [...reviewBank]);
+        }
+
+        function updateUI() {
+            document.getElementById('score').innerText = currentScore;
+            const totalScoreEl = document.getElementById('total-score');
+            if (totalScoreEl) totalScoreEl.innerText = totalQuestions;
+            document.getElementById('progress').innerText = answeredQuestions;
+            const reviewCountEl = document.getElementById('review-count');
+            if (reviewCountEl) reviewCountEl.innerText = reviewBank.size;
+        }
+
+        function renderSidebar(order = quizData.map((_, i) => i), useDisplayOrder = false) {
+            let html = '';
+            order.forEach((questionIndex, displayIndex) => {
+                const cls = reviewBank.has(questionIndex) ? 'nav-btn nav-unknown' : 'nav-btn';
+                const label = useDisplayOrder ? displayIndex + 1 : questionIndex + 1;
+                html += `<button class="${cls}" id="nav-btn-${questionIndex}" onclick="scrollToQ(${questionIndex})">${label}</button>`;
+            });
+            navGrid.innerHTML = html;
+        }
+
+        function renderQuestions() {
+            container.innerHTML = '';
+            quizData.forEach((item, i) => {
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = `q-card-${i}`;
+
+                let codeHtml = '';
+                if (item.code && item.code.trim()) {
+                    codeHtml = `<div class="code-block-wrapper"><pre><code>${escapeHTML(item.code)}</code></pre></div>`;
+                }
+
+                let opts = '';
+                item.o.forEach((opt, oi) => {
+                    opts += `<li id="li-${i}-${oi}">${renderOptionLabel(i, oi, oi)}</li>`;
+                });
+
+                const isSaved = reviewBank.has(i);
+                card.innerHTML = `
+                    <div class="question-header">
+                        <div class="question-title" id="q-title-${i}">Câu ${i + 1} (${item.id}): <span class="q-text-pre">${escapeHTML(item.q)}</span></div>
+                        <div class="header-actions">
+                            <button class="unknown-btn ${isSaved ? 'saved-btn' : ''}" id="ubtn-${i}" onclick="markUnknown(${i})">${isSaved ? '⭐ Đã lưu' : '❓ Không biết'}</button>
+                        </div>
+                    </div>
+                    ${codeHtml}
+                    <ul class="options">${opts}</ul>
+                    <div class="explanation" id="exp-${i}">
+                        ${getExplanation(i)}
+                        <br><button class="btn-save-review" id="srev-${i}" style="display:none;" onclick="addWrongReview(${i})">➕ Lưu vào Ôn tập</button>
+                    </div>`;
+                container.appendChild(card);
+            });
+        }
+
+        function scrollToQ(i) {
+            const id = isReviewMode ? `rq-card-${i}` : `q-card-${i}`;
+            const el = document.getElementById(id);
+            if (el && el.style.display !== 'none') {
+                el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                el.style.boxShadow = isReviewMode ? '0 0 20px rgba(155, 89, 182, 0.5)' : (window.isExamMode ? '0 0 20px rgba(243, 156, 18, 0.5)' : '0 0 20px rgba(52, 152, 219, 0.5)');
+                setTimeout(() => el.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)', 1000);
+            }
+        }
+
+        function checkAnswer(i, oi) {
+            const item = quizData[i];
+            const btn = document.getElementById(`nav-btn-${i}`);
+            const parentLi = document.getElementById(`li-${i}-${oi}`);
+            const allLis = document.querySelectorAll(`#q-card-${i} .options li`);
+
+            if (window.isExamMode) {
+                examAnswers[i] = oi;
+                allLis.forEach(li => li.classList.remove('exam-selected'));
+                parentLi.classList.add('exam-selected');
+                btn.className = 'nav-btn nav-exam-answered';
+                playSound('tick');
+                document.getElementById('progress').innerText = Object.keys(examAnswers).length;
+                return;
+            }
+
+            // Ngăn chặn cộng điểm nhiều lần nếu đã trả lời
+            if (allLis[0] && allLis[0].classList.contains('answered')) return;
+
+            allLis.forEach(li => li.classList.add('answered'));
+
+            const correctIndices = item.correctAnswers ?? [item.a];
+            const isCorrect = correctIndices.includes(oi);
+
+            if (isCorrect) {
+                parentLi.classList.add('correct-ans');
+                // Đánh dấu tất cả lựa chọn đúng tương đương (ví dụ TN35, TN38)
+                correctIndices.forEach(ci => {
+                    const el = document.getElementById(`li-${i}-${ci}`);
+                    if (el) el.classList.add('correct-ans');
+                });
+                btn.className = 'nav-btn nav-correct';
+                currentScore++;
+                playSound('correct');
+            } else {
+                parentLi.classList.add('wrong-ans');
+                correctIndices.forEach(ci => {
+                    const el = document.getElementById(`li-${i}-${ci}`);
+                    if (el) el.classList.add('correct-ans');
+                });
+                btn.className = 'nav-btn nav-wrong';
+                playSound('wrong');
+            }
+
+            document.getElementById(`srev-${i}`).style.display = 'inline-block';
+            const radios = document.getElementsByName(`q${i}`);
+            radios.forEach(r => r.disabled = true);
+            document.getElementById(`ubtn-${i}`).style.display = 'none';
+            document.getElementById(`exp-${i}`).style.display = 'block';
+            answeredQuestions++;
+            updateUI();
+        }
+
+        function markUnknown(i) {
+            if (window.isExamMode) return;
+            const item = quizData[i];
+            const allLis = document.querySelectorAll(`#q-card-${i} .options li`);
+            if (allLis[0] && allLis[0].classList.contains('answered')) return;
+
+            reviewBank.add(i);
+            saveReviewToStore();
+
+            allLis.forEach(li => li.classList.add('answered'));
+
+            const correctIndices = item.correctAnswers ?? [item.a];
+            correctIndices.forEach(ci => {
+                const el = document.getElementById(`li-${i}-${ci}`);
+                if (el) el.classList.add('correct-ans');
+            });
+
+            const radios = document.getElementsByName(`q${i}`);
+            radios.forEach(r => r.disabled = true);
+            document.getElementById(`ubtn-${i}`).style.display = 'none';
+            document.getElementById(`exp-${i}`).style.display = 'block';
+            document.getElementById(`nav-btn-${i}`).className = 'nav-btn nav-unknown';
+            answeredQuestions++;
+            updateUI();
+            playSound('tick');
+        }
+
+        function addWrongReview(i) {
+            reviewBank.add(i);
+            saveReviewToStore();
+            const b = document.getElementById(`srev-${i}`);
+            if (b) {
+                b.innerText = "✔️ Đã lưu";
+                b.disabled = true;
+            }
+            document.getElementById(`nav-btn-${i}`).className = 'nav-btn nav-unknown';
+            updateUI();
+        }
+
+        function formatTime(secs) {
+            const m = Math.floor(secs / 60);
+            const s = secs % 60;
+            return `⏱️ ${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+
+        function formatTimeUsed(secs) {
+            const m = Math.floor(secs / 60);
+            const s = secs % 60;
+            return `${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+
+        function startExamMode() {
+            if (!confirm("Bắt đầu thi CS466 trong 60 phút?")) return;
+            window.isExamMode = true;
+            isReviewMode = false;
+            currentScore = 0;
+            answeredQuestions = 0;
+            examAnswers = {};
+
+            // Xáo thứ tự câu hỏi
+            examOrder = shuffleArray(quizData.map((_, i) => i));
+
+            renderSidebar(examOrder, true);
+            applyExamQuestionOrder();
+
+            document.getElementById('search-bar-wrap').style.display = 'none';
+            document.getElementById('score-board-info').style.display = 'none';
+            document.getElementById('exam-timer-display').style.display = 'block';
+            document.getElementById('btn-exam-mode').style.display = 'none';
+            document.getElementById('btn-toggle-review').style.display = 'none';
+            document.getElementById('lg-correct').style.display = 'none';
+            document.getElementById('lg-wrong').style.display = 'none';
+            document.getElementById('lg-unknown').style.display = 'none';
+            document.getElementById('lg-exam').style.display = 'flex';
+            document.getElementById('bottom-actions').innerHTML = `<button class="action-btn" style="padding: 15px 30px; font-size: 1.2em; background-color: var(--danger); margin: 0 auto;" onclick="submitExam()">📤 Nộp Bài</button>`;
+
+            quizData.forEach((_, i) => {
+                document.getElementById(`nav-btn-${i}`).className = 'nav-btn';
+                document.getElementById(`q-card-${i}`).classList.add('exam-card');
+                resetOptionLabelsToOriginal(i);
+
+                const lis = document.querySelectorAll(`#q-card-${i} li`);
+                lis.forEach(li => li.className = '');
+                const radios = document.getElementsByName(`q${i}`);
+                radios.forEach(r => { r.disabled = false; r.checked = false; });
+                document.getElementById(`exp-${i}`).style.display = 'none';
+                document.getElementById(`ubtn-${i}`).style.display = 'none';
+            });
+
+            timeRemaining = 3600;
+            document.getElementById('exam-timer-display').innerText = formatTime(timeRemaining);
+            examTimer = setInterval(() => {
+                timeRemaining--;
+                document.getElementById('exam-timer-display').innerText = formatTime(timeRemaining);
+                if (timeRemaining <= 180) document.getElementById('exam-timer-display').style.color = 'var(--danger)';
+                if (timeRemaining <= 0) { clearInterval(examTimer); submitExam(); }
+            }, 1000);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function submitExam() {
+            clearInterval(examTimer);
+            let timeUsed = 3600 - timeRemaining;
+            let timeStr = formatTimeUsed(timeUsed);
+            let score = 0;
+
+            quizData.forEach((item, i) => {
+                const ans = examAnswers[i];
+                const btn = document.getElementById(`nav-btn-${i}`);
+                document.getElementById(`q-card-${i}`).classList.remove('exam-card');
+                const radios = document.getElementsByName(`q${i}`);
+                radios.forEach(r => r.disabled = true);
+                document.getElementById(`exp-${i}`).style.display = 'block';
+
+                const correctIndices = item.correctAnswers ?? [item.a];
+                const isCorrect = ans !== undefined && correctIndices.includes(ans);
+
+                if (isCorrect) {
+                    score++;
+                    btn.className = 'nav-btn nav-correct';
+                } else {
+                    if (ans !== undefined) {
+                        const wrongLi = document.getElementById(`li-${i}-${ans}`);
+                        if (wrongLi) wrongLi.classList.add('wrong-ans');
+                    }
+                    btn.className = 'nav-btn nav-wrong';
+                }
+
+                // Đánh dấu tất cả lựa chọn đúng tương đương
+                correctIndices.forEach(ci => {
+                    const el = document.getElementById(`li-${i}-${ci}`);
+                    if (el) el.classList.add('correct-ans');
+                });
+            });
+
+            window.isExamMode = false;
+            currentScore = score;
+            answeredQuestions = totalQuestions;
+
+            document.getElementById('score-board-info').style.display = 'block';
+            document.getElementById('exam-timer-display').style.display = 'none';
+            document.getElementById('btn-exam-mode').style.display = 'inline-flex';
+            document.getElementById('btn-toggle-review').style.display = 'inline-flex';
+            document.getElementById('search-bar-wrap').style.display = 'block';
+            document.getElementById('lg-correct').style.display = 'flex';
+            document.getElementById('lg-wrong').style.display = 'flex';
+            document.getElementById('lg-unknown').style.display = 'flex';
+            document.getElementById('lg-exam').style.display = 'none';
+            document.getElementById('main-title').innerText = "KẾT QUẢ THI CS466";
+            document.getElementById('bottom-actions').innerHTML = `<button class="action-btn" style="padding: 15px 30px; font-size: 1.2em; background-color: var(--primary); margin: 0 auto;" onclick="location.reload()">🔄 Kết thúc</button>`;
+
+            updateUI();
+            playSound(score / totalQuestions >= 0.5 ? 'correct' : 'wrong');
+            saveScore(true, 'Thi thử', timeStr);
+            alert(`Kết quả CS466: ${score}/${totalQuestions}. Thời gian: ${timeStr}`);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function toggleReviewMode() {
+            if (window.isExamMode) return alert("Không thể mở Ôn tập khi đang thi!");
+            if (!isReviewMode) {
+                if (reviewBank.size === 0) return alert("Chưa có câu nào trong danh sách ôn tập!");
+                isReviewMode = true;
+                container.style.display = 'none';
+                document.getElementById('search-bar-wrap').style.display = 'none';
+                document.getElementById('bottom-actions').style.display = 'none';
+                document.getElementById('sidebar-legend').style.display = 'none';
+                document.getElementById('main-title').innerText = "📚 Ôn Tập CS466";
+                document.getElementById('btn-toggle-review').innerHTML = '⬅️ Quay lại';
+                rContainer.style.display = 'block';
+                renderReview();
+            } else {
+                isReviewMode = false;
+                container.style.display = 'block';
+                document.getElementById('search-bar-wrap').style.display = 'block';
+                document.getElementById('bottom-actions').style.display = 'block';
+                document.getElementById('sidebar-legend').style.display = 'flex';
+                document.getElementById('main-title').innerText = "Môn Học: CS466 — Python & Network Automation";
+                document.getElementById('btn-toggle-review').innerHTML = `📚 Ôn tập (<span id="review-count">${reviewBank.size}</span>)`;
+                rContainer.style.display = 'none';
+            }
+        }
+
+        function renderReview() {
+            rContainer.innerHTML = '';
+            reviewBank.forEach(i => {
+                const item = quizData[i];
+                const card = document.createElement('div');
+                card.className = 'question-card review-card';
+                card.id = `rq-card-${i}`;
+
+                let codeHtml = '';
+                if (item.code && item.code.trim()) {
+                    codeHtml = `<div class="code-block-wrapper"><pre><code>${escapeHTML(item.code)}</code></pre></div>`;
+                }
+
+                let opts = '';
+                item.o.forEach((opt, oi) => {
+                    opts += `<li id="rli-${i}-${oi}"><label><input type="radio" name="rq${i}" onchange="checkReview(${i}, ${oi})">${formatOptionText(oi, escapeHTML(opt))}</label></li>`;
+                });
+
+                card.innerHTML = `
+                    <div class="question-header">
+                        <div class="question-title">Câu ${i + 1} (${item.id}): <span class="q-text-pre">${escapeHTML(item.q)}</span></div>
+                        <div class="header-actions">
+                            <button class="action-btn" id="rret-${i}" style="display:none; background-color: var(--primary); padding: 5px 10px; font-size: 0.8em;" onclick="retryReview(${i})">🔄 Lại</button>
+                            <button class="action-btn" style="background-color: var(--success); padding: 5px 10px; font-size: 0.8em;" onclick="doneReview(${i})">✔️ Thuộc</button>
+                        </div>
+                    </div>
+                    ${codeHtml}
+                    <ul class="options">${opts}</ul>
+                    <div class="explanation" id="rexp-${i}">${getExplanation(i)}</div>`;
+                rContainer.appendChild(card);
+            });
+        }
+
+        function checkReview(i, oi) {
+            const item = quizData[i];
+            const correctIndices = item.correctAnswers ?? [item.a];
+            const isCorrect = correctIndices.includes(oi);
+
+            if (isCorrect) {
+                document.getElementById(`rli-${i}-${oi}`).classList.add('correct-ans');
+            } else {
+                document.getElementById(`rli-${i}-${oi}`).classList.add('wrong-ans');
+            }
+
+            correctIndices.forEach(ci => {
+                const el = document.getElementById(`rli-${i}-${ci}`);
+                if (el) el.classList.add('correct-ans');
+            });
+
+            const radios = document.getElementsByName(`rq${i}`);
+            radios.forEach(r => r.disabled = true);
+            document.getElementById(`rexp-${i}`).style.display = 'block';
+            document.getElementById(`rret-${i}`).style.display = 'block';
+        }
+
+        function retryReview(i) {
+            const allLis = document.querySelectorAll(`#rq-card-${i} .options li`);
+            allLis.forEach(li => li.className = '');
+            const radios = document.getElementsByName(`rq${i}`);
+            radios.forEach(r => { r.disabled = false; r.checked = false; });
+            document.getElementById(`rexp-${i}`).style.display = 'none';
+            document.getElementById(`rret-${i}`).style.display = 'none';
+            const rCard = document.getElementById(`rq-card-${i}`);
+            if (rCard) rCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function doneReview(i) {
+            reviewBank.delete(i);
+            saveReviewToStore();
+            document.getElementById(`rq-card-${i}`).style.display = 'none';
+            document.getElementById(`nav-btn-${i}`).className = 'nav-btn';
+            updateUI();
+            if (reviewBank.size === 0) toggleReviewMode();
+        }
+
+        function saveScore(isAuto = false, mode = 'Luyện tập', timeText = '') {
+            let history = readStore(SCORE_KEY, []);
+            const percent = Math.round((currentScore / totalQuestions) * 100);
+            history.unshift({
+                id: Date.now(),
+                date: new Date().toLocaleString('vi-VN'),
+                score: currentScore,
+                total: totalQuestions,
+                percent,
+                mode,
+                time: timeText
+            });
+            writeStore(SCORE_KEY, history.slice(0, 30));
+            if (!isAuto) {
+                alert("Lưu điểm CS466 thành công!");
+                openHistoryModal();
+            }
+        }
+
+        function loadHistory() {
+            const history = readStore(SCORE_KEY, []);
+            const list = document.getElementById('history-list');
+            const hs = document.getElementById('high-score-display');
+            if (history.length === 0) {
+                list.innerHTML = '<li>Trống</li>';
+                hs.innerHTML = '🏆 Trống';
+                return;
+            }
+            let best = history.reduce((prev, curr) => (prev.percent > curr.percent) ? prev : curr);
+            hs.innerHTML = `🏆 Cao nhất: ${best.score}/${best.total} (${best.percent}%)`;
+            list.innerHTML = history.map(h => `
+                <li class="history-item ${h.id === best.id ? 'best' : ''}">
+                    <div>
+                        <div class="h-date">${h.date} <span class="badge ${h.mode === 'Thi thử' ? 'badge-exam' : 'badge-practice'}">${h.mode}</span> ${h.time ? '⏱️ ' + h.time : ''}</div>
+                        <div class="h-score">${h.score}/${h.total}</div>
+                    </div>
+                    <div class="history-right">
+                        <span>${h.percent}%</span>
+                        <button class="btn-del-item" onclick="delHistory(${h.id})">❌</button>
+                    </div>
+                </li>`).join('');
+        }
+
+        function delHistory(id) {
+            if (!confirm("Xóa bản ghi này?")) return;
+            let history = readStore(SCORE_KEY, []);
+            writeStore(SCORE_KEY, history.filter(h => h.id !== id));
+            loadHistory();
+        }
+
+        function clearAllHistory() {
+            if (confirm("Xóa toàn bộ lịch sử CS466?")) {
+                localStorage.removeItem(SCORE_KEY);
+                loadHistory();
+            }
+        }
+
+        function exportQuizData() {
+            const data = {
+                app: "cs466_m_quiz_backup",
+                version: 1,
+                exportedAt: new Date().toISOString(),
+                history: readStore(SCORE_KEY, []),
+                review: [...reviewBank],
+                darkMode: localStorage.getItem('cs466_m_dark'),
+                sound: localStorage.getItem('cs466_m_sound')
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            const date = new Date().toISOString().slice(0, 10);
+            a.href = url;
+            a.download = `cs466_m_quiz_backup_${date}.json`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+        }
+
+        function importQuizData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+
+                    if (data.app !== "cs466_m_quiz_backup" || !Array.isArray(data.history) || !Array.isArray(data.review)) {
+                        alert("File khôi phục không đúng định dạng hoặc không phải của môn CS466.");
+                        return;
+                    }
+
+                    writeStore(SCORE_KEY, data.history.slice(0, 30));
+                    reviewBank = new Set(data.review.filter(i => Number.isInteger(i) && i >= 0 && i < quizData.length));
+                    saveReviewToStore();
+
+                    if (data.darkMode !== null && data.darkMode !== undefined) localStorage.setItem('cs466_m_dark', data.darkMode);
+                    if (data.sound !== null && data.sound !== undefined) localStorage.setItem('cs466_m_sound', data.sound);
+
+                    renderSidebar();
+                    updateUI();
+                    loadHistory();
+
+                    alert("Khôi phục dữ liệu CS466 thành công!");
+                } catch (err) {
+                    alert("Không đọc được file khôi phục.");
+                    console.error(err);
+                } finally {
+                    event.target.value = "";
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function toggleTopBar() {
+            const isHidden = document.body.classList.toggle('topbar-hidden');
+            const btn = document.getElementById('mobile-topbar-toggle');
+            if (btn) btn.innerText = isHidden ? '☰' : '✕';
+        }
+
+        function scrollToQuestionNav() {
+            const target = document.getElementById('sidebar') || document.getElementById('layout-container') || document.body;
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        const modal = document.getElementById("historyModal");
+        function openHistoryModal() {
+            loadHistory();
+            modal.style.display = "block";
+        }
+        function closeHistoryModal() {
+            modal.style.display = "none";
+        }
+        window.onclick = (e) => {
+            if (e.target == modal) closeHistoryModal();
+        };
+
+        renderSidebar();
+        renderQuestions();
+        updateUI();
+    </script>
+</body>
+
+</html>
