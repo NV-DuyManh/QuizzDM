@@ -11,8 +11,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TN-CNXHKH - Trắc nghiệm Chủ nghĩa xã hội khoa học</title>
+    <title>CS466 - Trắc nghiệm Python, Lập trình mạng & Network Automation</title>
     <style>
+
         :root {
             --primary: #3498db;
             --primary-light: #ebf5fb;
@@ -924,14 +925,68 @@
                 grid-template-columns: repeat(5, 1fr);
             }
         }
+    
+
+        .code-block-wrapper {
+            margin: 12px 0 16px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .code-block-wrapper pre {
+            margin: 0;
+            padding: 14px 18px;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            font-family: 'Cascadia Code', 'Fira Code', 'Consolas', 'Courier New', monospace;
+            font-size: 0.95em;
+            line-height: 1.5;
+            overflow-x: auto;
+            border-left: 4px solid var(--primary);
+            white-space: pre;
+        }
+
+        body.dark-mode .code-block-wrapper pre {
+            background: #0d1117;
+            border-left-color: #388bfd;
+        }
+
+        .q-text-pre {
+            white-space: pre-line;
+            display: inline;
+        }
+
+        .exp-section {
+            margin-top: 6px;
+        }
+
+        .exp-tip {
+            margin-top: 8px;
+            background: rgba(46, 204, 113, 0.15);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--success);
+        }
+
+        body.dark-mode .exp-tip {
+            background: rgba(46, 204, 113, 0.1);
+        }
+
+        .exp-source {
+            margin-top: 6px;
+            font-style: italic;
+            color: var(--danger-text);
+        }
+
     </style>
 </head>
 
-<body>
+<body data-subject="cs466">
 
     <div id="score-board">
         <div id="score-board-info" class="score-info">
-            Điểm: <span id="score">0</span> / <span id="total-score">105</span>
+            Điểm: <span id="score">0</span> / <span id="total-score">39</span>
             <div class="progress-info">Đã trả lời: <span id="progress">0</span> câu</div>
         </div>
 
@@ -955,14 +1010,14 @@
     <button id="mobile-scroll-top" onclick="scrollToQuestionNav()" title="Về danh sách câu hỏi">⬆️</button>
 
     <div class="search-container" id="search-bar-wrap">
-        <input type="text" id="search-input" placeholder="🔍 Tìm câu hỏi..." oninput="filterQuestions()">
+        <input type="text" id="search-input" placeholder="🔍 Tìm câu hỏi, mã code..." oninput="filterQuestions()">
     </div>
 
     <div id="layout-container">
         <div id="main-content">
             <div id="quiz-header">
-                <h1 id="main-title">Môn Học: Chủ Nghĩa Xã Hội Khoa Học</h1>
-                <p class="intro-text" id="main-desc">Actor: Duy Mạnh</p>
+                <h1 id="main-title">Môn Học: CS466 — Python & Network Automation</h1>
+                <p class="intro-text" id="main-desc">Lập trình mạng và tự động hóa mạng • 39 câu trắc nghiệm</p>
             </div>
 
             <div id="quiz-container"></div>
@@ -976,7 +1031,7 @@
         </div>
 
         <div id="sidebar">
-            <div class="sidebar-title">Câu hỏi</div>
+            <div class="sidebar-title">Câu hỏi (39 câu)</div>
             <div class="nav-grid" id="nav-grid"></div>
             <div class="legend" id="sidebar-legend">
                 <div class="legend-item">
@@ -1001,7 +1056,7 @@
     <div id="historyModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeHistoryModal()">&times;</span>
-            <h2 style="text-align: center; margin-top: 0;">📊 Lịch sử</h2>
+            <h2 style="text-align: center; margin-top: 0;">📊 Lịch sử CS466</h2>
             <div class="high-score-board" id="high-score-display"></div>
             <ul class="history-list" id="history-list"></ul>
             <button class="btn-clear-history" id="clear-history-btn" onclick="clearAllHistory()">🗑️ Xóa hết</button>
@@ -1013,1183 +1068,745 @@
         </div>
     </div>
 
+        <script src="questions.js"></script>
     <script>
-        const quizData = [
-            {
-                "q": "Ai là người viết tác phẩm \"Không tưởng\" (Utôpia)?",
-                "o": [
-                    "Xanh Xi Mông",
-                    "Campanenla",
-                    "Tômát Morơ",
-                    "Uynxtenli"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Tác phẩm nào đánh dấu sự ra đời của Chủ nghĩa xã hội khoa học?",
-                "o": [
-                    "Chống Đuy - Rinh",
-                    "Tuyên ngôn của Đảng cộng sản",
-                    "Bộ Tư bản",
-                    "Chủ nghĩa duy vật và chủ nghĩa kinh nghiệm phê phán"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Đâu là giai cấp có lợi ích cơ bản đối lập với lợi ích của giai cấp tư sản?",
-                "o": [
-                    "Giai cấp nông dân",
-                    "Tiểu tư sản",
-                    "Tầng lớp trí thức",
-                    "Giai cấp công nhân"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Chủ nghĩa duy vật lịch sử đã luận giải như thế nào về mặt triết học của lịch sử phát triển chủ nghĩa tư bản?",
-                "o": [
-                    "Sự sụp đổ của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau",
-                    "Chủ nghĩa tư bản là đỉnh cao trong sự phát triển của lịch sử loài người",
-                    "Kinh tế tư bản chủ nghĩa phát triển tạo nên lực lượng sản xuất hiện đại",
-                    "Giai cấp tư sản là lực lượng xã hội đối đầu trực tiếp với giai cấp công nhân"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là Nhà nước xã hội chủ nghĩa đầu tiên trên thế giới?",
-                "o": [
-                    "Nhà nước Xô Viết, năm 1917",
-                    "Nhà nước XHCN Việt Nam",
-                    "Nhà nước Trung Quốc",
-                    "Nhà nước XHCN Cuba"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Người lãnh đạo Đảng cộng sản Liên Xô sau khi V.I.Lênin mất (1924) là ai?",
-                "o": [
-                    "Iosif Vissarionovich Stalin",
-                    "Georgy Maksimilianovich Malenkov",
-                    "Konstantin Ustinovich Chernenko",
-                    "Mikhail Sergeyevich Gorbachov"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Cách mạng Việt Nam diễn ra theo quy luật nào?",
-                "o": [
-                    "Kiên định mục tiêu chủ nghĩa xã hội",
-                    "Tính bạo lực cách mạng",
-                    "Độc lập dân tộc gắn với chủ nghĩa xã hội",
-                    "Thực hiện thời kỳ quá độ lên chủ nghĩa xã hội"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là giai cấp bị bóc lột giá trị thặng dư trong các nước tư bản?",
-                "o": [
-                    "Giai cấp nông dân",
-                    "Tiểu tư sản",
-                    "Tầng lớp trí thức",
-                    "Giai cấp công nhân"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Phạm trù nào là phạm trù trung tâm của chủ nghĩa xã hội khoa học?",
-                "o": [
-                    "Chủ nghĩa xã hội",
-                    "Đảng cộng sản",
-                    "Sứ mệnh lịch sử của giai cấp công nhân",
-                    "Cách mạng xã hội chủ nghĩa"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Tổ chức nào sẽ trực tiếp thực thi vấn đề dân chủ?",
-                "o": [
-                    "Các Đảng phái chính trị",
-                    "Nhà nước",
-                    "Pháp luật",
-                    "Các tổ chức chính trị - xã hội"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Theo đúng cách liệt kê tại Điều 1 Hiến pháp năm 2013, lãnh thổ nước Cộng hòa xã hội chủ nghĩa Việt Nam bao gồm những bộ phận nào?",
-                "o": [
-                    "Vùng biển, đất liền, các đảo và hải đảo.",
-                    "Vùng biển, đất liền, vùng trời và hải đảo",
-                    "Đất liền, hải đảo, vùng biển và vùng trời.",
-                    "Đất liền, hải đảo, vùng biển và vùng trời trên biển."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Nước ta có bao nhiêu dân tộc cùng chung sống?",
-                "o": [
-                    "53",
-                    "54",
-                    "55",
-                    "56"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Yếu tố nào trực tiếp trang bị tri thức, kỹ năng và nâng cao chất lượng nguồn lực con người?",
-                "o": [
-                    "Phát triển về chính trị",
-                    "Phát triển về kinh tế - xã hội",
-                    "Phát triển về văn hóa",
-                    "Phát triển về giáo dục"
-                ],
-                "a": 3
-            },
-            {
-                "q": "“Dân chủ” là gì?",
-                "o": [
-                    "Dân chủ là một hình thức hay hình thái nhà nước",
-                    "Dân chủ là một nguyên tắc thực thi quyền lực",
-                    "Dân chủ là quyền lực thuộc về nhân dân",
-                    "Cả A, B, C"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Cách mạng xã hội chủ nghĩa là do giai cấp, tầng lớp nào lãnh đạo?",
-                "o": [
-                    "Giai cấp công nhân",
-                    "Giai cấp nông dân",
-                    "Tầng lớp trí thức",
-                    "Tầng lớp tiểu tư sản"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Tổ chức chính trị lãnh đạo quá trình xây dựng CNXH ở Trung Quốc hiện nay là tổ chức nào?",
-                "o": [
-                    "Cộng hoà Nhân dân Trung Hoa",
-                    "Quốc vụ viện Trung Quốc",
-                    "Quân ủy Trung Quốc",
-                    "Đảng Cộng sản Trung Quốc"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Quy luật chung, phổ biến cho sự ra đời Đảng cộng sản?",
-                "o": [
-                    "Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân",
-                    "Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân với phong trào yêu nước chân chính",
-                    "Là sự phát triển của phong trào công nhân và chủ nghĩa xã hội",
-                    "Là theo chủ nghĩa Mác – Lênin và chủ nghĩa xã hội"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Bản chất của nhà nước xã hội chủ nghĩa về mặt chính trị là:",
-                "o": [
-                    "Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân.",
-                    "Mang bản chất của quần chúng nhân dân và chế độ xã hội chủ nghĩa",
-                    "Mang bản chất của giai cấp tư sản và quần chúng nhân dân",
-                    "Mang bản chất của giai cấp thống trị và quần chúng nhân dân"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Dân chủ xã hội chủ nghĩa được hình thành bắt đầu bởi sự kiện lịch sử nào?",
-                "o": [
-                    "Thắng lợi của cách mạng Trung Quốc năm 1939",
-                    "Cách mạng tháng Mười Nga thành công và sự ra đời của nhà nước XHCN đầu tiên (1917)",
-                    "Sự hình thành và phát triển của hệ thống xã hội chủ nghĩa ở Liên Xô và Đông Âu",
-                    "Thực tiễn đấu tranh giai cấp ở Pháp và công xã Paris 1817"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Giai cấp công nhân hiện đại đã có những khác biệt nào so với giai cấp công nhân thế kỷ 19?",
-                "o": [
-                    "Công nhân có xu hướng trí tuệ hóa, có tính toàn cầu hóa, gia tăng nhanh về số lượng và chất lượng",
-                    "Công nhân đã trở thành một phần của lực lượng sản xuất hiện đại, có tính toàn cầu hóa",
-                    "Gia tăng nhanh về số lượng và chất lượng",
-                    "Công nhân có xu hướng trí tuệ hóa, gia tăng nhanh về số lượng, chất lượng và trở thành một phần của lực lượng sản xuất hiện đại, có tính toàn cầu hóa"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Giai cấp công nhân ở các nước tư bản chủ nghĩa và xã hội chủ nghĩa có điểm khác biệt cơ bản nào?",
-                "o": [
-                    "Quan hệ sở hữu đối với tư liệu sản xuất chủ yếu",
-                    "Phương thức lao động và phương thức sản xuất",
-                    "Nguồn gốc xuất thân của giai cấp công nhân",
-                    "Sản phẩm lao động do giai cấp công nhân làm ra"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Chế độ dân chủ nhân dân ở Việt Nam được xác lập vào năm nào?",
-                "o": [
-                    "Sau khi thành lập Đảng cộng sản Việt Nam 1930",
-                    "Sau cách mạng Tháng Tám 1945 (2/9/1945)",
-                    "Sau chiến thắng Điện Biên Phủ 1954",
-                    "Sau thắng lợi mùa xuân 1975"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Thế giới quan tôn giáo thuộc vào loại hình thế giới quan nào?",
-                "o": [
-                    "Thế giới quan duy vật siêu hình",
-                    "Thế giới quan duy vật biện chứng",
-                    "Thế giới quan duy tâm",
-                    "Thế giới quan duy danh"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là hệ giá trị gia đình Việt Nam hiện nay?",
-                "o": [
-                    "Phát triển kinh tế - xã hội",
-                    "Nâng cao trình độ dân trí cho nhân dân lao động",
-                    "Giải phóng người phụ nữ",
-                    "Xây dựng gia đình ấm no, hạnh phúc, tiến bộ, văn minh"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Nhiệm vụ chính trị trực tiếp của giai cấp công nhân sau khi lật đổ quyền thống trị của giai cấp tư sản là gì?",
-                "o": [
-                    "Thay thế chế độ sở hữu tư nhân bằng chế độ sở hữu hỗn hợp",
-                    "Xóa bỏ chế độ sở hữu tư nhân TBCN",
-                    "Giành lấy lợi ích cho đại đa số trên cơ sở công hữu về tư liệu sản xuất chủ yếu",
-                    "Thiết lập nhà nước kiểu mới mang bản chất giai cấp công nhân"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Nguyên nhân dẫn đến tình trạng nghèo khổ của giai cấp công nhân dưới chủ nghĩa tư bản?",
-                "o": [
-                    "Sản xuất công nghiệp mở rộng",
-                    "Sự phát triển của khoa học – công nghệ",
-                    "Do sự bóc lột của giai cấp tư sản đối với giai cấp công nhân",
-                    "Sự hình thành các kiểu lao động mới như “chuyên gia quốc tế”, “làm việc tại nhà”."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Với tư cách là một hình thái nhà nước, một chế độ chính trị thì trong lịch sử nhân loại, cho đến nay có bao nhiêu nền (chế độ) dân chủ?",
-                "o": [
-                    "1",
-                    "2",
-                    "3",
-                    "4"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Tổ chức nào đóng vai trò trụ cột trong hệ thống chính trị ở Việt Nam hiện nay?",
-                "o": [
-                    "Đảng cộng sản Việt Nam",
-                    "Nhà nước xã hội chủ nghĩa",
-                    "Mặt trận Tổ quốc Việt Nam",
-                    "Các đoàn thể nhân dân"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Công xã Paris 1871 – Nhà nước kiểu mới của giai cấp vô sản tồn tại trong bao nhiêu ngày?",
-                "o": [
-                    "70 ngày",
-                    "71 ngày",
-                    "72 ngày",
-                    "73 ngày"
-                ],
-                "a": 2
-            },
-            {
-                "q": "“Chủ nghĩa xã hội thế kỷ XXI” là triết lý phát triển được ở đâu?",
-                "o": [
-                    "Châu Mỹ Latinh",
-                    "Bắc Mỹ",
-                    "Tây Âu",
-                    "Liên Xô cũ"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là công cụ điều chỉnh, chi phối để dân chủ không biến dạng thành các hành vi phản dân chủ?",
-                "o": [
-                    "Văn hóa",
-                    "Pháp luật",
-                    "Đoàn thể",
-                    "Hiệp hội"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Nền tảng tư tưởng và kim chỉ nam cho hành động của hệ thống chính trị Việt Nam là:",
-                "o": [
-                    "Chủ nghĩa Mác và tư tưởng Hồ Chí Minh",
-                    "Tư tưởng Hồ Chí Minh",
-                    "Chủ nghĩa Mác – Lênin và tư tưởng Hồ Chí Minh",
-                    "Hồ Chí Minh và Đảng Cộng sản Việt Nam."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Người kế tục xuất sắc sự nghiệp cách mạng và khoa học của C.Mác và Ph.Ănghen là ai?",
-                "o": [
-                    "V.I.Lênin",
-                    "I.V.Stalin",
-                    "I.M.Kant",
-                    "Heghen"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Theo nghĩa hẹp, chủ nghĩa xã hội khoa học là gì?",
-                "o": [
-                    "Toàn bộ hệ tư tưởng của chủ nghĩa Mác-Lênin.",
-                    "Một trong ba bộ phận hợp thành chủ nghĩa Mác-Lênin.",
-                    "Lý luận về đấu tranh giai cấp.",
-                    "Học thuyết về nhà nước pháp quyền xã hội chủ nghĩa."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Đâu là nguồn gốc lý luận trực tiếp ra đời Chủ nghĩa xã hội khoa học?",
-                "o": [
-                    "Triết học cổ điển Đức",
-                    "Kinh tế chính trị học cổ điển Anh",
-                    "Chủ nghĩa xã hội không tưởng Pháp",
-                    "Chủ nghĩa dân tộc"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Nguyên nhân kinh tế - xã hội cho sự ra đời của tôn giáo là gì?",
-                "o": [
-                    "Sự bất lực, yếu đuối của con người trước những hiện tượng của tự nhiên",
-                    "Sự xuất hiện giai cấp cùng những phân hóa, đối kháng, bất công... là điều không thể giải thích được",
-                    "Sự giới hạn trong nhận thức của con người trước tự nhiên, xã hội và chính bản thân mình.",
-                    "Sự sợ hãi trước những hiện tượng tự nhiên, xã hội…."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Theo chủ nghĩa Mác - Lênin, bản chất của tôn giáo là gì?",
-                "o": [
-                    "Là một hình thái ý thức xã hội phản ánh đúng hiện thực khách quan",
-                    "Là một công cụ để giai cấp thống trị áp bức quần chúng",
-                    "Là một yếu tố tích cực thúc đẩy sự phát triển xã hội",
-                    "Là một hiện tượng xã hội - văn hoá do con người sáng tạo ra"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Quá độ từ chủ nghĩa tư bản lên chủ nghĩa xã hội trải qua những hình thức nào?",
-                "o": [
-                    "Trực tiếp và gián tiếp",
-                    "Tiệm tiến và trực tiếp",
-                    "Trực tiếp và tiếp biến",
-                    "Tiệm tiến và gián tiếp"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Lênin đã phát triển sáng tạo Chủ nghĩa xã hội khoa học trong bối cảnh lịch sử:",
-                "o": [
-                    "Chủ nghĩa tư bản đang trong giai đoạn tự do cạnh tranh.",
-                    "Chủ nghĩa tư bản đã chuyển sang giai đoạn đế quốc chủ nghĩa.",
-                    "Chủ nghĩa xã hội đã trở thành một hệ thống trên thế giới.",
-                    "Các cuộc cách mạng tư sản đang nổ ra mạnh mẽ ở châu Âu."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Xã hội mà Việt Nam hướng đến trong quá trình xây dựng chủ nghĩa xã hội là một xã hội như thế nào?",
-                "o": [
-                    "Xã hội \"dân giàu, nước mạnh, dân chủ, công bằng, văn minh\"",
-                    "Xã hội có sự phát triển công nghiệp hiện đại, thu nhập trung bình cao",
-                    "Xã hội có tốc độ phát triển cao, thu nhập cao.",
-                    "Xã hội bảo đảm thu nhập cao, công bằng văn minh cho nhân dân."
-                ],
-                "a": 0
-            },
-            {
-                "q": "Quá độ lên chủ nghĩa xã hội bỏ qua chế độ tư bản chủ nghĩa ở Việt Nam là bỏ qua những yếu tố nào?",
-                "o": [
-                    "Bỏ qua sự thống trị về mặt kinh tế và chính trị của chủ nghĩa tư bản",
-                    "Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa",
-                    "Bỏ qua sự áp bức bóc lột và những thành tựu khoa học kỹ thuật của chủ nghĩa tư bản",
-                    "Bỏ qua giai đoạn phát triển cao của chủ nghĩa tư bản"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Mục tiêu về kinh tế của Việt Nam đến năm 2045 là:",
-                "o": [
-                    "Là nước đang phát triển, có công nghiệp theo hướng hiện đại, vượt qua mức thu nhập trung bình thấp",
-                    "Là nước đang phát triển có công nghiệp hiện đại, thu nhập trung bình cao",
-                    "Trở thành nước phát triển, thu nhập cao.",
-                    "Trở thành nước phát triển, vượt qua mức thu nhập trung bình thấp"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là đội tiên phong của giai cấp công nhân?",
-                "o": [
-                    "Nhà nước xã hội chủ nghĩa",
-                    "Đảng cộng sản",
-                    "Tổ chức Công Đoàn",
-                    "Quốc tế III"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Hình thức quá độ trực tiếp lên chủ nghĩa xã hội được áp dụng đối với những nước nào?",
-                "o": [
-                    "Các nước có Đảng cộng sản lãnh đạo",
-                    "Các nước đã trải qua giai đoạn chủ nghĩa tư bản phát triển.",
-                    "Các nước đã tiến hành cách mạng vô sản thành công",
-                    "Các nước chưa trải qua giai đoạn phát triển chủ nghĩa tư bản"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam hoạt động trên cơ sở nào?",
-                "o": [
-                    "Quyền lực của Quốc hội",
-                    "Sự hiểu biết pháp luật của nhân dân",
-                    "Hiến pháp và pháp luật",
-                    "Sự làm chủ của nhân dân"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Nhà nước pháp quyền xã hội chủ nghĩa ở Việt Nam do tổ chức nào lãnh đạo?",
-                "o": [
-                    "Đảng cộng sản Việt Nam",
-                    "Quốc Hội Việt Nam",
-                    "Mặt trận Tổ quốc Việt Nam",
-                    "Liên đoàn Lao động Việt Nam"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là những đặc trưng đặc biệt của giai cấp công nhân?",
-                "o": [
-                    "Tinh thần đoàn kết và khả năng tạo ra của cải vật chất",
-                    "Giai cấp có địa vị chính trị - xã hội trong CNTB",
-                    "Có tính tổ chức, kỷ luật lao động và tâm lý lao động công nghiệp.",
-                    "Giai cấp giữ vai trò quản lý cao cấp trong sản xuất TBCN."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Trong chủ nghĩa tư bản, giai cấp công nhân là giai cấp có mâu thuẫn đối kháng với:",
-                "o": [
-                    "Giai cấp nông dân",
-                    "Giai cấp địa chủ",
-                    "Tầng lớp trí thức",
-                    "Giai cấp tư sản"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Xét ở góc độ chính trị, tại sao giai cấp công nhân cần tiến hành liên minh với các giai tầng xã hội khác?",
-                "o": [
-                    "Tạo sức mạnh tổng hợp đảm bảo cho sự thắng lợi của cách mạng xã hội chủ nghĩa",
-                    "Điều hòa mâu thuẫn về lợi ích giữa giai cấp công nhân với các giai tầng xã hội khác.",
-                    "Đẩy mạnh công nghiệp hóa, hiện đại hóa, xây dựng nền tảng vật chất – kỹ thuật cần thiết cho chủ nghĩa xã hội.",
-                    "Thực hiện lợi ích của giai cấp công nhân, thực hiện thành công quá trình xây dựng chủ nghĩa xã hội"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Khối đại đoàn kết dân tộc ở Việt Nam được xây dựng trên nền tảng nào?",
-                "o": [
-                    "Sự phát triển kinh tế thị trường định hướng xã hội chủ nghĩa",
-                    "Liên minh giai cấp công nhân với giai cấp nông dân và đội ngũ trí thức do Đảng lãnh đạo.",
-                    "Thực hiện thành công chủ nghĩa xã hội ở Việt Nam",
-                    "Đoàn kết, tôn trọng lẫn nhau giữa các dân tộc – tộc người"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Vì sao các tôn giáo có sự thay đổi về giáo lý hoặc lễ nghi khi truyền bá sang các quốc gia khác?",
-                "o": [
-                    "Để thích nghi với văn hóa, xã hội của quốc gia đó",
-                    "Để tín đồ tôn giáo ở quốc gia đó di cư sang các vùng đất mới",
-                    "Để làm tốt chức năng đạo đức",
-                    "Phục vụ chức năng đền bù hư ảo"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là điểm khác biệt của Nhà nước pháp quyền xã hội chủ nghĩa Việt Nam so với các nhà nước pháp quyền khác?",
-                "o": [
-                    "Thực hành trên cơ sở dân biết, dân bàn, dân làm, dân kiểm tra",
-                    "Mang bản chất giai cấp công nhân; phục vụ lợi ích cho nhân dân",
-                    "Quyền dân chủ của nhân dân được thực hành rộng rãi",
-                    "Dân có quyền bầu cử và bãi miễn đại biểu."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Mốc thời gian nào Việt Nam chính thức bình thường hóa quan hệ với Hoa Kỳ, hoàn thành việc phá thế bị bao vây cấm vận?",
-                "o": [
-                    "Năm 1975",
-                    "Năm 2007",
-                    "Năm 1995",
-                    "Năm 1991"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Sắp xếp các hình thức cộng đồng từ thấp đến cao.",
-                "o": [
-                    "Thị tộc, bộ lạc, dân tộc, bộ tộc",
-                    "Bộ tộc, bộ lạc, thị tộc, dân tộc",
-                    "Bộ lạc, bộ tộc, thị tộc, dân tộc",
-                    "Thị tộc, bộ lạc, bộ tộc, dân tộc"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Quan hệ nào là mối quan hệ tự nhiên, là yếu tố mạnh mẽ nhất gắn kết các thành viên trong gia đình với nhau?",
-                "o": [
-                    "Quan hệ hôn nhân",
-                    "Quan hệ huyết thống",
-                    "Quan hệ dòng tộc",
-                    "Quan hệ nuôi dưỡng"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Mô hình nhà nước của Việt Nam trong thời kỳ quá độ lên chủ nghĩa xã hội?",
-                "o": [
-                    "Nhà nước dân chủ xã hội chủ nghĩa",
-                    "Nhà nước chủ nghĩa cộng sản.",
-                    "Chuyên chính vô sản",
-                    "Nhà nước pháp quyền xã hội chủ nghĩa"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Đối với vấn đề dân tộc, đâu là nội dung có vị trí chiến lược trong sự nghiệp cách mạng của nước ta?",
-                "o": [
-                    "Đoàn kết các dân tộc",
-                    "Phát triển kinh tế, giáo dục đồng bộ",
-                    "Phải có sự phối hợp giữa các Hội đoàn thể",
-                    "Thúc đẩy phát triển công nghiệp hóa, hiện đại hóa"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là tiêu chí cơ bản để phân biệt các tộc người khác nhau?",
-                "o": [
-                    "Cộng đồng về ngôn ngữ",
-                    "Cộng đồng về văn hóa",
-                    "Cộng đồng về kinh tế",
-                    "Ý thức tự giác tộc người"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Trách nhiệm nuôi dưỡng, dạy dỗ con cái trở thành người có ích cho gia đình, cộng đồng và xã hội là thuộc về chức năng nào của gia đình?",
-                "o": [
-                    "Chức năng tái sản xuất ra con người",
-                    "Chức năng nuôi dưỡng, giáo dục",
-                    "Chức năng kinh tế và tổ chức tiêu dùng",
-                    "Chức năng thỏa mãn nhu cầu sinh lý, duy trì tình cảm gia đình"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Đâu là giai cấp giữ vai trò lãnh đạo trong cơ cấu xã hội – giai cấp ở Việt Nam hiện nay?",
-                "o": [
-                    "Giai cấp công nhân Việt Nam",
-                    "Giai cấp nông dân Việt Nam",
-                    "Tầng lớp trí thức Việt Nam",
-                    "Tầng lớp doanh nhân Việt Nam"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Nhiệm vụ trung tâm về mặt kinh tế của thời kỳ quá độ lên CNXH ở Việt Nam hiện nay là gì?",
-                "o": [
-                    "Thực hiện thành công thời kỳ quá độ lên CNXH",
-                    "Phát triển kinh tế, tiến hành thành công công nghiệp hóa, hiện đại hóa",
-                    "Xây dựng nhà nước pháp quyền XHCN, thực hiện thành công thời kỳ quá độ lên CNXH",
-                    "Xây dựng nền văn hóa Việt Nam tiên tiến, đậm đà bản sắc dân tộc"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Tính chính trị của tôn giáo xuất hiện trong điều kiện nào?",
-                "o": [
-                    "Khi con người bắt đầu xây dựng các công trình thờ tự lớn",
-                    "Ngay từ thời kỳ công xã nguyên thủy khi con người mới biết thờ cúng",
-                    "Khi xã hội không còn xuất hiện sự phân chia giai cấp và đối kháng về lợi ích",
-                    "Khi xã hội xuất hiện sự phân chia giai cấp và đối kháng về lợi ích giai cấp"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Giai đoạn thấp của hình thái kinh tế - xã hội CNCS còn gọi là gì?",
-                "o": [
-                    "Thời kỳ quá độ",
-                    "CNCS hoàn chỉnh",
-                    "Tiền chủ nghĩa cộng sản",
-                    "Chủ nghĩa xã hội"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Sự kiện lịch sử nào đánh dấu sự ra đời của nước Việt Nam Dân chủ Cộng hòa?",
-                "o": [
-                    "Đại hội đại biểu toàn quốc lần thứ II của Đảng (1951)",
-                    "Hiến pháp năm 1980",
-                    "Hiệp định Genève (1954)",
-                    "Cách mạng Tháng Tám thành công và Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập (2/9/1945)"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Đâu là hạt nhân của khối đại đoàn kết toàn dân tộc Việt Nam?",
-                "o": [
-                    "Có sự lãnh đạo của Đảng cộng sản",
-                    "Có sự thống nhất lợi ích giữa các giai cấp",
-                    "Sự tăng trưởng và phát triển kinh tế bền vững",
-                    "Liên minh công - nông - trí thức"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Vì sao tôn giáo là một phạm trù lịch sử?",
-                "o": [
-                    "Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất định của lịch sử xã hội loài người",
-                    "Nó là sản phẩm của con người và nó ảnh hưởng đến đời sống tinh thần của con người",
-                    "Nó có ảnh hưởng đến sự phát triển của đời sống vật chất",
-                    "Vì tôn giáo là sản phẩm của sự phát triển về nhận thức của con người."
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là yếu tố gây trở ngại đối với quá trình thực hiện dân chủ ở nước ta trong giai đoạn hiện nay?",
-                "o": [
-                    "Âm mưu “diễn biến hòa bình”, gây bạo loạn, lật đổ",
-                    "Âm mưu thực hiện “cách mạng màu” của các thế lực thù địch",
-                    "Vấn đề tự diễn biến, tự chuyển hóa",
-                    "Cả 3 đáp án trên"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Phương châm thực hiện dân chủ ở cơ sở được Luật Thực hiện dân chủ ở cơ sở năm 2022 thể chế hóa bao gồm những thành tố nào?",
-                "o": [
-                    "Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng",
-                    "Dân biết, dân bàn, dân làm, dân kiểm tra",
-                    "Dân biết, dân bàn, dân thụ hưởng",
-                    "Dân biết, dân bàn, dân làm, dân giám sát, dân thụ hưởng"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Vì sao trong giai đoạn hiện nay Việt Nam tiếp tục mở rộng và phát huy khối đại đoàn kết dân tộc?",
-                "o": [
-                    "Để thực hiện thành công các nhiệm vụ trên lĩnh vực chính trị, kinh tế, văn hóa – tư tưởng",
-                    "Phát huy sức mạnh của mọi giai cấp, mọi tầng lớp nhân dân, mọi thành phần dân tộc, tôn giáo cho công cuộc đổi mới, xây dựng và bảo vệ tổ quốc.",
-                    "Giữ vững và tăng cường vai trò lãnh đạo của giai cấp công nhân Việt Nam và Đảng cộng sản Việt Nam",
-                    "Đảm bảo phát triển kinh tế gắn liền với lợi ích của các giai tầng, xã hội."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Đâu là nền tảng cho việc hoàn thiện pháp luật về bầu cử?",
-                "o": [
-                    "Cương lĩnh",
-                    "Đường lối",
-                    "Chủ trương",
-                    "Hiến pháp"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Sự ra đời và phát triển của giai cấp công nhân hiện đại gắn liền với điều kiện kinh tế nào?",
-                "o": [
-                    "Sự ra đời nền Đại công nghiệp",
-                    "Công trường thủ công phát triển",
-                    "Sự ra đời của động cơ hơi nước",
-                    "Sự phát triển của sản xuất thủ công nghiệp"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Nội dung cơ bản nhất mà nhờ đó chủ nghĩa xã hội từ không tưởng trở thành khoa học?",
-                "o": [
-                    "Phát hiện ra giai cấp công nhân là lực lượng xã hội có thể thủ tiêu CNTB, xây dựng CNXH.",
-                    "Phản ánh đúng khát vọng của nhân dân lao động bị áp bức.",
-                    "Lên án mạnh mẽ chủ nghĩa tư bản.",
-                    "Chỉ ra sự cần thiết phải thay thế chủ nghĩa tư bản bằng chủ nghĩa xã hội."
-                ],
-                "a": 0
-            },
-            {
-                "q": "Biểu tượng “Búa - Liềm” trên Đảng kỳ của Đảng cộng sản có ý nghĩa gì?",
-                "o": [
-                    "Sự lãnh đạo của Đảng cộng sản",
-                    "Sự thống nhất lợi ích giữa các giai cấp",
-                    "Sự đoàn kết, thống nhất của hai giai cấp công nhân và nông dân",
-                    "Liên kết để phát triển kinh tế bền vững"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Trong xã hội có giai cấp, cơ cấu nào có vị trí quyết định nhất, chi phối các loại hình cơ cấu xã hội khác?",
-                "o": [
-                    "Cơ cấu xã hội - nghề nghiệp",
-                    "Cơ cấu xã hội - dân số",
-                    "Cơ cấu xã hội - dân tộc",
-                    "Cơ cấu xã hội - giai cấp"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Trong các nội dung của quyền dân tộc tự quyết thì nội dung nào được coi là cơ bản nhất, tiên quyết nhất?",
-                "o": [
-                    "Tự quyết về chính trị",
-                    "Tự quyết về kinh tế",
-                    "Tự quyết về văn hoá",
-                    "Tự quyết về lãnh thổ"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là điều kiện tiên quyết để xây dựng thành công nền dân chủ xã hội chủ nghĩa ở Việt Nam?",
-                "o": [
-                    "Xây dựng Đảng cộng sản Việt Nam trong sạch, vững mạnh",
-                    "Xây dựng nhà nước pháp quyền XHCN vững mạnh",
-                    "Củng cố vai trò, chức năng của Mặt trận Tổ quốc Việt Nam",
-                    "Tăng cường vai trò của các tổ chức chính trị - xã hội"
-                ],
-                "a": 0
-            },
-            {
-                "q": "“Đoàn kết, đoàn kết, đại đoàn kết; Thành công, thành công, đại thành công” là câu nói nổi tiếng của lãnh tụ nào?",
-                "o": [
-                    "Chủ tịch Hồ Chí Minh",
-                    "Tổng bí thư Trần Phú",
-                    "Tổng bí thư Nguyễn Phú Trọng",
-                    "Chủ tịch Tôn Đức Thắng"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Cuộc cách mạng đầu tiên của giai cấp công nhân và nhân dân lao động trên thế giới lật đổ chính quyền của giai cấp tư sản diễn ra ở nước nào?",
-                "o": [
-                    "Anh",
-                    "Pháp",
-                    "Đức",
-                    "Nga"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Cơ quan nào thống nhất quản lý nhà nước về tín ngưỡng, tôn giáo trong phạm vi cả nước?",
-                "o": [
-                    "Chính phủ",
-                    "Bộ Tư pháp",
-                    "Bộ Nội vụ",
-                    "Ủy ban Dân tộc"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Tôn giáo và tín ngưỡng khác nhau ở điểm nào?",
-                "o": [
-                    "Tôn giáo có hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tương đối chặt chẽ; tín ngưỡng thường chưa có hệ thống đó.",
-                    "Tín ngưỡng có giáo lý, giáo luật và tính tổ chức chặt chẽ hơn tôn giáo.",
-                    "Tôn giáo chỉ liên quan đến các đấng siêu nhiên, còn tín ngưỡng thì không.",
-                    "Tôn giáo và tín ngưỡng là hoàn toàn đồng nhất."
-                ],
-                "a": 0
-            },
-            {
-                "q": "Biểu hiện của tính quần chúng trong tôn giáo là gì?",
-                "o": [
-                    "Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của tầng lớp thống trị.",
-                    "Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của đông đảo các tầng lớp nhân dân.",
-                    "Tôn giáo luôn kêu gọi đấu tranh chống bất công, nghèo đói, bạo lực.",
-                    "Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của tầng lớp nhân dân lao động."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Sự biến đổi trong lễ nghi của các tôn giáo trong xã hội hiện đại thể hiện tính chất nào của tôn giáo?",
-                "o": [
-                    "Tính bảo thủ",
-                    "Tính lịch sử",
-                    "Tính chính trị",
-                    "Tính siêu nhiên"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Khi con người chưa có khả năng nhận thức đúng đắn về tự nhiên, họ thường làm gì?",
-                "o": [
-                    "Thần thánh hóa các hiện tượng tự nhiên",
-                    "Dựa vào khoa học để nghiên cứu",
-                    "Phủ nhận thế giới khách quan",
-                    "Tách rời khỏi cộng đồng"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Về mặt cấu trúc, một tôn giáo hoàn chỉnh thường bao gồm các yếu tố cơ bản nào?",
-                "o": [
-                    "Hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tôn giáo",
-                    "Các giáo lý, giáo luật trong sinh hoạt thần thánh, lễ nghi tôn giáo.",
-                    "Hệ thống Thần linh, giáo luật trong sinh hoạt thần thánh, lễ nghi tôn giáo.",
-                    "Niềm tin, giáo luật trong sinh hoạt thần thánh, lễ nghi tôn giáo."
-                ],
-                "a": 0
-            },
-            {
-                "q": "Sự kiện nào góp phần nối liền hệ thống xã hội chủ nghĩa từ Châu Âu sang Châu Á năm 1949?",
-                "o": [
-                    "Nước Việt Nam Dân chủ Cộng hòa ra đời.",
-                    "Chiến tranh Triều Tiên kết thúc.",
-                    "Nước Cộng hòa Nhân dân Trung Hoa ra đời.",
-                    "Liên Xô chế tạo thành công bom nguyên tử."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Mê tín là gì?",
-                "o": [
-                    "Những niềm tin, sự ngưỡng mộ đối với những người có đóng góp cho xã hội",
-                    "Tin vào các lực lượng siêu nhiên đến mức độ cuồng tín.",
-                    "Là niềm tin mê muội, viển vông, không dựa trên một cơ sở khoa học",
-                    "Cầu mong sự che chở của các đấng linh thiêng"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Quốc gia nào là lá cờ đầu của phong trào giải phóng dân tộc và xây dựng chủ nghĩa xã hội ở khu vực Châu Mỹ Latinh?",
-                "o": [
-                    "Venezuela",
-                    "Chile",
-                    "Cuba",
-                    "Brazil"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Trong số 16 tôn giáo có tổ chức được Nhà nước công nhận hoặc cấp đăng ký hoạt động tại Việt Nam, có bao nhiêu tôn giáo du nhập từ nước ngoài?",
-                "o": [
-                    "7",
-                    "8",
-                    "9",
-                    "10"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là tiêu chí quan trọng nhất để đánh giá một gia đình văn hóa trong bối cảnh Việt Nam hiện nay?",
-                "o": [
-                    "Gia đình có thu nhập cao và địa vị xã hội lớn.",
-                    "Gia đình đông con và tuân thủ mọi nghi lễ truyền thống.",
-                    "Gia đình hòa thuận, bình đẳng, tiến bộ, hạnh phúc và thực hiện tốt nghĩa vụ công dân.",
-                    "Gia đình không bao giờ xảy ra tranh luận hay mâu thuẫn."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Sự biến đổi của gia đình Việt Nam hiện nay chịu tác động mạnh mẽ nhất của yếu tố nào?",
-                "o": [
-                    "Sự thay đổi của các quy định trong Luật Hôn nhân và Gia đình.",
-                    "Tác động của các phong trào đấu tranh vì nữ quyền trên thế giới.",
-                    "Quá trình công nghiệp hóa, hiện đại hóa và hội nhập quốc tế.",
-                    "Sự gia tăng của các phương tiện truyền thông đại chúng hiện đại."
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là phương hướng xây dựng gia đình Việt Nam hiện nay?",
-                "o": [
-                    "Phục hồi nguyên vẹn mô hình gia đình truyền thống với nhiều thế hệ cùng chung sống.",
-                    "Xây dựng gia đình no ấm, bình đẳng, tiến bộ, hạnh phúc và phát triển bền vững.",
-                    "Khuyến khích lối sống tự do, không bị ràng buộc bởi các trách nhiệm gia đình.",
-                    "Xóa bỏ chức năng kinh tế của gia đình, để nhà nước và xã hội đảm nhiệm."
-                ],
-                "a": 1
-            },
-            {
-                "q": "Ý thức tự giác tộc người là gì?",
-                "o": [
-                    "Là ý thức về nguồn gốc và tộc danh của dân tộc mình",
-                    "Ý thức về sự chung lưng đấu cật, đoàn kết đấu tranh chống thiên tai, địch họa để dựng nước và giữ nước",
-                    "Là ý thức về tên tự gọi, về tiếng mẹ đẻ và các đặc trưng văn hóa tương đối bền vững",
-                    "Là ý thức của mỗi tộc người trong xây dựng và bảo vệ Tổ quốc Việt Nam xã hội chủ nghĩa"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Dân chủ XHCN ở Việt Nam được thực hiện thông qua hình thức nào?",
-                "o": [
-                    "Trưng cầu dân ý là duy nhất",
-                    "Dân chủ đại diện và dân chủ trực tiếp",
-                    "Không có bầu cử",
-                    "Chỉ thông qua mạng xã hội"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Việc các thành viên trong gia đình cùng nhau lao động, sản xuất, tạo ra của cải vật chất và bảo đảm đời sống vật chất là biểu hiện của chức năng nào?",
-                "o": [
-                    "Chức năng sinh sản",
-                    "Chức năng văn hóa, giáo dục",
-                    "Chức năng kinh tế",
-                    "Chức năng tái tạo sức lao động"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Tờ báo cách mạng đầu tiên của Việt Nam là:",
-                "o": [
-                    "Báo Nhân Dân",
-                    "Báo Tiếng Dân",
-                    "Báo Búa Liềm",
-                    "Báo Thanh Niên"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Việc truyền thụ các giá trị văn hóa, giữ gìn truyền thống cho thế hệ sau thuộc về chức năng nào của gia đình?",
-                "o": [
-                    "Chức năng kinh tế",
-                    "Chức năng sinh sản và nuôi dưỡng",
-                    "Chức năng tâm sinh lý",
-                    "Chức năng giáo dục"
-                ],
-                "a": 3
-            },
-            {
-                "q": "Cơ sở hình thành nên gia đình là gì?",
-                "o": [
-                    "Quan hệ hôn nhân",
-                    "Quan hệ văn hóa",
-                    "Quan hệ chính trị",
-                    "Quan hệ xã hội"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Mô hình gia đình Việt Nam phổ biến trong bước chuyển biến từ \"xã hội nông nghiệp\" sang \"xã hội công nghiệp\" là mô hình nào?",
-                "o": [
-                    "Gia đình hạt nhân",
-                    "Gia đình truyền thống",
-                    "Gia đình nông nghiệp",
-                    "Gia đình hiện đại"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Trên phương diện văn hóa, trong bối cảnh hội nhập quốc tế sâu rộng, dân tộc Việt Nam cần làm gì để góp phần giữ vững độc lập dân tộc?",
-                "o": [
-                    "Chú trọng công tác bảo vệ toàn vẹn lãnh thổ quốc gia",
-                    "Tăng cường hội nhập kinh tế khu vực và thế giới",
-                    "Giáo dục lòng yêu nước và giữ gìn, phát huy bản sắc văn hóa dân tộc.",
-                    "Mở rộng tiếp thu những tinh hoa văn hóa nhân loại"
-                ],
-                "a": 2
-            },
-            {
-                "q": "Đâu là điều kiện tiên quyết bảo đảm thành công của công cuộc đổi mới, công nghiệp hoá, hiện đại hoá đất nước?",
-                "o": [
-                    "Sự lãnh đạo của Đảng Cộng sản Việt Nam",
-                    "Sự quản lý của nhà nước XHCN Việt Nam",
-                    "Sự đoàn kết của toàn dân",
-                    "Sự lớn mạnh của giai cấp công nhân"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Đâu là nguyên tắc nền tảng trong chính sách tín ngưỡng, tôn giáo của Đảng và Nhà nước Việt Nam?",
-                "o": [
-                    "Tôn trọng tự do tín ngưỡng",
-                    "Bài trừ mê tín dị đoan",
-                    "Đoàn kết tôn giáo",
-                    "Chống lợi dụng tôn giáo"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Chức năng nào của gia đình có ý nghĩa quan trọng đối với sự phát triển kinh tế của một cộng đồng người?",
-                "o": [
-                    "Chức năng kinh tế và tổ chức tiêu dùng",
-                    "Chức năng xã hội hóa",
-                    "Chức năng sinh sản và nuôi dưỡng",
-                    "Chức năng tái sản xuất ra con người"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Tính đến năm 2022, có bao nhiêu tổ chức thuộc 16 tôn giáo được Nhà nước Việt Nam công nhận hoặc cấp đăng ký hoạt động?",
-                "o": [
-                    "43",
-                    "36",
-                    "38",
-                    "39"
-                ],
-                "a": 0
-            },
-            {
-                "q": "Hôn nhân tự nguyện, tiến bộ được dựa trên cơ sở chính là gì?",
-                "o": [
-                    "Sự sắp đặt của cha mẹ và gia đình hai bên.",
-                    "Tình yêu chân chính giữa nam và nữ.",
-                    "Sự phù hợp về địa vị xã hội và tài sản.",
-                    "Các yếu tố về phong tục, tập quán lạc hậu"
-                ],
-                "a": 1
-            },
-            {
-                "q": "Đâu là điểm tựa tinh thần vô cùng lớn lao cho mỗi người?",
-                "o": [
-                    "Nhà trường",
-                    "Chính phủ",
-                    "Nhà nước",
-                    "Gia đình"
-                ],
-                "a": 3
-            }
-        ];
-
-
-        const explanationData = [
-            "Đáp án đúng: C. Tômát Morơ. Tômát Morơ (Thomas More) viết Utopia, xuất bản năm 1516. (Đối chiếu: British Library: Thomas More/Utopia.)",
-            "Đáp án đúng: B. Tuyên ngôn của Đảng cộng sản. Tuyên ngôn của Đảng Cộng sản được công bố năm 1848. (Đối chiếu: Bài giảng trên lớp, tr. 5–6.)",
-            "Đáp án đúng: D. Giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 3, 16–17.)",
-            "Đáp án đúng: A. Sự sụp đổ của chủ nghĩa tư bản và sự thắng lợi của chủ nghĩa xã hội là tất yếu như nhau. Đây là kết luận trong lý luận Mác - Lênin về quy luật vận động của các hình thái kinh tế - xã hội. (Đối chiếu: Bài giảng trên lớp, tr. 5.)",
-            "Đáp án đúng: A. Nhà nước Xô Viết, năm 1917. Trong các lựa chọn, nhà nước Xô viết ra đời sau Cách mạng Tháng Mười năm 1917. Cần phân biệt với Công xã Paris năm 1871, nhà nước vô sản đầu tiên nhưng tồn tại ngắn ngủi. (Đối chiếu: Bài giảng trên lớp, tr. 43.)",
-            "Đáp án đúng: A. Iosif Vissarionovich Stalin. Stalin là lựa chọn đúng. Quyền lãnh đạo của ông được củng cố dần sau khi Lênin mất; không phải toàn bộ quá trình chuyển giao hoàn tất ngay năm 1924. (Đối chiếu: Library of Congress: niên biểu.)",
-            "Đáp án đúng: C. Độc lập dân tộc gắn với chủ nghĩa xã hội (Đối chiếu: Bài giảng trên lớp, tr. 10.)",
-            "Đáp án đúng: D. Giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 17.)",
-            "Đáp án đúng: C. Sứ mệnh lịch sử của giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 12.)",
-            "Đáp án đúng: B. Nhà nước (Đối chiếu: Bài giảng trên lớp, tr. 51.)",
-            "Đáp án đúng: C. Đất liền, hải đảo, vùng biển và vùng trời. C trùng cách liệt kê trong Điều 1 Hiến pháp năm 2013. B trong bản đề gốc cũng đủ bốn bộ phận nhưng khác thứ tự; câu hỏi đã làm rõ yêu cầu chọn cách liệt kê đúng theo văn bản. (Đối chiếu: Hiến pháp 2013, Điều 1.)",
-            "Đáp án đúng: B. 54 (Đối chiếu: Bài giảng trên lớp, tr. 69.)",
-            "Đáp án đúng: D. Phát triển về giáo dục. Giáo dục trực tiếp phát triển tri thức và kỹ năng. Câu gốc hỏi quá rộng vì phát triển kinh tế - xã hội cũng tác động đến nguồn lực con người; câu đã được làm rõ theo khía cạnh đào tạo. (Đối chiếu: Giáo trình Bộ GD&ĐT (bản cũ), tr. 171–176; đã làm rõ khía cạnh đào tạo.)",
-            "Đáp án đúng: D. Cả A, B, C (Đối chiếu: Bài giảng trên lớp, tr. 40–42.)",
-            "Đáp án đúng: A. Giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 17–18.)",
-            "Đáp án đúng: D. Đảng Cộng sản Trung Quốc (Đối chiếu: Bài giảng trên lớp, tr. 9–10.)",
-            "Đáp án đúng: A. Là sự kết hợp giữa chủ nghĩa Mác - Lênin và phong trào công nhân. Đây là quy luật chung. Với Việt Nam, sự ra đời của Đảng còn gắn với phong trào yêu nước. (Đối chiếu: Giáo trình Bộ GD&ĐT (bản cũ), mục quy luật hình thành Đảng.)",
-            "Đáp án đúng: A. Mang bản chất của giai cấp công nhân với tư cách là giai cấp có lợi ích chung phù hợp với lợi ích của quần chúng nhân dân. (Đối chiếu: Bài giảng trên lớp, tr. 45–46.)",
-            "Đáp án đúng: B. Cách mạng tháng Mười Nga thành công và sự ra đời của nhà nước XHCN đầu tiên (1917) (Đối chiếu: Bài giảng trên lớp, tr. 43.)",
-            "Đáp án đúng: A. Công nhân có xu hướng trí tuệ hóa, có tính toàn cầu hóa, gia tăng nhanh về số lượng và chất lượng. Bài giảng trang 20 phân biệt những biến đổi mới với những điểm tương đồng. A nêu các biến đổi về trí tuệ hóa, toàn cầu hóa, số lượng và chất lượng; D thêm vai trò trong lực lượng sản xuất hiện đại, vốn là điểm tương đồng chứ không phải khác biệt mới. (Đối chiếu: Bài giảng trên lớp, tr. 20–21.)",
-            "Đáp án đúng: A. Quan hệ sở hữu đối với tư liệu sản xuất chủ yếu (Đối chiếu: Bài giảng trên lớp, tr. 17.)",
-            "Đáp án đúng: B. Sau cách mạng Tháng Tám 1945 (2/9/1945) (Đối chiếu: Bài giảng trên lớp, tr. 47.)",
-            "Đáp án đúng: C. Thế giới quan duy tâm (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
-            "Đáp án đúng: D. Xây dựng gia đình ấm no, hạnh phúc, tiến bộ, văn minh (Đối chiếu: Hệ giá trị gia đình: nguồn Chính phủ.)",
-            "Đáp án đúng: D. Thiết lập nhà nước kiểu mới mang bản chất giai cấp công nhân. Câu hỏi đã làm rõ nhiệm vụ chính trị trực tiếp. Các nhiệm vụ về sở hữu và xây dựng kinh tế còn tiếp tục trong quá trình xây dựng xã hội mới. (Đối chiếu: Bài giảng trên lớp, tr. 17–18.)",
-            "Đáp án đúng: C. Do sự bóc lột của giai cấp tư sản đối với giai cấp công nhân (Đối chiếu: Bài giảng trên lớp, tr. 16–17, 20.)",
-            "Đáp án đúng: C. 3. Theo cách phân loại nền dân chủ như chế độ nhà nước trong giáo trình: dân chủ chủ nô, dân chủ tư sản và dân chủ xã hội chủ nghĩa; không tính dân chủ nguyên thủy là một chế độ nhà nước. (Đối chiếu: Bài giảng trên lớp, tr. 42–43.)",
-            "Đáp án đúng: B. Nhà nước xã hội chủ nghĩa. Phân biệt Nhà nước là trụ cột với Đảng giữ vai trò lãnh đạo hệ thống chính trị. (Đối chiếu: Giáo trình Bộ GD&ĐT (bản cũ), tr. 100.)",
-            "Đáp án đúng: C. 72 ngày. Công xã Paris tồn tại từ ngày 18/3 đến ngày 28/5/1871, thường được tính là 72 ngày. (Đối chiếu: Học viện Chính trị khu vực IV: Công xã Paris.)",
-            "Đáp án đúng: A. Châu Mỹ Latinh (Đối chiếu: Mô hình CNXH thế kỷ XXI tại Mỹ Latinh.)",
-            "Đáp án đúng: B. Pháp luật (Đối chiếu: Bài giảng trên lớp, tr. 41–42.)",
-            "Đáp án đúng: C. Chủ nghĩa Mác – Lênin và tư tưởng Hồ Chí Minh (Đối chiếu: Bài giảng trên lớp, tr. 10–11.)",
-            "Đáp án đúng: A. V.I.Lênin (Đối chiếu: Bài giảng trên lớp, tr. 6–8.)",
-            "Đáp án đúng: B. Một trong ba bộ phận hợp thành chủ nghĩa Mác-Lênin. (Đối chiếu: Bài giảng trên lớp, tr. 3.)",
-            "Đáp án đúng: C. Chủ nghĩa xã hội không tưởng Pháp. Trong các phương án, C là phù hợp nhất. Di sản trực tiếp là chủ nghĩa xã hội không tưởng phê phán đầu thế kỷ XIX, gồm cả các nhà tư tưởng Pháp và Anh. (Đối chiếu: Bài giảng trên lớp, tr. 4.)",
-            "Đáp án đúng: B. Sự xuất hiện giai cấp cùng những phân hóa, đối kháng, bất công... là điều không thể giải thích được (Đối chiếu: Bài giảng trên lớp, tr. 75.)",
-            "Đáp án đúng: D. Là một hiện tượng xã hội - văn hoá do con người sáng tạo ra. D phù hợp nhất trong các lựa chọn. Theo quan điểm Mác - Lênin, tôn giáo còn là một hình thái ý thức xã hội phản ánh hiện thực qua niềm tin vào lực lượng siêu nhiên. (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
-            "Đáp án đúng: A. Trực tiếp và gián tiếp (Đối chiếu: Bài giảng trên lớp, tr. 31–32.)",
-            "Đáp án đúng: B. Chủ nghĩa tư bản đã chuyển sang giai đoạn đế quốc chủ nghĩa. (Đối chiếu: Bài giảng trên lớp, tr. 7.)",
-            "Đáp án đúng: A. Xã hội \"dân giàu, nước mạnh, dân chủ, công bằng, văn minh\" (Đối chiếu: Bài giảng trên lớp, tr. 36–37.)",
-            "Đáp án đúng: B. Bỏ qua việc xác lập vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa. Bỏ qua vị trí thống trị của quan hệ sản xuất và kiến trúc thượng tầng tư bản chủ nghĩa; vẫn tiếp thu thành tựu khoa học, công nghệ và quản lý. (Đối chiếu: Bài giảng trên lớp, tr. 34.)",
-            "Đáp án đúng: C. Trở thành nước phát triển, thu nhập cao. Mốc mục tiêu được hỏi là năm 2045, khác với mục tiêu năm 2030. (Đối chiếu: Mục tiêu 2045: nguồn Chính phủ.)",
-            "Đáp án đúng: B. Đảng cộng sản (Đối chiếu: Bài giảng trên lớp, tr. 19.)",
-            "Đáp án đúng: B. Các nước đã trải qua giai đoạn chủ nghĩa tư bản phát triển. (Đối chiếu: Bài giảng trên lớp, tr. 31.)",
-            "Đáp án đúng: C. Hiến pháp và pháp luật (Đối chiếu: Bài giảng trên lớp, tr. 49–50.)",
-            "Đáp án đúng: A. Đảng cộng sản Việt Nam (Đối chiếu: Bài giảng trên lớp, tr. 50.)",
-            "Đáp án đúng: C. Có tính tổ chức, kỷ luật lao động và tâm lý lao động công nghiệp. (Đối chiếu: Bài giảng trên lớp, tr. 16–17.)",
-            "Đáp án đúng: D. Giai cấp tư sản (Đối chiếu: Bài giảng trên lớp, tr. 16, 20.)",
-            "Đáp án đúng: A. Tạo sức mạnh tổng hợp đảm bảo cho sự thắng lợi của cách mạng xã hội chủ nghĩa (Đối chiếu: Bài giảng trên lớp, tr. 56.)",
-            "Đáp án đúng: B. Liên minh giai cấp công nhân với giai cấp nông dân và đội ngũ trí thức do Đảng lãnh đạo. (Đối chiếu: Bài giảng trên lớp, tr. 56–58.)",
-            "Đáp án đúng: A. Để thích nghi với văn hóa, xã hội của quốc gia đó (Đối chiếu: Bài giảng trên lớp, tr. 79.)",
-            "Đáp án đúng: B. Mang bản chất giai cấp công nhân; phục vụ lợi ích cho nhân dân (Đối chiếu: Bài giảng trên lớp, tr. 50–52.)",
-            "Đáp án đúng: C. Năm 1995. Hai nước bình thường hóa quan hệ ngoại giao năm 1995. Hoa Kỳ dỡ bỏ cấm vận thương mại từ năm 1994. (Đối chiếu: Bộ Ngoại giao: bình thường hóa năm 1995.)",
-            "Đáp án đúng: D. Thị tộc, bộ lạc, bộ tộc, dân tộc (Đối chiếu: Giáo trình Bộ GD&ĐT (bản cũ), chương dân tộc.)",
-            "Đáp án đúng: B. Quan hệ huyết thống (Đối chiếu: Bài giảng trên lớp, tr. 85.)",
-            "Đáp án đúng: D. Nhà nước pháp quyền xã hội chủ nghĩa (Đối chiếu: Bài giảng trên lớp, tr. 49–50.)",
-            "Đáp án đúng: A. Đoàn kết các dân tộc (Đối chiếu: Bài giảng trên lớp, tr. 71.)",
-            "Đáp án đúng: A. Cộng đồng về ngôn ngữ. Bài giảng trang 67 gọi cộng đồng về ngôn ngữ là tiêu chí cơ bản để phân biệt các tộc người. D là tiêu chí quan trọng nhất; cần phân biệt hai cách hỏi. (Đối chiếu: Bài giảng trên lớp, tr. 67.)",
-            "Đáp án đúng: B. Chức năng nuôi dưỡng, giáo dục (Đối chiếu: Bài giảng trên lớp, tr. 87–88.)",
-            "Đáp án đúng: A. Giai cấp công nhân Việt Nam (Đối chiếu: Bài giảng trên lớp, tr. 58.)",
-            "Đáp án đúng: B. Phát triển kinh tế, tiến hành thành công công nghiệp hóa, hiện đại hóa (Đối chiếu: Bài giảng trên lớp, tr. 61–62.)",
-            "Đáp án đúng: D. Khi xã hội xuất hiện sự phân chia giai cấp và đối kháng về lợi ích giai cấp (Đối chiếu: Bài giảng trên lớp, tr. 76.)",
-            "Đáp án đúng: D. Chủ nghĩa xã hội (Đối chiếu: Bài giảng trên lớp, tr. 27–28.)",
-            "Đáp án đúng: D. Cách mạng Tháng Tám thành công và Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập (2/9/1945) (Đối chiếu: Hiến pháp 2013, Lời nói đầu.)",
-            "Đáp án đúng: D. Liên minh công - nông - trí thức. Liên minh công nhân - nông dân - trí thức là lực lượng nòng cốt, nền tảng xã hội của khối đại đoàn kết. Không nhầm với “đoàn kết trong Đảng” là hạt nhân theo cách diễn đạt về xây dựng Đảng. (Đối chiếu: Cẩm nang tư tưởng Hồ Chí Minh, Thư viện Quốc hội.)",
-            "Đáp án đúng: A. Nó ra đời và tồn tại và biến đổi trong một giai đoạn nhất định của lịch sử xã hội loài người (Đối chiếu: Bài giảng trên lớp, tr. 76.)",
-            "Đáp án đúng: D. Cả 3 đáp án trên (Đối chiếu: Bài giảng trên lớp, tr. 48, 80.)",
-            "Đáp án đúng: A. Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng. Đây là phương châm được luật thể chế hóa bằng các quyền và cơ chế cụ thể; không phải khẳng định cả sáu vế là một câu trích nguyên văn của luật. (Đối chiếu: Luật Thực hiện dân chủ ở cơ sở 2022; nguồn Quốc hội.)",
-            "Đáp án đúng: B. Phát huy sức mạnh của mọi giai cấp, mọi tầng lớp nhân dân, mọi thành phần dân tộc, tôn giáo cho công cuộc đổi mới, xây dựng và bảo vệ tổ quốc. (Đối chiếu: Bài giảng trên lớp, tr. 10–11.)",
-            "Đáp án đúng: D. Hiến pháp (Đối chiếu: Hiến pháp 2013, Điều 7.)",
-            "Đáp án đúng: A. Sự ra đời nền Đại công nghiệp (Đối chiếu: Bài giảng trên lớp, tr. 3, 16.)",
-            "Đáp án đúng: A. Phát hiện ra giai cấp công nhân là lực lượng xã hội có thể thủ tiêu CNTB, xây dựng CNXH. Trong các lựa chọn, A xác định lực lượng thực hiện sự chuyển biến xã hội. Về nền tảng lý luận, chủ nghĩa duy vật lịch sử và học thuyết giá trị thặng dư cũng là các phát kiến quan trọng. (Đối chiếu: Bài giảng trên lớp, tr. 5.)",
-            "Đáp án đúng: C. Sự đoàn kết, thống nhất của hai giai cấp công nhân và nông dân (Đối chiếu: Ý nghĩa biểu tượng liên minh công nhân – nông dân.)",
-            "Đáp án đúng: D. Cơ cấu xã hội - giai cấp (Đối chiếu: Bài giảng trên lớp, tr. 54–55.)",
-            "Đáp án đúng: A. Tự quyết về chính trị (Đối chiếu: Bài giảng trên lớp, tr. 68–69.)",
-            "Đáp án đúng: A. Xây dựng Đảng cộng sản Việt Nam trong sạch, vững mạnh (Đối chiếu: Bài giảng trên lớp, tr. 51.)",
-            "Đáp án đúng: A. Chủ tịch Hồ Chí Minh (Đối chiếu: Hồ Chí Minh: đoàn kết và đại đoàn kết.)",
-            "Đáp án đúng: B. Pháp. Cuộc cách mạng vô sản đầu tiên là Công xã Paris ở Pháp năm 1871. Cách mạng Tháng Mười Nga năm 1917 là cuộc cách mạng vô sản thắng lợi, lập nhà nước Xô viết. (Đối chiếu: Học viện Chính trị khu vực IV: Công xã Paris 1871.)",
-            "Đáp án đúng: A. Chính phủ. Chính phủ thống nhất quản lý trên phạm vi cả nước. Cần phân biệt với bộ chuyên ngành tham mưu và thực hiện quản lý. (Đối chiếu: Luật Tín ngưỡng, tôn giáo 2016, Điều 61; luật 2026, Điều 57.)",
-            "Đáp án đúng: A. Tôn giáo có hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tương đối chặt chẽ; tín ngưỡng thường chưa có hệ thống đó. Bài giảng trang 74 cho thấy tín ngưỡng vẫn có cách thức thể hiện niềm tin. Lựa chọn A được làm rõ về mức độ hệ thống và tổ chức, không phủ nhận nghi thức tín ngưỡng. (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
-            "Đáp án đúng: B. Tôn giáo là nơi sinh hoạt văn hóa, tinh thần của đông đảo các tầng lớp nhân dân. (Đối chiếu: Bài giảng trên lớp, tr. 76.)",
-            "Đáp án đúng: B. Tính lịch sử (Đối chiếu: Bài giảng trên lớp, tr. 76, 78.)",
-            "Đáp án đúng: A. Thần thánh hóa các hiện tượng tự nhiên (Đối chiếu: Bài giảng trên lớp, tr. 75.)",
-            "Đáp án đúng: A. Hệ thống giáo lý, giáo luật, lễ nghi và tổ chức tôn giáo (Đối chiếu: Bài giảng trên lớp, tr. 74.)",
-            "Đáp án đúng: C. Nước Cộng hòa Nhân dân Trung Hoa ra đời. (Đối chiếu: Bài giảng trên lớp, tr. 8–9.)",
-            "Đáp án đúng: C. Là niềm tin mê muội, viển vông, không dựa trên một cơ sở khoa học (Đối chiếu: Bài giảng trên lớp, tr. 74–75.)",
-            "Đáp án đúng: C. Cuba (Đối chiếu: Lịch sử cách mạng Cuba.)",
-            "Đáp án đúng: C. 9. Trong cách thống kê 16 tôn giáo: 9 tôn giáo du nhập và 7 tôn giáo nội sinh. Tư cách pháp nhân áp dụng cho tổ chức tôn giáo, không phải cho khái niệm tôn giáo. (Đối chiếu: Báo Chính phủ: 9 tôn giáo du nhập.)",
-            "Đáp án đúng: C. Gia đình hòa thuận, bình đẳng, tiến bộ, hạnh phúc và thực hiện tốt nghĩa vụ công dân. (Đối chiếu: Bài giảng trên lớp, tr. 97.)",
-            "Đáp án đúng: C. Quá trình công nghiệp hóa, hiện đại hóa và hội nhập quốc tế. (Đối chiếu: Bài giảng trên lớp, tr. 92–93.)",
-            "Đáp án đúng: B. Xây dựng gia đình no ấm, bình đẳng, tiến bộ, hạnh phúc và phát triển bền vững. (Đối chiếu: Bài giảng trên lớp, tr. 95–97.)",
-            "Đáp án đúng: A. Là ý thức về nguồn gốc và tộc danh của dân tộc mình (Đối chiếu: Bài giảng trên lớp, tr. 67.)",
-            "Đáp án đúng: B. Dân chủ đại diện và dân chủ trực tiếp (Đối chiếu: Hiến pháp 2013, Điều 6.)",
-            "Đáp án đúng: C. Chức năng kinh tế (Đối chiếu: Bài giảng trên lớp, tr. 88–89.)",
-            "Đáp án đúng: D. Báo Thanh Niên (Đối chiếu: Bảo tàng Hồ Chí Minh: Báo Thanh Niên.)",
-            "Đáp án đúng: D. Chức năng giáo dục (Đối chiếu: Bài giảng trên lớp, tr. 87–89.)",
-            "Đáp án đúng: A. Quan hệ hôn nhân (Đối chiếu: Bài giảng trên lớp, tr. 85.)",
-            "Đáp án đúng: A. Gia đình hạt nhân (Đối chiếu: Bài giảng trên lớp, tr. 92.)",
-            "Đáp án đúng: C. Giáo dục lòng yêu nước và giữ gìn, phát huy bản sắc văn hóa dân tộc. Câu được giới hạn ở phương diện văn hóa để có đáp án duy nhất. Bảo vệ lãnh thổ và hội nhập cũng là những nhiệm vụ quan trọng ở các phương diện khác. (Đối chiếu: Bài giảng trên lớp, tr. 10–11.)",
-            "Đáp án đúng: A. Sự lãnh đạo của Đảng Cộng sản Việt Nam (Đối chiếu: Bài giảng trên lớp, tr. 11.)",
-            "Đáp án đúng: A. Tôn trọng tự do tín ngưỡng. Nguyên tắc là tôn trọng, bảo đảm quyền theo hoặc không theo tôn giáo. Bỏ cụm “hòn đá tảng” trong câu gốc vì không xác định được nguồn của cách gọi đó. (Đối chiếu: Bài giảng trên lớp, tr. 80.)",
-            "Đáp án đúng: A. Chức năng kinh tế và tổ chức tiêu dùng (Đối chiếu: Bài giảng trên lớp, tr. 88–89.)",
-            "Đáp án đúng: A. 43. Số 43 được dùng cho mốc năm 2022 trong đề, bao gồm các tổ chức được công nhận hoặc cấp đăng ký hoạt động. Không dùng số này như một khẳng định cho mọi thời điểm. (Đối chiếu: Ban Tôn giáo Chính phủ, số liệu mốc 2022.)",
-            "Đáp án đúng: B. Tình yêu chân chính giữa nam và nữ. (Đối chiếu: Bài giảng trên lớp, tr. 90–91.)",
-            "Đáp án đúng: D. Gia đình (Đối chiếu: Bài giảng trên lớp, tr. 86, 89.)"
-        ];
-
-        function getExplanation(i) {
-            return explanationData[i] || "Đáp án này phù hợp nhất với khái niệm được hỏi.";
+        if (typeof quizData === 'undefined') {
+            window.quizData = [
+    {
+        "id": "cs466-001",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "devices = [{\"ip\":\"10.0.0.1\",\"up\":True},{\"ip\":\"10.0.0.2\",\"up\":False}]\nprint([d[\"ip\"] for d in devices if d[\"up\"]])",
+        "o": [
+            "[\"10.0.0.1\"]",
+            "[\"10.0.0.2\"]",
+            "[True]"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Điều kiện if d[\"up\"] chỉ giữ thiết bị có up=True. Thiết bị đầu được giữ, rồi d[\"ip\"] lấy IP \"10.0.0.1\". Thiết bị thứ hai có up=False nên bị loại. Kết quả là list IP, không phải list Boolean.",
+        "tip": "Đọc list comprehension theo thứ tự: duyệt từng phần tử → kiểm tra if → lấy biểu thức ở đầu. Đừng thấy True trong điều kiện rồi chọn [True].",
+        "sourceNote": "Đề gốc chỉ có A, B, C."
+    },
+    {
+        "id": "cs466-002",
+        "q": "Một REST API hỗ trợ:\nGET /students\nGET /students/5\nPOST /students\nDELETE /students/5\nPhát biểu nào sau đây đúng?",
+        "code": "",
+        "o": [
+            "POST /students thường được sử dụng để tạo sinh viên mới.",
+            "GET /students/5 dùng để xóa sinh viên có mã 5.",
+            "DELETE /students/5 dùng để lấy thông tin sinh viên có mã 5.",
+            "GET /students dùng để thêm sinh viên mới."
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Trong thiết kế REST thông dụng, POST /students tạo sinh viên mới. GET /students lấy danh sách, GET /students/5 lấy sinh viên có mã 5, còn DELETE /students/5 xóa sinh viên đó. B, C, D nhầm chức năng của phương thức.",
+        "tip": "GET lấy — POST tạo — DELETE xóa. Đọc phương thức trước, sau đó mới đọc URL để xác định tài nguyên được tác động.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-003",
+        "q": "Khi đọc một file cấu hình YAML thông thường bằng PyYAML, cách nào an toàn hơn?",
+        "code": "",
+        "o": [
+            "pickle.loads(f.read())",
+            "yaml.safe_load(f)",
+            "yaml.load(f) không kiểm soát Loader",
+            "eval(f.read())"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "safe_load() đọc các kiểu YAML thông thường và hạn chế khả năng dựng đối tượng Python tùy ý. eval() thực thi biểu thức Python; pickle không phải bộ đọc YAML và giải tuần tự dữ liệu không tin cậy có thể nguy hiểm. yaml.load() không kiểm soát Loader không đáp ứng yêu cầu an toàn hơn.",
+        "tip": "Thấy YAML + đọc cấu hình + an toàn hơn → safe_load(). Phân biệt đọc dữ liệu với thực thi mã.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-004",
+        "q": "Trên một TCP socket đã kết nối, cặp phương thức nào phù hợp để gửi toàn bộ buffer và nhận dữ liệu?",
+        "code": "",
+        "o": [
+            "sendall()/recv()",
+            "bind()/listen()",
+            "connect()/accept()",
+            "write()/read()"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "sendall() tiếp tục gửi đến khi hết buffer hoặc gặp lỗi; recv() nhận dữ liệu trên socket. bind/listen và connect/accept phục vụ thiết lập địa chỉ hoặc kết nối. write/read không phải cặp phương thức trực tiếp được hỏi của đối tượng socket này.",
+        "tip": "sendall = gửi hết buffer hoặc báo lỗi; recv = nhận. Không suy ra rằng một lần recv() chắc chắn nhận hết dữ liệu đã gửi.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-005",
+        "q": "Với Paramiko, chính sách nào phù hợp khi muốn từ chối host key chưa được tin cậy thay vì tự động chấp nhận?",
+        "code": "",
+        "o": [
+            "AutoAddPolicy()",
+            "RejectPolicy()",
+            "WarningPolicy() luôn chấp nhận",
+            "Không cần host-key policy"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "RejectPolicy() từ chối host key chưa có trong danh sách tin cậy. AutoAddPolicy() tự thêm khóa mới; WarningPolicy() cảnh báo rồi chấp nhận khóa chưa biết, nên không đáp ứng yêu cầu từ chối.",
+        "tip": "Reject = từ chối; AutoAdd = tự thêm. Host key dùng để xác minh máy chủ SSH, không phải mật khẩu đăng nhập của người dùng.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-006",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "d = {\"a\": 1, \"b\": 2}\nd[\"c\"] = d.get(\"a\", 0) + d.get(\"x\", 5)\nprint(d[\"c\"])",
+        "o": [
+            "5",
+            "6",
+            "1",
+            "Lỗi"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Khóa \"a\" có giá trị 1, nên get(\"a\", 0) trả 1. Khóa \"x\" không tồn tại, nên get(\"x\", 5) trả mặc định 5. Tổng 1 + 5 = 6 được gán vào \"c\".",
+        "tip": "Với get(k, mặc định): có khóa lấy giá trị, thiếu khóa lấy mặc định. Tính từng vế riêng rồi cộng.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-007",
+        "q": "Netmiko phù hợp nhất cho trường hợp nào?",
+        "code": "",
+        "o": [
+            "Tự động hóa tương tác CLI với nhiều platform thiết bị mạng qua SSH",
+            "Xây dựng HTTP web server",
+            "Huấn luyện mô hình machine learning",
+            "Truy vấn cơ sở dữ liệu SQL"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Netmiko hỗ trợ kết nối và gửi lệnh CLI qua SSH tới nhiều nền tảng thiết bị mạng, đặc biệt router/switch. HTTP server, huấn luyện mô hình và truy vấn SQL không phải mục đích chính của thư viện.",
+        "tip": "Nhận diện cụm router/switch + CLI + SSH theo platform → Netmiko. Không chọn theo từ “Python” chung chung.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-008",
+        "q": "Cho đoạn code sau. Để đoạn code trên hoạt động đúng, dữ liệu Server trả về phù hợp nhất là:",
+        "code": "response = requests.get(\"http://127.0.0.1:5000/students\")\nstudents = response.json()\nprint(students[0][\"name\"])",
+        "o": [
+            "[{\"name\": \"An\"}, {\"name\": \"Bình\"}]",
+            "{\"name\": \"An\"}",
+            "An, Bình",
+            "{\"students\": \"An\"}"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "students[0] lấy phần tử đầu của list; phần tử này phải có khóa \"name\". A đáp ứng cấu trúc và in \"An\". B và D là đối tượng JSON không có cấu trúc list được yêu cầu; C không phải JSON hợp lệ như được trình bày.",
+        "tip": "[0] chọn phần tử đầu; [\"name\"] chọn trường. Đi từ ngoài vào trong để suy ra cấu trúc: list bên ngoài, dictionary bên trong.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-009",
+        "q": "Cho đoạn mã sau. Kết quả được in ra là:",
+        "code": "devices = [\"R1\", \"R2\", \"SW1\"]\nfor i, d in enumerate(devices, start=10):\n    print(f\"{i}:{d}\", end=\" \")",
+        "o": [
+            "0:R1 1:R2 2:SW1",
+            "10:R1 11:R2 12:SW1",
+            "R1:10 R2:11 SW1:12",
+            "Error"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "enumerate(..., start=10) đánh số 10, 11, 12. F-string {i}:{d} in số trước, tên thiết bị sau. end=\" \" giữ các kết quả trên cùng dòng, ngăn cách bằng dấu cách.",
+        "tip": "Kiểm tra hai điểm: bắt đầu từ bao nhiêu và số hay tên được in trước. A sai điểm bắt đầu; C đảo thứ tự.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-010",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "x = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)",
+        "o": [
+            "[4]",
+            "[1, 2, 3]",
+            "Lỗi",
+            "[1, 2, 3, 4]"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "y = x làm hai biến cùng tham chiếu một list, không tạo bản sao. append(4) thêm phần tử vào list chung, nên đọc qua x cũng thấy phần tử mới.",
+        "tip": "y = x dùng chung; y = x.copy() tạo list khác. Với câu hỏi list, xác định biến đang dùng chung hay dùng bản sao trước khi tính kết quả.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-011",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "base = {\"timeout\": 3, \"retries\": 2}\noverride = {\"timeout\": 5}\ncfg = {**base, **override}\nprint(cfg[\"timeout\"], cfg[\"retries\"])",
+        "o": [
+            "5 3",
+            "3 2",
+            "Error",
+            "5 2"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "Dictionary phía sau ghi đè giá trị của khóa trùng. \"timeout\" trở thành 5, còn \"retries\" không bị ghi đè nên vẫn là 2.",
+        "tip": "Khóa trùng: bên sau thắng; khóa không trùng: giữ lại. Không cộng các giá trị khi gặp cú pháp gộp dictionary.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-012",
+        "q": "Trong TCP server, phương thức nào dùng để gắn socket với địa chỉ IP và cổng cục bộ?",
+        "code": "",
+        "o": [
+            "connect()",
+            "bind()",
+            "accept()",
+            "recv()"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "bind() gắn socket vào IP và cổng cục bộ. connect() kết nối tới địa chỉ đích; accept() nhận kết nối; recv() nhận dữ liệu.",
+        "tip": "bind gắn — connect nối — accept nhận kết nối — recv nhận dữ liệu. Chú ý câu hỏi đang nói về thiết lập hay trao đổi dữ liệu.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-013",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "import re\nresult = bool(re.fullmatch(r\"Gi\\d+/\\d+\", \"Gi0/1\"))\nprint(result)",
+        "o": [
+            "Error",
+            "False",
+            "True",
+            "None"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Mẫu yêu cầu Gi, một hoặc nhiều chữ số, dấu /, rồi một hoặc nhiều chữ số. \"Gi0/1\" khớp toàn bộ. fullmatch() trả đối tượng Match và bool() chuyển nó thành True.",
+        "tip": "\\d = chữ số; + = ít nhất một; fullmatch = khớp cả chuỗi. Đừng nhầm với search() chỉ cần khớp một đoạn.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-014",
+        "q": "Điểm khác biệt đúng giữa TCP và UDP là:",
+        "code": "",
+        "o": [
+            "TCP có cơ chế kết nối và hỗ trợ truyền dữ liệu tin cậy hơn UDP.",
+            "UDP đảm bảo dữ liệu luôn đến đúng thứ tự.",
+            "TCP không cần thiết lập kết nối, UDP cần kết nối.",
+            "TCP chỉ sử dụng được trong mạng LAN."
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "TCP hướng kết nối, có cơ chế xác nhận, truyền lại và cung cấp luồng bytes đúng thứ tự. UDP không tự bảo đảm giao nhận hoặc thứ tự. C đảo ngược đặc điểm; D sai vì TCP có thể dùng qua Internet.",
+        "tip": "TCP: kết nối, truyền lại, đúng thứ tự. UDP: datagram, không tự bảo đảm các điều đó. Tránh các lựa chọn có từ tuyệt đối như “luôn” khi chúng trái đặc điểm giao thức.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-015",
+        "q": "Trong Python, kết quả của đoạn code sau là gì?",
+        "code": "data = [10, 20, 30, 40, 50]\nprint(data[-4:-1])",
+        "o": [
+            "[10, 20, 30]",
+            "[20, 30, 40]",
+            "[20, 30, 40, 50]",
+            "[30, 40, 50]"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "-4 trỏ tới 20; chỉ số kết thúc -1 trỏ tới 50 nhưng không được lấy. Lát cắt gồm 20, 30, 40.",
+        "tip": "Chỉ số âm đếm từ cuối; lát cắt lấy đầu, bỏ cuối. Đánh dấu hai mốc trước rồi mới chọn phần tử.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-016",
+        "q": "Một script nhận số cổng dưới dạng chuỗi \"443\". Phương thức nào thích hợp để kiểm tra chuỗi không rỗng và tất cả ký tự đều là chữ số?",
+        "code": "",
+        "o": [
+            "isspace()",
+            "isalpha()",
+            "isdigit()",
+            "isprintable()"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "isdigit() trả True khi chuỗi có ít nhất một ký tự và mọi ký tự đều là chữ số. isspace() kiểm tra ký tự trắng; isalpha() kiểm tra chữ; isprintable() kiểm tra khả năng hiển thị.",
+        "tip": "digit = chữ số. \"\".isdigit() là False. Để xác thực cổng thực tế còn cần kiểm tra khoảng giá trị; isdigit() còn chấp nhận một số chữ số Unicode.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-017",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "numbers = (10, 20, 30, 40)\nprint(numbers[-1])",
+        "o": [
+            "10",
+            "30",
+            "40",
+            "20"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Chỉ số -1 truy cập phần tử cuối tuple, ở đây là 40. Tuple hỗ trợ truy cập bằng chỉ số âm giống list.",
+        "tip": "[0] đầu tiên — [-1] cuối cùng — [-2] áp cuối.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-018",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "s = \"python-api\"\nprint(s.startswith(\"py\") and s.endswith(\"api\"))",
+        "o": [
+            "False",
+            "True",
+            "python-api",
+            "Lỗi"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Chuỗi bắt đầu bằng \"py\" và kết thúc bằng \"api\", nên hai điều kiện đều True. Kết quả được in là Boolean, không phải chuỗi gốc.",
+        "tip": "startswith kiểm tra đầu; endswith kiểm tra cuối; and cần cả hai đúng. Tính từng điều kiện riêng trước khi nối bằng and.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-019",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "devices = [\"R1\", \"R2\", \"R3\"]\nfor i, d in enumerate(devices, start=1):\n    print(f\"{i}:{d}\", end=\" \")",
+        "o": [
+            "R1:1 R2:2 R3:3",
+            "Error",
+            "1:R1 2:R2 3:R3",
+            "0:R1 1:R2 2:R3"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Số thứ tự bắt đầu từ 1, lần lượt ghép với R1, R2, R3. F-string đặt số trước tên, còn end=\" \" giữ kết quả trên cùng dòng.",
+        "tip": "Nhìn start=1 và {i}:{d}. A đảo thứ tự; D bỏ qua tham số start.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-020",
+        "q": "Đoạn mã post-check sau in ra giá trị nào?",
+        "code": "expected = {\"R1\": \"up\"}\nactual = {\"R1\": \"up\"}\nprint(actual[\"R1\"] == expected[\"R1\"])",
+        "o": [
+            "True",
+            "False",
+            "None",
+            "Error"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Giá trị ở khóa \"R1\" của hai dictionary đều là \"up\". Hai chuỗi bằng nhau nên == trả True.",
+        "tip": "= gán; == so sánh. Post-check so trạng thái thực tế với mong đợi; kết quả True ở đây chỉ chứng minh hai giá trị bằng nhau.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-021",
+        "q": "Một script network automation chạy trên CI/CD cần token để gọi REST API. Cách quản lý token nào phù hợp nhất?",
+        "code": "",
+        "o": [
+            "Đặt token làm một phần của tên file cấu hình",
+            "Hardcode token trực tiếp trong source code",
+            "Ghi token vào file log để dễ kiểm tra",
+            "Sử dụng secret manager hoặc cơ chế cung cấp secret tại runtime, áp dụng quyền tối thiểu và không ghi secret vào log"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "Cấp token khi chạy giúp tránh lưu bí mật trong source code. Quyền tối thiểu giới hạn tác động của token, còn không ghi secret vào log giảm nguy cơ rò rỉ. Tên file, mã nguồn và log đều không phải nơi phù hợp để công khai token.",
+        "tip": "Nhớ ba ý cấp lúc chạy — quyền tối thiểu — không lộ log. Không nhầm “dễ kiểm tra” với quản lý secret đúng cách.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-022",
+        "q": "Trong Python, json.dumps(payload) chủ yếu dùng để làm gì?",
+        "code": "",
+        "o": [
+            "Chuyển đối tượng Python thành chuỗi JSON",
+            "Đọc chuỗi JSON thành dictionary",
+            "Mở kết nối TCP",
+            "Đọc file YAML an toàn"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "json.dumps() chuyển đối tượng Python được hỗ trợ thành chuỗi JSON. json.loads() làm chiều ngược lại. Đây là chuyển đổi dữ liệu, không mở kết nối hay đọc YAML.",
+        "tip": "dumps ghi JSON — loads đọc JSON. Chữ s gắn với xử lý chuỗi; dumps() chưa tạo bytes để gửi qua socket.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-023",
+        "q": "Cho output CLI là \" Gi0/1 up \". Nếu chỉ muốn loại bỏ whitespace ở đầu chuỗi và giữ nguyên whitespace ở cuối, phương thức phù hợp là:",
+        "code": "",
+        "o": [
+            "lstrip()",
+            "replace()",
+            "strip()",
+            "rstrip()"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "lstrip() chỉ loại whitespace đầu chuỗi. rstrip() xử lý cuối, còn strip() xử lý cả hai đầu nên không đáp ứng yêu cầu giữ whitespace ở cuối. replace() cần chỉ rõ nội dung thay thế và không phải lựa chọn trực tiếp phù hợp nhất.",
+        "tip": "L=Left, R=Right. Gạch chân từ “chỉ” và “giữ nguyên” để không chọn nhầm strip().",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-024",
+        "q": "Trong TCP Server, phương thức accept() thường:",
+        "code": "",
+        "o": [
+            "Gửi dữ liệu cho Client",
+            "Đóng Socket",
+            "Chuyển chuỗi sang byte",
+            "Chờ cho đến khi có Client kết nối"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "Trên listening socket ở chế độ blocking thông thường, accept() chờ kết nối đến rồi trả socket kết nối mới và địa chỉ Client. Gửi dùng sendall(), đóng dùng close(), đổi chuỗi thành bytes dùng encode().",
+        "tip": "listen lắng nghe — accept nhận kết nối. Với non-blocking hoặc timeout, hành vi chờ có thể khác; đề dùng từ “thường”.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-025",
+        "q": "Trong logging, cách nào phù hợp hơn để tránh lộ token bí mật?",
+        "code": "",
+        "o": [
+            "Ghi toàn bộ token ở mức DEBUG",
+            "Mask/redact giá trị nhạy cảm trước khi ghi log",
+            "Nối token vào exception message",
+            "In toàn bộ biến môi trường"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Mask/redact là che hoặc loại bỏ thông tin nhạy cảm trước khi ghi log. DEBUG vẫn là log và có thể bị thu thập; exception message và biến môi trường cũng có thể chứa token.",
+        "tip": "Log sự kiện cần biết, không log bí mật. Không chọn DEBUG chỉ vì nghĩ mức này “ẩn” hoặc chỉ dùng lúc phát triển.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-026",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "devices = [\n    {\"name\": \"R1\", \"latency\": 15},\n    {\"name\": \"R2\", \"latency\": 8},\n    {\"name\": \"R3\", \"latency\": 20}\n]\nbest = min(devices, key=lambda d: d[\"latency\"])\nprint(best[\"name\"])",
+        "o": [
+            "R3",
+            "R2",
+            "Error",
+            "R1"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "key yêu cầu so sánh các thiết bị theo latency. Giá trị nhỏ nhất trong 15, 8, 20 là 8, thuộc R2. min() trả về dictionary của R2 rồi [\"name\"] lấy tên.",
+        "tip": "Xem key trước để biết tiêu chí; min nhỏ nhất, max lớn nhất. Đừng so tên thiết bị khi key đang lấy độ trễ.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-027",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "def tinh(a, b=2):\n    return a * b\nprint(tinh(5))",
+        "o": [
+            "5",
+            "7",
+            "10",
+            "Lỗi do thiếu tham số b"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "a=5; không truyền b nên dùng giá trị mặc định 2. Hàm tính 5 * 2 và trả 10, sau đó print() hiển thị kết quả.",
+        "tip": "Không truyền tham số thì dùng mặc định nếu có. Thay giá trị vào công thức trước khi tính; không cộng khi hàm dùng dấu *.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-028",
+        "q": "Cho đoạn code phía Client sau. Lệnh recv(1024) có ý nghĩa là:",
+        "code": "client.sendall(\"Hello\".encode(\"utf-8\"))\ndata = client.recv(1024)",
+        "o": [
+            "Gửi 1024 byte dữ liệu",
+            "Chờ 1024 Client kết nối",
+            "Nhận chính xác 1024 ký tự",
+            "Nhận tối đa 1024 byte dữ liệu"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "recv(1024) nhận tối đa 1024 bytes trong lần gọi đó. Dữ liệu thực nhận có thể ít hơn; giá trị trả về là bytes, không phải số ký tự Unicode.",
+        "tip": "recv(N) = nhận tối đa N bytes. Hai bẫy cần tránh là “chính xác” và “ký tự”.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-029",
+        "q": "Cho TCP Server sau. Biến conn được sử dụng để:",
+        "code": "server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver.bind((\"127.0.0.1\", 9001))\nserver.listen(5)\nconn, addr = server.accept()",
+        "o": [
+            "Trao đổi dữ liệu với Client đã kết nối",
+            "Chứa địa chỉ IP của Server",
+            "Lắng nghe các kết nối mới",
+            "Chứa số cổng của Client"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "accept() trả connected socket conn và địa chỉ Client addr. conn dùng để gửi/nhận với Client đó; server là listening socket. Vì vậy conn không phải địa chỉ hay số cổng.",
+        "tip": "server đón kết nối — conn trao đổi dữ liệu — addr chứa địa chỉ. Nhớ hai socket có hai vai trò khác nhau.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-030",
+        "q": "Cho đoạn code sau. Kết quả là:",
+        "code": "numbers = [1, 2, 3, 4, 5]\nresult = [x * 2 for x in numbers if x % 2 == 1]\nprint(result)",
+        "o": [
+            "[1, 3, 5]",
+            "[2, 6, 10]",
+            "[2, 4, 6, 8, 10]",
+            "[4, 8]"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Điều kiện % 2 == 1 giữ số lẻ 1, 3, 5; nhân từng số với 2 được 2, 6, 10. A chỉ lọc mà chưa nhân; C bỏ qua điều kiện; D xử lý số chẵn.",
+        "tip": "Lọc trước → nhân sau. % 2 == 1 chọn lẻ; % 2 == 0 chọn chẵn.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-031",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "import json\nraw = '{\"device\":\"R1\",\"status\":\"up\"}'\ndata = json.loads(raw)\nprint(data.get(\"status\"))",
+        "o": [
+            "up",
+            "R1",
+            "status"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "json.loads() chuyển chuỗi JSON thành dictionary. get(\"status\") lấy giá trị \"up\", không lấy tên khóa \"status\" hoặc giá trị của khóa \"device\".",
+        "tip": "loads đọc JSON — get lấy theo khóa. Phân biệt tên khóa với giá trị của khóa.",
+        "sourceNote": "Đề gốc chỉ có A, B, C."
+    },
+    {
+        "id": "cs466-032",
+        "q": "Ansible check mode chủ yếu được dùng để làm gì?",
+        "code": "",
+        "o": [
+            "Mô phỏng/ước lượng thay đổi đối với module hỗ trợ mà chưa áp dụng thay đổi",
+            "Tự động rollback mọi lỗi",
+            "Bỏ qua inventory",
+            "Tắt SSH trên host đích"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Check mode giúp xem thay đổi dự kiến của module có hỗ trợ. Nó không tự hoàn tác, không bỏ qua inventory và không tắt SSH. Không phải mọi module đều mô phỏng đầy đủ; task không hỗ trợ có thể bị bỏ qua.",
+        "tip": "Check = xem trước; rollback = khôi phục sau thay đổi. Chú ý cụm “module hỗ trợ”; không suy ra mọi task đều được mô phỏng.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-033",
+        "q": "Đoạn mã nào phù hợp hơn cho một script gọi REST API cần tránh chờ vô hạn và cần phát hiện HTTP 4xx/5xx?",
+        "code": "",
+        "o": [
+            "r = requests.get(url, timeout=5); r.raise_for_status()",
+            "requests.get(url, verify=False)",
+            "requests.get(url)",
+            "eval(requests.get(url).text)"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "timeout=5 giới hạn chờ kết nối/đọc; raise_for_status() báo HTTPError cho phản hồi 4xx/5xx. verify=False chỉ tắt xác minh TLS; gọi GET không timeout không đáp ứng yêu cầu giới hạn chờ. eval() thực thi nội dung và không phải cách xử lý phản hồi an toàn.",
+        "tip": "Có hai yêu cầu thì tìm đủ hai thao tác: timeout cho thời gian chờ + raise_for_status cho HTTP lỗi. Timeout không phải giới hạn tổng thời gian tuyệt đối của toàn request.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-034",
+        "q": "Trong Ansible, tùy chọn --limit hữu ích nhất để làm gì?",
+        "code": "",
+        "o": [
+            "Giới hạn phạm vi host được chạy playbook",
+            "Tăng số CPU của host",
+            "Tự động tạo secret",
+            "Thay thế inventory"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "--limit thu hẹp tập host trong phạm vi host mà play đã chọn, dựa trên tên, nhóm hoặc mẫu. Nó không thay thế inventory và không thay tài nguyên máy hay tạo secret.",
+        "tip": "Inventory khai báo host — play chọn host — limit thu hẹp phạm vi. “Limit” nghĩa là giới hạn.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-035",
+        "q": "Cho đoạn mã sau. Kết quả được in ra là:",
+        "code": "label = \" edge-r1\\n\"\nprint(label.strip().upper())",
+        "o": [
+            "EDGE-R1",
+            "edge-r1",
+            "EDGE-R1"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0,
+            2
+        ],
+        "explanation": "strip() bỏ whitespace hai đầu, gồm dấu cách đầu và ký tự xuống dòng cuối. upper() đổi chữ thành hoa, tạo \"EDGE-R1\". B chưa chuyển chữ hoa. A và C cùng hiển thị kết quả đúng.",
+        "tip": "strip làm sạch hai đầu → upper viết hoa. Học kết quả \"EDGE-R1\" thay vì cố nhớ một chữ cái khi đề bị trùng lựa chọn.",
+        "sourceNote": "Chỉ có A, B, C; không có D. Hai lựa chọn A/C giống nhau. Trong ứng dụng luyện tập, chọn A hoặc C đều phải được tính đúng."
+    },
+    {
+        "id": "cs466-036",
+        "q": "Một REST API có endpoint:\nPOST /students\nRequest Body: {\"name\": \"An\", \"score\": 8.5}\nNếu dữ liệu được tạo mới thành công, HTTP Status Code phù hợp nhất là:",
+        "code": "",
+        "o": [
+            "404 Not Found",
+            "500 Internal Server Error",
+            "201 Created",
+            "200 OK"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "201 Created thể hiện yêu cầu đã thành công và tạo tài nguyên mới. 200 OK là thành công nói chung nên kém cụ thể hơn; 404 là không tìm thấy, 500 là lỗi phía server.",
+        "tip": "Gạch chân “tạo mới” → Created → 201. Nhớ 200 thành công chung, 404 không tìm thấy, 500 lỗi server.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-037",
+        "q": "Một inventory có nhiều địa chỉ IP bị lặp. Nếu chỉ cần tập hợp các địa chỉ duy nhất, kiểu dữ liệu nào phù hợp nhất?",
+        "code": "",
+        "o": [
+            "str",
+            "tuple",
+            "list",
+            "set"
+        ],
+        "a": 3,
+        "correctAnswers": [
+            3
+        ],
+        "explanation": "set lưu các phần tử duy nhất, tự loại giá trị trùng. List và tuple vẫn có thể chứa phần tử lặp; str là chuỗi, không phải kiểu tập hợp phù hợp cho yêu cầu này.",
+        "tip": "Chỉ cần duy nhất → set. Nếu đề yêu cầu giữ thứ tự xuất hiện đầu tiên, dùng cách như list(dict.fromkeys(items)); set không bảo đảm thứ tự đó.",
+        "sourceNote": ""
+    },
+    {
+        "id": "cs466-038",
+        "q": "Cho đoạn mã sau. Kết quả là:",
+        "code": "name = \" sw-core-01\\n\"\nprint(name.strip().upper())",
+        "o": [
+            "sw-core-01",
+            "Error",
+            "SW-CORE-01",
+            "SW-CORE-01"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2,
+            3
+        ],
+        "explanation": "strip() bỏ whitespace hai đầu; upper() đổi chữ sang hoa, cho \"SW-CORE-01\". Các chữ số và dấu gạch nối giữ nguyên. A chưa chuyển chữ hoa; B sai vì code hợp lệ.",
+        "tip": "upper chỉ đổi hoa/thường, không đổi chữ số và dấu gạch nối. Tính giá trị trước khi nhìn chữ cái đáp án.",
+        "sourceNote": "C và D giống nhau. Trong ứng dụng luyện tập, chọn C hoặc D đều phải được tính đúng."
+    },
+    {
+        "id": "cs466-039",
+        "q": "Cho UDP Server sau. Biến addr chứa:",
+        "code": "server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\nserver.bind((\"0.0.0.0\", 6000))\ndata, addr = server.recvfrom(1024)",
+        "o": [
+            "Nội dung Client gửi",
+            "Địa chỉ IP của Server",
+            "Địa chỉ IP và cổng của Client gửi dữ liệu",
+            "Kích thước gói tin"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "recvfrom() trả dữ liệu nhận được và địa chỉ nguồn. Với IPv4, addr là tuple (IP, port) của bên gửi datagram. Nội dung nằm ở data; \"0.0.0.0\", 6000 trong bind() là địa chỉ phía Server, không phải giá trị nguồn trả về trong addr.",
+        "tip": "recvfrom = nhận từ ai → data và địa chỉ người gửi. Phân biệt địa chỉ trong bind() với địa chỉ do recvfrom() trả về.",
+        "sourceNote": ""
+    }
+];
+        }
+    </script>
+    <script>
+        function escapeHTML(str) {
+            if (str === null || str === undefined) return '';
+            return String(str)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
         }
 
-        function stripOptionPrefix(text) {
-            return text.replace(/^[A-D]\.\s*/, "");
+        function getExplanation(i) {
+            const item = quizData[i];
+            if (!item) return "Đáp án chuẩn theo học phần CS466.";
+            let html = `<div>💡 <strong>Vì sao đúng:</strong> ${escapeHTML(item.explanation)}</div>`;
+            if (item.tip) {
+                html += `<div class="exp-tip">🎯 <strong>Mẹo / Kỹ năng:</strong> ${escapeHTML(item.tip)}</div>`;
+            }
+            if (item.sourceNote) {
+                html += `<div class="exp-source">📌 <strong>Lưu ý nguồn:</strong> ${escapeHTML(item.sourceNote)}</div>`;
+            }
+            return html;
         }
 
         function formatOptionText(displayIndex, originalText) {
-            return `${String.fromCharCode(65 + displayIndex)}. ${stripOptionPrefix(originalText)}`;
+            return `${String.fromCharCode(65 + displayIndex)}. ${originalText}`;
         }
 
         function renderOptionLabel(questionIndex, originalOptionIndex, displayIndex) {
-            return `<label><input type="radio" name="q${questionIndex}" onchange="checkAnswer(${questionIndex}, ${originalOptionIndex})">${formatOptionText(displayIndex, quizData[questionIndex].o[originalOptionIndex])}</label>`;
+            const optText = quizData[questionIndex].o[originalOptionIndex];
+            return `<label><input type="radio" name="q${questionIndex}" onchange="checkAnswer(${questionIndex}, ${originalOptionIndex})">${formatOptionText(displayIndex, escapeHTML(optText))}</label>`;
         }
 
         function resetOptionLabelsToOriginal(questionIndex) {
@@ -2199,23 +1816,11 @@
             });
         }
 
-        function shuffleExamAnswers(questionIndex) {
-            const order = shuffleArray(quizData[questionIndex].o.map((_, optionIndex) => optionIndex));
-            const ul = document.querySelector(`#q-card-${questionIndex} .options`);
-            if (!ul) return;
-            order.forEach((originalOptionIndex, displayIndex) => {
-                const li = document.getElementById(`li-${questionIndex}-${originalOptionIndex}`);
-                if (li) {
-                    li.innerHTML = renderOptionLabel(questionIndex, originalOptionIndex, displayIndex);
-                    ul.appendChild(li);
-                }
-            });
-        }
-
-
-        let currentScore = 0; let answeredQuestions = 0;
+        let currentScore = 0;
+        let answeredQuestions = 0;
         const totalQuestions = quizData.length;
-        const SCORE_KEY = 'cnxhkh_history'; const REVIEW_KEY = 'cnxhkh_review';
+        const SCORE_KEY = 'cs466_history';
+        const REVIEW_KEY = 'cs466_review';
 
         function readStore(key, fallback = []) {
             try {
@@ -2240,51 +1845,72 @@
 
         let reviewBank = new Set(readStore(REVIEW_KEY, []).filter(i => Number.isInteger(i) && i >= 0 && i < quizData.length));
         saveReviewToStore();
-        let isReviewMode = false; let isExamMode = false;
-        let examAnswers = {}; let examTimer; let timeRemaining = 3600;
+        let isReviewMode = false;
+        window.isExamMode = false;
+        let examAnswers = {};
+        let examTimer;
+        let timeRemaining = 3600;
         let examOrder = quizData.map((_, i) => i);
 
         // Âm thanh
         let audioCtx = null;
-        let soundEnabled = localStorage.getItem('cnxhkh_sound') !== 'false';
+        let soundEnabled = localStorage.getItem('cs466_sound') !== 'false';
         document.getElementById('btn-sound').innerText = soundEnabled ? '🎵' : '🔇';
 
-        function initAudio() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+        function initAudio() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+
         function toggleSound() {
             soundEnabled = !soundEnabled;
-            localStorage.setItem('cnxhkh_sound', soundEnabled);
+            localStorage.setItem('cs466_sound', soundEnabled);
             document.getElementById('btn-sound').innerText = soundEnabled ? '🎵' : '🔇';
         }
+
         function playSound(type) {
             if (!soundEnabled) return;
-            initAudio(); if (audioCtx.state === 'suspended') audioCtx.resume();
-            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
-            osc.connect(gain); gain.connect(audioCtx.destination);
+            initAudio();
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
             const now = audioCtx.currentTime;
             if (type === 'correct') {
-                osc.type = 'sine'; osc.frequency.setValueAtTime(600, now); osc.frequency.exponentialRampToValueAtTime(1200, now + 0.1);
-                gain.gain.setValueAtTime(0.1, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
-                osc.start(now); osc.stop(now + 0.2);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(600, now);
+                osc.frequency.exponentialRampToValueAtTime(1200, now + 0.1);
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                osc.start(now);
+                osc.stop(now + 0.2);
             } else if (type === 'wrong') {
-                osc.type = 'sawtooth'; osc.frequency.setValueAtTime(150, now); osc.frequency.exponentialRampToValueAtTime(100, now + 0.2);
-                gain.gain.setValueAtTime(0.1, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
-                osc.start(now); osc.stop(now + 0.2);
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(150, now);
+                osc.frequency.exponentialRampToValueAtTime(100, now + 0.2);
+                gain.gain.setValueAtTime(0.1, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.2);
+                osc.start(now);
+                osc.stop(now + 0.2);
             } else if (type === 'tick') {
-                osc.type = 'sine'; osc.frequency.setValueAtTime(400, now);
-                gain.gain.setValueAtTime(0.05, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
-                osc.start(now); osc.stop(now + 0.05);
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(400, now);
+                gain.gain.setValueAtTime(0.05, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.05);
+                osc.start(now);
+                osc.stop(now + 0.05);
             }
         }
 
         // Dark Mode
-        let isDarkMode = localStorage.getItem('cnxhkh_dark') === 'true';
+        let isDarkMode = localStorage.getItem('cs466_dark') === 'true';
         if (isDarkMode) document.body.classList.add('dark-mode');
         document.getElementById('btn-dark').innerText = isDarkMode ? '☀️' : '🌙';
 
         function toggleDark() {
             isDarkMode = !isDarkMode;
             document.body.classList.toggle('dark-mode', isDarkMode);
-            localStorage.setItem('cnxhkh_dark', isDarkMode);
+            localStorage.setItem('cs466_dark', isDarkMode);
             document.getElementById('btn-dark').innerText = isDarkMode ? '☀️' : '🌙';
         }
 
@@ -2301,9 +1927,8 @@
             examOrder.forEach((questionIndex, displayIndex) => {
                 const card = document.getElementById(`q-card-${questionIndex}`);
                 const title = document.getElementById(`q-title-${questionIndex}`);
-
                 if (card) container.appendChild(card);
-                if (title) title.innerText = `Câu ${displayIndex + 1}: ${quizData[questionIndex].q}`;
+                if (title) title.innerHTML = `Câu ${displayIndex + 1} (${quizData[questionIndex].id}): <span class="q-text-pre">${escapeHTML(quizData[questionIndex].q)}</span>`;
             });
         }
 
@@ -2311,9 +1936,9 @@
         function filterQuestions() {
             const term = document.getElementById('search-input').value.toLowerCase();
             quizData.forEach((item, i) => {
-                const text = (item.q + " " + item.o.join(" ")).toLowerCase();
+                const text = (item.q + " " + (item.code || "") + " " + item.o.join(" ")).toLowerCase();
                 const card = document.getElementById(`q-card-${i}`);
-                if (card && !isReviewMode && !isExamMode) card.style.display = text.includes(term) ? 'block' : 'none';
+                if (card && !isReviewMode && !window.isExamMode) card.style.display = text.includes(term) ? 'block' : 'none';
             });
         }
 
@@ -2321,7 +1946,10 @@
         const rContainer = document.getElementById('review-container');
         const navGrid = document.getElementById('nav-grid');
 
-        function saveReviewToStore() { writeStore(REVIEW_KEY, [...reviewBank]); }
+        function saveReviewToStore() {
+            writeStore(REVIEW_KEY, [...reviewBank]);
+        }
+
         function updateUI() {
             document.getElementById('score').innerText = currentScore;
             const totalScoreEl = document.getElementById('total-score');
@@ -2342,23 +1970,34 @@
         }
 
         function renderQuestions() {
+            container.innerHTML = '';
             quizData.forEach((item, i) => {
-                const card = document.createElement('div'); card.className = 'question-card'; card.id = `q-card-${i}`;
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = `q-card-${i}`;
+
+                let codeHtml = '';
+                if (item.code && item.code.trim()) {
+                    codeHtml = `<div class="code-block-wrapper"><pre><code>${escapeHTML(item.code)}</code></pre></div>`;
+                }
+
                 let opts = '';
                 item.o.forEach((opt, oi) => {
                     opts += `<li id="li-${i}-${oi}">${renderOptionLabel(i, oi, oi)}</li>`;
                 });
+
                 const isSaved = reviewBank.has(i);
                 card.innerHTML = `
                     <div class="question-header">
-                        <div class="question-title" id="q-title-${i}">Câu ${i + 1}: ${item.q}</div>
+                        <div class="question-title" id="q-title-${i}">Câu ${i + 1} (${item.id}): <span class="q-text-pre">${escapeHTML(item.q)}</span></div>
                         <div class="header-actions">
                             <button class="unknown-btn ${isSaved ? 'saved-btn' : ''}" id="ubtn-${i}" onclick="markUnknown(${i})">${isSaved ? '⭐ Đã lưu' : '❓ Không biết'}</button>
                         </div>
                     </div>
+                    ${codeHtml}
                     <ul class="options">${opts}</ul>
                     <div class="explanation" id="exp-${i}">
-                        💡 <strong>Giải thích:</strong> ${getExplanation(i)}
+                        ${getExplanation(i)}
                         <br><button class="btn-save-review" id="srev-${i}" style="display:none;" onclick="addWrongReview(${i})">➕ Lưu vào Ôn tập</button>
                     </div>`;
                 container.appendChild(card);
@@ -2370,17 +2009,18 @@
             const el = document.getElementById(id);
             if (el && el.style.display !== 'none') {
                 el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                el.style.boxShadow = isReviewMode ? '0 0 20px rgba(155, 89, 182, 0.5)' : (isExamMode ? '0 0 20px rgba(243, 156, 18, 0.5)' : '0 0 20px rgba(52, 152, 219, 0.5)');
+                el.style.boxShadow = isReviewMode ? '0 0 20px rgba(155, 89, 182, 0.5)' : (window.isExamMode ? '0 0 20px rgba(243, 156, 18, 0.5)' : '0 0 20px rgba(52, 152, 219, 0.5)');
                 setTimeout(() => el.style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)', 1000);
             }
         }
 
         function checkAnswer(i, oi) {
-            const item = quizData[i]; const btn = document.getElementById(`nav-btn-${i}`);
+            const item = quizData[i];
+            const btn = document.getElementById(`nav-btn-${i}`);
             const parentLi = document.getElementById(`li-${i}-${oi}`);
             const allLis = document.querySelectorAll(`#q-card-${i} .options li`);
 
-            if (isExamMode) {
+            if (window.isExamMode) {
                 examAnswers[i] = oi;
                 allLis.forEach(li => li.classList.remove('exam-selected'));
                 parentLi.classList.add('exam-selected');
@@ -2390,62 +2030,108 @@
                 return;
             }
 
+            // Ngăn chặn cộng điểm nhiều lần nếu đã trả lời
+            if (allLis[0] && allLis[0].classList.contains('answered')) return;
+
             allLis.forEach(li => li.classList.add('answered'));
 
-            if (oi === item.a) {
+            const correctIndices = item.correctAnswers ?? [item.a];
+            const isCorrect = correctIndices.includes(oi);
+
+            if (isCorrect) {
                 parentLi.classList.add('correct-ans');
+                // Đánh dấu tất cả lựa chọn đúng tương đương (ví dụ TN35, TN38)
+                correctIndices.forEach(ci => {
+                    const el = document.getElementById(`li-${i}-${ci}`);
+                    if (el) el.classList.add('correct-ans');
+                });
                 btn.className = 'nav-btn nav-correct';
-                currentScore++; playSound('correct');
+                currentScore++;
+                playSound('correct');
             } else {
                 parentLi.classList.add('wrong-ans');
-                document.getElementById(`li-${i}-${item.a}`).classList.add('correct-ans');
+                correctIndices.forEach(ci => {
+                    const el = document.getElementById(`li-${i}-${ci}`);
+                    if (el) el.classList.add('correct-ans');
+                });
                 btn.className = 'nav-btn nav-wrong';
                 playSound('wrong');
             }
+
             document.getElementById(`srev-${i}`).style.display = 'inline-block';
-            const radios = document.getElementsByName(`q${i}`); radios.forEach(r => r.disabled = true);
+            const radios = document.getElementsByName(`q${i}`);
+            radios.forEach(r => r.disabled = true);
             document.getElementById(`ubtn-${i}`).style.display = 'none';
             document.getElementById(`exp-${i}`).style.display = 'block';
-            answeredQuestions++; updateUI();
+            answeredQuestions++;
+            updateUI();
         }
 
         function markUnknown(i) {
-            if (isExamMode) return;
-            reviewBank.add(i); saveReviewToStore();
+            if (window.isExamMode) return;
+            const item = quizData[i];
             const allLis = document.querySelectorAll(`#q-card-${i} .options li`);
+            if (allLis[0] && allLis[0].classList.contains('answered')) return;
+
+            reviewBank.add(i);
+            saveReviewToStore();
+
             allLis.forEach(li => li.classList.add('answered'));
-            document.getElementById(`li-${i}-${quizData[i].a}`).classList.add('correct-ans');
-            const radios = document.getElementsByName(`q${i}`); radios.forEach(r => r.disabled = true);
+
+            const correctIndices = item.correctAnswers ?? [item.a];
+            correctIndices.forEach(ci => {
+                const el = document.getElementById(`li-${i}-${ci}`);
+                if (el) el.classList.add('correct-ans');
+            });
+
+            const radios = document.getElementsByName(`q${i}`);
+            radios.forEach(r => r.disabled = true);
             document.getElementById(`ubtn-${i}`).style.display = 'none';
             document.getElementById(`exp-${i}`).style.display = 'block';
             document.getElementById(`nav-btn-${i}`).className = 'nav-btn nav-unknown';
-            answeredQuestions++; updateUI(); playSound('tick');
+            answeredQuestions++;
+            updateUI();
+            playSound('tick');
         }
 
         function addWrongReview(i) {
-            reviewBank.add(i); saveReviewToStore();
-            const b = document.getElementById(`srev-${i}`); b.innerText = "✔️ Đã lưu"; b.disabled = true;
-            document.getElementById(`nav-btn-${i}`).className = 'nav-btn nav-unknown'; updateUI();
+            reviewBank.add(i);
+            saveReviewToStore();
+            const b = document.getElementById(`srev-${i}`);
+            if (b) {
+                b.innerText = "✔️ Đã lưu";
+                b.disabled = true;
+            }
+            document.getElementById(`nav-btn-${i}`).className = 'nav-btn nav-unknown';
+            updateUI();
         }
 
         function formatTime(secs) {
-            const m = Math.floor(secs / 60); const s = secs % 60;
+            const m = Math.floor(secs / 60);
+            const s = secs % 60;
             return `⏱️ ${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
         }
+
         function formatTimeUsed(secs) {
-            const m = Math.floor(secs / 60); const s = secs % 60;
+            const m = Math.floor(secs / 60);
+            const s = secs % 60;
             return `${m}:${s < 10 ? '0' : ''}${s}`;
         }
 
         function startExamMode() {
-            if (!confirm("Bắt đầu thi 60 phút?")) return;
-            isExamMode = true; isReviewMode = false; currentScore = 0; answeredQuestions = 0; examAnswers = {};
+            if (!confirm("Bắt đầu thi CS466 trong 60 phút?")) return;
+            window.isExamMode = true;
+            isReviewMode = false;
+            currentScore = 0;
+            answeredQuestions = 0;
+            examAnswers = {};
 
-            //xáo câu hỏi
+            // Xáo thứ tự câu hỏi
             examOrder = shuffleArray(quizData.map((_, i) => i));
 
             renderSidebar(examOrder, true);
             applyExamQuestionOrder();
+
             document.getElementById('search-bar-wrap').style.display = 'none';
             document.getElementById('score-board-info').style.display = 'none';
             document.getElementById('exam-timer-display').style.display = 'block';
@@ -2456,13 +2142,11 @@
             document.getElementById('lg-unknown').style.display = 'none';
             document.getElementById('lg-exam').style.display = 'flex';
             document.getElementById('bottom-actions').innerHTML = `<button class="action-btn" style="padding: 15px 30px; font-size: 1.2em; background-color: var(--danger); margin: 0 auto;" onclick="submitExam()">📤 Nộp Bài</button>`;
+
             quizData.forEach((_, i) => {
                 document.getElementById(`nav-btn-${i}`).className = 'nav-btn';
                 document.getElementById(`q-card-${i}`).classList.add('exam-card');
                 resetOptionLabelsToOriginal(i);
-
-                //xáo đáp án
-                // shuffleExamAnswers(i);
 
                 const lis = document.querySelectorAll(`#q-card-${i} li`);
                 lis.forEach(li => li.className = '');
@@ -2471,6 +2155,7 @@
                 document.getElementById(`exp-${i}`).style.display = 'none';
                 document.getElementById(`ubtn-${i}`).style.display = 'none';
             });
+
             timeRemaining = 3600;
             document.getElementById('exam-timer-display').innerText = formatTime(timeRemaining);
             examTimer = setInterval(() => {
@@ -2487,6 +2172,7 @@
             let timeUsed = 3600 - timeRemaining;
             let timeStr = formatTimeUsed(timeUsed);
             let score = 0;
+
             quizData.forEach((item, i) => {
                 const ans = examAnswers[i];
                 const btn = document.getElementById(`nav-btn-${i}`);
@@ -2494,16 +2180,32 @@
                 const radios = document.getElementsByName(`q${i}`);
                 radios.forEach(r => r.disabled = true);
                 document.getElementById(`exp-${i}`).style.display = 'block';
-                if (ans === item.a) {
-                    score++; document.getElementById(`li-${i}-${ans}`).classList.add('correct-ans');
+
+                const correctIndices = item.correctAnswers ?? [item.a];
+                const isCorrect = ans !== undefined && correctIndices.includes(ans);
+
+                if (isCorrect) {
+                    score++;
                     btn.className = 'nav-btn nav-correct';
                 } else {
-                    if (ans !== undefined) document.getElementById(`li-${i}-${ans}`).classList.add('wrong-ans');
-                    document.getElementById(`li-${i}-${item.a}`).classList.add('correct-ans');
+                    if (ans !== undefined) {
+                        const wrongLi = document.getElementById(`li-${i}-${ans}`);
+                        if (wrongLi) wrongLi.classList.add('wrong-ans');
+                    }
                     btn.className = 'nav-btn nav-wrong';
                 }
+
+                // Đánh dấu tất cả lựa chọn đúng tương đương
+                correctIndices.forEach(ci => {
+                    const el = document.getElementById(`li-${i}-${ci}`);
+                    if (el) el.classList.add('correct-ans');
+                });
             });
-            isExamMode = false; currentScore = score; answeredQuestions = totalQuestions;
+
+            window.isExamMode = false;
+            currentScore = score;
+            answeredQuestions = totalQuestions;
+
             document.getElementById('score-board-info').style.display = 'block';
             document.getElementById('exam-timer-display').style.display = 'none';
             document.getElementById('btn-exam-mode').style.display = 'inline-flex';
@@ -2513,31 +2215,36 @@
             document.getElementById('lg-wrong').style.display = 'flex';
             document.getElementById('lg-unknown').style.display = 'flex';
             document.getElementById('lg-exam').style.display = 'none';
-            document.getElementById('main-title').innerText = "KẾT QUẢ THI";
+            document.getElementById('main-title').innerText = "KẾT QUẢ THI CS466";
             document.getElementById('bottom-actions').innerHTML = `<button class="action-btn" style="padding: 15px 30px; font-size: 1.2em; background-color: var(--primary); margin: 0 auto;" onclick="location.reload()">🔄 Kết thúc</button>`;
-            updateUI(); playSound(score / totalQuestions >= 0.5 ? 'correct' : 'wrong');
+
+            updateUI();
+            playSound(score / totalQuestions >= 0.5 ? 'correct' : 'wrong');
             saveScore(true, 'Thi thử', timeStr);
-            alert(`Kết quả: ${score}/${totalQuestions}. Thời gian: ${timeStr}`);
+            alert(`Kết quả CS466: ${score}/${totalQuestions}. Thời gian: ${timeStr}`);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function toggleReviewMode() {
-            if (isExamMode) return alert("Không thể mở Ôn tập khi đang thi!");
+            if (window.isExamMode) return alert("Không thể mở Ôn tập khi đang thi!");
             if (!isReviewMode) {
-                if (reviewBank.size === 0) return alert("Chưa có câu nào!");
-                isReviewMode = true; container.style.display = 'none';
+                if (reviewBank.size === 0) return alert("Chưa có câu nào trong danh sách ôn tập!");
+                isReviewMode = true;
+                container.style.display = 'none';
                 document.getElementById('search-bar-wrap').style.display = 'none';
                 document.getElementById('bottom-actions').style.display = 'none';
                 document.getElementById('sidebar-legend').style.display = 'none';
-                document.getElementById('main-title').innerText = "📚 Ôn Tập";
+                document.getElementById('main-title').innerText = "📚 Ôn Tập CS466";
                 document.getElementById('btn-toggle-review').innerHTML = '⬅️ Quay lại';
-                rContainer.style.display = 'block'; renderReview();
+                rContainer.style.display = 'block';
+                renderReview();
             } else {
-                isReviewMode = false; container.style.display = 'block';
+                isReviewMode = false;
+                container.style.display = 'block';
                 document.getElementById('search-bar-wrap').style.display = 'block';
                 document.getElementById('bottom-actions').style.display = 'block';
                 document.getElementById('sidebar-legend').style.display = 'flex';
-                document.getElementById('main-title').innerText = "Môn Học: Chủ Nghĩa Xã Hội Khoa Học";
+                document.getElementById('main-title').innerText = "Môn Học: CS466 — Python & Network Automation";
                 document.getElementById('btn-toggle-review').innerHTML = `📚 Ôn tập (<span id="review-count">${reviewBank.size}</span>)`;
                 rContainer.style.display = 'none';
             }
@@ -2547,33 +2254,55 @@
             rContainer.innerHTML = '';
             reviewBank.forEach(i => {
                 const item = quizData[i];
-                const card = document.createElement('div'); card.className = 'question-card review-card'; card.id = `rq-card-${i}`;
+                const card = document.createElement('div');
+                card.className = 'question-card review-card';
+                card.id = `rq-card-${i}`;
+
+                let codeHtml = '';
+                if (item.code && item.code.trim()) {
+                    codeHtml = `<div class="code-block-wrapper"><pre><code>${escapeHTML(item.code)}</code></pre></div>`;
+                }
+
                 let opts = '';
                 item.o.forEach((opt, oi) => {
-                    opts += `<li id="rli-${i}-${oi}"><label><input type="radio" name="rq${i}" onchange="checkReview(${i}, ${oi})">${formatOptionText(oi, opt)}</label></li>`;
+                    opts += `<li id="rli-${i}-${oi}"><label><input type="radio" name="rq${i}" onchange="checkReview(${i}, ${oi})">${formatOptionText(oi, escapeHTML(opt))}</label></li>`;
                 });
+
                 card.innerHTML = `
                     <div class="question-header">
-                        <div class="question-title">Câu ${i + 1}: ${item.q}</div>
+                        <div class="question-title">Câu ${i + 1} (${item.id}): <span class="q-text-pre">${escapeHTML(item.q)}</span></div>
                         <div class="header-actions">
                             <button class="action-btn" id="rret-${i}" style="display:none; background-color: var(--primary); padding: 5px 10px; font-size: 0.8em;" onclick="retryReview(${i})">🔄 Lại</button>
                             <button class="action-btn" style="background-color: var(--success); padding: 5px 10px; font-size: 0.8em;" onclick="doneReview(${i})">✔️ Thuộc</button>
                         </div>
                     </div>
+                    ${codeHtml}
                     <ul class="options">${opts}</ul>
-                    <div class="explanation" id="rexp-${i}">💡 <strong>Giải thích:</strong> ${getExplanation(i)}</div>`;
+                    <div class="explanation" id="rexp-${i}">${getExplanation(i)}</div>`;
                 rContainer.appendChild(card);
             });
         }
 
         function checkReview(i, oi) {
-            if (oi === quizData[i].a) document.getElementById(`rli-${i}-${oi}`).classList.add('correct-ans');
-            else {
+            const item = quizData[i];
+            const correctIndices = item.correctAnswers ?? [item.a];
+            const isCorrect = correctIndices.includes(oi);
+
+            if (isCorrect) {
+                document.getElementById(`rli-${i}-${oi}`).classList.add('correct-ans');
+            } else {
                 document.getElementById(`rli-${i}-${oi}`).classList.add('wrong-ans');
-                document.getElementById(`rli-${i}-${quizData[i].a}`).classList.add('correct-ans');
             }
-            const radios = document.getElementsByName(`rq${i}`); radios.forEach(r => r.disabled = true);
-            document.getElementById(`rexp-${i}`).style.display = 'block'; document.getElementById(`rret-${i}`).style.display = 'block';
+
+            correctIndices.forEach(ci => {
+                const el = document.getElementById(`rli-${i}-${ci}`);
+                if (el) el.classList.add('correct-ans');
+            });
+
+            const radios = document.getElementsByName(`rq${i}`);
+            radios.forEach(r => r.disabled = true);
+            document.getElementById(`rexp-${i}`).style.display = 'block';
+            document.getElementById(`rret-${i}`).style.display = 'block';
         }
 
         function retryReview(i) {
@@ -2581,13 +2310,15 @@
             allLis.forEach(li => li.className = '');
             const radios = document.getElementsByName(`rq${i}`);
             radios.forEach(r => { r.disabled = false; r.checked = false; });
-            document.getElementById(`rexp-${i}`).style.display = 'none'; document.getElementById(`rret-${i}`).style.display = 'none';
+            document.getElementById(`rexp-${i}`).style.display = 'none';
+            document.getElementById(`rret-${i}`).style.display = 'none';
             const rCard = document.getElementById(`rq-card-${i}`);
             if (rCard) rCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         function doneReview(i) {
-            reviewBank.delete(i); saveReviewToStore();
+            reviewBank.delete(i);
+            saveReviewToStore();
             document.getElementById(`rq-card-${i}`).style.display = 'none';
             document.getElementById(`nav-btn-${i}`).className = 'nav-btn';
             updateUI();
@@ -2597,16 +2328,30 @@
         function saveScore(isAuto = false, mode = 'Luyện tập', timeText = '') {
             let history = readStore(SCORE_KEY, []);
             const percent = Math.round((currentScore / totalQuestions) * 100);
-            history.unshift({ id: Date.now(), date: new Date().toLocaleString('vi-VN'), score: currentScore, total: totalQuestions, percent, mode, time: timeText });
+            history.unshift({
+                id: Date.now(),
+                date: new Date().toLocaleString('vi-VN'),
+                score: currentScore,
+                total: totalQuestions,
+                percent,
+                mode,
+                time: timeText
+            });
             writeStore(SCORE_KEY, history.slice(0, 30));
-            if (!isAuto) { alert("Lưu thành công!"); openHistoryModal(); }
+            if (!isAuto) {
+                alert("Lưu điểm CS466 thành công!");
+                openHistoryModal();
+            }
         }
 
         function loadHistory() {
             const history = readStore(SCORE_KEY, []);
-            const list = document.getElementById('history-list'); const hs = document.getElementById('high-score-display');
+            const list = document.getElementById('history-list');
+            const hs = document.getElementById('high-score-display');
             if (history.length === 0) {
-                list.innerHTML = '<li>Trống</li>'; hs.innerHTML = '🏆 Trống'; return;
+                list.innerHTML = '<li>Trống</li>';
+                hs.innerHTML = '🏆 Trống';
+                return;
             }
             let best = history.reduce((prev, curr) => (prev.percent > curr.percent) ? prev : curr);
             hs.innerHTML = `🏆 Cao nhất: ${best.score}/${best.total} (${best.percent}%)`;
@@ -2616,26 +2361,36 @@
                         <div class="h-date">${h.date} <span class="badge ${h.mode === 'Thi thử' ? 'badge-exam' : 'badge-practice'}">${h.mode}</span> ${h.time ? '⏱️ ' + h.time : ''}</div>
                         <div class="h-score">${h.score}/${h.total}</div>
                     </div>
-                    <div class="history-right"><span>${h.percent}%</span><button class="btn-del-item" onclick="delHistory(${h.id})">❌</button></div>
+                    <div class="history-right">
+                        <span>${h.percent}%</span>
+                        <button class="btn-del-item" onclick="delHistory(${h.id})">❌</button>
+                    </div>
                 </li>`).join('');
         }
 
         function delHistory(id) {
-            if (!confirm("Xóa?")) return;
+            if (!confirm("Xóa bản ghi này?")) return;
             let history = readStore(SCORE_KEY, []);
-            writeStore(SCORE_KEY, history.filter(h => h.id !== id)); loadHistory();
+            writeStore(SCORE_KEY, history.filter(h => h.id !== id));
+            loadHistory();
         }
-        function clearAllHistory() { if (confirm("Xóa hết?")) { localStorage.removeItem(SCORE_KEY); loadHistory(); } }
+
+        function clearAllHistory() {
+            if (confirm("Xóa toàn bộ lịch sử CS466?")) {
+                localStorage.removeItem(SCORE_KEY);
+                loadHistory();
+            }
+        }
 
         function exportQuizData() {
             const data = {
-                app: "cnxhkh_quiz_backup",
+                app: "cs466_quiz_backup",
                 version: 1,
                 exportedAt: new Date().toISOString(),
                 history: readStore(SCORE_KEY, []),
                 review: [...reviewBank],
-                darkMode: localStorage.getItem('cnxhkh_dark'),
-                sound: localStorage.getItem('cnxhkh_sound')
+                darkMode: localStorage.getItem('cs466_dark'),
+                sound: localStorage.getItem('cs466_sound')
             };
 
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
@@ -2643,7 +2398,7 @@
             const a = document.createElement("a");
             const date = new Date().toISOString().slice(0, 10);
             a.href = url;
-            a.download = `cnxhkh_quiz_backup_${date}.json`;
+            a.download = `cs466_quiz_backup_${date}.json`;
             document.body.appendChild(a);
             a.click();
             a.remove();
@@ -2659,8 +2414,8 @@
                 try {
                     const data = JSON.parse(e.target.result);
 
-                    if (data.app !== "cnxhkh_quiz_backup" || !Array.isArray(data.history) || !Array.isArray(data.review)) {
-                        alert("File khôi phục không đúng định dạng.");
+                    if (data.app !== "cs466_quiz_backup" || !Array.isArray(data.history) || !Array.isArray(data.review)) {
+                        alert("File khôi phục không đúng định dạng hoặc không phải của môn CS466.");
                         return;
                     }
 
@@ -2668,14 +2423,14 @@
                     reviewBank = new Set(data.review.filter(i => Number.isInteger(i) && i >= 0 && i < quizData.length));
                     saveReviewToStore();
 
-                    if (data.darkMode !== null && data.darkMode !== undefined) localStorage.setItem('cnxhkh_dark', data.darkMode);
-                    if (data.sound !== null && data.sound !== undefined) localStorage.setItem('cnxhkh_sound', data.sound);
+                    if (data.darkMode !== null && data.darkMode !== undefined) localStorage.setItem('cs466_dark', data.darkMode);
+                    if (data.sound !== null && data.sound !== undefined) localStorage.setItem('cs466_sound', data.sound);
 
                     renderSidebar();
                     updateUI();
                     loadHistory();
 
-                    alert("Khôi phục dữ liệu thành công!");
+                    alert("Khôi phục dữ liệu CS466 thành công!");
                 } catch (err) {
                     alert("Không đọc được file khôi phục.");
                     console.error(err);
@@ -2698,11 +2453,20 @@
         }
 
         const modal = document.getElementById("historyModal");
-        function openHistoryModal() { loadHistory(); modal.style.display = "block"; }
-        function closeHistoryModal() { modal.style.display = "none"; }
-        window.onclick = (e) => { if (e.target == modal) closeHistoryModal(); }
+        function openHistoryModal() {
+            loadHistory();
+            modal.style.display = "block";
+        }
+        function closeHistoryModal() {
+            modal.style.display = "none";
+        }
+        window.onclick = (e) => {
+            if (e.target == modal) closeHistoryModal();
+        };
 
-        renderSidebar(); renderQuestions(); updateUI();
+        renderSidebar();
+        renderQuestions();
+        updateUI();
     </script>
 </body>
 
