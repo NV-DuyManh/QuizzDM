@@ -11,7 +11,7 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CS466 - Trắc nghiệm Python, Lập trình mạng & Network Automation</title>
+    <title>CMU SE433CIS - Trắc nghiệm Software Process and Quality Management</title>
     <style>
 
         :root {
@@ -925,7 +925,7 @@
                 grid-template-columns: repeat(5, 1fr);
             }
         }
-    
+
 
         .code-block-wrapper {
             margin: 12px 0 16px 0;
@@ -979,14 +979,18 @@
             color: var(--danger-text);
         }
 
+        @media (max-width: 900px) {
+            #main-content { width: 100%; }
+            .q-text-pre, .options label { overflow-wrap: anywhere; }
+        }
     </style>
 </head>
 
-<body data-subject="cs466">
+<body data-subject="se433cis">
 
     <div id="score-board">
         <div id="score-board-info" class="score-info">
-            Điểm: <span id="score">0</span> / <span id="total-score">39</span>
+            Điểm: <span id="score">0</span> / <span id="total-score">40</span>
             <div class="progress-info">Đã trả lời: <span id="progress">0</span> câu</div>
         </div>
 
@@ -1010,14 +1014,14 @@
     <button id="mobile-scroll-top" onclick="scrollToQuestionNav()" title="Về danh sách câu hỏi">⬆️</button>
 
     <div class="search-container" id="search-bar-wrap">
-        <input type="text" id="search-input" placeholder="🔍 Tìm câu hỏi, mã code..." oninput="filterQuestions()">
+        <input type="text" id="search-input" placeholder="🔍 Tìm câu hỏi, từ khóa..." oninput="filterQuestions()">
     </div>
 
     <div id="layout-container">
         <div id="main-content">
             <div id="quiz-header">
-                <h1 id="main-title">Môn Học: CS466 — Python & Network Automation</h1>
-                <p class="intro-text" id="main-desc">Lập trình mạng và tự động hóa mạng • 39 câu trắc nghiệm</p>
+                <h1 id="main-title">Môn Học: CMU SE433CIS — Software Process and Quality Management</h1>
+                <p class="intro-text" id="main-desc">Quy trình phần mềm và quản lý chất lượng • 40 câu trắc nghiệm</p>
             </div>
 
             <div id="quiz-container"></div>
@@ -1031,7 +1035,7 @@
         </div>
 
         <div id="sidebar">
-            <div class="sidebar-title">Câu hỏi (39 câu)</div>
+            <div class="sidebar-title">Câu hỏi (40 câu)</div>
             <div class="nav-grid" id="nav-grid"></div>
             <div class="legend" id="sidebar-legend">
                 <div class="legend-item">
@@ -1056,7 +1060,7 @@
     <div id="historyModal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeHistoryModal()">&times;</span>
-            <h2 style="text-align: center; margin-top: 0;">📊 Lịch sử CS466</h2>
+            <h2 style="text-align: center; margin-top: 0;">📊 Lịch sử SE433CIS</h2>
             <div class="high-score-board" id="high-score-display"></div>
             <ul class="history-list" id="history-list"></ul>
             <button class="btn-clear-history" id="clear-history-btn" onclick="clearAllHistory()">🗑️ Xóa hết</button>
@@ -1073,705 +1077,724 @@
         if (typeof quizData === 'undefined') {
             window.quizData = [
     {
-        "id": "cs466-001",
-        "q": "Cho đoạn mã sau. Kết quả là:",
-        "code": "devices = [{\"ip\":\"10.0.0.1\",\"up\":True},{\"ip\":\"10.0.0.2\",\"up\":False}]\nprint([d[\"ip\"] for d in devices if d[\"up\"]])",
-        "o": [
-            "[\"10.0.0.1\"]",
-            "[\"10.0.0.2\"]",
-            "[True]"
-        ],
-        "a": 0,
-        "correctAnswers": [
-            0
-        ],
-        "explanation": "Điều kiện if d[\"up\"] chỉ giữ thiết bị có up=True. Thiết bị đầu được giữ, rồi d[\"ip\"] lấy IP \"10.0.0.1\". Thiết bị thứ hai có up=False nên bị loại. Kết quả là list IP, không phải list Boolean.",
-        "tip": "Đọc list comprehension theo thứ tự: duyệt từng phần tử → kiểm tra if → lấy biểu thức ở đầu. Đừng thấy True trong điều kiện rồi chọn [True].",
-        "sourceNote": "Đề gốc chỉ có A, B, C."
-    },
-    {
-        "id": "cs466-002",
-        "q": "Một REST API hỗ trợ:\nGET /students\nGET /students/5\nPOST /students\nDELETE /students/5\nPhát biểu nào sau đây đúng?",
+        "id": "se433cis-001",
+        "q": "What is a software process?",
         "code": "",
         "o": [
-            "POST /students thường được sử dụng để tạo sinh viên mới.",
-            "GET /students/5 dùng để xóa sinh viên có mã 5.",
-            "DELETE /students/5 dùng để lấy thông tin sinh viên có mã 5.",
-            "GET /students dùng để thêm sinh viên mới."
-        ],
-        "a": 0,
-        "correctAnswers": [
-            0
-        ],
-        "explanation": "Trong thiết kế REST thông dụng, POST /students tạo sinh viên mới. GET /students lấy danh sách, GET /students/5 lấy sinh viên có mã 5, còn DELETE /students/5 xóa sinh viên đó. B, C, D nhầm chức năng của phương thức.",
-        "tip": "GET lấy — POST tạo — DELETE xóa. Đọc phương thức trước, sau đó mới đọc URL để xác định tài nguyên được tác động.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-003",
-        "q": "Khi đọc một file cấu hình YAML thông thường bằng PyYAML, cách nào an toàn hơn?",
-        "code": "",
-        "o": [
-            "pickle.loads(f.read())",
-            "yaml.safe_load(f)",
-            "yaml.load(f) không kiểm soát Loader",
-            "eval(f.read())"
+            "A programming language",
+            "A structured set of activities for developing and maintaining software",
+            "A hardware configuration",
+            "A single testing technique"
         ],
         "a": 1,
         "correctAnswers": [
             1
         ],
-        "explanation": "safe_load() đọc các kiểu YAML thông thường và hạn chế khả năng dựng đối tượng Python tùy ý. eval() thực thi biểu thức Python; pickle không phải bộ đọc YAML và giải tuần tự dữ liệu không tin cậy có thể nguy hiểm. yaml.load() không kiểm soát Loader không đáp ứng yêu cầu an toàn hơn.",
-        "tip": "Thấy YAML + đọc cấu hình + an toàn hơn → safe_load(). Phân biệt đọc dữ liệu với thực thi mã.",
-        "sourceNote": ""
+        "explanation": "Quy trình phần mềm là tập hợp hoạt động có tổ chức để xây dựng và bảo trì phần mềm; không phải một ngôn ngữ hay kỹ thuật kiểm thử riêng lẻ.",
+        "tip": "Software process → activities + developing + maintaining.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-004",
-        "q": "Trên một TCP socket đã kết nối, cặp phương thức nào phù hợp để gửi toàn bộ buffer và nhận dữ liệu?",
+        "id": "se433cis-002",
+        "q": "Which activity focuses on identifying what the software must do?",
         "code": "",
         "o": [
-            "sendall()/recv()",
-            "bind()/listen()",
-            "connect()/accept()",
-            "write()/read()"
+            "Deployment",
+            "Maintenance",
+            "Requirements engineering",
+            "Coding"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Requirements engineering xác định nhu cầu, chức năng và các ràng buộc mà phần mềm phải đáp ứng. Coding là triển khai những yêu cầu đó.",
+        "tip": "What the software must do → Requirements engineering.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-003",
+        "q": "What is the main output of requirements analysis?",
+        "code": "",
+        "o": [
+            "Requirements specification",
+            "Executable code",
+            "User training plan",
+            "Server logs"
         ],
         "a": 0,
         "correctAnswers": [
             0
         ],
-        "explanation": "sendall() tiếp tục gửi đến khi hết buffer hoặc gặp lỗi; recv() nhận dữ liệu trên socket. bind/listen và connect/accept phục vụ thiết lập địa chỉ hoặc kết nối. write/read không phải cặp phương thức trực tiếp được hỏi của đối tượng socket này.",
-        "tip": "sendall = gửi hết buffer hoặc báo lỗi; recv = nhận. Không suy ra rằng một lần recv() chắc chắn nhận hết dữ liệu đã gửi.",
-        "sourceNote": ""
+        "explanation": "Phân tích yêu cầu tạo cơ sở cho bản đặc tả yêu cầu, mô tả điều hệ thống cần thực hiện. Mã thực thi thuộc giai đoạn triển khai.",
+        "tip": "Requirements analysis → Requirements specification.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-005",
-        "q": "Với Paramiko, chính sách nào phù hợp khi muốn từ chối host key chưa được tin cậy thay vì tự động chấp nhận?",
+        "id": "se433cis-004",
+        "q": "Which model follows sequential phases with limited iteration?",
         "code": "",
         "o": [
-            "AutoAddPolicy()",
-            "RejectPolicy()",
-            "WarningPolicy() luôn chấp nhận",
-            "Không cần host-key policy"
+            "Spiral",
+            "Waterfall",
+            "Scrum",
+            "Incremental"
         ],
         "a": 1,
         "correctAnswers": [
             1
         ],
-        "explanation": "RejectPolicy() từ chối host key chưa có trong danh sách tin cậy. AutoAddPolicy() tự thêm khóa mới; WarningPolicy() cảnh báo rồi chấp nhận khóa chưa biết, nên không đáp ứng yêu cầu từ chối.",
-        "tip": "Reject = từ chối; AutoAdd = tự thêm. Host key dùng để xác minh máy chủ SSH, không phải mật khẩu đăng nhập của người dùng.",
-        "sourceNote": ""
+        "explanation": "Waterfall tổ chức công việc theo các giai đoạn tuần tự, với khả năng lặp lại hạn chế trong mô hình mô tả ở đề.",
+        "tip": "Sequential phases → Waterfall.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-006",
-        "q": "Cho đoạn code sau. Kết quả là:",
-        "code": "d = {\"a\": 1, \"b\": 2}\nd[\"c\"] = d.get(\"a\", 0) + d.get(\"x\", 5)\nprint(d[\"c\"])",
+        "id": "se433cis-005",
+        "q": "Which model delivers software in multiple usable releases?",
+        "code": "",
         "o": [
-            "5",
-            "6",
-            "1",
-            "Lỗi"
+            "Big Bang",
+            "Waterfall only",
+            "Incremental development",
+            "Code-and-fix"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Incremental development bàn giao sản phẩm theo các phần tăng trưởng có thể sử dụng được, thay vì đợi một lần bàn giao duy nhất.",
+        "tip": "Multiple usable releases → Incremental development.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-006",
+        "q": "What is a major limitation of the Waterfall model?",
+        "code": "",
+        "o": [
+            "No documentation",
+            "Difficulty accommodating late requirement changes",
+            "No testing phase",
+            "No project planning"
         ],
         "a": 1,
         "correctAnswers": [
             1
         ],
-        "explanation": "Khóa \"a\" có giá trị 1, nên get(\"a\", 0) trả 1. Khóa \"x\" không tồn tại, nên get(\"x\", 5) trả mặc định 5. Tổng 1 + 5 = 6 được gán vào \"c\".",
-        "tip": "Với get(k, mặc định): có khóa lấy giá trị, thiếu khóa lấy mặc định. Tính từng vế riêng rồi cộng.",
-        "sourceNote": ""
+        "explanation": "Các giai đoạn tuần tự của Waterfall khiến thay đổi yêu cầu muộn thường kéo theo việc làm lại nhiều sản phẩm đã hoàn thành. Mô hình vẫn có tài liệu, kiểm thử và kế hoạch.",
+        "tip": "Waterfall + limitation → late requirement changes.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-007",
-        "q": "Netmiko phù hợp nhất cho trường hợp nào?",
+        "id": "se433cis-007",
+        "q": "Which activity checks whether software meets specified requirements?",
         "code": "",
         "o": [
-            "Tự động hóa tương tác CLI với nhiều platform thiết bị mạng qua SSH",
-            "Xây dựng HTTP web server",
-            "Huấn luyện mô hình machine learning",
-            "Truy vấn cơ sở dữ liệu SQL"
+            "Verification",
+            "Marketing",
+            "Procurement",
+            "Recruitment"
         ],
         "a": 0,
         "correctAnswers": [
             0
         ],
-        "explanation": "Netmiko hỗ trợ kết nối và gửi lệnh CLI qua SSH tới nhiều nền tảng thiết bị mạng, đặc biệt router/switch. HTTP server, huấn luyện mô hình và truy vấn SQL không phải mục đích chính của thư viện.",
-        "tip": "Nhận diện cụm router/switch + CLI + SSH theo platform → Netmiko. Không chọn theo từ “Python” chung chung.",
-        "sourceNote": ""
+        "explanation": "Verification kiểm tra sản phẩm có tuân thủ các yêu cầu đã đặc tả hay không. Các lựa chọn còn lại không phải hoạt động kiểm tra sự phù hợp này.",
+        "tip": "Specified requirements → Verification.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-008",
-        "q": "Cho đoạn code sau. Để đoạn code trên hoạt động đúng, dữ liệu Server trả về phù hợp nhất là:",
-        "code": "response = requests.get(\"http://127.0.0.1:5000/students\")\nstudents = response.json()\nprint(students[0][\"name\"])",
+        "id": "se433cis-008",
+        "q": "Which statement best describes validation?",
+        "code": "",
         "o": [
-            "[{\"name\": \"An\"}, {\"name\": \"Bình\"}]",
-            "{\"name\": \"An\"}",
-            "An, Bình",
-            "{\"students\": \"An\"}"
-        ],
-        "a": 0,
-        "correctAnswers": [
-            0
-        ],
-        "explanation": "students[0] lấy phần tử đầu của list; phần tử này phải có khóa \"name\". A đáp ứng cấu trúc và in \"An\". B và D là đối tượng JSON không có cấu trúc list được yêu cầu; C không phải JSON hợp lệ như được trình bày.",
-        "tip": "[0] chọn phần tử đầu; [\"name\"] chọn trường. Đi từ ngoài vào trong để suy ra cấu trúc: list bên ngoài, dictionary bên trong.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-009",
-        "q": "Cho đoạn mã sau. Kết quả được in ra là:",
-        "code": "devices = [\"R1\", \"R2\", \"SW1\"]\nfor i, d in enumerate(devices, start=10):\n    print(f\"{i}:{d}\", end=\" \")",
-        "o": [
-            "0:R1 1:R2 2:SW1",
-            "10:R1 11:R2 12:SW1",
-            "R1:10 R2:11 SW1:12",
-            "Error"
+            "Are we building the product right?",
+            "Are we building the right product?",
+            "Is the code formatted?",
+            "Is the server online?"
         ],
         "a": 1,
         "correctAnswers": [
             1
         ],
-        "explanation": "enumerate(..., start=10) đánh số 10, 11, 12. F-string {i}:{d} in số trước, tên thiết bị sau. end=\" \" giữ các kết quả trên cùng dòng, ngăn cách bằng dấu cách.",
-        "tip": "Kiểm tra hai điểm: bắt đầu từ bao nhiêu và số hay tên được in trước. A sai điểm bắt đầu; C đảo thứ tự.",
-        "sourceNote": ""
+        "explanation": "Validation xem sản phẩm có giải quyết đúng nhu cầu sử dụng hay không. Cụm building the right product phân biệt với verification là building the product right.",
+        "tip": "Validation → right product; Verification → product right.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-010",
-        "q": "Cho đoạn code sau. Kết quả là:",
-        "code": "x = [1, 2, 3]\ny = x\ny.append(4)\nprint(x)",
+        "id": "se433cis-009",
+        "q": "What is the purpose of software architecture design?",
+        "code": "",
         "o": [
-            "[4]",
-            "[1, 2, 3]",
-            "Lỗi",
-            "[1, 2, 3, 4]"
+            "Define high-level components and their relationships",
+            "Write user manuals only",
+            "Eliminate all defects",
+            "Estimate salaries"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Thiết kế kiến trúc xác định cấu trúc tổng thể, các thành phần cấp cao và quan hệ giữa chúng; không thể tự bảo đảm loại bỏ mọi lỗi.",
+        "tip": "Architecture → components + relationships.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-010",
+        "q": "Which artifact records changes and versions of source code?",
+        "code": "",
+        "o": [
+            "Risk matrix",
+            "Version control repository",
+            "Invoice",
+            "Organizational chart"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Kho quản lý phiên bản lưu lịch sử thay đổi và các phiên bản mã nguồn. Risk matrix dùng cho rủi ro, không quản lý phiên bản code.",
+        "tip": "Changes and versions of source code → Version control repository.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-011",
+        "q": "Which testing level examines individual functions or classes?",
+        "code": "",
+        "o": [
+            "Acceptance testing",
+            "System testing",
+            "Unit testing",
+            "Deployment testing"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Unit testing tập trung vào đơn vị nhỏ như hàm hoặc lớp, giúp kiểm tra hành vi của từng đơn vị trước khi xét toàn hệ thống.",
+        "tip": "Individual functions/classes → Unit testing.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-012",
+        "q": "Which testing level focuses on interactions among components?",
+        "code": "",
+        "o": [
+            "Integration testing",
+            "Unit testing",
+            "Static analysis",
+            "User training"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Integration testing kiểm tra tương tác và giao tiếp giữa các thành phần khi chúng được kết hợp với nhau.",
+        "tip": "Interactions among components → Integration testing.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-013",
+        "q": "What is a key objective of software maintenance?",
+        "code": "",
+        "o": [
+            "Prevent all future changes",
+            "Modify software after delivery to fix or improve it",
+            "Replace all developers",
+            "Stop monitoring defects"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Bảo trì diễn ra sau bàn giao để sửa lỗi, thích nghi hoặc cải thiện phần mềm. Bảo trì không có nghĩa ngăn mọi thay đổi.",
+        "tip": "After delivery + fix/improve → Maintenance.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-014",
+        "q": "Which is a functional requirement?",
+        "code": "",
+        "o": [
+            "Response time below two seconds",
+            "Encrypt data at rest",
+            "Users can reset passwords",
+            "99.9% availability"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Cho phép người dùng đặt lại mật khẩu là một chức năng hệ thống cung cấp. Các lựa chọn về thời gian đáp ứng và độ sẵn sàng nêu thuộc tính chất lượng.",
+        "tip": "Functional → hệ thống làm được việc gì.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-015",
+        "q": "Which is a non-functional requirement?",
+        "code": "",
+        "o": [
+            "Create a customer account",
+            "Generate a receipt",
+            "Search products",
+            "Support 1,000 concurrent users"
         ],
         "a": 3,
         "correctAnswers": [
             3
         ],
-        "explanation": "y = x làm hai biến cùng tham chiếu một list, không tạo bản sao. append(4) thêm phần tử vào list chung, nên đọc qua x cũng thấy phần tử mới.",
-        "tip": "y = x dùng chung; y = x.copy() tạo list khác. Với câu hỏi list, xác định biến đang dùng chung hay dùng bản sao trước khi tính kết quả.",
-        "sourceNote": ""
+        "explanation": "Hỗ trợ 1.000 người dùng đồng thời mô tả năng lực hoặc hiệu năng của hệ thống, không phải một thao tác nghiệp vụ như tạo tài khoản hay tìm kiếm.",
+        "tip": "Concurrent users → Non-functional requirement.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-011",
-        "q": "Cho đoạn mã sau. Kết quả là:",
-        "code": "base = {\"timeout\": 3, \"retries\": 2}\noverride = {\"timeout\": 5}\ncfg = {**base, **override}\nprint(cfg[\"timeout\"], cfg[\"retries\"])",
+        "id": "se433cis-016",
+        "q": "Why is traceability important?",
+        "code": "",
         "o": [
-            "5 3",
-            "3 2",
-            "Error",
-            "5 2"
+            "It replaces testing",
+            "It links requirements to design, code, and tests",
+            "It removes the need for documentation",
+            "It guarantees zero defects"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Traceability liên kết yêu cầu với thiết kế, mã và kiểm thử để kiểm tra độ bao phủ và đánh giá ảnh hưởng khi thay đổi. Nó không thay thế kiểm thử.",
+        "tip": "Traceability → links requirements, design, code, tests.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-017",
+        "q": "Which approach explicitly addresses risks in repeated cycles?",
+        "code": "",
+        "o": [
+            "Waterfall",
+            "V-model",
+            "Spiral model",
+            "Big Bang"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Spiral phát triển theo các vòng lặp có chú trọng xác định và xử lý rủi ro. Chính yếu tố rủi ro lặp lại là dấu hiệu phân biệt trong đề.",
+        "tip": "Risks + repeated cycles → Spiral.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-018",
+        "q": "In the V-model, test planning is closely associated with what?",
+        "code": "",
+        "o": [
+            "Development stages",
+            "Payroll",
+            "Hardware disposal",
+            "Marketing campaigns"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "V-model liên hệ các hoạt động kiểm thử với các giai đoạn phát triển tương ứng, hỗ trợ lập kế hoạch kiểm thử sớm.",
+        "tip": "V-model → development stages đi cùng test planning.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-019",
+        "q": "Which metric directly describes defect density?",
+        "code": "",
+        "o": [
+            "Defects per unit of software size",
+            "Number of meetings",
+            "Total staff salary",
+            "Number of customers"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Defect density là số lỗi trên một đơn vị kích thước phần mềm, ví dụ số lỗi trên một nghìn dòng mã. Chỉ đếm số lỗi chưa thể hiện mật độ nếu không có kích thước.",
+        "tip": "Density → defects / software size.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-020",
+        "q": "Which activity ensures changes are evaluated and controlled?",
+        "code": "",
+        "o": [
+            "Change management",
+            "Random refactoring",
+            "Unreviewed deployment",
+            "Informal coding"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Change management giúp thay đổi được ghi nhận, đánh giá và kiểm soát trước khi thực hiện; triển khai không xem xét đi ngược mục tiêu đó.",
+        "tip": "Evaluated and controlled changes → Change management.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-021",
+        "q": "What is the primary goal of software process improvement?",
+        "code": "",
+        "o": [
+            "Increase paperwork regardless of value",
+            "Improve process capability and outcomes",
+            "Remove all project roles",
+            "Avoid measurement"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Cải tiến quy trình nhằm nâng cao năng lực thực hiện và kết quả thực tế. Tăng giấy tờ không tạo giá trị không phải mục tiêu chính.",
+        "tip": "Process improvement → capability + outcomes.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-022",
+        "q": "Which cycle is commonly used for continuous improvement?",
+        "code": "",
+        "o": [
+            "PDCA",
+            "FIFO",
+            "HTTP",
+            "CRUD"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "PDCA gồm Plan, Do, Check, Act: lập kế hoạch, thực hiện, kiểm tra và điều chỉnh để tiếp tục cải tiến.",
+        "tip": "Continuous improvement → PDCA.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-023",
+        "q": "In PDCA, what does Check involve?",
+        "code": "",
+        "o": [
+            "Implementing the plan",
+            "Measuring results against objectives",
+            "Hiring staff",
+            "Writing new code only"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Check đo lường, xem xét kết quả so với mục tiêu. Thực hiện kế hoạch thuộc bước Do, còn điều chỉnh thuộc Act.",
+        "tip": "Check → measuring results against objectives.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-024",
+        "q": "What is a process baseline?",
+        "code": "",
+        "o": [
+            "A starting measurement of current performance",
+            "The final product release",
+            "A programming standard",
+            "A user interface mockup"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Process baseline là mốc đo lường hiệu suất hiện tại, làm cơ sở so sánh khi đánh giá sự thay đổi hoặc cải tiến.",
+        "tip": "Baseline → mốc ban đầu để so sánh.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-025",
+        "q": "What does defect escape rate describe?",
+        "code": "",
+        "o": [
+            "Defects found before coding",
+            "Defects that reach a later phase or production",
+            "Lines of code written",
+            "Test cases executed"
+        ],
+        "a": 1,
+        "correctAnswers": [
+            1
+        ],
+        "explanation": "Defect escape mô tả lỗi không được phát hiện ở giai đoạn dự kiến và lọt sang giai đoạn sau hoặc môi trường vận hành.",
+        "tip": "Escape → lỗi lọt qua sang later phase/production.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-026",
+        "q": "Which level emphasizes statistical and quantitative management of performance?",
+        "code": "",
+        "o": [
+            "Level 1",
+            "Level 2",
+            "Level 3",
+            "Level 4"
         ],
         "a": 3,
         "correctAnswers": [
             3
         ],
-        "explanation": "Dictionary phía sau ghi đè giá trị của khóa trùng. \"timeout\" trở thành 5, còn \"retries\" không bị ghi đè nên vẫn là 2.",
-        "tip": "Khóa trùng: bên sau thắng; khóa không trùng: giữ lại. Không cộng các giá trị khi gặp cú pháp gộp dictionary.",
-        "sourceNote": ""
+        "explanation": "Trong các mức trưởng thành CMMI, Level 4 là Quantitatively Managed, nhấn mạnh quản lý hiệu suất bằng định lượng và phương pháp thống kê.",
+        "tip": "Statistical/quantitative management → Level 4.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-012",
-        "q": "Trong TCP server, phương thức nào dùng để gắn socket với địa chỉ IP và cổng cục bộ?",
+        "id": "se433cis-027",
+        "q": "What is the purpose of a CMMI appraisal?",
         "code": "",
         "o": [
-            "connect()",
-            "bind()",
-            "accept()",
-            "recv()"
+            "Evaluate implementation against model practices and identify strengths/gaps",
+            "Guarantee zero defects",
+            "Replace customer testing",
+            "Approve a product license"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "CMMI appraisal đánh giá việc áp dụng các thực hành của mô hình, xác định điểm mạnh và khoảng thiếu để cải tiến. Nó không bảo đảm sản phẩm không có lỗi.",
+        "tip": "Appraisal → evaluate practices + strengths/gaps.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-028",
+        "q": "Which activity best demonstrates requirements management?",
+        "code": "",
+        "o": [
+            "Tracking requirement changes and maintaining traceability",
+            "Writing code without approval",
+            "Ignoring stakeholder feedback",
+            "Skipping acceptance criteria"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Quản lý yêu cầu bao gồm theo dõi thay đổi và duy trì khả năng truy vết, giúp các bên biết tác động của yêu cầu mới hoặc được sửa.",
+        "tip": "Requirements management → changes + traceability.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-029",
+        "q": "What is a process asset?",
+        "code": "",
+        "o": [
+            "A reusable organizational process template, guideline, or checklist",
+            "A physical server only",
+            "A customer invoice",
+            "An untracked bug"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Process asset là tài sản quy trình có thể tái sử dụng như mẫu biểu, hướng dẫn hoặc checklist của tổ chức; không chỉ là thiết bị vật lý.",
+        "tip": "Process asset → reusable template/guideline/checklist.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-030",
+        "q": "What is a common mistake when implementing CMMI?",
+        "code": "",
+        "o": [
+            "Using evidence to improve decisions",
+            "Treating documentation as the goal instead of improving performance",
+            "Training process owners",
+            "Reviewing outcomes"
         ],
         "a": 1,
         "correctAnswers": [
             1
         ],
-        "explanation": "bind() gắn socket vào IP và cổng cục bộ. connect() kết nối tới địa chỉ đích; accept() nhận kết nối; recv() nhận dữ liệu.",
-        "tip": "bind gắn — connect nối — accept nhận kết nối — recv nhận dữ liệu. Chú ý câu hỏi đang nói về thiết lập hay trao đổi dữ liệu.",
-        "sourceNote": ""
+        "explanation": "Xem tài liệu là đích đến thay vì công cụ cải thiện hiệu suất là lỗi triển khai CMMI. Các lựa chọn còn lại hỗ trợ quản lý và cải tiến thực chất.",
+        "tip": "Common mistake → documentation as the goal.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-013",
-        "q": "Cho đoạn mã sau. Kết quả là:",
-        "code": "import re\nresult = bool(re.fullmatch(r\"Gi\\d+/\\d+\", \"Gi0/1\"))\nprint(result)",
-        "o": [
-            "Error",
-            "False",
-            "True",
-            "None"
-        ],
-        "a": 2,
-        "correctAnswers": [
-            2
-        ],
-        "explanation": "Mẫu yêu cầu Gi, một hoặc nhiều chữ số, dấu /, rồi một hoặc nhiều chữ số. \"Gi0/1\" khớp toàn bộ. fullmatch() trả đối tượng Match và bool() chuyển nó thành True.",
-        "tip": "\\d = chữ số; + = ít nhất một; fullmatch = khớp cả chuỗi. Đừng nhầm với search() chỉ cần khớp một đoạn.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-014",
-        "q": "Điểm khác biệt đúng giữa TCP và UDP là:",
+        "id": "se433cis-031",
+        "q": "What is the purpose of Sprint Planning?",
         "code": "",
         "o": [
-            "TCP có cơ chế kết nối và hỗ trợ truyền dữ liệu tin cậy hơn UDP.",
-            "UDP đảm bảo dữ liệu luôn đến đúng thứ tự.",
-            "TCP không cần thiết lập kết nối, UDP cần kết nối.",
-            "TCP chỉ sử dụng được trong mạng LAN."
+            "Plan why, what, and how for the Sprint",
+            "Approve annual budgets",
+            "Conduct a final audit",
+            "Replace the Product Backlog"
         ],
         "a": 0,
         "correctAnswers": [
             0
         ],
-        "explanation": "TCP hướng kết nối, có cơ chế xác nhận, truyền lại và cung cấp luồng bytes đúng thứ tự. UDP không tự bảo đảm giao nhận hoặc thứ tự. C đảo ngược đặc điểm; D sai vì TCP có thể dùng qua Internet.",
-        "tip": "TCP: kết nối, truyền lại, đúng thứ tự. UDP: datagram, không tự bảo đảm các điều đó. Tránh các lựa chọn có từ tuyệt đối như “luôn” khi chúng trái đặc điểm giao thức.",
-        "sourceNote": ""
+        "explanation": "Sprint Planning làm rõ lý do Sprint có giá trị, công việc sẽ làm và cách thực hiện. Nó không thay thế Product Backlog.",
+        "tip": "Sprint Planning → why, what, how.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-015",
-        "q": "Trong Python, kết quả của đoạn code sau là gì?",
-        "code": "data = [10, 20, 30, 40, 50]\nprint(data[-4:-1])",
+        "id": "se433cis-032",
+        "q": "What is the purpose of the Sprint Review?",
+        "code": "",
         "o": [
-            "[10, 20, 30]",
-            "[20, 30, 40]",
-            "[20, 30, 40, 50]",
-            "[30, 40, 50]"
+            "Inspect the outcome and adapt the Product Backlog",
+            "Evaluate employee salaries",
+            "Assign blame for defects",
+            "Approve timesheets"
+        ],
+        "a": 0,
+        "correctAnswers": [
+            0
+        ],
+        "explanation": "Sprint Review kiểm tra kết quả Sprint với các bên liên quan và xác định điều chỉnh tiếp theo, gồm điều chỉnh Product Backlog.",
+        "tip": "Sprint Review → inspect outcome + adapt backlog.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-033",
+        "q": "What is the Scrum commitment for the Product Backlog?",
+        "code": "",
+        "o": [
+            "Definition of Done",
+            "Sprint Goal",
+            "Product Goal",
+            "Release Plan"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Cam kết gắn với Product Backlog là Product Goal. Sprint Goal gắn với Sprint Backlog; Definition of Done gắn với Increment.",
+        "tip": "Product Backlog → Product Goal.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-034",
+        "q": "What is the Scrum commitment for the Increment?",
+        "code": "",
+        "o": [
+            "Product Goal",
+            "Sprint Goal",
+            "Definition of Done",
+            "Velocity"
+        ],
+        "a": 2,
+        "correctAnswers": [
+            2
+        ],
+        "explanation": "Definition of Done là cam kết về trạng thái chất lượng cần đạt để công việc trở thành một phần của Increment.",
+        "tip": "Increment → Definition of Done.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
+    },
+    {
+        "id": "se433cis-035",
+        "q": "What happens to work that does not meet the Definition of Done?",
+        "code": "",
+        "o": [
+            "It becomes part of the Increment",
+            "It is not part of the Increment",
+            "It is automatically released",
+            "It counts as completed"
         ],
         "a": 1,
         "correctAnswers": [
             1
         ],
-        "explanation": "-4 trỏ tới 20; chỉ số kết thúc -1 trỏ tới 50 nhưng không được lấy. Lát cắt gồm 20, 30, 40.",
-        "tip": "Chỉ số âm đếm từ cuối; lát cắt lấy đầu, bỏ cuối. Đánh dấu hai mốc trước rồi mới chọn phần tử.",
-        "sourceNote": ""
+        "explanation": "Công việc chưa đạt Definition of Done không được tính là một phần của Increment. Không được coi là hoàn thành chỉ vì đã hết Sprint.",
+        "tip": "Not Done → not part of Increment.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-016",
-        "q": "Một script nhận số cổng dưới dạng chuỗi \"443\". Phương thức nào thích hợp để kiểm tra chuỗi không rỗng và tất cả ký tự đều là chữ số?",
+        "id": "se433cis-036",
+        "q": "Who may cancel a Sprint?",
         "code": "",
         "o": [
-            "isspace()",
-            "isalpha()",
-            "isdigit()",
-            "isprintable()"
+            "Scrum Master",
+            "Developers",
+            "Product Owner",
+            "Any stakeholder"
         ],
         "a": 2,
         "correctAnswers": [
             2
         ],
-        "explanation": "isdigit() trả True khi chuỗi có ít nhất một ký tự và mọi ký tự đều là chữ số. isspace() kiểm tra ký tự trắng; isalpha() kiểm tra chữ; isprintable() kiểm tra khả năng hiển thị.",
-        "tip": "digit = chữ số. \"\".isdigit() là False. Để xác thực cổng thực tế còn cần kiểm tra khoảng giá trị; isdigit() còn chấp nhận một số chữ số Unicode.",
-        "sourceNote": ""
+        "explanation": "Theo Scrum, chỉ Product Owner có quyền hủy Sprint. Việc hủy có thể xảy ra nếu Sprint Goal trở nên lỗi thời.",
+        "tip": "Cancel a Sprint → Product Owner.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-017",
-        "q": "Cho đoạn code sau. Kết quả là:",
-        "code": "numbers = (10, 20, 30, 40)\nprint(numbers[-1])",
+        "id": "se433cis-037",
+        "q": "Which statement about Scrum Teams is correct?",
+        "code": "",
         "o": [
-            "10",
-            "30",
-            "40",
-            "20"
-        ],
-        "a": 2,
-        "correctAnswers": [
-            2
-        ],
-        "explanation": "Chỉ số -1 truy cập phần tử cuối tuple, ở đây là 40. Tuple hỗ trợ truy cập bằng chỉ số âm giống list.",
-        "tip": "[0] đầu tiên — [-1] cuối cùng — [-2] áp cuối.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-018",
-        "q": "Cho đoạn code sau. Kết quả là:",
-        "code": "s = \"python-api\"\nprint(s.startswith(\"py\") and s.endswith(\"api\"))",
-        "o": [
-            "False",
-            "True",
-            "python-api",
-            "Lỗi"
+            "They must have separate testing subteams",
+            "They are cross-functional and self-managing",
+            "They require a project manager role",
+            "They never interact with stakeholders"
         ],
         "a": 1,
         "correctAnswers": [
             1
         ],
-        "explanation": "Chuỗi bắt đầu bằng \"py\" và kết thúc bằng \"api\", nên hai điều kiện đều True. Kết quả được in là Boolean, không phải chuỗi gốc.",
-        "tip": "startswith kiểm tra đầu; endswith kiểm tra cuối; and cần cả hai đúng. Tính từng điều kiện riêng trước khi nối bằng and.",
-        "sourceNote": ""
+        "explanation": "Scrum Team có đầy đủ kỹ năng cần thiết để tạo giá trị và tự quản lý cách tổ chức công việc; không bắt buộc có nhóm kiểm thử tách riêng.",
+        "tip": "Scrum Team → cross-functional + self-managing.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-019",
-        "q": "Cho đoạn mã sau. Kết quả là:",
-        "code": "devices = [\"R1\", \"R2\", \"R3\"]\nfor i, d in enumerate(devices, start=1):\n    print(f\"{i}:{d}\", end=\" \")",
+        "id": "se433cis-038",
+        "q": "What is an Increment?",
+        "code": "",
         "o": [
-            "R1:1 R2:2 R3:3",
-            "Error",
-            "1:R1 2:R2 3:R3",
-            "0:R1 1:R2 2:R3"
-        ],
-        "a": 2,
-        "correctAnswers": [
-            2
-        ],
-        "explanation": "Số thứ tự bắt đầu từ 1, lần lượt ghép với R1, R2, R3. F-string đặt số trước tên, còn end=\" \" giữ kết quả trên cùng dòng.",
-        "tip": "Nhìn start=1 và {i}:{d}. A đảo thứ tự; D bỏ qua tham số start.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-020",
-        "q": "Đoạn mã post-check sau in ra giá trị nào?",
-        "code": "expected = {\"R1\": \"up\"}\nactual = {\"R1\": \"up\"}\nprint(actual[\"R1\"] == expected[\"R1\"])",
-        "o": [
-            "True",
-            "False",
-            "None",
-            "Error"
+            "A concrete step toward the Product Goal that meets the Definition of Done",
+            "A list of unestimated ideas",
+            "A project contract",
+            "A meeting agenda"
         ],
         "a": 0,
         "correctAnswers": [
             0
         ],
-        "explanation": "Giá trị ở khóa \"R1\" của hai dictionary đều là \"up\". Hai chuỗi bằng nhau nên == trả True.",
-        "tip": "= gán; == so sánh. Post-check so trạng thái thực tế với mong đợi; kết quả True ở đây chỉ chứng minh hai giá trị bằng nhau.",
-        "sourceNote": ""
+        "explanation": "Increment là bước tiến cụ thể hướng tới Product Goal và phải đạt Definition of Done. Một danh sách ý tưởng hay biên bản họp không đáp ứng điều này.",
+        "tip": "Increment → concrete step + Product Goal + Done.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-021",
-        "q": "Một script network automation chạy trên CI/CD cần token để gọi REST API. Cách quản lý token nào phù hợp nhất?",
+        "id": "se433cis-039",
+        "q": "Which Scrum event is designed for stakeholders to discuss product progress with the Scrum Team?",
         "code": "",
         "o": [
-            "Đặt token làm một phần của tên file cấu hình",
-            "Hardcode token trực tiếp trong source code",
-            "Ghi token vào file log để dễ kiểm tra",
-            "Sử dụng secret manager hoặc cơ chế cung cấp secret tại runtime, áp dụng quyền tối thiểu và không ghi secret vào log"
-        ],
-        "a": 3,
-        "correctAnswers": [
-            3
-        ],
-        "explanation": "Cấp token khi chạy giúp tránh lưu bí mật trong source code. Quyền tối thiểu giới hạn tác động của token, còn không ghi secret vào log giảm nguy cơ rò rỉ. Tên file, mã nguồn và log đều không phải nơi phù hợp để công khai token.",
-        "tip": "Nhớ ba ý cấp lúc chạy — quyền tối thiểu — không lộ log. Không nhầm “dễ kiểm tra” với quản lý secret đúng cách.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-022",
-        "q": "Trong Python, json.dumps(payload) chủ yếu dùng để làm gì?",
-        "code": "",
-        "o": [
-            "Chuyển đối tượng Python thành chuỗi JSON",
-            "Đọc chuỗi JSON thành dictionary",
-            "Mở kết nối TCP",
-            "Đọc file YAML an toàn"
-        ],
-        "a": 0,
-        "correctAnswers": [
-            0
-        ],
-        "explanation": "json.dumps() chuyển đối tượng Python được hỗ trợ thành chuỗi JSON. json.loads() làm chiều ngược lại. Đây là chuyển đổi dữ liệu, không mở kết nối hay đọc YAML.",
-        "tip": "dumps ghi JSON — loads đọc JSON. Chữ s gắn với xử lý chuỗi; dumps() chưa tạo bytes để gửi qua socket.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-023",
-        "q": "Cho output CLI là \" Gi0/1 up \". Nếu chỉ muốn loại bỏ whitespace ở đầu chuỗi và giữ nguyên whitespace ở cuối, phương thức phù hợp là:",
-        "code": "",
-        "o": [
-            "lstrip()",
-            "replace()",
-            "strip()",
-            "rstrip()"
-        ],
-        "a": 0,
-        "correctAnswers": [
-            0
-        ],
-        "explanation": "lstrip() chỉ loại whitespace đầu chuỗi. rstrip() xử lý cuối, còn strip() xử lý cả hai đầu nên không đáp ứng yêu cầu giữ whitespace ở cuối. replace() cần chỉ rõ nội dung thay thế và không phải lựa chọn trực tiếp phù hợp nhất.",
-        "tip": "L=Left, R=Right. Gạch chân từ “chỉ” và “giữ nguyên” để không chọn nhầm strip().",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-024",
-        "q": "Trong TCP Server, phương thức accept() thường:",
-        "code": "",
-        "o": [
-            "Gửi dữ liệu cho Client",
-            "Đóng Socket",
-            "Chuyển chuỗi sang byte",
-            "Chờ cho đến khi có Client kết nối"
-        ],
-        "a": 3,
-        "correctAnswers": [
-            3
-        ],
-        "explanation": "Trên listening socket ở chế độ blocking thông thường, accept() chờ kết nối đến rồi trả socket kết nối mới và địa chỉ Client. Gửi dùng sendall(), đóng dùng close(), đổi chuỗi thành bytes dùng encode().",
-        "tip": "listen lắng nghe — accept nhận kết nối. Với non-blocking hoặc timeout, hành vi chờ có thể khác; đề dùng từ “thường”.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-025",
-        "q": "Trong logging, cách nào phù hợp hơn để tránh lộ token bí mật?",
-        "code": "",
-        "o": [
-            "Ghi toàn bộ token ở mức DEBUG",
-            "Mask/redact giá trị nhạy cảm trước khi ghi log",
-            "Nối token vào exception message",
-            "In toàn bộ biến môi trường"
+            "Daily Scrum",
+            "Sprint Review",
+            "Sprint Retrospective",
+            "Sprint Planning"
         ],
         "a": 1,
         "correctAnswers": [
             1
         ],
-        "explanation": "Mask/redact là che hoặc loại bỏ thông tin nhạy cảm trước khi ghi log. DEBUG vẫn là log và có thể bị thu thập; exception message và biến môi trường cũng có thể chứa token.",
-        "tip": "Log sự kiện cần biết, không log bí mật. Không chọn DEBUG chỉ vì nghĩ mức này “ẩn” hoặc chỉ dùng lúc phát triển.",
-        "sourceNote": ""
+        "explanation": "Sprint Review là dịp Scrum Team và các bên liên quan cùng xem kết quả, thảo luận tiến độ sản phẩm và bước tiếp theo. Daily Scrum tập trung vào Developers.",
+        "tip": "Stakeholders + product progress → Sprint Review.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     },
     {
-        "id": "cs466-026",
-        "q": "Cho đoạn mã sau. Kết quả là:",
-        "code": "devices = [\n    {\"name\": \"R1\", \"latency\": 15},\n    {\"name\": \"R2\", \"latency\": 8},\n    {\"name\": \"R3\", \"latency\": 20}\n]\nbest = min(devices, key=lambda d: d[\"latency\"])\nprint(best[\"name\"])",
+        "id": "se433cis-040",
+        "q": "When does a new Sprint start?",
+        "code": "",
         "o": [
-            "R3",
-            "R2",
-            "Error",
-            "R1"
-        ],
-        "a": 1,
-        "correctAnswers": [
-            1
-        ],
-        "explanation": "key yêu cầu so sánh các thiết bị theo latency. Giá trị nhỏ nhất trong 15, 8, 20 là 8, thuộc R2. min() trả về dictionary của R2 rồi [\"name\"] lấy tên.",
-        "tip": "Xem key trước để biết tiêu chí; min nhỏ nhất, max lớn nhất. Đừng so tên thiết bị khi key đang lấy độ trễ.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-027",
-        "q": "Cho đoạn code sau. Kết quả là:",
-        "code": "def tinh(a, b=2):\n    return a * b\nprint(tinh(5))",
-        "o": [
-            "5",
-            "7",
-            "10",
-            "Lỗi do thiếu tham số b"
-        ],
-        "a": 2,
-        "correctAnswers": [
-            2
-        ],
-        "explanation": "a=5; không truyền b nên dùng giá trị mặc định 2. Hàm tính 5 * 2 và trả 10, sau đó print() hiển thị kết quả.",
-        "tip": "Không truyền tham số thì dùng mặc định nếu có. Thay giá trị vào công thức trước khi tính; không cộng khi hàm dùng dấu *.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-028",
-        "q": "Cho đoạn code phía Client sau. Lệnh recv(1024) có ý nghĩa là:",
-        "code": "client.sendall(\"Hello\".encode(\"utf-8\"))\ndata = client.recv(1024)",
-        "o": [
-            "Gửi 1024 byte dữ liệu",
-            "Chờ 1024 Client kết nối",
-            "Nhận chính xác 1024 ký tự",
-            "Nhận tối đa 1024 byte dữ liệu"
-        ],
-        "a": 3,
-        "correctAnswers": [
-            3
-        ],
-        "explanation": "recv(1024) nhận tối đa 1024 bytes trong lần gọi đó. Dữ liệu thực nhận có thể ít hơn; giá trị trả về là bytes, không phải số ký tự Unicode.",
-        "tip": "recv(N) = nhận tối đa N bytes. Hai bẫy cần tránh là “chính xác” và “ký tự”.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-029",
-        "q": "Cho TCP Server sau. Biến conn được sử dụng để:",
-        "code": "server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\nserver.bind((\"127.0.0.1\", 9001))\nserver.listen(5)\nconn, addr = server.accept()",
-        "o": [
-            "Trao đổi dữ liệu với Client đã kết nối",
-            "Chứa địa chỉ IP của Server",
-            "Lắng nghe các kết nối mới",
-            "Chứa số cổng của Client"
+            "Immediately after the previous Sprint concludes",
+            "Only after a quarterly approval",
+            "After a two-week break",
+            "Whenever the Scrum Master chooses"
         ],
         "a": 0,
         "correctAnswers": [
             0
         ],
-        "explanation": "accept() trả connected socket conn và địa chỉ Client addr. conn dùng để gửi/nhận với Client đó; server là listening socket. Vì vậy conn không phải địa chỉ hay số cổng.",
-        "tip": "server đón kết nối — conn trao đổi dữ liệu — addr chứa địa chỉ. Nhớ hai socket có hai vai trò khác nhau.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-030",
-        "q": "Cho đoạn code sau. Kết quả là:",
-        "code": "numbers = [1, 2, 3, 4, 5]\nresult = [x * 2 for x in numbers if x % 2 == 1]\nprint(result)",
-        "o": [
-            "[1, 3, 5]",
-            "[2, 6, 10]",
-            "[2, 4, 6, 8, 10]",
-            "[4, 8]"
-        ],
-        "a": 1,
-        "correctAnswers": [
-            1
-        ],
-        "explanation": "Điều kiện % 2 == 1 giữ số lẻ 1, 3, 5; nhân từng số với 2 được 2, 6, 10. A chỉ lọc mà chưa nhân; C bỏ qua điều kiện; D xử lý số chẵn.",
-        "tip": "Lọc trước → nhân sau. % 2 == 1 chọn lẻ; % 2 == 0 chọn chẵn.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-031",
-        "q": "Cho đoạn mã sau. Kết quả là:",
-        "code": "import json\nraw = '{\"device\":\"R1\",\"status\":\"up\"}'\ndata = json.loads(raw)\nprint(data.get(\"status\"))",
-        "o": [
-            "up",
-            "R1",
-            "status"
-        ],
-        "a": 0,
-        "correctAnswers": [
-            0
-        ],
-        "explanation": "json.loads() chuyển chuỗi JSON thành dictionary. get(\"status\") lấy giá trị \"up\", không lấy tên khóa \"status\" hoặc giá trị của khóa \"device\".",
-        "tip": "loads đọc JSON — get lấy theo khóa. Phân biệt tên khóa với giá trị của khóa.",
-        "sourceNote": "Đề gốc chỉ có A, B, C."
-    },
-    {
-        "id": "cs466-032",
-        "q": "Ansible check mode chủ yếu được dùng để làm gì?",
-        "code": "",
-        "o": [
-            "Mô phỏng/ước lượng thay đổi đối với module hỗ trợ mà chưa áp dụng thay đổi",
-            "Tự động rollback mọi lỗi",
-            "Bỏ qua inventory",
-            "Tắt SSH trên host đích"
-        ],
-        "a": 0,
-        "correctAnswers": [
-            0
-        ],
-        "explanation": "Check mode giúp xem thay đổi dự kiến của module có hỗ trợ. Nó không tự hoàn tác, không bỏ qua inventory và không tắt SSH. Không phải mọi module đều mô phỏng đầy đủ; task không hỗ trợ có thể bị bỏ qua.",
-        "tip": "Check = xem trước; rollback = khôi phục sau thay đổi. Chú ý cụm “module hỗ trợ”; không suy ra mọi task đều được mô phỏng.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-033",
-        "q": "Đoạn mã nào phù hợp hơn cho một script gọi REST API cần tránh chờ vô hạn và cần phát hiện HTTP 4xx/5xx?",
-        "code": "",
-        "o": [
-            "r = requests.get(url, timeout=5); r.raise_for_status()",
-            "requests.get(url, verify=False)",
-            "requests.get(url)",
-            "eval(requests.get(url).text)"
-        ],
-        "a": 0,
-        "correctAnswers": [
-            0
-        ],
-        "explanation": "timeout=5 giới hạn chờ kết nối/đọc; raise_for_status() báo HTTPError cho phản hồi 4xx/5xx. verify=False chỉ tắt xác minh TLS; gọi GET không timeout không đáp ứng yêu cầu giới hạn chờ. eval() thực thi nội dung và không phải cách xử lý phản hồi an toàn.",
-        "tip": "Có hai yêu cầu thì tìm đủ hai thao tác: timeout cho thời gian chờ + raise_for_status cho HTTP lỗi. Timeout không phải giới hạn tổng thời gian tuyệt đối của toàn request.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-034",
-        "q": "Trong Ansible, tùy chọn --limit hữu ích nhất để làm gì?",
-        "code": "",
-        "o": [
-            "Giới hạn phạm vi host được chạy playbook",
-            "Tăng số CPU của host",
-            "Tự động tạo secret",
-            "Thay thế inventory"
-        ],
-        "a": 0,
-        "correctAnswers": [
-            0
-        ],
-        "explanation": "--limit thu hẹp tập host trong phạm vi host mà play đã chọn, dựa trên tên, nhóm hoặc mẫu. Nó không thay thế inventory và không thay tài nguyên máy hay tạo secret.",
-        "tip": "Inventory khai báo host — play chọn host — limit thu hẹp phạm vi. “Limit” nghĩa là giới hạn.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-035",
-        "q": "Cho đoạn mã sau. Kết quả được in ra là:",
-        "code": "label = \" edge-r1\\n\"\nprint(label.strip().upper())",
-        "o": [
-            "EDGE-R1",
-            "edge-r1",
-            "EDGE-R1"
-        ],
-        "a": 0,
-        "correctAnswers": [
-            0,
-            2
-        ],
-        "explanation": "strip() bỏ whitespace hai đầu, gồm dấu cách đầu và ký tự xuống dòng cuối. upper() đổi chữ thành hoa, tạo \"EDGE-R1\". B chưa chuyển chữ hoa. A và C cùng hiển thị kết quả đúng.",
-        "tip": "strip làm sạch hai đầu → upper viết hoa. Học kết quả \"EDGE-R1\" thay vì cố nhớ một chữ cái khi đề bị trùng lựa chọn.",
-        "sourceNote": "Chỉ có A, B, C; không có D. Hai lựa chọn A/C giống nhau. Trong ứng dụng luyện tập, chọn A hoặc C đều phải được tính đúng."
-    },
-    {
-        "id": "cs466-036",
-        "q": "Một REST API có endpoint:\nPOST /students\nRequest Body: {\"name\": \"An\", \"score\": 8.5}\nNếu dữ liệu được tạo mới thành công, HTTP Status Code phù hợp nhất là:",
-        "code": "",
-        "o": [
-            "404 Not Found",
-            "500 Internal Server Error",
-            "201 Created",
-            "200 OK"
-        ],
-        "a": 2,
-        "correctAnswers": [
-            2
-        ],
-        "explanation": "201 Created thể hiện yêu cầu đã thành công và tạo tài nguyên mới. 200 OK là thành công nói chung nên kém cụ thể hơn; 404 là không tìm thấy, 500 là lỗi phía server.",
-        "tip": "Gạch chân “tạo mới” → Created → 201. Nhớ 200 thành công chung, 404 không tìm thấy, 500 lỗi server.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-037",
-        "q": "Một inventory có nhiều địa chỉ IP bị lặp. Nếu chỉ cần tập hợp các địa chỉ duy nhất, kiểu dữ liệu nào phù hợp nhất?",
-        "code": "",
-        "o": [
-            "str",
-            "tuple",
-            "list",
-            "set"
-        ],
-        "a": 3,
-        "correctAnswers": [
-            3
-        ],
-        "explanation": "set lưu các phần tử duy nhất, tự loại giá trị trùng. List và tuple vẫn có thể chứa phần tử lặp; str là chuỗi, không phải kiểu tập hợp phù hợp cho yêu cầu này.",
-        "tip": "Chỉ cần duy nhất → set. Nếu đề yêu cầu giữ thứ tự xuất hiện đầu tiên, dùng cách như list(dict.fromkeys(items)); set không bảo đảm thứ tự đó.",
-        "sourceNote": ""
-    },
-    {
-        "id": "cs466-038",
-        "q": "Cho đoạn mã sau. Kết quả là:",
-        "code": "name = \" sw-core-01\\n\"\nprint(name.strip().upper())",
-        "o": [
-            "sw-core-01",
-            "Error",
-            "SW-CORE-01",
-            "SW-CORE-01"
-        ],
-        "a": 2,
-        "correctAnswers": [
-            2,
-            3
-        ],
-        "explanation": "strip() bỏ whitespace hai đầu; upper() đổi chữ sang hoa, cho \"SW-CORE-01\". Các chữ số và dấu gạch nối giữ nguyên. A chưa chuyển chữ hoa; B sai vì code hợp lệ.",
-        "tip": "upper chỉ đổi hoa/thường, không đổi chữ số và dấu gạch nối. Tính giá trị trước khi nhìn chữ cái đáp án.",
-        "sourceNote": "C và D giống nhau. Trong ứng dụng luyện tập, chọn C hoặc D đều phải được tính đúng."
-    },
-    {
-        "id": "cs466-039",
-        "q": "Cho UDP Server sau. Biến addr chứa:",
-        "code": "server = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)\nserver.bind((\"0.0.0.0\", 6000))\ndata, addr = server.recvfrom(1024)",
-        "o": [
-            "Nội dung Client gửi",
-            "Địa chỉ IP của Server",
-            "Địa chỉ IP và cổng của Client gửi dữ liệu",
-            "Kích thước gói tin"
-        ],
-        "a": 2,
-        "correctAnswers": [
-            2
-        ],
-        "explanation": "recvfrom() trả dữ liệu nhận được và địa chỉ nguồn. Với IPv4, addr là tuple (IP, port) của bên gửi datagram. Nội dung nằm ở data; \"0.0.0.0\", 6000 trong bind() là địa chỉ phía Server, không phải giá trị nguồn trả về trong addr.",
-        "tip": "recvfrom = nhận từ ai → data và địa chỉ người gửi. Phân biệt địa chỉ trong bind() với địa chỉ do recvfrom() trả về.",
-        "sourceNote": ""
+        "explanation": "Sprint mới bắt đầu ngay sau khi Sprint trước kết thúc, tạo nhịp phát triển liên tục; không có khoảng nghỉ hai tuần bắt buộc.",
+        "tip": "New Sprint → immediately after previous Sprint.",
+        "sourceNote": "Đáp án theo phương án in đậm trong tài liệu Word bạn cung cấp."
     }
 ];
         }
@@ -1789,7 +1812,7 @@
 
         function getExplanation(i) {
             const item = quizData[i];
-            if (!item) return "Đáp án chuẩn theo học phần CS466.";
+            if (!item) return "Đáp án chuẩn theo học phần SE433CIS.";
             let html = `<div>💡 <strong>Vì sao đúng:</strong> ${escapeHTML(item.explanation)}</div>`;
             if (item.tip) {
                 html += `<div class="exp-tip">🎯 <strong>Mẹo / Kỹ năng:</strong> ${escapeHTML(item.tip)}</div>`;
@@ -1806,7 +1829,7 @@
 
         function renderOptionLabel(questionIndex, originalOptionIndex, displayIndex) {
             const optText = quizData[questionIndex].o[originalOptionIndex];
-            return `<label><input type="radio" name="q${questionIndex}" onchange="checkAnswer(${questionIndex}, ${originalOptionIndex})">${formatOptionText(displayIndex, escapeHTML(optText))}</label>`;
+            return `<label lang="en"><input type="radio" name="q${questionIndex}" onchange="checkAnswer(${questionIndex}, ${originalOptionIndex})">${formatOptionText(displayIndex, escapeHTML(optText))}</label>`;
         }
 
         function resetOptionLabelsToOriginal(questionIndex) {
@@ -1819,8 +1842,8 @@
         let currentScore = 0;
         let answeredQuestions = 0;
         const totalQuestions = quizData.length;
-        const SCORE_KEY = 'cs466_history';
-        const REVIEW_KEY = 'cs466_review';
+        const SCORE_KEY = 'se433cis_history';
+        const REVIEW_KEY = 'se433cis_review';
 
         function readStore(key, fallback = []) {
             try {
@@ -1854,7 +1877,7 @@
 
         // Âm thanh
         let audioCtx = null;
-        let soundEnabled = localStorage.getItem('cs466_sound') !== 'false';
+        let soundEnabled = localStorage.getItem('se433cis_sound') !== 'false';
         document.getElementById('btn-sound').innerText = soundEnabled ? '🎵' : '🔇';
 
         function initAudio() {
@@ -1863,7 +1886,7 @@
 
         function toggleSound() {
             soundEnabled = !soundEnabled;
-            localStorage.setItem('cs466_sound', soundEnabled);
+            localStorage.setItem('se433cis_sound', soundEnabled);
             document.getElementById('btn-sound').innerText = soundEnabled ? '🎵' : '🔇';
         }
 
@@ -1903,14 +1926,14 @@
         }
 
         // Dark Mode
-        let isDarkMode = localStorage.getItem('cs466_dark') === 'true';
+        let isDarkMode = localStorage.getItem('se433cis_dark') === 'true';
         if (isDarkMode) document.body.classList.add('dark-mode');
         document.getElementById('btn-dark').innerText = isDarkMode ? '☀️' : '🌙';
 
         function toggleDark() {
             isDarkMode = !isDarkMode;
             document.body.classList.toggle('dark-mode', isDarkMode);
-            localStorage.setItem('cs466_dark', isDarkMode);
+            localStorage.setItem('se433cis_dark', isDarkMode);
             document.getElementById('btn-dark').innerText = isDarkMode ? '☀️' : '🌙';
         }
 
@@ -1928,7 +1951,7 @@
                 const card = document.getElementById(`q-card-${questionIndex}`);
                 const title = document.getElementById(`q-title-${questionIndex}`);
                 if (card) container.appendChild(card);
-                if (title) title.innerHTML = `Câu ${displayIndex + 1} (${quizData[questionIndex].id}): <span class="q-text-pre">${escapeHTML(quizData[questionIndex].q)}</span>`;
+                if (title) title.innerHTML = `Câu ${displayIndex + 1} (${quizData[questionIndex].id}): <span class="q-text-pre" lang="en">${escapeHTML(quizData[questionIndex].q)}</span>`;
             });
         }
 
@@ -1989,7 +2012,7 @@
                 const isSaved = reviewBank.has(i);
                 card.innerHTML = `
                     <div class="question-header">
-                        <div class="question-title" id="q-title-${i}">Câu ${i + 1} (${item.id}): <span class="q-text-pre">${escapeHTML(item.q)}</span></div>
+                        <div class="question-title" id="q-title-${i}">Câu ${i + 1} (${item.id}): <span class="q-text-pre" lang="en">${escapeHTML(item.q)}</span></div>
                         <div class="header-actions">
                             <button class="unknown-btn ${isSaved ? 'saved-btn' : ''}" id="ubtn-${i}" onclick="markUnknown(${i})">${isSaved ? '⭐ Đã lưu' : '❓ Không biết'}</button>
                         </div>
@@ -2119,7 +2142,7 @@
         }
 
         function startExamMode() {
-            if (!confirm("Bắt đầu thi CS466 trong 60 phút?")) return;
+            if (!confirm("Bắt đầu thi SE433CIS trong 60 phút?")) return;
             window.isExamMode = true;
             isReviewMode = false;
             currentScore = 0;
@@ -2215,13 +2238,13 @@
             document.getElementById('lg-wrong').style.display = 'flex';
             document.getElementById('lg-unknown').style.display = 'flex';
             document.getElementById('lg-exam').style.display = 'none';
-            document.getElementById('main-title').innerText = "KẾT QUẢ THI CS466";
+            document.getElementById('main-title').innerText = "KẾT QUẢ THI SE433CIS";
             document.getElementById('bottom-actions').innerHTML = `<button class="action-btn" style="padding: 15px 30px; font-size: 1.2em; background-color: var(--primary); margin: 0 auto;" onclick="location.reload()">🔄 Kết thúc</button>`;
 
             updateUI();
             playSound(score / totalQuestions >= 0.5 ? 'correct' : 'wrong');
             saveScore(true, 'Thi thử', timeStr);
-            alert(`Kết quả CS466: ${score}/${totalQuestions}. Thời gian: ${timeStr}`);
+            alert(`Kết quả SE433CIS: ${score}/${totalQuestions}. Thời gian: ${timeStr}`);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
@@ -2234,7 +2257,7 @@
                 document.getElementById('search-bar-wrap').style.display = 'none';
                 document.getElementById('bottom-actions').style.display = 'none';
                 document.getElementById('sidebar-legend').style.display = 'none';
-                document.getElementById('main-title').innerText = "📚 Ôn Tập CS466";
+                document.getElementById('main-title').innerText = "📚 Ôn Tập SE433CIS";
                 document.getElementById('btn-toggle-review').innerHTML = '⬅️ Quay lại';
                 rContainer.style.display = 'block';
                 renderReview();
@@ -2244,7 +2267,7 @@
                 document.getElementById('search-bar-wrap').style.display = 'block';
                 document.getElementById('bottom-actions').style.display = 'block';
                 document.getElementById('sidebar-legend').style.display = 'flex';
-                document.getElementById('main-title').innerText = "Môn Học: CS466 — Python & Network Automation";
+                document.getElementById('main-title').innerText = "Môn Học: CMU SE433CIS — Software Process and Quality Management";
                 document.getElementById('btn-toggle-review').innerHTML = `📚 Ôn tập (<span id="review-count">${reviewBank.size}</span>)`;
                 rContainer.style.display = 'none';
             }
@@ -2270,7 +2293,7 @@
 
                 card.innerHTML = `
                     <div class="question-header">
-                        <div class="question-title">Câu ${i + 1} (${item.id}): <span class="q-text-pre">${escapeHTML(item.q)}</span></div>
+                        <div class="question-title">Câu ${i + 1} (${item.id}): <span class="q-text-pre" lang="en">${escapeHTML(item.q)}</span></div>
                         <div class="header-actions">
                             <button class="action-btn" id="rret-${i}" style="display:none; background-color: var(--primary); padding: 5px 10px; font-size: 0.8em;" onclick="retryReview(${i})">🔄 Lại</button>
                             <button class="action-btn" style="background-color: var(--success); padding: 5px 10px; font-size: 0.8em;" onclick="doneReview(${i})">✔️ Thuộc</button>
@@ -2339,7 +2362,7 @@
             });
             writeStore(SCORE_KEY, history.slice(0, 30));
             if (!isAuto) {
-                alert("Lưu điểm CS466 thành công!");
+                alert("Lưu điểm SE433CIS thành công!");
                 openHistoryModal();
             }
         }
@@ -2376,7 +2399,7 @@
         }
 
         function clearAllHistory() {
-            if (confirm("Xóa toàn bộ lịch sử CS466?")) {
+            if (confirm("Xóa toàn bộ lịch sử SE433CIS?")) {
                 localStorage.removeItem(SCORE_KEY);
                 loadHistory();
             }
@@ -2384,13 +2407,13 @@
 
         function exportQuizData() {
             const data = {
-                app: "cs466_quiz_backup",
+                app: "se433cis_quiz_backup",
                 version: 1,
                 exportedAt: new Date().toISOString(),
                 history: readStore(SCORE_KEY, []),
                 review: [...reviewBank],
-                darkMode: localStorage.getItem('cs466_dark'),
-                sound: localStorage.getItem('cs466_sound')
+                darkMode: localStorage.getItem('se433cis_dark'),
+                sound: localStorage.getItem('se433cis_sound')
             };
 
             const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
@@ -2398,7 +2421,7 @@
             const a = document.createElement("a");
             const date = new Date().toISOString().slice(0, 10);
             a.href = url;
-            a.download = `cs466_quiz_backup_${date}.json`;
+            a.download = `se433cis_quiz_backup_${date}.json`;
             document.body.appendChild(a);
             a.click();
             a.remove();
@@ -2414,8 +2437,8 @@
                 try {
                     const data = JSON.parse(e.target.result);
 
-                    if (data.app !== "cs466_quiz_backup" || !Array.isArray(data.history) || !Array.isArray(data.review)) {
-                        alert("File khôi phục không đúng định dạng hoặc không phải của môn CS466.");
+                    if (data.app !== "se433cis_quiz_backup" || !Array.isArray(data.history) || !Array.isArray(data.review)) {
+                        alert("File khôi phục không đúng định dạng hoặc không phải của môn SE433CIS.");
                         return;
                     }
 
@@ -2423,14 +2446,14 @@
                     reviewBank = new Set(data.review.filter(i => Number.isInteger(i) && i >= 0 && i < quizData.length));
                     saveReviewToStore();
 
-                    if (data.darkMode !== null && data.darkMode !== undefined) localStorage.setItem('cs466_dark', data.darkMode);
-                    if (data.sound !== null && data.sound !== undefined) localStorage.setItem('cs466_sound', data.sound);
+                    if (data.darkMode !== null && data.darkMode !== undefined) localStorage.setItem('se433cis_dark', data.darkMode);
+                    if (data.sound !== null && data.sound !== undefined) localStorage.setItem('se433cis_sound', data.sound);
 
                     renderSidebar();
                     updateUI();
                     loadHistory();
 
-                    alert("Khôi phục dữ liệu CS466 thành công!");
+                    alert("Khôi phục dữ liệu SE433CIS thành công!");
                 } catch (err) {
                     alert("Không đọc được file khôi phục.");
                     console.error(err);
