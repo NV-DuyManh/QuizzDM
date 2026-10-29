@@ -20,6 +20,6 @@ Môn này dùng se433cis_history, se433cis_review, se433cis_dark và se433cis_so
 
 ## Git và triển khai
 
-Nhánh: codex/TN-SE433CIS. Việc push nhánh này không đổi nhánh đang dùng cho GitHub Pages. Nếu muốn xuất bản riêng môn này, cấu hình Pages dùng nhánh này tại thư mục gốc hoặc ghép vào trang đa môn trong một thay đổi riêng.
+Nhánh: TN-SoftwareQuality. Việc push nhánh này không đổi nhánh đang dùng cho GitHub Pages. Nếu muốn xuất bản riêng môn này, cấu hình Pages dùng nhánh này tại thư mục gốc hoặc ghép vào trang đa môn trong một thay đổi riêng.
 
 Bảng đáp án và giải thích: [ANSWERS.md](ANSWERS.md).
